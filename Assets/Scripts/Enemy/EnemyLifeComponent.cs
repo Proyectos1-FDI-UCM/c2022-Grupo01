@@ -7,7 +7,7 @@ public class EnemyLifeComponent : MonoBehaviour
     public float maxLife = 100f;
 	public Animator animator;
 
-    private float _currentLife;
+    public float _currentLife;
 
 	private BulletLife bullet;
 	private void Start()
