@@ -15,7 +15,7 @@ public class SpikeHurtComponent : MonoBehaviour
 
         if(player != null)
 		{
-			player.gameObject.GetComponent<PlayerLife>().SetHealth(-_touchDamage);
+			player.SetHealth(-_touchDamage);
 		}
 	}
 
