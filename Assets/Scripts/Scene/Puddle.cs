@@ -9,15 +9,21 @@ public class Puddle : MonoBehaviour
 	private float _touchHydrate = 10;
 	#endregion
 
+	#region references
+	private PlayerManager _playerManager;
+	#endregion
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
         PlayerLife player = collision.gameObject.GetComponent<PlayerLife>();
 
-        if(player != null)  //&& health <= 90
-							// mas adelante solo si esta rodando
+        if(player != null && _playerManager.playerInRoll)
 		{
-			player.SetHealth(+_touchHydrate);
+				player.SetHealth(+_touchHydrate);
 		}
+	}
+	void Start()
+	{
+		_playerManager = PlayerManager.Instance;
 	}
 }
