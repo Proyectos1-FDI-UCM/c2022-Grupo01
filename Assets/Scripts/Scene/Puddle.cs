@@ -20,6 +20,7 @@ public class Puddle : MonoBehaviour
         if(player != null && _playerManager.playerInRoll)
 		{
 				player.SetHealth(+_touchHydrate);
+				Destroy(gameObject);
 		}
 	}
 	void Start()
