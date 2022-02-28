@@ -11,20 +11,25 @@ public class Puddle : MonoBehaviour
 
 	#region references
 	private PlayerManager _playerManager;
+	private SpriteRenderer _spriteRenderer;
+	public Sprite newSprite;
 	#endregion
+
+	void Start()
+	{
+		_playerManager = PlayerManager.Instance;
+		_spriteRenderer = GetComponent<SpriteRenderer>();
+	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
         PlayerLife player = collision.gameObject.GetComponent<PlayerLife>();
-
-        if(player != null && _playerManager.playerInRoll)
+		if (player != null && _playerManager.playerInRoll)
 		{
-				player.SetHealth(+_touchHydrate);
-				Destroy(gameObject);
+			player.SetHealth(+_touchHydrate);
+			_spriteRenderer.sprite = newSprite;
+			Destroy(gameObject, 3f);
 		}
 	}
-	void Start()
-	{
-		_playerManager = PlayerManager.Instance;
-	}
+
 }
