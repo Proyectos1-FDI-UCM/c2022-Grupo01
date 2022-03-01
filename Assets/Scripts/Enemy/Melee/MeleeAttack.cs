@@ -34,7 +34,7 @@ public class MeleeAttack : MonoBehaviour
 
 		Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(transform.position, _attackRange, _playerLayer);
 
-		if(hitPlayer[0] != null) hitPlayer[0].gameObject.GetComponent<PlayerLife>().SetHealth(-_meleeDamage);
+		if(hitPlayer[0] != null) PlayerManager.Instance.ChangePlayerLife(-_meleeDamage);
 		
 	}
     #endregion
