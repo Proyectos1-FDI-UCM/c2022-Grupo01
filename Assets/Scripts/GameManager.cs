@@ -87,4 +87,5 @@ public class GameManager : MonoBehaviour
         
         vivo = true;
     }
+
 }

@@ -17,16 +17,16 @@ public class PlayerLife : MonoBehaviour
     #region methods
     public void SetHealth(float healthToAdd)
 	{
-        if(_playerManager.myLifeState == PlayerManager.LifeStates.Normal || health < health + healthToAdd)
+        if(_playerManager.myLifeState == PlayerManager.LifeStates.Normal || healthToAdd > 0)
         {
             health += healthToAdd;
             health = Mathf.Clamp(health, 0, maxHealth);
-            GameManager.Instance.ShowHealth(health);
             if (health <= 0)
             {
                 Die();
             }
             PlayerManager.Instance.UpdateLife(health);
+            GameManager.Instance.ShowHealth(health);
         }
         else if(_playerManager.myLifeState == PlayerManager.LifeStates.HolyFlotador)
         {
@@ -51,4 +51,23 @@ public class PlayerLife : MonoBehaviour
         _playerManager.UpdateLife(health);
         _playerManager.UpdateMaxLife(maxHealth);
     }
+
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            SetHealth(10);
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            maxHealth += 10;
+        }
+        _playerManager.UpdateLife(health);
+        _playerManager.UpdateMaxLife(maxHealth);
+        GameManager.Instance.ShowHealth(health);
+    }
+
+
+
 }

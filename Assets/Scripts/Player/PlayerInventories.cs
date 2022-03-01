@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +13,7 @@ public class PlayerInventories : MonoBehaviour
         var item = collision.GetComponent<PhysicalItem>();
         if (item)
         {
-            Destroy(collision.gameObject);
+            /*Destroy(collision.gameObject);
             if(item.item.type == ItemType.Passive)
             {
                 passiveInventory.AddItem(new Item(item.item));
@@ -22,7 +22,7 @@ public class PlayerInventories : MonoBehaviour
             {
                 if(activeInventory.inventoryContainer.itemListInInventory.Count == 0) activeInventory.AddItem(new Item(item.item));
                 else(Instantiate())
-            }
+            }*//*
         }
     }
 
@@ -32,3 +32,4 @@ public class PlayerInventories : MonoBehaviour
         activeInventory.inventoryContainer.itemListInInventory.Clear();
     } 
 }
+*/

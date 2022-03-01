@@ -75,9 +75,9 @@ public class PlayerManager : MonoBehaviour
     {
         _playerLife.SetHealth(health);  
     }
-    public void ChangeMaxLife(int maxHealth)
+    public void ChangeMaxLife(int mymaxHealth)
     {
-        //_playerLife.SetMaxHealth(maxHealth); esto es de íñigo     
+        _playerLife.maxHealth = mymaxHealth;   
     }
     public void ChangePlayerMeleeDamage(float newPlayerMeleeDamage)
     {
@@ -112,4 +112,6 @@ public class PlayerManager : MonoBehaviour
     {
         UpdatePosition();
     }
+
+
 }
