@@ -14,7 +14,11 @@ public class PlayerManager : MonoBehaviour
     private PlayerMovement _playerMovement;
     private Transform _playerTransform;
     #endregion
-
+    #region properties
+    public enum LifeStates { Normal, Shield, HolyFlotador };   // Añadir shields en el futuro
+    //[HideInInspector]
+    public LifeStates myLifeState;
+    #endregion
 
     #region Singleton
     private static PlayerManager _instance;

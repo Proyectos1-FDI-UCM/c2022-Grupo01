@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PomperActiveObject : MonoBehaviour
+public class Pomper : MonoBehaviour
 {
     #region parameters
     [SerializeField]
