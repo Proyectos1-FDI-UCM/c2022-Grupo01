@@ -75,11 +75,9 @@ GameObject:
   - component: {fileID: 9191831522005992302}
   - component: {fileID: 9191831522005992301}
   - component: {fileID: 9191831522005992303}
-  - component: {fileID: 9191831522005992304}
   - component: {fileID: 9191831522005992306}
   - component: {fileID: 9191831522005992305}
   - component: {fileID: 894022324}
-  - component: {fileID: 6171887443458520577}
   m_Layer: 7
   m_Name: MeleeEnemy
   m_TagString: Untagged
@@ -226,27 +224,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _touchDamage: 0
---- !u!50 &9191831522005992304
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9191831522005992297}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!195 &9191831522005992306
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -282,7 +259,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeToBeElapsed: 0.5
-  _target: {fileID: 0}
   _animator: {fileID: 9191831522005992302}
 --- !u!114 &894022324
 MonoBehaviour:
@@ -303,24 +279,3 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _animator: {fileID: 9191831522005992302}
-  _playerPosition: {fileID: 0}
---- !u!114 &6171887443458520577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9191831522005992297}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77185a63d6a10d94da0e23c2f7d305e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _meleeCooldown: 0.8
-  _attackRange: 2
-  _meleeDamage: 20
-  _playerLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  _animator: {fileID: 9191831522005992302}
-  _playerPosition: {fileID: 0}
