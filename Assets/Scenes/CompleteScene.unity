@@ -11255,12 +11255,13 @@ MonoBehaviour:
   _playerGun: {fileID: 450459907}
   _necromancer: {fileID: 0}
   _weakEnemy: {fileID: 0}
+  _chest: {fileID: 0}
   _cam: {fileID: 519420033}
   _uiManager: {fileID: 1957454365}
   _playerDirection: {x: 0, y: 0, z: 0}
   _necroPosition: {x: 0, y: 0, z: 0}
   add: 0
-  _vivo: 0
+  vivo: 0
 --- !u!4 &1957454367
 Transform:
   m_ObjectHideFlags: 0
@@ -11293,6 +11294,7 @@ MonoBehaviour:
   model: {fileID: 5272552499463678556}
   attackPoint: {fileID: 1113589927}
   gancho: {fileID: 0}
+  myLifeState: 0
   health: 0
   maxHealth: 0
   meleeDamage: 0
