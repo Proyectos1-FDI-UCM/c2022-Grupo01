@@ -7,6 +7,7 @@ public class ActiveItem : ItemObject
 {
     public void Awake()
     {
+        
         type = ItemType.Active;
     }
 }

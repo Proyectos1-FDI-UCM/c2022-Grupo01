@@ -23,11 +23,26 @@ public abstract class ItemObject : ScriptableObject
         return newItem;
     }
     #endregion
+    /*public GameObject Object;
+    public GameObject physicalObject;
+
+    private Vector3 offset = new Vector3(0, 1, 0);
+    public void ReplaceItem()
+    {
+        physicalObject.AddComponent<PhysicalItem>();
+        physicalObject.AddComponent<BoxCollider2D>();
+        physicalObject.AddComponent<SpriteRenderer>();
+
+        physicalObject.GetComponent<BoxCollider2D>().isTrigger = true;
+        physicalObject.GetComponent<SpriteRenderer>().sprite = sprite;
+        Instantiate(physicalObject, PlayerManager.Instance._playerPosition + offset, Quaternion.identity);
+    }*/
 }
 
 [System.Serializable]
 public class Item
 {
+    
     public string Name;
     public Sprite sprite;
     public int itemID;
@@ -40,6 +55,7 @@ public class Item
         sprite = item.sprite;
         itemPrefab = item.itemPrefab;
         buffs = new ItemBuff[item.buffs.Length];
+
         for(int i = 0; i < buffs.Length; i++)
         {
             buffs[i] = new ItemBuff(item.buffs[i].value);

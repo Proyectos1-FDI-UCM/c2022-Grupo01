@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7625302d6f08457b96e97bf38a0aec4, type: 3}
   m_Name: IceBag
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5976231131812714873, guid: 81bc8ac8e3fa38d4a97547671e77fdc4, type: 3}
+  sprite: {fileID: 0}
   type: 0
-  _itemID: 0
+  itemID: 0
+  itemPrefab: {fileID: 0}
   shortDescription: 
   longDescription: 
+  buffs: []
