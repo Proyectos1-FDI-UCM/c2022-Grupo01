@@ -5,10 +5,7 @@ using UnityEngine;
 public class FleeingEnemyMovement : MonoBehaviour
 {
     #region parameters
-    /// <summary>
-    /// Speed of the fleeing enemy
-    /// </summary>
-    private float _speed;
+    public float _speed;
     private Vector3 _enemyMovementDirection;
     [SerializeField] private float _hidingTimer = 3.0f;
     #endregion

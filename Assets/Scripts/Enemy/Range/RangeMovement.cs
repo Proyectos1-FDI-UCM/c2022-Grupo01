@@ -14,7 +14,8 @@ public class RangeMovement : MonoBehaviour
     [SerializeField]
     private float _wallDistanceOffset;
     [SerializeField]
-    private float _speed, _distanceFlee, _raycastTime;
+    private float _distanceFlee, _raycastTime;
+    public float speed;
     #endregion
     #region methods
     public void ExecuteRangeEnemyMovement()
@@ -66,11 +67,11 @@ public class RangeMovement : MonoBehaviour
 
         if (_myRangeStates == RangeStates.Flee)
         {
-            _rb.MovePosition(_myTransform.position + direction * _speed * Time.deltaTime);
+            _rb.MovePosition(_myTransform.position + direction * speed * Time.deltaTime);
         }
         else if (_myRangeStates == RangeStates.Follow)
         {
-            _rb.MovePosition(_myTransform.position - direction * _speed * Time.deltaTime);
+            _rb.MovePosition(_myTransform.position - direction * speed * Time.deltaTime);
         }
         _elapsedTime += Time.deltaTime;
     }
