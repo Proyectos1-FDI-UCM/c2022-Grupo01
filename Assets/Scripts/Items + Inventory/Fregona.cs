@@ -11,19 +11,25 @@ public class Fregona : MonoBehaviour
     #region properties
     private float _elapsedTime;
     private int _uses = 0;
-    private Puddle charco;
+    private Puddle _puddle;
     private bool fregar = false;
     #endregion
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        charco = other.gameObject.GetComponent<Puddle>();
-        if (charco != null) fregar = true;
+        _puddle = other.gameObject.GetComponent<Puddle>();
+        if (_puddle != null)
+        {
+            fregar = true;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        charco = collision.gameObject.GetComponent<Puddle>();
-        if (charco != null) fregar = false;
+        _puddle = collision.gameObject.GetComponent<Puddle>();
+        if (_puddle != null)
+        {
+            fregar = false;
+        }
     }
 
     private void Update()
@@ -33,17 +39,23 @@ public class Fregona : MonoBehaviour
             if (Input.GetKey(KeyCode.Q))
             {
                 _elapsedTime += Time.deltaTime;
-                if (_elapsedTime >= timeToComplete) Use();
+                if (_elapsedTime >= timeToComplete)
+                {
+                    Use();
+                }
             }
         }
     }
 
     void Use()
     {
-        PlayerManager.Instance.ChangePlayerLife(2*(int)charco._touchHydrate);
-        charco.DestroyPuddle();
+        PlayerManager.Instance.ChangePlayerLife(2 * (int)_puddle._touchHydrate);
+        _puddle.UsedPuddle();
         _elapsedTime = 0;
         _uses++;
-        if (_uses == maxUses) enabled = false;
+        if (_uses == maxUses)
+        {
+            enabled = false;
+        }
     }
 }
