@@ -34,10 +34,8 @@ public class MeleeAttack : MonoBehaviour
 
 		Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(transform.position, _attackRange, _playerLayer);
 
-		foreach (Collider2D player in hitPlayer)
-		{
-			player.gameObject.GetComponent<PlayerLife>().SetHealth(-_meleeDamage);
-		}
+		if(hitPlayer[0] != null) hitPlayer[0].gameObject.GetComponent<PlayerLife>().SetHealth(-_meleeDamage);
+		
 	}
     #endregion
     private void Start()
@@ -48,7 +46,7 @@ public class MeleeAttack : MonoBehaviour
 	{
 		//checkear distancia entre PJ y enemigo
 		float distance = Vector3.Magnitude(_myPlayerManager._playerPosition - transform.position);
-		_meleeCooldown -= Time.deltaTime;
+		_meleeCooldown -= Time.fixedDeltaTime;
 		if (distance < 2 && _meleeCooldown <= 0)
 		{
 			Melee();
