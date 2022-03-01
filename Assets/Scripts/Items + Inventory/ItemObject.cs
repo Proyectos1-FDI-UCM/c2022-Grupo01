@@ -10,7 +10,7 @@ public abstract class ItemObject : ScriptableObject
     public Sprite sprite;
     public ItemType type;
     public int itemID;
-    [TextArea(1,2)]public string shortDescription;
+    [TextArea(1,2)] public string shortDescription;
     [TextArea(4, 5)] public string longDescription;
     #endregion
 }

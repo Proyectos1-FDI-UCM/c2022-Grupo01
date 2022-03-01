@@ -25,9 +25,18 @@ public class IceBagEffect : MonoBehaviour
         {
             Debug.Log("VeRGA");
             enemy.GetComponent<EnemyLifeComponent>().Damage(_iceDamage);
-            if (enemy.GetComponent<NavMeshAgent>() != null) enemy.GetComponent<NavMeshAgent>().speed /= 2;
-            else if (enemy.GetComponent<FleeingEnemyMovement>() != null) enemy.GetComponent<FleeingEnemyMovement>()._speed /= 2;
-            else if (enemy.GetComponent<RangeMovement>() != null) enemy.GetComponent<RangeMovement>().speed /= 2;
+            if (enemy.GetComponent<NavMeshAgent>() != null) 
+            {
+                enemy.GetComponent<NavMeshAgent>().speed /= 2;
+            }
+            else if (enemy.GetComponent<FleeingEnemyMovement>() != null) 
+            {
+                enemy.GetComponent<FleeingEnemyMovement>()._speed /= 2;
+            }
+            else if (enemy.GetComponent<RangeMovement>() != null) 
+            {
+                enemy.GetComponent<RangeMovement>().speed /= 2;
+            }
         }
     }
 
@@ -43,7 +52,6 @@ public class IceBagEffect : MonoBehaviour
                 else if (enemy.GetComponent<FleeingEnemyMovement>() != null) enemy.GetComponent<FleeingEnemyMovement>()._speed *= 2;
                 else if (enemy.GetComponent<RangeMovement>() != null) enemy.GetComponent<RangeMovement>().speed *= 2;
             }
-
             Destroy(gameObject);
         }
     }

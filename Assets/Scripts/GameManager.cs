@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     #region references
     [SerializeField]
-    private GameObject _player, _playerGun, _necromancer, _weakEnemy;
+    private GameObject _player, _playerGun, _necromancer, _weakEnemy, _chest;
     [SerializeField]
     private FollowComponent _cam;
     [SerializeField]
@@ -14,14 +14,13 @@ public class GameManager : MonoBehaviour
 
     private List<WeakEnemy> _listOfWeakEnemies;
     private WeakEnemy _weakEnemies;
-
     private PlayerManager _playerManager;
 
     #endregion
 
     public Vector3 _playerDirection, _necroPosition;
     public int add = 0;
-    public bool _vivo;
+    public bool vivo;
 
     static private GameManager _instance;
     static public GameManager Instance
@@ -32,15 +31,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-	#region methods
+	#region methodss
     public void ShowHealth(float health )
 	{
         _uiManager.ShowHealth(health);
 	}
 
-    public void ShowCooldown(float cooldown)
+    public void ShowCooldown(float cooldown, float maxCooldown)
 	{
-        _uiManager.ShowCooldown(cooldown);
+        _uiManager.ShowCooldown(cooldown, maxCooldown);
 	}
 
     public void OnPlayerDie()
@@ -49,7 +48,7 @@ public class GameManager : MonoBehaviour
         _cam.lerpParameter = 0;
         _cam.GetComponent<FollowComponent>().SetPlayerDead();
         //Necro
-        _vivo = false;
+        vivo = false;
 	}
 
  //Necromancer
@@ -68,7 +67,6 @@ public class GameManager : MonoBehaviour
     {
         _listOfWeakEnemies.Remove(deadweak);
         add--;
-        
     }
 
     public void WeakInstantation(GameObject weakEnemy, Vector3 pos)
@@ -87,6 +85,6 @@ public class GameManager : MonoBehaviour
     {
         _listOfWeakEnemies = new List<WeakEnemy>();
         
-        _vivo = true;
+        vivo = true;
     }
 }

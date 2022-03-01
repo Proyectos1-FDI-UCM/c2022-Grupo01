@@ -33,7 +33,7 @@ public class NecromancerController : MonoBehaviour
         //GameManager.Instance.NecroPosition(_mytransform.position);
 
         _currentTime = _currentTime - Time.deltaTime;
-        if (_currentTime < 0 && GameManager.Instance._vivo == true && GameManager.Instance.add < 4)
+        if (_currentTime < 0 && GameManager.Instance.vivo == true && GameManager.Instance.add < 4)
         {
 
             GameManager.Instance.WeakInstantation(_weakEnemy, _mytransform.position);

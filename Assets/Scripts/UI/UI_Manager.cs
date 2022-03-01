@@ -19,9 +19,9 @@ public class UI_Manager : MonoBehaviour
         _healthSlider.value = health;
 	}
 
-    public void ShowCooldown(float cooldown)
+    public void ShowCooldown(float cooldown, float maxCooldown)
 	{
-        _cooldownSlider.value = cooldown;
+        _cooldownSlider.value = cooldown/maxCooldown;
 	}
     #endregion
 }

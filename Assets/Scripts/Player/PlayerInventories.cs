@@ -16,11 +16,11 @@ public class PlayerInventories : MonoBehaviour
             Destroy(collision.gameObject);
             if(item.item.type == ItemType.Passive)
             {
-                passiveInventory.AddItem(new Item(item.item));
+                passiveInventory.AddPassiveItem(new Item(item.item));
             }
             else
             {
-                activeInventory.AddItem(new Item(item.item));
+                activeInventory.AddActiveItem(new Item(item.item));
             }
         }
     }
