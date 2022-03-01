@@ -17,7 +17,7 @@ public class PlayerLife : MonoBehaviour
     #region methods
     public void SetHealth(float healthToAdd)
 	{
-        if(_playerManager.myLifeState == PlayerManager.LifeStates.Normal)
+        if(_playerManager.myLifeState == PlayerManager.LifeStates.Normal || health < health + healthToAdd)
         {
             health += healthToAdd;
             health = Mathf.Clamp(health, 0, maxHealth);
