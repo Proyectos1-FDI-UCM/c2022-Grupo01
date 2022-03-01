@@ -5,26 +5,27 @@ using UnityEngine;
 public class PlayerLife : MonoBehaviour
 {
     #region parameters
-    [SerializeField]
-    private float _health, _maxHealth = 100;
+    public float health, maxHealth = 100;
     #endregion
 
     #region references
-    public Animator animator;
+    [SerializeField]
+    private Animator animator;
+    private PlayerManager _playerManager;
     #endregion
 
     #region methods
     public void SetHealth(float healthToAdd)
 	{
-        _health += healthToAdd;
-        _health = Mathf.Clamp(_health, 0, _maxHealth);
-        GameManager.Instance.ShowHealth(_health);
-        if(_health <= 0)
+        health += healthToAdd;
+        health = Mathf.Clamp(health, 0, maxHealth);
+        GameManager.Instance.ShowHealth(health);
+        if(health <= 0)
 		{
             Die();
 		}
+        PlayerManager.Instance.UpdateLife(health);
 	}
-
     private void Die()
 	{
         animator.SetBool("Walk", false);
@@ -32,19 +33,15 @@ public class PlayerLife : MonoBehaviour
         animator.SetTrigger("Die");
 
         GameManager.Instance.OnPlayerDie();
-
 	}
 	#endregion
 	// Start is called before the first frame update
 	void Start()
     {
-        _health = _maxHealth;
-        GameManager.Instance.ShowHealth(_health);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        _playerManager = PlayerManager.Instance;
+        health = maxHealth;
+        GameManager.Instance.ShowHealth(health);
+        _playerManager.UpdateLife(health);
+        _playerManager.UpdateMaxLife(maxHealth);
     }
 }
