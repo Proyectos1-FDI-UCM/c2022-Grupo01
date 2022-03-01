@@ -26,14 +26,14 @@ public class Puddle : MonoBehaviour
 		if (player != null && _playerManager.playerInRoll)
 		{
 			player.SetHealth(+_touchHydrate);
-			DestroyPuddle();
+			UsedPuddle();
 		}
 	}
 
-	public void DestroyPuddle()
+	public void UsedPuddle()
     {
-		_spriteRenderer.sprite = newSprite;
 		GetComponent<Collider2D>().enabled = false;
+		_spriteRenderer.sprite = newSprite;
 		Destroy(gameObject, 3f);
 	}
 }

@@ -23,7 +23,6 @@ public class EnemyLifeComponent : MonoBehaviour
 	{
 		bullet = collision.gameObject.GetComponent<BulletLife>();
 		bubble = collision.gameObject.GetComponent<BubbleAttack>();
-		ice = collision.gameObject.GetComponent<BolsaDeHielo>();
 
 		if (bullet != null)
 		{
@@ -33,10 +32,7 @@ public class EnemyLifeComponent : MonoBehaviour
 		{
 			Damage(bubble.bulletDamage);
 		}
-		if (ice != null)
-		{
-			Damage(ice.iceDamage);
-		}
+		
 	}
 
 	public void Damage(float damage)
