@@ -23,6 +23,14 @@ public class Inventory : ScriptableObject
             inventoryContainer.itemListInInventory.Add(new InventorySlot(_item.itemID, _item));
         }
     }
+
+    public void ReplaceItem(Item _item)
+    {
+        for(int i = 0; i < inventoryContainer.itemListInInventory.Count; i++)
+        {
+            
+        }
+    }
 }
 
 [System.Serializable]
@@ -41,4 +49,9 @@ public class InventorySlot
         ID = _id;
         item = _item;
     }
+}
+[System.Serializable]
+public class ItemToInstantiate
+{
+    public ScriptableObject _itemPrefabToInstantiate;
 }

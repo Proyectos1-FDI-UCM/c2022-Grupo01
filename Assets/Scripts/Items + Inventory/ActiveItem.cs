@@ -9,5 +9,4 @@ public class ActiveItem : ItemObject
     {
         type = ItemType.Active;
     }
-    //DEFINIR LOS ATRIBUTOS DE CADA OBJETO
 }

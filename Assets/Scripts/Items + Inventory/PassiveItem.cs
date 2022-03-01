@@ -9,10 +9,4 @@ public class PassiveItem : ItemObject
     {
         type = ItemType.Passive;
     }
-    //DEFINIR LOS ATRIBUTOS DE CADA OBJETO
-    public float healthBonus;
-    public float maxHealthBonus;
-    public float speedBonus;
-    public float attackBonus;
-    public MonoBehaviour uwu;
 }

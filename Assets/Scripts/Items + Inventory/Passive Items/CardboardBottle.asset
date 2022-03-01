@@ -17,7 +17,4 @@ MonoBehaviour:
   itemID: 0
   shortDescription: Es un tetrapak, pero sin aluminio.
   longDescription: ???
-  healthBonus: 0
-  maxHealthBonus: 0
-  speedBonus: 0
-  attackBonus: 0
+  buffs: []

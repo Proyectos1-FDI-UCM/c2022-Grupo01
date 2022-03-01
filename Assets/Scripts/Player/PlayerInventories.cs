@@ -20,7 +20,8 @@ public class PlayerInventories : MonoBehaviour
             }
             else
             {
-                activeInventory.AddItem(new Item(item.item));
+                if(activeInventory.inventoryContainer.itemListInInventory.Count == 0) activeInventory.AddItem(new Item(item.item));
+                else(Instantiate())
             }
         }
     }
