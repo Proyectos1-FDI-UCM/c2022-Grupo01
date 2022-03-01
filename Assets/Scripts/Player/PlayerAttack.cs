@@ -73,6 +73,10 @@ public class PlayerAttack : MonoBehaviour
 		}
 
         // BOLSA DE HIELO (Laura)
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            LanzaHielo();
+        }
         mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         
         _shotCooldownCounter += Time.deltaTime;
@@ -129,7 +133,7 @@ public class PlayerAttack : MonoBehaviour
     //Si tiene el objeto activo "Bolsa de Hielo", este método lo activa.
     public void LanzaHielo()
     {
-        GameObject nuevoIcebagPrefab = Instantiate(icebagPrefab, _myTransform.position + _myTransform.forward, Quaternion.identity);
+        GameObject nuevoIcebagPrefab = Instantiate(icebagPrefab, shotPoint.position, Quaternion.identity);
         nuevoIcebagPrefab.GetComponent<Rigidbody2D>().AddForce(iceForce * shotPoint.right, ForceMode2D.Impulse);
     }
 }
