@@ -17,14 +17,21 @@ public class PlayerLife : MonoBehaviour
     #region methods
     public void SetHealth(float healthToAdd)
 	{
-        health += healthToAdd;
-        health = Mathf.Clamp(health, 0, maxHealth);
-        GameManager.Instance.ShowHealth(health);
-        if(health <= 0)
-		{
-            Die();
-		}
-        PlayerManager.Instance.UpdateLife(health);
+        if(_playerManager.myLifeState == PlayerManager.LifeStates.Normal || health < health + healthToAdd)
+        {
+            health += healthToAdd;
+            health = Mathf.Clamp(health, 0, maxHealth);
+            GameManager.Instance.ShowHealth(health);
+            if (health <= 0)
+            {
+                Die();
+            }
+            PlayerManager.Instance.UpdateLife(health);
+        }
+        else if(_playerManager.myLifeState == PlayerManager.LifeStates.HolyFlotador)
+        {
+            _playerManager.myLifeState = PlayerManager.LifeStates.Normal;   // Si tiene escudos hay que comprobar en que estado está, pero por ahora es así
+        }
 	}
     private void Die()
 	{

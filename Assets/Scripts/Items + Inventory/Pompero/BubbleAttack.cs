@@ -10,7 +10,7 @@ public class BubbleAttack : MonoBehaviour
 	public Transform hitSpawn;
 	public Rigidbody2D bulletRB;
 	[HideInInspector]
-	public PomperActiveObject pompero;
+	public Pomper pompero;
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{

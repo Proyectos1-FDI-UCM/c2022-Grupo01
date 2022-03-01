@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2087247520646716688}
   - component: {fileID: 953450148939638163}
-  m_Layer: 14
+  m_Layer: 3
   m_Name: bolsadehielob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: -2158822819386911836}
   - component: {fileID: 7418723311136959570}
   - component: {fileID: -3243340025487422199}
-  m_Layer: 14
+  m_Layer: 3
   m_Name: BolsaDeHielo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.005957365, y: -0.0396415}
@@ -166,8 +166,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 3
-  iceDamage: 20
-  _myTransform: {fileID: 0}
-  icebagRB: {fileID: 0}
   _iceCooldown: 3
-  _iceCooldownCounter: 0
+  _areaEffect: {fileID: 6181921302013432722, guid: 3ad505af464c37b4180916bf9fdf4cc8, type: 3}

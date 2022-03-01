@@ -4,20 +4,29 @@ using UnityEngine;
 
 public class BolsaDeHielo : MonoBehaviour
 {
-    private float lifeTime = 3f;
-    public float iceDamage = 20f;
-    private Transform _myTransform;
-    private Rigidbody2D icebagRB;
+    #region parameters
+    [SerializeField] private float lifeTime = 0.8f;
     [SerializeField] private float _iceCooldown = 3f;
-    private float _iceCooldownCounter = 0f;
+    #endregion
 
+    #region properties
+    private float _iceCooldownCounter = 0f;
+    #endregion
+
+    #region references
+    [SerializeField] private GameObject _areaEffect;
+    #endregion
     #region methods
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        ContactPoint2D punto = collision.GetContact(0);
-		Destroy(gameObject);
+        Explode();
     }
     #endregion
+
+    private void Start()
+    {
+        Destroy(gameObject, lifeTime);
+    }
 
     void Update()
     {
@@ -25,7 +34,13 @@ public class BolsaDeHielo : MonoBehaviour
 
         if (_iceCooldownCounter >= _iceCooldown)
         {
-            Destroy(gameObject);
+            Explode();
         }
+    }
+
+    void Explode()
+    {
+        Destroy(gameObject);
+        Instantiate(_areaEffect, transform.position, Quaternion.identity);
     }
 }
