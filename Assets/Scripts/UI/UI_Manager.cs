@@ -28,8 +28,8 @@ public class UI_Manager : MonoBehaviour
             //Vector3 localscale = _secondaryHealthSlider.gameObject.transform.localScale;
             //_secondaryHealthSlider.gameObject.transform.localScale = new Vector3((health - _normalMaxHealth) / 100, localscale.y, localscale.z);
             _secondaryHealthSlider.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2 (_sliderWidth * (healthDiff/100) , _secondaryHealthSlider.gameObject.GetComponent<RectTransform>().sizeDelta.y);
-            _secondaryHealthSlider.maxValue = healthDiff;
-            _secondaryHealthSlider.value = health - _normalMaxHealth / healthDiff;
+            _secondaryHealthSlider.maxValue = Mathf.Clamp(healthDiff, 0, 100);
+            _secondaryHealthSlider.value = health - _normalMaxHealth;
         }
         else
         {

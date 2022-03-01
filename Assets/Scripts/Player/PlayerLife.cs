@@ -21,18 +21,24 @@ public class PlayerLife : MonoBehaviour
         {
             health += healthToAdd;
             health = Mathf.Clamp(health, 0, maxHealth);
+            PlayerManager.Instance.UpdateLife(health);
+            GameManager.Instance.ShowHealth(health);
             if (health <= 0)
             {
                 Die();
             }
-            PlayerManager.Instance.UpdateLife(health);
-            GameManager.Instance.ShowHealth(health);
         }
         else if(_playerManager.myLifeState == PlayerManager.LifeStates.HolyFlotador)
         {
             _playerManager.myLifeState = PlayerManager.LifeStates.Normal;   // Si tiene escudos hay que comprobar en que estado está, pero por ahora es así
         }
 	}
+
+    public void SetMaxHealth(float maxHealthToAdd)
+    {
+        maxHealth += maxHealthToAdd;
+        maxHealth = Mathf.Clamp(maxHealth, 0, 100);
+    }
     private void Die()
 	{
         animator.SetBool("Walk", false);
@@ -55,19 +61,8 @@ public class PlayerLife : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            SetHealth(10);
-        }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            maxHealth += 10;
-        }
         _playerManager.UpdateLife(health);
         _playerManager.UpdateMaxLife(maxHealth);
         GameManager.Instance.ShowHealth(health);
     }
-
-
-
 }
