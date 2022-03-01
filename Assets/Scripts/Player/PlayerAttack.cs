@@ -60,7 +60,7 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         //cambiar esto a un inputManager
-        if (Input.GetButtonDown("Fire1") && GetComponent<PlayerLife>().health > 0 && _shotCooldownCounter >= _meleeCooldown)
+        if (Input.GetButtonDown("Fire1") && GetComponent<PlayerLife>().health > 0 && _shotCooldownCounter >= _shotCooldown)
 		{
             Shoot();
             _shotCooldownCounter = 0;
@@ -72,16 +72,11 @@ public class PlayerAttack : MonoBehaviour
             _meleeCooldownCounter = 0;
 		}
 
-        // BOLSA DE HIELO (Laura)
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            LanzaHielo();
-        }
         mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         
         _shotCooldownCounter += Time.deltaTime;
         _meleeCooldownCounter += Time.deltaTime;
-        GameManager.Instance.ShowCooldown(_shotCooldownCounter);
+        GameManager.Instance.ShowCooldown(_shotCooldownCounter, _shotCooldown);
     }
 
     public void SetAttackPoint(Vector3 movement)
