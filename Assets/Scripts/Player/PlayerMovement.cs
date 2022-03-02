@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     private Transform _myTransform, _hookTransform;
     private Collider2D _playerCollider;
     private Rigidbody2D playerRB;
+    public Collider2D player2ºCollider;
     private PlayerManager _playerManager;
     #endregion
 
@@ -79,8 +80,12 @@ public class PlayerMovement : MonoBehaviour
     {
         //Debug.LogWarning(position);
         ganchoPos = position;
-        ganchoDirection = position - _myTransform.position;
+        //ganchoDirection = position - _myTransform.position;
+        ganchoDirection = _hookTransform.position - _myTransform.position;
         target = true;
+        _playerCollider.isTrigger = true;
+        player2ºCollider.isTrigger = true;
+        
     }
 
     public void ModifyPlayerSpeed(float speed)
@@ -119,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
 
         mouse = cam.ScreenToWorldPoint(Input.mousePosition);
         
-        bool pickUpHook = Mathf.Abs(_myTransform.position.x - _hookTransform.position.x) < 1 && Mathf.Abs(_myTransform.position.y - _hookTransform.position.y) < 1;
+        bool pickUpHook = Mathf.Abs(_myTransform.position.x - _hookTransform.position.x) < 0.1 && Mathf.Abs(_myTransform.position.y - _hookTransform.position.y) < 0.1;
         
         if (gancho == false)
         {
@@ -130,6 +135,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 hook.SetActive(false);
                 target = false;
+                _playerCollider.isTrigger = false;
+                player2ºCollider.isTrigger = false;
             }
             
             if (pickUpHook && Input.GetMouseButton(1))
@@ -170,6 +177,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (!pickUpHook)
                 {
+                    //Move(ganchoDirection);
                     Move(ganchoDirection);
                     //_myTransform.Translate(ganchoSpeed * Time.deltaTime * ganchoDirection.normalized * 5);
                 }
