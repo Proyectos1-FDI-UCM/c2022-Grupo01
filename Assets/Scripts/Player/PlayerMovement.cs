@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     private Transform _myTransform, _hookTransform;
     private Collider2D _playerCollider;
     private Rigidbody2D playerRB;
-    public Collider2D player2ºCollider;
+    public Collider2D player2DCollider;
     private PlayerManager _playerManager;
     #endregion
 
@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
         ganchoDirection = _hookTransform.position - _myTransform.position;
         target = true;
         _playerCollider.isTrigger = true;
-        player2ºCollider.isTrigger = true;
+        player2DCollider.isTrigger = true;
         
     }
 
@@ -137,7 +137,7 @@ public class PlayerMovement : MonoBehaviour
                 hook.SetActive(false);
                 target = false;
                 _playerCollider.isTrigger = false;
-                player2ºCollider.isTrigger = false;
+                player2DCollider.isTrigger = false;
             }
             
             if (pickUpHook && Input.GetMouseButton(1))
