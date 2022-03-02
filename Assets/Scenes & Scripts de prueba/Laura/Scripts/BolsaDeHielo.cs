@@ -5,19 +5,16 @@ using UnityEngine;
 public class BolsaDeHielo : MonoBehaviour
 {
     #region parameters
-    [SerializeField] private float _iceCooldown = 10f;
-    [SerializeField] private float _iceDamage = 20f;
+    [SerializeField] private float lifeTime = 0.8f;
+    [SerializeField] private float _iceCooldown = 3f;
     #endregion
 
     #region properties
     private float _iceCooldownCounter = 0f;
-    [SerializeField] private float _iceRange = 60f;
     #endregion
 
     #region references
     [SerializeField] private GameObject _areaEffect;
-    private Transform _myTransform;
-    private EnemyLifeComponent _iceAttack;
     #endregion
     #region methods
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,8 +25,7 @@ public class BolsaDeHielo : MonoBehaviour
 
     private void Start()
     {
-        _myTransform = transform;
-        _iceAttack = GetComponent<EnemyLifeComponent>();
+        Destroy(gameObject, lifeTime);
     }
 
     void Update()
@@ -46,13 +42,5 @@ public class BolsaDeHielo : MonoBehaviour
     {
         Destroy(gameObject);
         Instantiate(_areaEffect, transform.position, Quaternion.identity);
-        Collider2D[] area = Physics2D.OverlapCircleAll(_myTransform.position, _iceRange);
-        foreach(Collider2D obj in area) 
-        {
-            if (obj.gameObject.CompareTag("Enemy"))
-            {
-                obj.gameObject.GetComponent<EnemyLifeComponent>().Damage(_iceDamage);
-            }
-        }
     }
 }
