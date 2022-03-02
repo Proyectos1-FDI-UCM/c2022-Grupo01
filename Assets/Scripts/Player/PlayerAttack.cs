@@ -34,15 +34,13 @@ public class PlayerAttack : MonoBehaviour
     private float _shotCooldown = 5, _meleeCooldown = 0.2f, attackRange = 0.5f;
 
     private PlayerManager _playerManager;
-    // Añadido por Laura
-    private Transform _myTransform;
+    //private Transform _myTransform;
 	#endregion
 
 	#region properties
 	private float _shotCooldownCounter = 0, _meleeCooldownCounter = 0;
     private Vector3 _attackPointPosition = Vector3.zero;
-    // Añadido por Laura
-    Vector3 mouseWorldPosition;
+    //Vector3 mouseWorldPosition;
 	#endregion
 
 	void Start()
@@ -53,8 +51,7 @@ public class PlayerAttack : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         _playerManager.UpdateMeleeDamage(meleeDamage);
         _playerManager.UpdateRangeDamage(rangeDamage);
-        // Añadido por Laura
-        _myTransform = transform;
+        //_myTransform = transform;
     }
     
     void Update()
@@ -72,7 +69,7 @@ public class PlayerAttack : MonoBehaviour
             _meleeCooldownCounter = 0;
 		}
 
-        mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         
         _shotCooldownCounter += Time.deltaTime;
         _meleeCooldownCounter += Time.deltaTime;
