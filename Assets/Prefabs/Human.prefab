@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5757689141459901246}
   - component: {fileID: 5757689141459901247}
   - component: {fileID: 5757689141066335029}
+  - component: {fileID: 5272552500916890700}
   m_Layer: 6
   m_Name: Human
   m_TagString: Player
@@ -128,13 +129,13 @@ MonoBehaviour:
   icebagPrefab: {fileID: 8467541936118930963, guid: 5c698bc38c4cec04eb825f50e627dba2, type: 3}
   gunRB: {fileID: 5757689141440673754}
   meleeDamage: 20
-  shotForce: 2
+  shotForce: 20
   rangeDamage: 10
   iceForce: 20
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
-  _shotCooldown: 5
+  _shotCooldown: 0.5
   _meleeCooldown: 0.4
   attackRange: 2
 --- !u!114 &5757689141459901247
@@ -166,6 +167,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeInventory: {fileID: 11400000, guid: bd52082e119b344ac9dc5a4dfc80d153, type: 2}
   passiveInventory: {fileID: 11400000, guid: 57a7379ead2ba4355bc21154c6d6ec58, type: 2}
+--- !u!114 &5272552500916890700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489965834623984285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a96343e700187645903074a3506ebde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cooldownTime: 0.5
+  _bubblePrefab: {fileID: 368771570412944389, guid: 2247d63244b03f04481b06d065b19dcd, type: 3}
+  _instantiateOffset: {x: -0.3, y: 0.78, z: 0}
+  _bubbleActive: 0
 --- !u!1 &489965835875663811
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,6 +436,7 @@ GameObject:
   - component: {fileID: 5757689140368369078}
   - component: {fileID: 5757689140368369076}
   - component: {fileID: 5856679209396317453}
+  - component: {fileID: 1228759689}
   m_Layer: 0
   m_Name: Fregona
   m_TagString: Untagged
@@ -467,6 +485,20 @@ BoxCollider2D:
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &5856679209396317453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5757689140368369079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1295df1b61ead8249813a2e7fc22128c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToComplete: 0.5
+  maxUses: 3
+--- !u!114 &1228759689
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

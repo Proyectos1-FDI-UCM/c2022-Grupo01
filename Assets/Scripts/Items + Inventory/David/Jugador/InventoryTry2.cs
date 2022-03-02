@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PassiveItemDavid : MonoBehaviour
+public class InventoryTry2 : MonoBehaviour
 {
-    public float uwu = 0;
+    
 }
