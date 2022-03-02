@@ -7,7 +7,7 @@ public class PassiveObject : Object
     //Meter atributos aquí
     public void Activate()
     {
-        Debug.Log("Objeto " + gameObject.name + " activado");
+        Debug.Log("Objeto pasivo " + gameObject.name + " activado");
     }
 }
 /*public Item(ItemObject item)

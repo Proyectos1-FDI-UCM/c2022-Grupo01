@@ -7,10 +7,9 @@ public enum ItemTypes { Buff, NoBuff,Active }
 public class Object : MonoBehaviour
 { 
     public int ID;
-    public Sprite itemSprite; //para qué queremos el sprite ;(
     public ItemTypes type;
-    public string nameOnScreen;
-    public string littleDescriptionOnScreen;
-    public string descriptionOnInventoryMenu;
+    [TextArea(1, 2)] public string nameOnScreen;
+    [TextArea(4, 5)] public string littleDescriptionOnScreen;
+    //[TextArea(6,7)] public string descriptionOnInventoryMenu;
 }
 
