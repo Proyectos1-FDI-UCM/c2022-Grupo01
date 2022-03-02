@@ -72,6 +72,11 @@ public class PlayerAttack : MonoBehaviour
             _meleeCooldownCounter = 0;
 		}
 
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            LanzaHielo();
+        }
+
         mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         
         _shotCooldownCounter += Time.deltaTime;
