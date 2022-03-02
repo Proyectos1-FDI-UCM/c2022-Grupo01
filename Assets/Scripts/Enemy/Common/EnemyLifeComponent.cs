@@ -6,17 +6,22 @@ public class EnemyLifeComponent : MonoBehaviour
 {
     public float maxLife = 100f;
 	public Animator animator;
+	public SalaManager sala;
 
     public float _currentLife;
 
 	private BulletLife bullet;
 	private BubbleAttack bubble;
 	private BolsaDeHielo ice;
-	
-	private void Start()
+	public bool dead = false;
+    
+    private void Start()
 	{
 		_currentLife = maxLife;
 		animator = GetComponent<Animator>();
+		sala.GetComponentInParent<SalaManager>();
+		sala.RegisterEnemy();
+		
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
@@ -46,7 +51,12 @@ public class EnemyLifeComponent : MonoBehaviour
 	void Die()
 	{
 		//play die animation
-		animator.SetTrigger("Die");
-		Destroy(gameObject, 1f);
+		if (!dead)
+		{
+			animator.SetTrigger("Die");
+			Destroy(gameObject, 1f);
+			dead = true;
+			sala.OnEnemyDies();
+		}
 	}
 }
