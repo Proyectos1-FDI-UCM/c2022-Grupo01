@@ -11,7 +11,6 @@ public class EnemyLifeComponent : MonoBehaviour
 
 	private BulletLife bullet;
 	private BubbleAttack bubble;
-	private BolsaDeHielo ice;
 	
 	private void Start()
 	{
