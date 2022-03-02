@@ -20,7 +20,7 @@ public class BubbleMovement : MonoBehaviour
     [SerializeField]
     private Vector3 _positionOffset = new Vector3(-0.3f, 0.78f, 0);
     [SerializeField]
-    private float _lerpOffset, _shotForce;
+    private float _shotForce;
     #endregion
     #region methods
  
@@ -44,23 +44,24 @@ public class BubbleMovement : MonoBehaviour
         {
             if (distance > 0.5)
             {
-                _myRB.velocity = direction * _shotForce * Time.deltaTime * 1000;
+                _myRB.velocity = direction * _shotForce * Time.deltaTime;
             }
             else
             {
                 _myRB.velocity = Vector3.zero;
             }
         }
-        else if(_myState == BubbleStates.Detected)
+        else if (_myState == BubbleStates.Detected)
         {
             _enemyTransform = _myBubbleTrigger.GetEnemyTransform();
             _myState = BubbleStates.Follow;
         }
-        else
+        else if (_enemyTransform != null)
         {
             Vector3 direction2 = (_enemyTransform.position - _myTransform.position).normalized;
-            _myRB.velocity = direction2 * _shotForce * Time.deltaTime * 1000;
+            _myRB.velocity = direction2 * _shotForce * Time.deltaTime;
         }
+        else _myState = BubbleStates.Stand;
 
     }
     

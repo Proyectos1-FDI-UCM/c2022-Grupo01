@@ -37,7 +37,7 @@ public class PlayerLife : MonoBehaviour
     public void SetMaxHealth(float maxHealthToAdd)
     {
         maxHealth += maxHealthToAdd;
-        maxHealth = Mathf.Clamp(maxHealth, 0, 100);
+        maxHealth = Mathf.Clamp(maxHealth, 0, 200);
     }
     private void Die()
 	{

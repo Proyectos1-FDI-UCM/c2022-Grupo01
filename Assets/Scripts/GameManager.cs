@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public Vector3 _playerDirection, _necroPosition;
     public int add = 0;
     public bool vivo;
+    private float cooldown = 2.5f;
+    private float _elapsedTime = 0f;
 
     static private GameManager _instance;
     static public GameManager Instance
@@ -86,6 +88,22 @@ public class GameManager : MonoBehaviour
         _listOfWeakEnemies = new List<WeakEnemy>();
         
         vivo = true;
+    }
+
+    private void Update()
+    { 
+        _elapsedTime += Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+
+            PlayerManager.Instance.ChangeMaxLife(10);
+            _elapsedTime = 0;
+        }
+        else if (Input.GetKeyDown(KeyCode.J))
+        {
+            PlayerManager.Instance.ChangePlayerLife(10);
+            _elapsedTime = 0;
+        }
     }
 
 }

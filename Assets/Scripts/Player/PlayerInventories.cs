@@ -9,7 +9,7 @@ public class PlayerInventories : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Detectado un item: " + collision.name);
+        //Debug.Log("Detectado un item: " + collision.name);
         var item = collision.GetComponent<PhysicalItem>();
         if (item)
         {
