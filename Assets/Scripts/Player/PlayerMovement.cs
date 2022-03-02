@@ -97,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        //comentario de prueba
         _playerManager = PlayerManager.Instance;
         _myTransform = transform;
         _hookTransform = hook.transform;
