@@ -16,10 +16,17 @@ public class BolsaDeHielo : MonoBehaviour
     #region references
     [SerializeField] private GameObject _areaEffect;
     #endregion
+
     #region methods
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Explode();
+    }
+
+    void Explode()
+    {
+        Destroy(gameObject);
+        Instantiate(_areaEffect, transform.position, Quaternion.identity);
     }
     #endregion
 
@@ -38,9 +45,9 @@ public class BolsaDeHielo : MonoBehaviour
         }
     }
 
-    void Explode()
-    {
-        Destroy(gameObject);
-        Instantiate(_areaEffect, transform.position, Quaternion.identity);
-    }
+	private void OnDestroy()
+	{
+        Explode();
+	}
+
 }

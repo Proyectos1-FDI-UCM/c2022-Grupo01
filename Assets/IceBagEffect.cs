@@ -23,7 +23,6 @@ public class IceBagEffect : MonoBehaviour
 
         foreach (Collider2D enemy in hitPlayer)
         {
-            Debug.Log("VeRGA");
             enemy.GetComponent<EnemyLifeComponent>().Damage(_iceDamage);
             if (enemy.GetComponent<NavMeshAgent>() != null) 
             {

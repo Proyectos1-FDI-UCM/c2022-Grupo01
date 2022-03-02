@@ -20,7 +20,11 @@ public class BolsaDeHieloActivo : ActiveObject
 
 	void LanzaHielo()
 	{
+		_shotPoint = PlayerManager.Instance.attackPoint.transform;
 		GameObject nuevoIcebagPrefab = Instantiate(_icebagPrefab, _shotPoint.position, Quaternion.identity);
-		nuevoIcebagPrefab.GetComponent<Rigidbody2D>().AddForce(_iceForce * _shotPoint.right, ForceMode2D.Impulse);
+		Debug.Log(nuevoIcebagPrefab.transform.position);
+		Rigidbody2D rb = nuevoIcebagPrefab.GetComponent<Rigidbody2D>();
+		rb.rotation = PlayerManager.Instance.gun.GetComponent<Rigidbody2D>().rotation;
+		rb.AddForce(_shotPoint.right * _iceForce, ForceMode2D.Impulse);
 	}
 }
