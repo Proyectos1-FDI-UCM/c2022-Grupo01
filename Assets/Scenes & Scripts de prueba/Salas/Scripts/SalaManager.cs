@@ -29,7 +29,7 @@ public class SalaManager : MonoBehaviour
     {       
         if (enemies <= 0 && puerta)
         {
-            doors.SetActive(false);
+            Destroy(doors);
             puerta = false;
         }
         
