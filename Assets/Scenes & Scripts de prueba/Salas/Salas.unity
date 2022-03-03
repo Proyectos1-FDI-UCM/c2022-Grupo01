@@ -1494,18 +1494,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 171339059, guid: 79f4e60bf54c39d4798b33506e40da25, type: 3}
-      propertyPath: doors
-      value: 
-      objectReference: {fileID: 1614503181}
-    - target: {fileID: 2265917062048816783, guid: 79f4e60bf54c39d4798b33506e40da25, type: 3}
-      propertyPath: m_CompositePaths.m_Paths.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2265917062048816783, guid: 79f4e60bf54c39d4798b33506e40da25, type: 3}
-      propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2265917063689777506, guid: 79f4e60bf54c39d4798b33506e40da25, type: 3}
       propertyPath: m_Name
       value: Sala 1
@@ -1556,11 +1544,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79f4e60bf54c39d4798b33506e40da25, type: 3}
---- !u!1 &1614503181 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1640870368575933946, guid: 79f4e60bf54c39d4798b33506e40da25, type: 3}
-  m_PrefabInstance: {fileID: 1539875353}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1749041359
 GameObject:
   m_ObjectHideFlags: 3
