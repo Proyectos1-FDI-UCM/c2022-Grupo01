@@ -29,6 +29,6 @@ public class PickUpObjects : MonoBehaviour
         }
         //else if (item.GetComponent<ActiveObject>() != null)
 
-        item.gameObject.SetActive(false);
+        item.gameObject.GetComponent<SpriteRenderer>().sprite = null; ;
 	}
 }
