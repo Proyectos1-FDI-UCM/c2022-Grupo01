@@ -20,7 +20,12 @@ public class PickUpObjects : MonoBehaviour
     void PickUpObject(Collider2D item)
 	{
         if (item.GetComponent<ActiveObject>() == null) InventoryTry2.Instance.passiveItemList.Add(item.gameObject);
-        else Debug.Log("UWU"); InventoryTry2.Instance.activeItem = item.gameObject;
+        else Debug.Log("UWU");
+        {
+            if (InventoryTry2.Instance.activeItem != null) InventoryTry2.Instance.activeItem.GetComponent<ActiveObject>().ChangeActiveObject();
+            InventoryTry2.Instance.activeItem = item.gameObject;
+            
+        }
 
         item.gameObject.SetActive(false);
 	}

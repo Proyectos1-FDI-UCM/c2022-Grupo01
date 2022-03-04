@@ -4,22 +4,40 @@ using UnityEngine;
 
 public class BolsaDeHieloActivo : ActiveObject
 {
-	[SerializeField] private GameObject _icebagPrefab;
+    #region parameters
+    [SerializeField] private GameObject _icebagPrefab;
 	[SerializeField] private float _iceForce = 20f;
-	private Transform _shotPoint;
+	[SerializeField] private float _cooldown = 40f;
+    #endregion
 
-	private void Start()
+    #region properties
+    private float _elapsedTime = 0f;
+	private bool _canShoot = true;
+    #endregion
+    #region references
+    private Transform _shotPoint;
+    #endregion
+
+    private void Start()
 	{
 		_shotPoint = PlayerManager.Instance.attackPoint.transform;
 	}
 	public override void Activate()
 	{
 		base.Activate();
-		LanzaHielo();
+		if(_canShoot) LanzaHielo(); 
 	}
 
-	void LanzaHielo()
+    private void Update()
+    {
+		_elapsedTime += Time.deltaTime;
+		if (_elapsedTime <= _cooldown) _canShoot = true;
+    }
+
+    void LanzaHielo()
 	{
+		_canShoot = false; 
+		_elapsedTime = 0;
 		_shotPoint = PlayerManager.Instance.attackPoint.transform;
 		GameObject nuevoIcebagPrefab = Instantiate(_icebagPrefab, _shotPoint.position, Quaternion.identity);
 		Debug.Log(nuevoIcebagPrefab.transform.position);

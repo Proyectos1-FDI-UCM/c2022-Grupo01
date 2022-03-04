@@ -8,13 +8,15 @@ public class FregonaActivo : ActiveObject
     #region properties
     private bool fregonaCreada = false;
     #endregion
-
+    #region references
+    private GameObject fregona;
+    #endregion
     public override void Activate()
 	{
         if (!fregonaCreada)
         {
 		    base.Activate();
-            GameObject fregona = new GameObject("Fregona");
+            fregona = new GameObject("Fregona");
             fregona.transform.parent = PlayerManager.Instance.player.transform;
             CircleCollider2D fregonaCollider = fregona.AddComponent<CircleCollider2D>();
             fregonaCollider.radius = 1;
@@ -24,4 +26,12 @@ public class FregonaActivo : ActiveObject
             fregonaCreada = true;
         }
 	}
+
+    public override void ChangeActiveObject()
+    {
+        base.ChangeActiveObject();
+        Destroy(fregona);
+    }
+
+
 }
