@@ -13,4 +13,16 @@ MonoBehaviour:
   m_Name: Passive
   m_EditorClassIdentifier: 
   inventoryContainer:
-    itemListInInventory: []
+    itemListInInventory:
+    - ID: 0
+      item:
+        Name: 
+        sprite: {fileID: 0}
+        itemID: 0
+        itemPrefab: {fileID: 0}
+        buffs:
+        - attribute: 0
+          value: 0
+        - attribute: 1
+          value: 0
+  cosa2: {fileID: 0}

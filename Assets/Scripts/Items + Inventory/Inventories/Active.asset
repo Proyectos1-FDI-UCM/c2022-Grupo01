@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73c7cab0bf2ca45af9fc3df7bd8d8a8e, type: 3}
   m_Name: Active
   m_EditorClassIdentifier: 
-  inventoryContainer: []
+  inventoryContainer:
+    itemListInInventory:
+    - ID: 0
+      item:
+        Name: 
+        sprite: {fileID: 0}
+        itemID: 0
+        itemPrefab: {fileID: 0}
+        buffs: []
+  cosa2: {fileID: 0}
