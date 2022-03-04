@@ -81,7 +81,8 @@ public class PlayerAttack : MonoBehaviour
         
         _shotCooldownCounter += Time.deltaTime;
         _meleeCooldownCounter += Time.deltaTime;
-        GameManager.Instance.ShowCooldown(_shotCooldownCounter, _shotCooldown);
+        // eliminada esta visualizacion, al menos hasta revisar su funcionalidad
+        //GameManager.Instance.ShowCooldown(_shotCooldownCounter, _shotCooldown);
     }
 
     public void SetAttackPoint(Vector3 movement)
