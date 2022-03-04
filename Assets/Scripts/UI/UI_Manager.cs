@@ -8,8 +8,6 @@ public class UI_Manager : MonoBehaviour
 
     #region references
     [SerializeField]
-    private Text _ammo;
-    [SerializeField]
     private Slider _healthSlider, _cooldownSlider, _secondaryHealthSlider;
     private PlayerManager _myPlayerManager;
     #endregion
@@ -24,9 +22,7 @@ public class UI_Manager : MonoBehaviour
         if(health > _normalMaxHealth)
         {
             _secondaryHealthSlider.gameObject.SetActive(true);
-            float healthDiff = _myPlayerManager.maxHealth - _normalMaxHealth;
-            //Vector3 localscale = _secondaryHealthSlider.gameObject.transform.localScale;
-            //_secondaryHealthSlider.gameObject.transform.localScale = new Vector3((health - _normalMaxHealth) / 100, localscale.y, localscale.z);
+            float healthDiff = PlayerManager.Instance.maxHealth - _normalMaxHealth;
             _secondaryHealthSlider.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2 (_sliderWidth * (healthDiff/100) , _secondaryHealthSlider.gameObject.GetComponent<RectTransform>().sizeDelta.y);
             _secondaryHealthSlider.maxValue = Mathf.Clamp(healthDiff, 0, 100);
             _secondaryHealthSlider.value = health - _normalMaxHealth;
@@ -45,7 +41,6 @@ public class UI_Manager : MonoBehaviour
     #endregion
     private void Start()
     {
-        _myPlayerManager = PlayerManager.Instance;
         
     }
 }

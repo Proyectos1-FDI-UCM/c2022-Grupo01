@@ -8,7 +8,8 @@ public class PlayerMovement : MonoBehaviour
 	public float movementSpeed = 10;
 
 	[SerializeField]
-    private int rollSpeed = 20, rodarCooldown = 2, hookSpeed = 2, rango = 20;
+    private int rollSpeed = 20, hookSpeed = 2, rango = 20;
+    [SerializeField] private float rodarCooldown = 0.5f;
     #endregion
 
     #region properties
