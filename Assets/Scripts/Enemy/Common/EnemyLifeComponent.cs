@@ -6,6 +6,7 @@ public class EnemyLifeComponent : MonoBehaviour
 {
     public float maxLife = 100f;
 	public Animator animator;
+	[HideInInspector]
 	public SalaManager sala;
 
     public float _currentLife;
@@ -20,7 +21,7 @@ public class EnemyLifeComponent : MonoBehaviour
 		_currentLife = maxLife;
 		animator = GetComponent<Animator>();
 		sala.GetComponentInParent<SalaManager>();
-		sala.RegisterEnemy();
+		sala.RegisterEnemy(this);
 		
 	}
 
@@ -42,10 +43,13 @@ public class EnemyLifeComponent : MonoBehaviour
 
 	public void Damage(float damage)
 	{
-		animator.SetTrigger("Hurt");
-		_currentLife -= damage;
-		if (_currentLife <= 0)
-			Die();
+		if (!dead)
+		{
+			animator.SetTrigger("Hurt");
+			_currentLife -= damage;
+			if (_currentLife <= 0)
+				Die();
+		}
 	}
 
 	void Die()
@@ -56,7 +60,7 @@ public class EnemyLifeComponent : MonoBehaviour
 			animator.SetTrigger("Die");
 			Destroy(gameObject, 1f);
 			dead = true;
-			sala.OnEnemyDies();
+			sala.OnEnemyDies(this);
 		}
 	}
 }
