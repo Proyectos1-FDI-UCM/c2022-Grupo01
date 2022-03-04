@@ -12051,6 +12051,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3243884460879451011, guid: dd30a8db36068f84586478dc560c21bd, type: 3}
+      propertyPath: _cooldown
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3998425941224310982, guid: dd30a8db36068f84586478dc560c21bd, type: 3}
       propertyPath: m_Name
       value: PO_BolsaDeHielo
