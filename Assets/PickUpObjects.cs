@@ -6,6 +6,7 @@ public class PickUpObjects : MonoBehaviour
 {
     [SerializeField] private float _pickUpRange = 2f;
     [SerializeField] private LayerMask _objectLayer;
+
     // Update is called once per frame
     void Update()
     {
@@ -19,13 +20,14 @@ public class PickUpObjects : MonoBehaviour
 
     void PickUpObject(Collider2D item)
 	{
-        if (item.GetComponent<ActiveObject>() == null) InventoryTry2.Instance.passiveItemList.Add(item.gameObject);
-        else Debug.Log("UWU");
+        if (item.GetComponent<PassiveObject>() != null) InventoryTry2.Instance.passiveItemList.Add(item.gameObject);
+        else if (item.GetComponent<ActiveObject>() != null)
         {
             if (InventoryTry2.Instance.activeItem != null) InventoryTry2.Instance.activeItem.GetComponent<ActiveObject>().ChangeActiveObject();
             InventoryTry2.Instance.activeItem = item.gameObject;
             
         }
+        //else if (item.GetComponent<ActiveObject>() != null)
 
         item.gameObject.SetActive(false);
 	}
