@@ -38,11 +38,12 @@ public class GameManager : MonoBehaviour
 	{
         _uiManager.ShowHealth(health);
 	}
-
+        /*  Esto no se usa mas... por ahora
     public void ShowCooldown(float cooldown, float maxCooldown)
 	{
         _uiManager.ShowCooldown(cooldown, maxCooldown);
 	}
+        */
 
     public void OnPlayerDie()
 	{
