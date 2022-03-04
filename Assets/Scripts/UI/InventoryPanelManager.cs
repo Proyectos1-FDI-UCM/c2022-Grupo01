@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class InventoryPanelManager : MonoBehaviour
 {
-    [SerializeField]
-    private Inventory _inventory;
-
     #region parameters
     [SerializeField] private int _spaceBetweenItemsX, _spaceBetweenItemsY, _columns, _xStart, _yStart;
     [SerializeField] private GameObject inventoryPrefab;

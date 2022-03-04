@@ -14,7 +14,7 @@ public class PickUpObjects : MonoBehaviour
 		{
             Collider2D[] items = Physics2D.OverlapCircleAll(transform.position, _pickUpRange, _objectLayer);
 
-            PickUpObject(items[0]);
+            if(items.Length >= 1) PickUpObject(items[0]);
         }
     }
 
