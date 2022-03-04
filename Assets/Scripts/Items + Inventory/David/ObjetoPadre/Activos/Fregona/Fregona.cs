@@ -14,9 +14,18 @@ public class Fregona : MonoBehaviour
     private Puddle _puddle;
     private bool fregar = false;
     #endregion
+    #region references
+    private Transform _myTransform;
+    #endregion
+
+    private void Start()
+    {
+        _myTransform = transform;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("WEwWEWE");
         _puddle = other.gameObject.GetComponent<Puddle>();
         if (_puddle != null)
         {
@@ -34,6 +43,7 @@ public class Fregona : MonoBehaviour
 
     private void Update()
     {
+        _myTransform.position = PlayerManager.Instance._playerPosition;
         if (fregar)
         {
             if (Input.GetKey(KeyCode.Q))

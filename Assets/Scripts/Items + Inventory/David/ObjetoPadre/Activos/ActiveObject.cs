@@ -12,4 +12,9 @@ public class ActiveObject : Object
     {
         Debug.Log("Objeto activo " + gameObject.name + " activado");
     }
+
+    public virtual void ChangeActiveObject()
+    {
+        Debug.Log("Cambiado Objeto Activo");
+    }
 }
