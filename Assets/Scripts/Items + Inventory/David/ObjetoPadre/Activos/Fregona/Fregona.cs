@@ -12,6 +12,7 @@ public class Fregona : MonoBehaviour
     private float _elapsedTime;
     private int _uses = 0;
     private Puddle _puddle;
+    private Puddle _newPuddle;
     private bool fregar = false;
     #endregion
     #region references
@@ -25,10 +26,10 @@ public class Fregona : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("WEwWEWE");
         _puddle = other.gameObject.GetComponent<Puddle>();
         if (_puddle != null)
         {
+            _newPuddle = _puddle;
             fregar = true;
         }
     }
@@ -37,6 +38,7 @@ public class Fregona : MonoBehaviour
         _puddle = collision.gameObject.GetComponent<Puddle>();
         if (_puddle != null)
         {
+            _newPuddle = _puddle;
             fregar = false;
         }
     }
@@ -59,8 +61,8 @@ public class Fregona : MonoBehaviour
 
     void Use()
     {
-        PlayerManager.Instance.ChangePlayerLife(2 * (int)_puddle._touchHydrate);
-        _puddle.UsedPuddle();
+        PlayerManager.Instance.ChangePlayerLife(2 * (int)_newPuddle._touchHydrate);
+        _newPuddle.UsedPuddle();
         _elapsedTime = 0;
         _uses++;
         if (_uses == maxUses)

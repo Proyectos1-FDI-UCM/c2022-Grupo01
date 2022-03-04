@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryTry2 : MonoBehaviour
+public class Inventory : MonoBehaviour
 {
     #region Singleton
-    private static InventoryTry2 _instance;
-    public static InventoryTry2 Instance
+    private static Inventory _instance;
+    public static Inventory Instance
     {
         get
         {

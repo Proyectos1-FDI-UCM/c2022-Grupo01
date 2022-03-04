@@ -20,11 +20,11 @@ public class PickUpObjects : MonoBehaviour
 
     void PickUpObject(Collider2D item)
 	{
-        if (item.GetComponent<PassiveObject>() != null) InventoryTry2.Instance.passiveItemList.Add(item.gameObject);
+        if (item.GetComponent<PassiveObject>() != null) Inventory.Instance.passiveItemList.Add(item.gameObject);
         else if (item.GetComponent<ActiveObject>() != null)
         {
-            if (InventoryTry2.Instance.activeItem != null) InventoryTry2.Instance.activeItem.GetComponent<ActiveObject>().ChangeActiveObject();
-            InventoryTry2.Instance.activeItem = item.gameObject;
+            if (Inventory.Instance.activeItem != null) Inventory.Instance.activeItem.GetComponent<ActiveObject>().ChangeActiveObject();
+            Inventory.Instance.activeItem = item.gameObject;
             
         }
         //else if (item.GetComponent<ActiveObject>() != null)

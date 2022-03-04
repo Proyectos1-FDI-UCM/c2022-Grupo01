@@ -131,4 +131,4 @@ MonoBehaviour:
   activePrefab: {fileID: 3998425941224310982}
   _icebagPrefab: {fileID: 8467541936118930963, guid: 5c698bc38c4cec04eb825f50e627dba2, type: 3}
   _iceForce: 20
-  _shotPoint: {fileID: 0}
+  _cooldown: 1

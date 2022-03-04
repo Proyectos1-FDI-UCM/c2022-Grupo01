@@ -21,17 +21,20 @@ public class BolsaDeHieloActivo : ActiveObject
     private void Start()
 	{
 		_shotPoint = PlayerManager.Instance.attackPoint.transform;
+		_elapsedTime = 0;
 	}
 	public override void Activate()
 	{
 		base.Activate();
+		Debug.Log(_canShoot);
 		if(_canShoot) LanzaHielo(); 
 	}
 
     private void Update()
     {
 		_elapsedTime += Time.deltaTime;
-		if (_elapsedTime <= _cooldown) _canShoot = true;
+		Debug.Log(_elapsedTime);
+		if (_elapsedTime >= _cooldown) _canShoot = true;
     }
 
     void LanzaHielo()

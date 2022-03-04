@@ -9,7 +9,7 @@ public class UseActiveObject : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
 		{
-            InventoryTry2.Instance.activeItem.GetComponent<ActiveObject>().Activate();
+            Inventory.Instance.activeItem.GetComponent<ActiveObject>().Activate();
 		}
     }
 }
