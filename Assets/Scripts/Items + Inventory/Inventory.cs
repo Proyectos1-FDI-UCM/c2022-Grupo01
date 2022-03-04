@@ -73,8 +73,3 @@ public class InventorySlot
         item = _item;
     }
 }
-[System.Serializable]
-public class ItemToInstantiate
-{
-    public ScriptableObject _itemPrefabToInstantiate;
-}

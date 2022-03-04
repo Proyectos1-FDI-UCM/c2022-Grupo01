@@ -11,31 +11,29 @@ public class InventoryPanelManager : MonoBehaviour
     #region parameters
     [SerializeField] private int _spaceBetweenItemsX, _spaceBetweenItemsY, _columns, _xStart, _yStart;
     [SerializeField] private GameObject inventoryPrefab;
-    Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
+    List<GameObject> itemsDisplayed = new List<GameObject>();
     #endregion
 
     public void CreateDisplay()
     {
-        for (int i = 0; i < _inventory.inventoryContainer.itemListInInventory.Count; i++)
+        for (int i = 0; i < InventoryTry2.Instance.passiveItemList.Count; i++)
         {
             var obj = Instantiate(inventoryPrefab, Vector3.zero, Quaternion.identity, transform);
             obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
-            itemsDisplayed.Add(_inventory.inventoryContainer.itemListInInventory[i], obj);
+            itemsDisplayed.Add(InventoryTry2.Instance.passiveItemList[i]);
         }
     }
 
     public void UpdateDisplay()
     {
-        for(int i = 0; i < _inventory.inventoryContainer.itemListInInventory.Count; i++)
+        for(int i = 0; i < InventoryTry2.Instance.passiveItemList.Count; i++)
         {
-            InventorySlot slot = _inventory.inventoryContainer.itemListInInventory[i];
-
-            if(!itemsDisplayed.ContainsKey(slot))
+            if(!itemsDisplayed.Contains(InventoryTry2.Instance.passiveItemList[i]))
             {
                 var obj = Instantiate(inventoryPrefab, Vector3.zero, Quaternion.identity, transform);
-                obj.transform.GetChild(0).GetComponentInChildren<Image>().sprite = slot.item.sprite;
+                obj.transform.GetChild(0).GetComponentInChildren<Image>().sprite = InventoryTry2.Instance.passiveItemList[i].GetComponent<SpriteRenderer>().sprite;
                 obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
-                itemsDisplayed.Add(slot, obj);
+                itemsDisplayed.Add(InventoryTry2.Instance.passiveItemList[i]);
             }
         }
     }
