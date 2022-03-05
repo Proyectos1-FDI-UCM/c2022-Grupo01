@@ -252,7 +252,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLife: 10
   animator: {fileID: 6708671369809335469}
+  sala: {fileID: 0}
   _currentLife: 0
+  dead: 0
 --- !u!114 &-7528552641812810541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,7 +384,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!195 &-5273713187421605913
 NavMeshAgent:
   m_ObjectHideFlags: 0

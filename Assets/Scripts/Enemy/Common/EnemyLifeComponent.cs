@@ -6,7 +6,7 @@ public class EnemyLifeComponent : MonoBehaviour
 {
     public float maxLife = 100f;
 	public Animator animator;
-	[HideInInspector]
+	//[HideInInspector]
 	public SalaManager sala;
 
     public float _currentLife;
@@ -16,13 +16,12 @@ public class EnemyLifeComponent : MonoBehaviour
 	private BolsaDeHielo ice;
 	public bool dead = false;
     
-    private void Start()
+   
+	public void Register()
 	{
-		_currentLife = maxLife;
-		animator = GetComponent<Animator>();
-		sala.GetComponentInParent<SalaManager>();
+		Debug.LogWarning("Sala" + sala);
+		Debug.LogWarning("This " + this);
 		sala.RegisterEnemy(this);
-		
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)

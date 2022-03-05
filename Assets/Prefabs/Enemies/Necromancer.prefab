@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 5222318862485010865}
   - component: {fileID: 93962909682094901}
   - component: {fileID: 1438671300}
+  - component: {fileID: -7106520215433519733}
   m_Layer: 7
   m_Name: Necromancer
   m_TagString: Untagged
@@ -208,8 +209,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLife: 100
-  animator: {fileID: 0}
+  animator: {fileID: 2223008597245930797}
+  sala: {fileID: 0}
   _currentLife: 0
+  dead: 0
 --- !u!114 &5222318862485010865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,3 +258,24 @@ MonoBehaviour:
   _attackOffset: 1
   _bulletPrefab: {fileID: 4258877983288083039, guid: eea5681cc0da0654b8467b54ede86151, type: 3}
   _myTransform: {fileID: 6420855111666384653}
+--- !u!50 &-7106520215433519733
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4826418600712077422}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
