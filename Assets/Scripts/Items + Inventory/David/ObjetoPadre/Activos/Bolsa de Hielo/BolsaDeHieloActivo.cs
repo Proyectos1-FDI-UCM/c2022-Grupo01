@@ -26,14 +26,14 @@ public class BolsaDeHieloActivo : ActiveObject
 	public override void Activate()
 	{
 		base.Activate();
-		Debug.Log(_canShoot);
+		//Debug.Log(_canShoot);
 		if(_canShoot) LanzaHielo(); 
 	}
 
     private void Update()
     {
 		_elapsedTime += Time.deltaTime;
-		Debug.Log(_elapsedTime);
+		//Debug.Log(_elapsedTime);
 		if (_elapsedTime >= _cooldown) _canShoot = true;
     }
 
@@ -43,7 +43,7 @@ public class BolsaDeHieloActivo : ActiveObject
 		_elapsedTime = 0;
 		_shotPoint = PlayerManager.Instance.attackPoint.transform;
 		GameObject nuevoIcebagPrefab = Instantiate(_icebagPrefab, _shotPoint.position, Quaternion.identity);
-		Debug.Log(nuevoIcebagPrefab.transform.position);
+		//Debug.Log(nuevoIcebagPrefab.transform.position);
 		Rigidbody2D rb = nuevoIcebagPrefab.GetComponent<Rigidbody2D>();
 		rb.rotation = PlayerManager.Instance.gun.GetComponent<Rigidbody2D>().rotation;
 		rb.AddForce(_shotPoint.right * _iceForce, ForceMode2D.Impulse);
