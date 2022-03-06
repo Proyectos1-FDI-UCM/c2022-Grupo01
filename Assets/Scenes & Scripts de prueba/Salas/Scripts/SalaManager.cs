@@ -5,9 +5,9 @@ using UnityEngine;
 public class SalaManager : MonoBehaviour
 {
      
-    public float enemies;
-    public GameObject doors;
-    private List<Door> _listOfDoors;
+    
+    
+    public List<Door> _listOfDoors;
     private List<EnemyLifeComponent> _listOfEnemies;
     private List<Vector3> _listEnemyPosition;
 
@@ -18,6 +18,8 @@ public class SalaManager : MonoBehaviour
     
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        //Debug.LogWarning("Detector "+ this);
+
         PlayerAttack _player = collision.gameObject.GetComponent<PlayerAttack>();
         EnemyLifeComponent _enemy = collision.gameObject.GetComponent<EnemyLifeComponent>();
         Door _door = collision.gameObject.GetComponent<Door>();
@@ -29,10 +31,12 @@ public class SalaManager : MonoBehaviour
         if (_enemy != null)
         {
             _enemy.sala = this;
+            _enemy.Register();
         }
         if (_door != null)
         {
             _door.sala = this;
+            _door.Register();
         }
     }
 
@@ -43,6 +47,7 @@ public class SalaManager : MonoBehaviour
         if (_player != null && myState != SalaStates.Completada)
         {
             Reload();
+            myState = SalaStates.Inactiva;
         }
     }
     public void Reload()
@@ -67,9 +72,10 @@ public class SalaManager : MonoBehaviour
     }
     public void RegisterEnemy(EnemyLifeComponent enemy)
     {
-        Debug.Log("si");
+        
         _listOfEnemies.Add(enemy);
         _listEnemyPosition.Add(enemy.gameObject.transform.position);
+        Debug.Log("enemy: " + _listOfEnemies.Count);
     }
 
     public void OnEnemyDies( EnemyLifeComponent enemy)
@@ -81,7 +87,7 @@ public class SalaManager : MonoBehaviour
     public void RegisterDoor(Door _door)
     {
         _listOfDoors.Add(_door);
-        Debug.Log(_listOfDoors.Count);
+        Debug.Log("doors: "+_listOfDoors.Count);
         
 
     }
@@ -100,17 +106,21 @@ public class SalaManager : MonoBehaviour
         _listOfDoors = new List<Door>();
         _listOfEnemies = new List<EnemyLifeComponent>();
         _listEnemyPosition = new List<Vector3>();
+        myState = SalaStates.Inactiva;
+
+
     }
 
     public void Start()
     {
-        myState = SalaStates.Inactiva;
+       // Debug.LogWarning(this);
+        
     }
 
     // Update is called once per frame
     void Update()
     {       
-        if (_listOfEnemies.Count <= 0 && myState==SalaStates.Activa)
+        if (_listOfEnemies.Count == 0 && myState==SalaStates.Activa)
         {
             DestroyDoors();
             myState = SalaStates.Completada;

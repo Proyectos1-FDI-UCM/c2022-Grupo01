@@ -1,0 +1,636 @@
+fileFormatVersion: 2
+guid: c23b54f234210e9489d40c5b59e7d358
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8585497858252596753
+    second: ruedo_0
+  - first:
+      213: -1303574263593291042
+    second: ruedo_1
+  - first:
+      213: -8285373667217567639
+    second: ruedo_2
+  - first:
+      213: -9075524831614236702
+    second: ruedo_3
+  - first:
+      213: -4118457720215400160
+    second: ruedo_4
+  - first:
+      213: -6888933565309516680
+    second: ruedo_5
+  - first:
+      213: -5538159130764309771
+    second: ruedo_6
+  - first:
+      213: -2655673545672953892
+    second: ruedo_7
+  - first:
+      213: 6212309755233589624
+    second: ruedo_8
+  - first:
+      213: -8992312679089044746
+    second: ruedo_9
+  - first:
+      213: 5329082126564275095
+    second: ruedo_10
+  - first:
+      213: 8857650209553152048
+    second: ruedo_11
+  - first:
+      213: 5857241016483723096
+    second: ruedo_12
+  - first:
+      213: 185688125327973982
+    second: ruedo_13
+  - first:
+      213: 7689619353470713563
+    second: ruedo_14
+  - first:
+      213: -2830234009139844696
+    second: ruedo_15
+  - first:
+      213: -8047290728565034762
+    second: ruedo_16
+  - first:
+      213: -5764238996077851927
+    second: ruedo_17
+  - first:
+      213: -5325057766094383162
+    second: ruedo_18
+  - first:
+      213: 621981253768321587
+    second: ruedo_19
+  - first:
+      213: -3856805137397573718
+    second: ruedo_20
+  - first:
+      213: 8066381911254277257
+    second: ruedo_21
+  - first:
+      213: -1139586728205192082
+    second: ruedo_22
+  - first:
+      213: 3494579610407649921
+    second: ruedo_23
+  - first:
+      213: -4145754545509674323
+    second: ruedo_24
+  - first:
+      213: 3194018984789039548
+    second: ruedo_25
+  - first:
+      213: -6531553995860290254
+    second: ruedo_26
+  - first:
+      213: 7651835159903128428
+    second: ruedo_27
+  - first:
+      213: 7032907670936067413
+    second: ruedo_28
+  - first:
+      213: 5998700899349991319
+    second: ruedo_29
+  - first:
+      213: 32064714839132322
+    second: ruedo_30
+  - first:
+      213: -4673358629086602282
+    second: ruedo_31
+  - first:
+      213: -1188764181057871514
+    second: ruedo_32
+  - first:
+      213: 4668887636118473114
+    second: ruedo_33
+  - first:
+      213: -1599302635824838246
+    second: ruedo_34
+  - first:
+      213: 6527507971575612898
+    second: ruedo_35
+  - first:
+      213: -6416803959354440887
+    second: ruedo_36
+  - first:
+      213: 8723234635560407796
+    second: ruedo_37
+  - first:
+      213: 2270597072471376907
+    second: ruedo_38
+  - first:
+      213: 8875549119136185927
+    second: ruedo_39
+  - first:
+      213: -3406245453676241530
+    second: ruedo_40
+  - first:
+      213: 2838751617260279256
+    second: ruedo_41
+  - first:
+      213: 4240769515286449758
+    second: ruedo_42
+  - first:
+      213: -5343502219651325536
+    second: ruedo_43
+  - first:
+      213: 6217606137132642565
+    second: ruedo_44
+  - first:
+      213: -1147039881360988161
+    second: ruedo_45
+  - first:
+      213: 21335277676602067
+    second: ruedo_46
+  - first:
+      213: -2170190613382172228
+    second: ruedo_47
+  - first:
+      213: 7517253260615691355
+    second: ruedo_48
+  - first:
+      213: -3679600867649372482
+    second: ruedo_49
+  - first:
+      213: 6884982074346518845
+    second: ruedo_50
+  - first:
+      213: 5664396195327920338
+    second: ruedo_51
+  - first:
+      213: -6393264881207281106
+    second: ruedo_52
+  - first:
+      213: 7652293462768374540
+    second: ruedo_53
+  - first:
+      213: 8874209194905140173
+    second: ruedo_54
+  - first:
+      213: 5419130586195294865
+    second: ruedo_55
+  - first:
+      213: 8809795131065073549
+    second: ruedo_56
+  - first:
+      213: 8030507549067320592
+    second: ruedo_57
+  - first:
+      213: -3295779040937298122
+    second: ruedo_58
+  - first:
+      213: -5198961497823533770
+    second: ruedo_59
+  - first:
+      213: 5799157535286533452
+    second: ruedo_60
+  - first:
+      213: -3593569928433456777
+    second: ruedo_61
+  - first:
+      213: 7616874413566841981
+    second: ruedo_62
+  - first:
+      213: -4709702314871200320
+    second: ruedo_63
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 7
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ruedo_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 109
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 116e50d60d0d52770800000000000000
+      internalID: 8585497858252596753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruedo_1
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 109
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed23e282d16c8ede0800000000000000
+      internalID: -1303574263593291042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruedo_2
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 108
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9601f162c80740d80800000000000000
+      internalID: -8285373667217567639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruedo_3
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 109
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e78565ff324d0280800000000000000
+      internalID: -9075524831614236702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruedo_4
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 77
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0219814268c48d6c0800000000000000
+      internalID: -4118457720215400160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruedo_5
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 77
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8740676eb679560a0800000000000000
+      internalID: -6888933565309516680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruedo_6
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 78
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fa053dec918423b0800000000000000
+      internalID: -5538159130764309771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruedo_7
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 77
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdfe2c60bf6252bd0800000000000000
+      internalID: -2655673545672953892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruedo_8
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 45
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8795463eece863650800000000000000
+      internalID: 6212309755233589624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruedo_9
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 45
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f208adf243e43380800000000000000
+      internalID: -8992312679089044746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruedo_10
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 45
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7933fbc95f3b4f940800000000000000
+      internalID: 5329082126564275095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruedo_11
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 45
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 038741d8fe1bcea70800000000000000
+      internalID: 8857650209553152048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruedo_12
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 12
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8573c57eba9194150800000000000000
+      internalID: 5857241016483723096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruedo_13
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 12
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5e9e2dbd52b39200800000000000000
+      internalID: 185688125327973982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruedo_14
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 12
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde37958f0407ba60800000000000000
+      internalID: 7689619353470713563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruedo_15
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 12
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a96df5f92df8b8d0800000000000000
+      internalID: -2830234009139844696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

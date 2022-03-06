@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 9191831522005992306}
   - component: {fileID: 9191831522005992305}
   - component: {fileID: 894022324}
+  - component: {fileID: 249422623309061836}
   m_Layer: 7
   m_Name: MeleeEnemy
   m_TagString: Untagged
@@ -210,7 +211,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLife: 100
   animator: {fileID: 9191831522005992302}
+  sala: {fileID: 0}
   _currentLife: 0
+  dead: 0
 --- !u!114 &9191831522005992303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,3 +282,24 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _animator: {fileID: 9191831522005992302}
+--- !u!50 &249422623309061836
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9191831522005992297}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    [HideInInspector]
+    //[HideInInspector]
     public SalaManager sala;
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -16,10 +16,12 @@ public class Door : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void Register()
     {
-        sala.GetComponentInParent<SalaManager>();
+        Debug.LogWarning("Sala" + sala);
+        Debug.LogWarning("This " + this);
         sala.RegisterDoor(this);
     }
+    // Start is called before the first frame update
+    
 }
