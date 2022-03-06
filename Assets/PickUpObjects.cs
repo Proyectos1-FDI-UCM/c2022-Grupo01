@@ -33,7 +33,5 @@ public class PickUpObjects : MonoBehaviour
             item.GetComponent<ActiveObject>().pickable = false;
         }
         //else if (item.GetComponent<ActiveObject>() != null)
-
-
     }
 }
