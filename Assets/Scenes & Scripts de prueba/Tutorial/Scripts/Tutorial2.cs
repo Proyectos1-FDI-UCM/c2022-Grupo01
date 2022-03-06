@@ -4,26 +4,17 @@ using UnityEngine;
 
 public class Tutorial2 : MonoBehaviour
 {
-	/*
-	#region references
-	private DisplayManager _displayManager;
-	#endregion
+	public GameObject textoTutorial;
 
 	void Start()
 	{
-		_displayManager = DisplayManager.Instance();
+		textoTutorial.SetActive(false);
 	}
-
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-
-			_displayManager.DisplayMessage("Tutorial 2");
-
-			//Destroy(gameObject);
-	}
-	*/
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
+		textoTutorial.SetActive(true);
+		Destroy(textoTutorial, 5f);
+		Destroy(gameObject, 5f);
 		Debug.Log("activa texto del tutorial 2");
 	}
 }
