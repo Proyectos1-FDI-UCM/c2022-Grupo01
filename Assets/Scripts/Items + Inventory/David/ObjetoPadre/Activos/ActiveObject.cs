@@ -7,6 +7,7 @@ public class ActiveObject : Object
     [HideInInspector] public int uses;
     public int maxUses;
     public GameObject activePrefab;
+    public bool pickable = true;
     //Meter atributos aquí
     public virtual void Activate()
     {
