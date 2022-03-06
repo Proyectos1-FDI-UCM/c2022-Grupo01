@@ -14,6 +14,7 @@ public class PickUpObjects : MonoBehaviour
 		{
             Collider2D[] items = Physics2D.OverlapCircleAll(transform.position, _pickUpRange, _objectLayer);
 
+            //if(items.Length >= 1) PickUpObject(items[0]);
             if(items.Length >= 1) PickUpObject(items[0]);
         }
     }
@@ -23,15 +24,14 @@ public class PickUpObjects : MonoBehaviour
         if (item.GetComponent<PassiveObject>() != null) 
         { 
             Inventory.Instance.passiveItemList.Add(item.gameObject); 
-            item.gameObject.SetActive(false); 
         }
         else if (item.GetComponent<ActiveObject>() != null && item.GetComponent<ActiveObject>().pickable)
         {
             if (Inventory.Instance.activeItem != null) Inventory.Instance.activeItem.GetComponent<ActiveObject>().ChangeActiveObject();
             Inventory.Instance.activeItem = item.gameObject;
-            item.gameObject.GetComponent<SpriteRenderer>().sprite = null;
             item.GetComponent<ActiveObject>().pickable = false;
         }
+        item.gameObject.SetActive(false);
         //else if (item.GetComponent<ActiveObject>() != null)
     }
 }

@@ -7,8 +7,6 @@ public class FregonaActivo : ActiveObject
     //Atributos necesarios para el funcionamiento del objeto
     #region properties
     private bool fregonaCreada = false;
-    #endregion
-    #region references
     private GameObject fregona;
     #endregion
     public override void Activate()
