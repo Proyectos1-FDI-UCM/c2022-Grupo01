@@ -11,8 +11,8 @@ public class Door : MonoBehaviour
         BolsaDeHielo bolsa = collision.gameObject.GetComponent<BolsaDeHielo>();
         if (bolsa != null)
         {
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponentInChildren<BoxCollider2D>().enabled = false;
         }
     }
 
@@ -23,5 +23,8 @@ public class Door : MonoBehaviour
         sala.RegisterDoor(this);
     }
     // Start is called before the first frame update
-    
+    private void Start()
+    {
+
+    }
 }

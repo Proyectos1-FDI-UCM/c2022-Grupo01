@@ -10,8 +10,7 @@ public class SalaManager : MonoBehaviour
     public List<Door> _listOfDoors;
     private List<EnemyLifeComponent> _listOfEnemies;
     private List<Vector3> _listEnemyPosition;
-
-    public enum SalaStates {Inactiva,Activa,Completada};
+    public enum SalaStates {Inicial, Inactiva, Activa,Completada};
 
     public SalaStates myState;
 
@@ -48,7 +47,7 @@ public class SalaManager : MonoBehaviour
         if (_player != null && myState != SalaStates.Completada)
         {
             Reload();
-            myState = SalaStates.Inactiva;
+            myState = SalaStates.Inicial;
         }
     }
     public void Reload()
@@ -68,7 +67,7 @@ public class SalaManager : MonoBehaviour
         foreach(Door door in _listOfDoors)
         {
             door.gameObject.GetComponent<SpriteRenderer>().enabled=true;
-            door.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            door.gameObject.GetComponentInChildren<BoxCollider2D>().enabled = true;
         }
     }
     public void RegisterEnemy(EnemyLifeComponent enemy)
@@ -98,7 +97,7 @@ public class SalaManager : MonoBehaviour
         foreach(Door _door in _listOfDoors)
         {
             _door.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            _door.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            _door.gameObject.GetComponentInChildren<BoxCollider2D>().enabled = false;
         }
     }
 
@@ -107,7 +106,7 @@ public class SalaManager : MonoBehaviour
         _listOfDoors = new List<Door>();
         _listOfEnemies = new List<EnemyLifeComponent>();
         _listEnemyPosition = new List<Vector3>();
-        myState = SalaStates.Inactiva;
+        myState = SalaStates.Inicial;
 
 
     }
@@ -120,12 +119,15 @@ public class SalaManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {       
-        if (_listOfEnemies.Count == 0 && myState==SalaStates.Activa)
+    {   if(myState == SalaStates.Inicial)
+        {
+            DestroyDoors();
+            myState = SalaStates.Inactiva;
+        }    
+        else if (_listOfEnemies.Count == 0 && myState==SalaStates.Activa)
         {
             DestroyDoors();
             myState = SalaStates.Completada;
-            
         }
         
     }
