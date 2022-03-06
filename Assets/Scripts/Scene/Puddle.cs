@@ -20,7 +20,7 @@ public class Puddle : MonoBehaviour
 		_spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
-	private void OnTriggerStay2D(Collider2D collision)
+	private void OnTriggerEnter2D(Collider2D collision)
 	{
         PlayerLife player = collision.gameObject.GetComponent<PlayerLife>();
 		if (player != null && _playerManager.playerInRoll)
