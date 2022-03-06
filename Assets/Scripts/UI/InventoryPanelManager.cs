@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class InventoryPanelManager : MonoBehaviour
 {
     #region parameters
-    [SerializeField] private int _spaceBetweenItemsX, _spaceBetweenItemsY, _columns, _xStart, _yStart, _activeXPos, _activeYPos;
+    [SerializeField] private int _spaceBetweenItemsX, _spaceBetweenItemsY, _columns, _xStart, _yStart;
     [SerializeField] private GameObject _passiveInventoryPrefab, _activeInventoryPrefab;
     List<GameObject> passiveItemsDisplayed = new List<GameObject>();
     [HideInInspector]public GameObject activeItemDisplayed;
@@ -52,7 +52,9 @@ public class InventoryPanelManager : MonoBehaviour
         {
             var obj2 = Instantiate(_activeInventoryPrefab, Vector3.zero, Quaternion.identity, transform);
             obj2.transform.GetChild(0).GetComponentInChildren<Image>().sprite = Inventory.Instance.activeItem.GetComponent<SpriteRenderer>().sprite;
+
             obj2.GetComponent<RectTransform>().localPosition = GetActiveSlotPosition();
+            
             activeItemDisplayed = Inventory.Instance.activeItem;
         }
         else if(activeItemDisplayed != Inventory.Instance.activeItem && activeItemDisplayed != null)
@@ -69,7 +71,8 @@ public class InventoryPanelManager : MonoBehaviour
 
     public Vector3 GetActiveSlotPosition()
     {
-        return new Vector3(_activeXPos, _activeYPos, 0f);
+        //return new Vector3(_activeXPos, _activeYPos, 0f);
+        return transform.GetChild(0).GetComponentInChildren<RectTransform>().localPosition;
     }
 
     void Start()
