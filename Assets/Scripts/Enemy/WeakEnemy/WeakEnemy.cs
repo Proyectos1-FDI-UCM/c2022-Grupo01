@@ -7,6 +7,7 @@ public class WeakEnemy : MonoBehaviour
     private float _num=0;
     [SerializeField]
     private EnemyLifeComponent _life;
+   
 
    // public Animator animator;
 
@@ -27,14 +28,15 @@ public class WeakEnemy : MonoBehaviour
         GameManager.Instance.RegisterWeakEnemy(this);
         _num = 1;
         _life = GetComponent<EnemyLifeComponent>();
-      //  animator.SetBool("Walk",true);
+       
+        //  animator.SetBool("Walk",true);
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (_life._currentLife <= 0 && _num > 0)
+        if (_life._currentLife <= 0 && _num>0)
         {
             GameManager.Instance.OnWeakDies(this);
             _num--;

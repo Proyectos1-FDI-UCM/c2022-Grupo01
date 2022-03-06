@@ -15,9 +15,12 @@ public class EnemyLifeComponent : MonoBehaviour
 	private BubbleAttack bubble;
 	private BolsaDeHielo ice;
 	public bool dead = false;
-    
-   
-	public void Register()
+
+    void Start()
+    {
+		_currentLife = maxLife;
+    }
+    public void Register()
 	{
 		Debug.LogWarning("Sala" + sala);
 		Debug.LogWarning("This " + this);

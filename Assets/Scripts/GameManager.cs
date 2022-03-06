@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     private UI_Manager _uiManager;
 
     private List<WeakEnemy> _listOfWeakEnemies;
-    private WeakEnemy _weakEnemies;
+    //private WeakEnemy _weakEnemies;
     private PlayerManager _playerManager;
 
     #endregion
@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
     public void RegisterWeakEnemy(WeakEnemy enemyToAdd)
     {
          _listOfWeakEnemies.Add(enemyToAdd);
+        
     }
 
     public void OnWeakDies(WeakEnemy deadweak)
