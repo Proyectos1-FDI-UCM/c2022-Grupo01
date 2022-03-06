@@ -29,7 +29,6 @@ public class MeleeMovement : MonoBehaviour
     [SerializeField]
     private Animator _animator;
     private PlayerManager _myPlayerManager;
-    private DetectPlayer _trigger;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -40,7 +39,6 @@ public class MeleeMovement : MonoBehaviour
         _agent.updateUpAxis = false;
         _elapsedTime += _timeToBeElapsed;
         _agent.SetDestination(_myPlayerManager._playerPosition);
-        _trigger = GetComponentInChildren<DetectPlayer>();
     }
 
     // Update is called once per frame
