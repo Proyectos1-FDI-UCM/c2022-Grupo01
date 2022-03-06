@@ -31,6 +31,7 @@ public class SalaManager : MonoBehaviour
         if (_enemy != null)
         {
             _enemy.sala = this;
+            _enemy.gameObject.GetComponentInChildren<DetectPlayer>().sala = this;
             _enemy.Register();
         }
         if (_door != null)

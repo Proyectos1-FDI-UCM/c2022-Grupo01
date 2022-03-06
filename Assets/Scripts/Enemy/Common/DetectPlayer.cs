@@ -8,7 +8,11 @@ public class DetectPlayer : MonoBehaviour
 
     #region properties
     private float _radius;
-    private enum typeofEnemy { CAC, Range, Fleeing, Necromancer }
+    [HideInInspector]
+    public SalaManager sala;
+    private enum DetectStates { Inactive, Stand, Detected};
+    private DetectStates _myState;
+    private enum typeofEnemy { CAC, Range, Fleeing, Necromancer };
     private int _wallsLayerMask;
     #endregion
     #region parameters
@@ -18,21 +22,35 @@ public class DetectPlayer : MonoBehaviour
     #region methods
     private void OnTriggerStay2D(Collider2D other)
     {
-        PlayerAttack _myPlayerAttack = other.gameObject.GetComponent<PlayerAttack>();
-        if (_myPlayerAttack != null)
+        if(_myState == DetectStates.Stand)
         {
-            Vector2 direction = (other.gameObject.transform.position - _myTransform.position).normalized;
-            if (!Physics2D.Raycast(_myTransform.position, direction, _radius, _wallsLayerMask))
+            PlayerAttack _myPlayerAttack = other.gameObject.GetComponent<PlayerAttack>();
+            if (_myPlayerAttack != null)
             {
-                switch (_thisTypeOfEnemy)
+                Vector2 direction = (other.gameObject.transform.position - _myTransform.position).normalized;
+                if (!Physics2D.Raycast(_myTransform.position, direction, _radius, _wallsLayerMask))
                 {
-                    case typeofEnemy.Fleeing: { GetComponentInParent<FleeingEnemyMovement>().ExecuteFleeingEnemyMovement(); break; }
-                    case typeofEnemy.CAC: { GetComponentInParent<NavMeshAgent>().enabled = true; GetComponentInParent<MeleeMovement>().ExecuteMeleeEnemyMovement();  GetComponentInParent<MeleeAttack>().ExecuteMeleeAttack(); break; }
-                    case typeofEnemy.Range: { GetComponentInParent<RangeMovement>().ExecuteRangeEnemyMovement(); GetComponentInParent<RangeAttack>().ExecuteRangeAttack(); break; }
-                    case typeofEnemy.Necromancer: { GetComponentInParent<NecromancerController>().ExecuteNecromancerController(); break; }
+                    switch (_thisTypeOfEnemy)
+                    {
+                        case typeofEnemy.Fleeing: { GetComponentInParent<FleeingEnemyMovement>().ExecuteFleeingEnemyMovement(); break; }
+                        case typeofEnemy.CAC: { GetComponentInParent<NavMeshAgent>().enabled = true; GetComponentInParent<MeleeMovement>().ExecuteMeleeEnemyMovement(); GetComponentInParent<MeleeAttack>().ExecuteMeleeAttack(); break; }
+                        case typeofEnemy.Range: { GetComponentInParent<RangeMovement>().ExecuteRangeEnemyMovement(); GetComponentInParent<RangeAttack>().ExecuteRangeAttack(); break; }
+                        case typeofEnemy.Necromancer: { GetComponentInParent<NecromancerController>().ExecuteNecromancerController(); break; }
+                    }
+                    _myState = DetectStates.Detected;
                 }
-                this.gameObject.SetActive(false);
             }
+        }
+        else if(sala.myState == SalaManager.SalaStates.Inactiva)
+        {
+            switch (_thisTypeOfEnemy)
+            {
+                case typeofEnemy.Fleeing: { GetComponentInParent<FleeingEnemyMovement>().enabled = false; break; }
+                case typeofEnemy.CAC: { GetComponentInParent<NavMeshAgent>().enabled = false; GetComponentInParent<MeleeMovement>().StopMeleeEnemyMovement(); GetComponentInParent<MeleeAttack>().enabled = false; break; }
+                case typeofEnemy.Range: { GetComponentInParent<RangeMovement>().enabled = false; GetComponentInParent<RangeAttack>().enabled = false; break; }
+                case typeofEnemy.Necromancer: { GetComponentInParent<NecromancerController>().enabled = false; break; }
+            }
+            _myState = DetectStates.Stand;
         }
     }
     #endregion
@@ -47,5 +65,6 @@ public class DetectPlayer : MonoBehaviour
         _myCircleCollider2D = GetComponent<CircleCollider2D>();
         _radius = _myCircleCollider2D.radius;
         _wallsLayerMask = 1 << 8;
+        _myState = DetectStates.Inactive;
     }
 }
