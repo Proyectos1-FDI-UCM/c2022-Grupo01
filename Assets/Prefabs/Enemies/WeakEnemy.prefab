@@ -195,7 +195,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6708671370522219188}
   - component: {fileID: 497235649477632467}
-  - component: {fileID: 3125673863405521836}
   - component: {fileID: -7528552641812810541}
   - component: {fileID: 5924943474055698415}
   - component: {fileID: 9195848397771939019}
@@ -203,6 +202,8 @@ GameObject:
   - component: {fileID: -1881989702862749291}
   - component: {fileID: -5273713187421605913}
   - component: {fileID: 7022313987385209352}
+  - component: {fileID: -8675844643101548979}
+  - component: {fileID: 7033554723307130263}
   m_Layer: 7
   m_Name: WeakEnemy
   m_TagString: Untagged
@@ -237,24 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f700b2998cbfc164fb528f8a904e4802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _life: {fileID: 3125673863405521836}
---- !u!114 &3125673863405521836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6708671370522219186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf91290141004eb43af386b0eda5513e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxLife: 10
-  animator: {fileID: 6708671369809335469}
-  sala: {fileID: 0}
-  _currentLife: 0
-  dead: 0
+  _life: {fileID: -8675844643101548979}
 --- !u!114 &-7528552641812810541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,7 +368,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!195 &-5273713187421605913
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -421,3 +405,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timeToBeElapsed: 0.3
   _animator: {fileID: 9195848397771939019}
+--- !u!114 &-8675844643101548979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6708671370522219186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf91290141004eb43af386b0eda5513e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLife: 10
+  animator: {fileID: 9195848397771939019}
+  sala: {fileID: 0}
+  _currentLife: 0
+  dead: 0
+--- !u!114 &7033554723307130263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6708671370522219186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcd1928f1b824ec4c8198db2dff7dbd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sala: {fileID: 0}
+  _thisTypeOfEnemy: 0

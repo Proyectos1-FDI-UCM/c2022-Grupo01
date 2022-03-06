@@ -6,8 +6,9 @@ public class SalaManager : MonoBehaviour
 {
      
     
-    
-    public List<Door> _listOfDoors;
+    [SerializeField]
+    private List<Door> _listOfDoors;
+    [SerializeField]
     private List<EnemyLifeComponent> _listOfEnemies;
     private List<Vector3> _listEnemyPosition;
     public enum SalaStates {Inicial, Inactiva, Activa,Completada};
@@ -29,6 +30,7 @@ public class SalaManager : MonoBehaviour
         }
         if (_enemy != null)
         {
+            
             _enemy.sala = this;
             _enemy.gameObject.GetComponentInChildren<DetectPlayer>().sala = this;
             _enemy.Register();
