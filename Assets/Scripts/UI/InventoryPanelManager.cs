@@ -7,7 +7,7 @@ public class InventoryPanelManager : MonoBehaviour
 {
     #region parameters
     [SerializeField] private int _spaceBetweenItemsX, _spaceBetweenItemsY, _columns, _xStart, _yStart;
-    [SerializeField] private GameObject _passiveInventoryPrefab, _activeInventoryPrefab;
+    [SerializeField] private GameObject _passiveInventoryPrefab, _activeInventoryPrefab, prueba;
     List<GameObject> passiveItemsDisplayed = new List<GameObject>();
     [HideInInspector]public GameObject activeItemDisplayed;
     #endregion
@@ -72,7 +72,7 @@ public class InventoryPanelManager : MonoBehaviour
     public Vector3 GetActiveSlotPosition()
     {
         //return new Vector3(_activeXPos, _activeYPos, 0f);
-        return transform.GetChild(0).GetComponentInChildren<RectTransform>().localPosition;
+        return prueba.GetComponent<RectTransform>().localPosition;
     }
 
     void Start()
