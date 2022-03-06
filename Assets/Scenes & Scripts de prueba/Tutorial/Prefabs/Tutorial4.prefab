@@ -4645,7 +4645,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 59ab80fd79922bf429d6b8c214487459, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7618,9 +7618,9 @@ GameObject:
   - component: {fileID: 2766405236064818615}
   - component: {fileID: 2766405236064818614}
   - component: {fileID: 4113503311630759275}
-  - component: {fileID: 7557668082712611515}
+  - component: {fileID: 2970248296691538771}
   m_Layer: 0
-  m_Name: Sala 2
+  m_Name: Tutorial4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7707,7 +7707,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 28, y: 14}
   m_EdgeRadius: 0
---- !u!114 &7557668082712611515
+--- !u!114 &2970248296691538771
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

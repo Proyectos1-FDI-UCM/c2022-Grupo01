@@ -5283,7 +5283,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 59ab80fd79922bf429d6b8c214487459, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5338,10 +5338,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2265917063689777532}
   - component: {fileID: 2265917063689777533}
-  - component: {fileID: 171339059}
   - component: {fileID: 1743901088}
+  - component: {fileID: 5792392504148723744}
   m_Layer: 0
-  m_Name: Sala 1
+  m_Name: Tutorial3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5389,19 +5389,6 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &171339059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2265917063689777506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43fe3db3416112f408f3ed6c3cd515ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myState: 0
 --- !u!61 &1743901088
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5428,6 +5415,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 28, y: 14}
   m_EdgeRadius: 0
+--- !u!114 &5792392504148723744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2265917063689777506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43fe3db3416112f408f3ed6c3cd515ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listOfDoors: []
+  myState: 0
 --- !u!1 &2265917064019167231
 GameObject:
   m_ObjectHideFlags: 0
@@ -7810,7 +7811,7 @@ PrefabInstance:
     - target: {fileID: -7724965039430733357, guid: 4296ff90aa50e1e4d8d569a1ced23907, type: 3}
       propertyPath: sala
       value: 
-      objectReference: {fileID: 171339059}
+      objectReference: {fileID: 0}
     - target: {fileID: -817125828148600688, guid: 4296ff90aa50e1e4d8d569a1ced23907, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -7938,7 +7939,7 @@ PrefabInstance:
     - target: {fileID: 6261920538391311320, guid: 1bdb760a04770474ea05d94d0cc6dd88, type: 3}
       propertyPath: sala
       value: 
-      objectReference: {fileID: 171339059}
+      objectReference: {fileID: 0}
     - target: {fileID: 6261920538391311321, guid: 1bdb760a04770474ea05d94d0cc6dd88, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -7980,7 +7981,7 @@ PrefabInstance:
     - target: {fileID: -7724965039430733357, guid: 4296ff90aa50e1e4d8d569a1ced23907, type: 3}
       propertyPath: sala
       value: 
-      objectReference: {fileID: 171339059}
+      objectReference: {fileID: 0}
     - target: {fileID: -817125828148600688, guid: 4296ff90aa50e1e4d8d569a1ced23907, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -8058,7 +8059,7 @@ PrefabInstance:
     - target: {fileID: -7724965039430733357, guid: 4296ff90aa50e1e4d8d569a1ced23907, type: 3}
       propertyPath: sala
       value: 
-      objectReference: {fileID: 171339059}
+      objectReference: {fileID: 0}
     - target: {fileID: -817125828148600688, guid: 4296ff90aa50e1e4d8d569a1ced23907, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -8148,7 +8149,7 @@ PrefabInstance:
     - target: {fileID: 6261920538391311320, guid: 1bdb760a04770474ea05d94d0cc6dd88, type: 3}
       propertyPath: sala
       value: 
-      objectReference: {fileID: 171339059}
+      objectReference: {fileID: 0}
     - target: {fileID: 6261920538391311321, guid: 1bdb760a04770474ea05d94d0cc6dd88, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -8193,7 +8194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4859458526044349534, guid: 1ae6ce9fcb64138418817648f50ff174, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.402317
+      value: -16.38
       objectReference: {fileID: 0}
     - target: {fileID: 4859458526044349534, guid: 1ae6ce9fcb64138418817648f50ff174, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8256,7 +8257,7 @@ PrefabInstance:
     - target: {fileID: 9191831522005992301, guid: 2ef4148efb197954594ebac486b53e9e, type: 3}
       propertyPath: sala
       value: 
-      objectReference: {fileID: 171339059}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ef4148efb197954594ebac486b53e9e, type: 3}
 --- !u!4 &2376785848708590339 stripped
@@ -8315,7 +8316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4859458526044349534, guid: 1ae6ce9fcb64138418817648f50ff174, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.479693
+      value: 6.54
       objectReference: {fileID: 0}
     - target: {fileID: 4859458526044349534, guid: 1ae6ce9fcb64138418817648f50ff174, type: 3}
       propertyPath: m_LocalPosition.y
