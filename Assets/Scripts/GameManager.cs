@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private FollowComponent _cam;
     [SerializeField]
-    private UI_Manager _uiManager;
+    public UI_Manager _uiManager;
 
     private List<WeakEnemy> _listOfWeakEnemies;
     //private WeakEnemy _weakEnemies;
@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public Vector3 _playerDirection, _necroPosition;
     public int add = 0;
     public bool vivo;
+    public List<GameObject> itemList;
     private float cooldown = 2.5f;
     private float _elapsedTime = 0f;
 

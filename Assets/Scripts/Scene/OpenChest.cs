@@ -24,7 +24,7 @@ public class OpenChest : MonoBehaviour
 
     private void Start()
     {
-        //_objectHeld = GameManager.Instance.itemList[Random.Range(0, GameManager.Instance.itemList.Length + 1)];
+        _objectHeld = GameManager.Instance.itemList[Random.Range(0, GameManager.Instance.itemList.Count)];
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -62,6 +62,7 @@ public class OpenChest : MonoBehaviour
                 GetComponent<SpriteRenderer>().sprite = _newSprite;
                 _shadowObject.GetComponent<SpriteRenderer>().sprite = _newOpenedSprite;
                 Instantiate(_objectHeld, transform.position + _offset, Quaternion.identity);
+                _chestOpen = false;
             }
         }
 

@@ -31,8 +31,9 @@ public class PlayerLife : MonoBehaviour
         else if(_playerManager.myLifeState == PlayerManager.LifeStates.HolyFlotador)
         {
             _playerManager.myLifeState = PlayerManager.LifeStates.Normal;   // Si tiene escudos hay que comprobar en que estado está, pero por ahora es así
+            HolyFlotadorImage.Instance.enabled = false;
         }
-	}
+    }
 
     public void SetMaxHealth(float maxHealthToAdd)
     {

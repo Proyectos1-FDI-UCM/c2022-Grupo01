@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HolyFlotadorPasivo : PassiveObject
 {
@@ -9,6 +10,7 @@ public class HolyFlotadorPasivo : PassiveObject
     {
         base.Activate();
         PlayerManager.Instance.myLifeState = PlayerManager.LifeStates.HolyFlotador;
+        HolyFlotadorImage.Instance.enabled = true;
     }
     #endregion
 }
