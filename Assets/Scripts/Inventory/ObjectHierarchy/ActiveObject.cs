@@ -20,6 +20,5 @@ public class ActiveObject : Object
         GameObject oldOBject = Instantiate(activePrefab, PlayerManager.Instance._playerPosition, Quaternion.identity);
         oldOBject.name = Inventory.Instance.activeItem.name;
         oldOBject.SetActive(true);
-         
     }
 }

@@ -9,6 +9,7 @@ public class ActiveInventoryPanelManager : MonoBehaviour
     [SerializeField] private GameObject _activeInventoryPrefab;
     [HideInInspector] public GameObject activeItemDisplayed;
     private static ActiveInventoryPanelManager _instance;
+    private GameObject obj2;
     public static ActiveInventoryPanelManager Instance
     {
         get { return _instance; }
@@ -18,7 +19,7 @@ public class ActiveInventoryPanelManager : MonoBehaviour
     {
         if (activeItemDisplayed != null)
         {
-            var obj2 = Instantiate(_activeInventoryPrefab, Vector3.zero, Quaternion.identity, transform);
+            obj2 = Instantiate(_activeInventoryPrefab, Vector3.zero, Quaternion.identity, transform);
             obj2.GetComponent<RectTransform>().localPosition = GetActiveSlotPosition();
             activeItemDisplayed = Inventory.Instance.activeItem;
         }
@@ -28,7 +29,7 @@ public class ActiveInventoryPanelManager : MonoBehaviour
     {
         if (activeItemDisplayed != Inventory.Instance.activeItem && activeItemDisplayed == null)
         {
-            var obj2 = Instantiate(_activeInventoryPrefab, Vector3.zero, Quaternion.identity, transform);
+            obj2 = Instantiate(_activeInventoryPrefab, Vector3.zero, Quaternion.identity, transform);
             obj2.transform.GetChild(0).GetComponentInChildren<Image>().sprite = Inventory.Instance.activeItem.GetComponent<SpriteRenderer>().sprite;
 
             obj2.GetComponent<RectTransform>().localPosition = GetActiveSlotPosition();
@@ -37,9 +38,8 @@ public class ActiveInventoryPanelManager : MonoBehaviour
         }
         else if (activeItemDisplayed != Inventory.Instance.activeItem && activeItemDisplayed != null)
         {
-            Debug.Log("EEeeeeeeeeeeeeee");
             activeItemDisplayed = Inventory.Instance.activeItem;
-            _activeInventoryPrefab.GetComponentInChildren<Image>().sprite = activeItemDisplayed.GetComponent<SpriteRenderer>().sprite;
+            obj2.transform.GetChild(0).GetComponentInChildren<Image>().sprite = activeItemDisplayed.GetComponent<SpriteRenderer>().sprite;
         }
     }
 
@@ -57,10 +57,5 @@ public class ActiveInventoryPanelManager : MonoBehaviour
     void Start()
     {
         CreateActiveDisplay();
-    }
-
-    void Update()
-    {
-        UpdateActiveDisplay();
     }
 }

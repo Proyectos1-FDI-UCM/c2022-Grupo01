@@ -26,13 +26,14 @@ public class PickUpObjects : MonoBehaviour
         if (item.GetComponent<PassiveObject>() != null) 
         { 
             Inventory.Instance.passiveItemList.Add(item.gameObject);
-             item.GetComponent<PassiveObject>().Activate();
+            item.GetComponent<PassiveObject>().Activate();
         }
         else if (item.GetComponent<ActiveObject>() != null)
         {
             if (activeObjectPickedUp) Inventory.Instance.activeItem.GetComponent<ActiveObject>().ChangeActiveObject();
             Destroy(Inventory.Instance.activeItem);
             Inventory.Instance.activeItem = item.gameObject.GetComponent<ActiveObject>().activePrefab;
+            ActiveInventoryPanelManager.Instance.UpdateActiveDisplay();
             item.GetComponent<ActiveObject>().pickable = false;
             activeObjectPickedUp = true;
         }

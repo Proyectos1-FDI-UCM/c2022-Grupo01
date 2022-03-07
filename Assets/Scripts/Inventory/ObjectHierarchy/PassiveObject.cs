@@ -65,5 +65,6 @@ public class PassiveObject : Object
                 }
             }
         }
+        PassiveInventoryPanelManager.Instance.UpdatePassiveDisplay();
     }
 }

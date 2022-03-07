@@ -54,9 +54,4 @@ public class PassiveInventoryPanelManager : MonoBehaviour
     {
         CreatePassiveDisplay();
     }
-
-    void Update()
-    {
-        UpdatePassiveDisplay();
-    }
 }
