@@ -7,14 +7,14 @@ public class Pomper : MonoBehaviour
     #region parameters
     [SerializeField]
     private float _cooldownTime;
-    [SerializeField]
-    private GameObject _bubblePrefab;
+    [HideInInspector]
+    public GameObject _bubblePrefab;
     [SerializeField]
     private Vector3 _instantiateOffset = new Vector3 (-0.3f, 0.78f, 0);
     #endregion
     #region properties
-    private float _elapsedTime;
     public bool _bubbleActive;
+    private float _elapsedTime;
     #endregion
     #region references
     private Transform _myTransform;
@@ -40,7 +40,7 @@ public class Pomper : MonoBehaviour
             if(_elapsedTime > _cooldownTime)
             {
                 _bubbleActive = true;
-                Vector3 instantiatePosition = _myTransform.position + _instantiateOffset;
+                Vector3 instantiatePosition = PlayerManager.Instance._playerPosition + _instantiateOffset;
                 GameObject bubble = Instantiate(_bubblePrefab, instantiatePosition, Quaternion.identity);
                 bubble.GetComponent<BubbleAttack>().pompero = this;
             }

@@ -18,6 +18,8 @@ public class ActiveObject : Object
     {
         Debug.Log("Cambiado Objeto Activo");
         GameObject oldOBject = Instantiate(activePrefab, PlayerManager.Instance._playerPosition, Quaternion.identity);
+        oldOBject.name = Inventory.Instance.activeItem.name;
         oldOBject.SetActive(true);
+         
     }
 }

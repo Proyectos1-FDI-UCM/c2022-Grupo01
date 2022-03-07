@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 	#region parameters
-	public float movementSpeed = 10;
+	public int movementSpeed = 10;
 
 	[SerializeField]
     private int rollSpeed = 20, hookSpeed = 2, rango = 20;
@@ -89,10 +89,11 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    public void ModifyPlayerSpeed(float speed)
+    public void ModifyPlayerSpeed(int speed)
     {
         movementSpeed += speed;
         _playerManager.UpdateSpeed(movementSpeed);
+        rollSpeed = 2 * movementSpeed;
     }
     #endregion
 

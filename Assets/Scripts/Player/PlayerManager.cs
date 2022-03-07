@@ -88,7 +88,7 @@ public class PlayerManager : MonoBehaviour
         _playerAttack.SetRangeDamage(newPlayerRangeDamage);
 
     }
-    public void ChangePlayerSpeed(float speed)
+    public void ChangePlayerSpeed(int speed)
     {
         _playerMovement.ModifyPlayerSpeed(speed);
     }
