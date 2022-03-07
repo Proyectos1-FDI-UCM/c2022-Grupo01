@@ -22,6 +22,7 @@ public class RangeMovement : MonoBehaviour
     {
         this.enabled = true;
     }
+   
     #endregion
     #region references
     private Transform _myTransform;
@@ -40,7 +41,7 @@ public class RangeMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+   /* void Update()
     {
         Vector3 direction = (_myTransform.position - _myPlayerManager._playerPosition).normalized;
         float distance = (_myTransform.position - _myPlayerManager._playerPosition).magnitude;
@@ -73,6 +74,7 @@ public class RangeMovement : MonoBehaviour
         {
             _rb.MovePosition(_myTransform.position - direction * speed * Time.deltaTime);
         }
+        
         _elapsedTime += Time.deltaTime;
-    }
+    }*/
 }

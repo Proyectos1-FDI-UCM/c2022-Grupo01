@@ -60,8 +60,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd1928f1b824ec4c8198db2dff7dbd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sala: {fileID: 0}
+  _myState: 0
   _thisTypeOfEnemy: 1
-  _wallsLayerMask: 8
 --- !u!1 &6261920538391311324
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,9 +210,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf91290141004eb43af386b0eda5513e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 100
+  maxLife: 10
   animator: {fileID: 6261920538391311323}
+  sala: {fileID: 0}
   _currentLife: 0
+  dead: 0
+  ID: 0
 --- !u!50 &6261920538391311301
 Rigidbody2D:
   serializedVersion: 4
@@ -232,7 +236,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!114 &6261920538391311300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,11 +250,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallDistanceOffset: 2
-  _speed: 2
   _distanceFlee: 5
   _raycastTime: 0.5
-  _wallsLayerMask: 0
-  _targetTransform: {fileID: 0}
+  speed: 0
 --- !u!114 &105687533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,7 +269,6 @@ MonoBehaviour:
   _cooldownTime: 2
   _attackOffset: 1
   _bulletPrefab: {fileID: 4258877983288083039, guid: eea5681cc0da0654b8467b54ede86151, type: 3}
-  _playerTransform: {fileID: 0}
   _myTransform: {fileID: 6261920538391311321}
 --- !u!114 &1108783045
 MonoBehaviour:
@@ -281,4 +282,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b141e618eac92d24f9be545a8ecfa24a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _touchDamage: 1
+  _touchDamage: 10

@@ -54,11 +54,12 @@ public class SalaManager : MonoBehaviour
     }
     public void Reload()
     {
-        int i = 0;
+        
         foreach(EnemyLifeComponent enemy in _listOfEnemies)
         {
-            enemy.gameObject.transform.position = _listEnemyPosition[i];
-            i++;
+            enemy.gameObject.transform.position = _listEnemyPosition[enemy.ID];
+            enemy.gameObject.GetComponentInChildren<DetectPlayer>().Desactivate() ;
+            
         }
     }
 
@@ -76,6 +77,7 @@ public class SalaManager : MonoBehaviour
     {
         
         _listOfEnemies.Add(enemy);
+        enemy.ID = _listOfEnemies.Count - 1;
         _listEnemyPosition.Add(enemy.gameObject.transform.position);
         Debug.Log("enemy: " + _listOfEnemies.Count);
     }
@@ -83,7 +85,7 @@ public class SalaManager : MonoBehaviour
     public void OnEnemyDies( EnemyLifeComponent enemy)
     {
         _listOfEnemies.Remove(enemy);
-        _listEnemyPosition.Remove(enemy.gameObject.transform.position);
+        //_listEnemyPosition.Remove(_listEnemyPosition[enemy.ID]);
     }
 
     public void RegisterDoor(Door _door)
