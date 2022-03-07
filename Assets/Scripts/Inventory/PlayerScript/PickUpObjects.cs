@@ -7,6 +7,8 @@ public class PickUpObjects : MonoBehaviour
     [SerializeField] private float _pickUpRange = 2f;
     [SerializeField] private LayerMask _objectLayer;
 
+    private bool activeObjectPickedUp = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -25,11 +27,13 @@ public class PickUpObjects : MonoBehaviour
         { 
             Inventory.Instance.passiveItemList.Add(item.gameObject); 
         }
-        else if (item.GetComponent<ActiveObject>() != null && item.GetComponent<ActiveObject>().pickable)
+        else if (item.GetComponent<ActiveObject>() != null)
         {
-            if (Inventory.Instance.activeItem != null) Inventory.Instance.activeItem.GetComponent<ActiveObject>().ChangeActiveObject();
-            Inventory.Instance.activeItem = item.gameObject;
+            if (activeObjectPickedUp) Inventory.Instance.activeItem.GetComponent<ActiveObject>().ChangeActiveObject();
+            Destroy(Inventory.Instance.activeItem);
+            Inventory.Instance.activeItem = item.gameObject.GetComponent<ActiveObject>().activePrefab;
             item.GetComponent<ActiveObject>().pickable = false;
+            activeObjectPickedUp = true;
         }
         item.gameObject.SetActive(false);
         //else if (item.GetComponent<ActiveObject>() != null)
