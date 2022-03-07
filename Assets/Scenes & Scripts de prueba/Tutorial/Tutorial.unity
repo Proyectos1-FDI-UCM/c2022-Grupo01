@@ -265,71 +265,6 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1749041360}
---- !u!1001 &63211253
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1467310330}
-    m_Modifications:
-    - target: {fileID: -3118081802271183372, guid: df0a622efa618ed44bafd2587da4ab7a, type: 3}
-      propertyPath: m_Size.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1089514820373175035, guid: df0a622efa618ed44bafd2587da4ab7a, type: 3}
-      propertyPath: textoTutorial
-      value: 
-      objectReference: {fileID: 977980258}
-    - target: {fileID: 3630381811472245964, guid: df0a622efa618ed44bafd2587da4ab7a, type: 3}
-      propertyPath: m_Name
-      value: TriggerTutorial2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5553695288948322780, guid: df0a622efa618ed44bafd2587da4ab7a, type: 3}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 5553695288948322780, guid: df0a622efa618ed44bafd2587da4ab7a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -18.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5553695288948322780, guid: df0a622efa618ed44bafd2587da4ab7a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -9.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5553695288948322780, guid: df0a622efa618ed44bafd2587da4ab7a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5553695288948322780, guid: df0a622efa618ed44bafd2587da4ab7a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5553695288948322780, guid: df0a622efa618ed44bafd2587da4ab7a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5553695288948322780, guid: df0a622efa618ed44bafd2587da4ab7a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5553695288948322780, guid: df0a622efa618ed44bafd2587da4ab7a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5553695288948322780, guid: df0a622efa618ed44bafd2587da4ab7a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5553695288948322780, guid: df0a622efa618ed44bafd2587da4ab7a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5553695288948322780, guid: df0a622efa618ed44bafd2587da4ab7a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: df0a622efa618ed44bafd2587da4ab7a, type: 3}
 --- !u!1 &115552826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,7 +1109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3871545353054597204, guid: f3f7e6b91759c6e48b8093753b59dc65, type: 3}
       propertyPath: m_Name
-      value: Tutorial1
+      value: Sala 1
       objectReference: {fileID: 0}
     - target: {fileID: 5024528196160128967, guid: f3f7e6b91759c6e48b8093753b59dc65, type: 3}
       propertyPath: m_Enabled
@@ -1543,8 +1478,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 2054891436}
   _playerGun: {fileID: 247836500}
-  _necromancer: {fileID: 0}
-  _weakEnemy: {fileID: 0}
+  _necromancer: {fileID: 4826418600712077422, guid: 4875bdc361110b640809d552878c4600, type: 3}
+  _weakEnemy: {fileID: 6708671370522219186, guid: 7a65554a7f8e37d429dc0823da17a081, type: 3}
   _chest: {fileID: 0}
   _cam: {fileID: 950854672}
   _uiManager: {fileID: 778536840}
@@ -1626,7 +1561,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2265917063689777506, guid: 0849cb3afddec9f4c968688577720c4d, type: 3}
       propertyPath: m_Name
-      value: Tutorial3
+      value: Sala 3
       objectReference: {fileID: 0}
     - target: {fileID: 2265917063689777532, guid: 0849cb3afddec9f4c968688577720c4d, type: 3}
       propertyPath: m_RootOrder
@@ -2006,7 +1941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2766405236064818601, guid: 21183449524d1d44b9a01ab69f172f04, type: 3}
       propertyPath: m_Name
-      value: Tutorial4
+      value: Sala 4
       objectReference: {fileID: 0}
     - target: {fileID: 2766405236064818615, guid: 21183449524d1d44b9a01ab69f172f04, type: 3}
       propertyPath: m_RootOrder
@@ -2633,6 +2568,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1780533405847854055, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 3871545351482711993, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[0].x
       value: 10.99997
@@ -2844,7 +2783,7 @@ PrefabInstance:
     - target: {fileID: 3871545352578418370, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[12].m_Data
       value: 
-      objectReference: {fileID: 7145537068944724988, guid: f7b37b91088c7d44b98c5e710477bd39, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3871545352578418370, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[18].m_Data
       value: 
@@ -2863,7 +2802,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3871545352578418370, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[12].m_RefCount
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871545352578418370, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[13].m_RefCount
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3871545352578418370, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[26].m_RefCount
@@ -2883,7 +2826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3871545352578418370, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
       propertyPath: m_Tiles.Array.data[91].second.m_TileSpriteIndex
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3871545352578418381, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.size
@@ -4003,8 +3946,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3871545353054597204, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
       propertyPath: m_Name
-      value: Tutorial2
+      value: Sala 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6537452282376401088, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
+      propertyPath: textoTutorial
+      value: 
+      objectReference: {fileID: 977980258}
     - target: {fileID: 9141776230932755533, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -4012,11 +3959,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
---- !u!4 &1467310330 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3871545353054597194, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
-  m_PrefabInstance: {fileID: 1467310329}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1518656204
 GameObject:
   m_ObjectHideFlags: 0
