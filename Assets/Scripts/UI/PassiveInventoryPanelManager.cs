@@ -9,6 +9,11 @@ public class PassiveInventoryPanelManager : MonoBehaviour
     [SerializeField] private int _spaceBetweenItemsX, _spaceBetweenItemsY, _columns, _xStart, _yStart;
     [SerializeField] private GameObject _passiveInventoryPrefab;
     List<GameObject> passiveItemsDisplayed = new List<GameObject>();
+    private static PassiveInventoryPanelManager _instance;
+    public static PassiveInventoryPanelManager Instance
+    {
+        get { return _instance; }
+    }
     #endregion
 
     public void CreatePassiveDisplay()
@@ -38,6 +43,11 @@ public class PassiveInventoryPanelManager : MonoBehaviour
     public Vector3 GetPassiveSlotPosition(int i)
     {
         return new Vector3(_xStart + (_spaceBetweenItemsX * (i % _columns)), _yStart + (-_spaceBetweenItemsY * (i / _columns)), 0f);
+    }
+
+    void Awake()
+    {
+        _instance = this;
     }
 
     void Start()

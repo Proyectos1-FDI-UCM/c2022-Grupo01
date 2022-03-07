@@ -8,6 +8,11 @@ public class ActiveInventoryPanelManager : MonoBehaviour
     [SerializeField] private float _xStart, _yStart;
     [SerializeField] private GameObject _activeInventoryPrefab;
     [HideInInspector] public GameObject activeItemDisplayed;
+    private static ActiveInventoryPanelManager _instance;
+    public static ActiveInventoryPanelManager Instance
+    {
+        get { return _instance; }
+    }
 
     public void CreateActiveDisplay()
     {
@@ -32,6 +37,7 @@ public class ActiveInventoryPanelManager : MonoBehaviour
         }
         else if (activeItemDisplayed != Inventory.Instance.activeItem && activeItemDisplayed != null)
         {
+            Debug.Log("EEeeeeeeeeeeeeee");
             activeItemDisplayed = Inventory.Instance.activeItem;
             _activeInventoryPrefab.GetComponentInChildren<Image>().sprite = activeItemDisplayed.GetComponent<SpriteRenderer>().sprite;
         }
@@ -41,6 +47,11 @@ public class ActiveInventoryPanelManager : MonoBehaviour
     {
         return new Vector3(_xStart, _yStart, 0f);
         //return transform.GetChild(0).GetComponentInChildren<RectTransform>().localPosition;
+    }
+
+    void Awake()
+    {
+        _instance = this;
     }
 
     void Start()
