@@ -25,7 +25,8 @@ public class PickUpObjects : MonoBehaviour
 	{
         if (item.GetComponent<PassiveObject>() != null) 
         { 
-            Inventory.Instance.passiveItemList.Add(item.gameObject); 
+            Inventory.Instance.passiveItemList.Add(item.gameObject);
+             item.GetComponent<PassiveObject>().Activate();
         }
         else if (item.GetComponent<ActiveObject>() != null)
         {
