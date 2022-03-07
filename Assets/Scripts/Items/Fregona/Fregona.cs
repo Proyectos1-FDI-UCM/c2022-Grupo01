@@ -6,7 +6,7 @@ public class Fregona : MonoBehaviour
 {
     #region parameters
     [SerializeField] private float timeToComplete = 0.5f;
-    [SerializeField] private int maxUses = 3;
+    [HideInInspector] public int maxUses;
     #endregion
     #region properties
     private float _elapsedTime;
@@ -22,6 +22,7 @@ public class Fregona : MonoBehaviour
     private void Start()
     {
         _myTransform = transform;
+        _uses = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -46,7 +47,7 @@ public class Fregona : MonoBehaviour
     private void Update()
     {
         _myTransform.position = PlayerManager.Instance._playerPosition;
-        if (fregar)
+        if (_uses < maxUses && fregar)
         {
             if (Input.GetKey(KeyCode.Q))
             {
@@ -65,9 +66,5 @@ public class Fregona : MonoBehaviour
         _newPuddle.UsedPuddle();
         _elapsedTime = 0;
         _uses++;
-        if (_uses == maxUses)
-        {
-            enabled = false;
-        }
     }
 }
