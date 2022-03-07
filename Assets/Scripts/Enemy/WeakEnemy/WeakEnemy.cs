@@ -18,6 +18,7 @@ public class WeakEnemy : MonoBehaviour
         {
             //hacer daño
             Destroy(gameObject);
+            _life.sala.OnEnemyDies(_life);
             GameManager.Instance.OnWeakDies(this);
            
         }

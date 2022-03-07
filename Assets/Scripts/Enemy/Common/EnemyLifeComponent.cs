@@ -16,9 +16,12 @@ public class EnemyLifeComponent : MonoBehaviour
 	private BolsaDeHielo ice;
 	public bool dead = false;
 
+	public int ID;
+
     void Start()
     {
 		_currentLife = maxLife;
+		
     }
     public void Register()
 	{
