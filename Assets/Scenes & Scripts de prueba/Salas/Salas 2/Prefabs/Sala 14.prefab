@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2625046166337351692}
   - component: {fileID: 2625046166337351693}
   - component: {fileID: 2625046166337351694}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Vacio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1812,7 +1812,7 @@ GameObject:
   - component: {fileID: 2625046166420451840}
   - component: {fileID: 2625046166420451841}
   - component: {fileID: 2625046166420451842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collidable_Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
