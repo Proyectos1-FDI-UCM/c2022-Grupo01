@@ -8057,6 +8057,10 @@ PrefabInstance:
       propertyPath: sala
       value: 
       objectReference: {fileID: 1118967892045799520}
+    - target: {fileID: 740009619236103039, guid: 4296ff90aa50e1e4d8d569a1ced23907, type: 3}
+      propertyPath: m_Radius
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 979439951788322032, guid: 4296ff90aa50e1e4d8d569a1ced23907, type: 3}
       propertyPath: m_Name
       value: Door
