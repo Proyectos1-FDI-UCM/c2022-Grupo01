@@ -50,10 +50,12 @@ public class FleeingEnemyMovement : MonoBehaviour
 
     void Update()
     {
-        if(_timer <= 0)
-        {
-            FleeingEnemyHiding();
-        }
+
+            if (_timer <= 0)
+            {
+                FleeingEnemyHiding();
+            }
+ 
     }
 
     private void FixedUpdate()

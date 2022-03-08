@@ -4175,7 +4175,7 @@ MonoBehaviour:
   _necromancer: {fileID: 4826418600712077422, guid: 4875bdc361110b640809d552878c4600, type: 3}
   _weakEnemy: {fileID: 6708671370522219186, guid: 7a65554a7f8e37d429dc0823da17a081, type: 3}
   _chest: {fileID: 0}
-  _cam: {fileID: 0}
+  _cam: {fileID: 950854672}
   _uiManager: {fileID: 778536840}
   _playerDirection: {x: 0, y: 0, z: 0}
   _necroPosition: {x: 0, y: 0, z: 0}

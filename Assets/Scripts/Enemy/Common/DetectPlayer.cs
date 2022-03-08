@@ -69,6 +69,8 @@ public class DetectPlayer : MonoBehaviour
     #region references
     private Transform _myTransform;
     private CircleCollider2D _myCircleCollider2D;
+    private Rigidbody2D _rb;
+    private EnemyLifeComponent _myELC;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -78,5 +80,14 @@ public class DetectPlayer : MonoBehaviour
         _radius = _myCircleCollider2D.radius;
         _wallsLayerMask = 1 << 8;
         _myState = DetectStates.Stand;
+        _rb = GetComponentInParent<Rigidbody2D>();
+        _myELC = GetComponentInParent<EnemyLifeComponent>();
+    }
+    private void Update()
+    {
+        if (_myELC.dead)
+        {
+            Desactivate();
+        }
     }
 }
