@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class FleeingEnemyDropController : MonoBehaviour
 {
-    #region parameters
-    private bool hasInstantiated = false;
+    #region properties
+    private GameObject _instantiatedBottle;
     #endregion
 
-    #region properties
-    public GameObject[] bottles;
-    public GameObject blueBottle, yellowBottle, greenBottle;
+    #region parameters
+    private bool hasInstantiated = false;
     #endregion
 
     #region references
@@ -20,9 +19,9 @@ public class FleeingEnemyDropController : MonoBehaviour
     #region methods
     public void InstantiateBottleOnDie()
     {
-        int bottleType = Random.Range(0, 3);
-
-        Instantiate(bottles[bottleType], transform.position, Quaternion.identity);
+        int rnd = Random.Range(0, 3);
+        _instantiatedBottle = GameManager.Instance.itemList[rnd];
+        Instantiate(_instantiatedBottle, transform.position, Quaternion.identity);
     }
     #endregion
 
@@ -30,7 +29,6 @@ public class FleeingEnemyDropController : MonoBehaviour
     void Start()
     {
         _fleeingEnemyLifeComponent = GetComponent<EnemyLifeComponent>();
-        bottles = new GameObject[3] {blueBottle, yellowBottle, greenBottle};
     }
 
     void Update()

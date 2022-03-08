@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ActiveObject : Object
 {
     public int maxUses;
     public GameObject activePrefab;
     public bool pickable = true;
-    //Meter atributos aquí
+    public Slider cooldownSlider;
 
     private void Start()
     {
