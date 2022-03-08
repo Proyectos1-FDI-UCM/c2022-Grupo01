@@ -6,13 +6,12 @@ public class FregonaController : MonoBehaviour
 {
     #region parameters
     [SerializeField] private float timeToComplete = 0.5f;
-    [HideInInspector] public int maxUses;
+    [HideInInspector] public int _uses = 0;
     [HideInInspector] public FregonaActivo fregonaActivo;
     #endregion
 
     #region properties
     private float _elapsedTime;
-    private int _uses = 0;
     private Puddle _puddle;
     private Puddle _newPuddle;
     private bool fregar = false;
@@ -25,7 +24,6 @@ public class FregonaController : MonoBehaviour
     private void Start()
     {
         _myTransform = transform;
-        _uses = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -50,8 +48,9 @@ public class FregonaController : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(_uses);
         _myTransform.position = PlayerManager.Instance._playerPosition;
-        if (Input.GetKey(KeyCode.Q) && _uses < maxUses && fregar)
+        if (Input.GetKey(KeyCode.Q) && _uses != 0 && fregar)
         {
             _elapsedTime += Time.deltaTime;
             if (_elapsedTime >= timeToComplete) Use(); 
@@ -63,7 +62,7 @@ public class FregonaController : MonoBehaviour
         PlayerManager.Instance.ChangePlayerLife(2 * (int)_newPuddle._touchHydrate);
         _newPuddle.UsedPuddle();
         _elapsedTime = 0;
-        _uses++;
-        GameManager.Instance.SetUsesText(maxUses-_uses);
+        _uses--;
+        GameManager.Instance.SetUsesText(_uses);
     }
 }

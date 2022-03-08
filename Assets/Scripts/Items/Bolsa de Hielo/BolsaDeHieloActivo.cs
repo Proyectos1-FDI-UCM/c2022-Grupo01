@@ -27,7 +27,7 @@ public class BolsaDeHieloActivo : ActiveObject
             bolsaDeHieloController._cooldown = cooldown;
             bolsaDeHieloController._elapsedTime = cooldown;
             bolsaDeHieloController._iceForce = _iceForce;
-            bolsaDeHieloController.maxUses = maxUses;
+            bolsaDeHieloController.uses = maxUses;
             sonCreated = true;
         }
     }
