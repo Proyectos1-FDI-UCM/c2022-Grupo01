@@ -8,7 +8,6 @@ public class UI_Manager : MonoBehaviour
 
     #region references
     [SerializeField] private Slider _healthSlider, _cooldownSlider, _secondaryHealthSlider;
-    [SerializeField] private Text _usesText;
     #endregion
 
     #region properties
@@ -44,15 +43,9 @@ public class UI_Manager : MonoBehaviour
         _cooldownSlider.gameObject.SetActive(setter);
         if(setter) _cooldownSlider.value = _cooldownSlider.maxValue;
 	}
-
-    public void SetUsesText(int uses)
-    {
-        _usesText.text = ""+uses;
-    }
     #endregion
     private void Start()
     {
         _cooldownSlider.gameObject.SetActive(false);
-        _usesText.text = "";
     }
 }

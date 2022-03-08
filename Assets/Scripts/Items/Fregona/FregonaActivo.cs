@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FregonaActivo : ActiveObject
 {
-    public override void Activate()
+	public override void Activate()
 	{
         if (!sonCreated)
         {
@@ -16,7 +16,8 @@ public class FregonaActivo : ActiveObject
             fregonaCollider.isTrigger = true;
             sonToCreate.AddComponent<Rigidbody2D>().gravityScale = 0;
             sonToCreate.AddComponent<FregonaController>();
-            sonToCreate.GetComponent<FregonaController>()._uses = maxUses;
+            sonToCreate.GetComponent<FregonaController>()._elapsedTime = cooldown;
+            sonToCreate.GetComponent<FregonaController>()._cooldown = cooldown;
             sonCreated = true;
         }
     }

@@ -10,26 +10,31 @@ public class BolsaDeHieloActivo : ActiveObject
 
 	#region references
 	[SerializeField] private GameObject iceBagPrefab;
+    private BolsaDeHieloController bolsaDeHieloController;
     #endregion
 
-    public override void Activate()
+	public override void Activate()
 	{
 		base.Activate();
 
         if (!sonCreated)
         {
             base.Activate();
-            sonToCreate = new GameObject("BolsaDeHielo");
-            sonToCreate.transform.parent = PlayerManager.Instance.player.transform;
-            sonToCreate.AddComponent<BolsaDeHieloController>();
-            BolsaDeHieloController bolsaDeHieloController = sonToCreate.GetComponent<BolsaDeHieloController>();
-            bolsaDeHieloController._icebagPrefab = iceBagPrefab;
-            bolsaDeHieloController._cooldown = cooldown;
-            bolsaDeHieloController._elapsedTime = cooldown;
-            bolsaDeHieloController._iceForce = _iceForce;
-            bolsaDeHieloController.uses = maxUses;
+            CreateSon();
             sonCreated = true;
         }
+    }
+
+    void CreateSon()
+	{
+        sonToCreate = new GameObject("BolsaDeHielo");
+        sonToCreate.transform.parent = PlayerManager.Instance.player.transform;
+        sonToCreate.AddComponent<BolsaDeHieloController>();
+        bolsaDeHieloController = sonToCreate.GetComponent<BolsaDeHieloController>();
+        bolsaDeHieloController._icebagPrefab = iceBagPrefab;
+        bolsaDeHieloController._cooldown = cooldown;
+        bolsaDeHieloController._elapsedTime = cooldown;
+        bolsaDeHieloController._iceForce = _iceForce;
     }
 
 	public override void ChangeActiveObject()

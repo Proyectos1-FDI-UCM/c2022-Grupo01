@@ -8,7 +8,6 @@ public class BolsaDeHieloController : MonoBehaviour
 	[HideInInspector] public float _iceForce = 20f;
 	[HideInInspector] public float _cooldown = 40f;
     [HideInInspector] public float _elapsedTime = 0f;
-	[HideInInspector] public int uses;
     #endregion
 
     #region properties
@@ -29,7 +28,7 @@ public class BolsaDeHieloController : MonoBehaviour
     {
 		_elapsedTime += Time.deltaTime;
 		GameManager.Instance.ShowActiveCooldown(_elapsedTime, _cooldown);
-		if (Input.GetKeyDown(KeyCode.Q) && uses != 0 &&_elapsedTime >= _cooldown) LanzaHielo();
+		if (Input.GetKeyDown(KeyCode.Q) &&_elapsedTime >= _cooldown) LanzaHielo();
 	}
 
 	public void LanzaHielo()
@@ -40,7 +39,5 @@ public class BolsaDeHieloController : MonoBehaviour
 		Rigidbody2D rb = nuevoIcebagPrefab.GetComponent<Rigidbody2D>();
 		rb.rotation = PlayerManager.Instance.gun.GetComponent<Rigidbody2D>().rotation;
 		rb.AddForce(_shotPoint.right * _iceForce, ForceMode2D.Impulse);
-		uses--;
-		GameManager.Instance.SetUsesText(uses);
 	}
 }

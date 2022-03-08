@@ -19,6 +19,8 @@ public class PlayerManager : MonoBehaviour
     public enum LifeStates { Normal, Shield, HolyFlotador };   // Añadir shields en el futuro
     //[HideInInspector]
     public LifeStates myLifeState;
+    private List<int> lastItemsID = new List<int>();
+    private List<int> lastItemsUses = new List<int>();
     #endregion
 
     #region paremeters
@@ -26,15 +28,6 @@ public class PlayerManager : MonoBehaviour
     public int uses;
     public Vector3 _playerPosition;
     public bool playerInRoll = false;
-	#endregion
-
-	#region methods
-    public void UpdateUses(int newUses)
-	{
-        Inventory.Instance.activeItem.GetComponent<ActiveObject>().UpdateUses(newUses);
-	}
-
-
 	#endregion
 
 	#region Actualizar Referencias al jugador

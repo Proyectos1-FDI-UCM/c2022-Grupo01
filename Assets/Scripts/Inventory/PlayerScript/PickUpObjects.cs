@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class PickUpObjects : MonoBehaviour
 {
-    [SerializeField] private float _pickUpRange = 2f;
+	#region parameters
+	[SerializeField] private float _pickUpRange = 2f;
     [SerializeField] private LayerMask _objectLayer;
+	#endregion
 
-    private bool activeObjectPickedUp = false;
-
-    // Update is called once per frame
-    void Update()
+	#region properties
+	private bool activeObjectPickedUp = false;
+	#endregion
+	// Update is called once per frame
+	void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
 		{
             Collider2D[] items = Physics2D.OverlapCircleAll(transform.position, _pickUpRange, _objectLayer);
-
-            //if(items.Length >= 1) PickUpObject(items[0]);
             if(items.Length >= 1) PickUpObject(items[0]);
         }
     }
@@ -36,10 +37,7 @@ public class PickUpObjects : MonoBehaviour
             ActiveInventoryPanelManager.Instance.UpdateActiveDisplay();
             item.GetComponent<ActiveObject>().pickable = false;
             activeObjectPickedUp = true;
-            if (Inventory.Instance.activeItem.GetComponent<ActiveObject>().cooldown != 0) GameManager.Instance.SetCooldownBar(true);
-            else GameManager.Instance.SetCooldownBar(false);
-            if (Inventory.Instance.activeItem.GetComponent<ActiveObject>().sonCreated) GameManager.Instance.SetUsesText(0);
-            else GameManager.Instance.SetUsesText(Inventory.Instance.activeItem.GetComponent<ActiveObject>().maxUses);
+            GameManager.Instance.SetCooldownBar(true);
         }
         item.gameObject.SetActive(false);
     }

@@ -59,13 +59,7 @@ public class GameManager : MonoBehaviour
         vivo = false;
 	}
 
-    // Cambiar esto
-    public void SetUsesText(int uses)
-    {
-        _uiManager.SetUsesText(uses);
-    }
     //Necromancer
-
     public Vector3 PlayerPosition()
     {
         _playerDirection = _player.transform.position;
@@ -74,7 +68,6 @@ public class GameManager : MonoBehaviour
     public void RegisterWeakEnemy(WeakEnemy enemyToAdd)
     {
          _listOfWeakEnemies.Add(enemyToAdd);
-        
     }
 
     public void OnWeakDies(WeakEnemy deadweak)

@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class ActiveObject : Object
 {
-    public int maxUses;
     public GameObject activePrefab;
     public bool pickable = true;
     public float cooldown = 0;
-    [HideInInspector] public int uses;
     [HideInInspector] public float _elapsedTime;
     [HideInInspector] public GameObject sonToCreate;
     [HideInInspector] public bool sonCreated = false;
@@ -26,9 +24,4 @@ public class ActiveObject : Object
         oldOBject.name = Inventory.Instance.activeItem.name;
         oldOBject.SetActive(true);
     }
-
-    public void UpdateUses(int newUses)
-	{
-        uses = newUses;
-	}
 }

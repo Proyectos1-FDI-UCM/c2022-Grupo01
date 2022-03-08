@@ -6,12 +6,13 @@ public class FregonaController : MonoBehaviour
 {
     #region parameters
     [SerializeField] private float timeToComplete = 0.5f;
-    [HideInInspector] public int _uses = 0;
     [HideInInspector] public FregonaActivo fregonaActivo;
+    [HideInInspector] public float _cooldown;
     #endregion
 
     #region properties
-    private float _elapsedTime;
+    [HideInInspector] public float _elapsedTime;
+    private float _timeUntilComplete;
     private Puddle _puddle;
     private Puddle _newPuddle;
     private bool fregar = false;
@@ -48,12 +49,14 @@ public class FregonaController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(_uses);
+        _elapsedTime += Time.deltaTime;
+        GameManager.Instance.ShowActiveCooldown(_elapsedTime, _cooldown);
         _myTransform.position = PlayerManager.Instance._playerPosition;
-        if (Input.GetKey(KeyCode.Q) && _uses != 0 && fregar)
+        if (_elapsedTime >= _cooldown && Input.GetKey(KeyCode.Q) && fregar)
         {
-            _elapsedTime += Time.deltaTime;
-            if (_elapsedTime >= timeToComplete) Use(); 
+            Debug.Log(_cooldown);
+            _timeUntilComplete += Time.deltaTime;
+            if (_timeUntilComplete >= timeToComplete) Use(); Debug.Log(_elapsedTime);
         }
     }
 
@@ -61,8 +64,7 @@ public class FregonaController : MonoBehaviour
     {
         PlayerManager.Instance.ChangePlayerLife(2 * (int)_newPuddle._touchHydrate);
         _newPuddle.UsedPuddle();
+        _timeUntilComplete = 0;
         _elapsedTime = 0;
-        _uses--;
-        GameManager.Instance.SetUsesText(_uses);
     }
 }
