@@ -31,9 +31,14 @@ public class Tutorial1 : MonoBehaviour
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		textoTutorial.SetActive(true);
-		Destroy(textoTutorial, 5f);
-		Destroy(gameObject, 5f);
-		Debug.Log("activa texto");
+		PlayerLife player = collision.gameObject.GetComponent<PlayerLife>();
+		if (player != null)
+		{
+			textoTutorial.SetActive(true);
+			Destroy(textoTutorial, 5f);
+			Destroy(gameObject, 5f);
+			Debug.Log("activa texto");
+		}
 	}
+
 }
