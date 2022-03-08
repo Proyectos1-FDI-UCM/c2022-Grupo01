@@ -56,7 +56,7 @@ public class PlayerAttack : MonoBehaviour
         // Añadido por Laura
         _myTransform = transform;
     }
-    
+
     void Update()
     {
         //cambiar esto a un inputManager
@@ -87,8 +87,8 @@ public class PlayerAttack : MonoBehaviour
 
     public void SetAttackPoint(Vector3 movement)
     {
-        if (movement.x > 0) _attackPointPosition.x = 0.5f;
-        else _attackPointPosition.x = -0.5f;
+        if (movement.x > 0) _attackPointPosition.x = attackRange;
+        else _attackPointPosition.x = -attackRange;
     }
 
     void Melee()

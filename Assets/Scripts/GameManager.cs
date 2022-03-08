@@ -60,11 +60,6 @@ public class GameManager : MonoBehaviour
 	}
 
     // Cambiar esto
-
-    public void SetUsesText()
-    {
-        _uiManager.SetUsesTextFalse();
-    }
     public void SetUsesText(int uses)
     {
         _uiManager.SetUsesText(uses);

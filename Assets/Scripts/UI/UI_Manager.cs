@@ -45,11 +45,6 @@ public class UI_Manager : MonoBehaviour
         if(setter) _cooldownSlider.value = _cooldownSlider.maxValue;
 	}
 
-    public void SetUsesTextFalse()
-	{
-        _usesText.text = "";
-	}
-
     public void SetUsesText(int uses)
     {
         _usesText.text = ""+uses;

@@ -6,7 +6,7 @@ public class AnimationOffsetScript : MonoBehaviour
 {
     public Vector3 offset;
 
-    void Update()
+    void FixedUpdate()
     {
         transform.position += offset;
     }

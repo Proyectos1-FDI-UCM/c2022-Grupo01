@@ -12069,6 +12069,14 @@ PrefabInstance:
       propertyPath: m_NavMeshData
       value: 
       objectReference: {fileID: 23800000, guid: efe5c388381235c4193fdc1621125efb, type: 2}
+    - target: {fileID: 6379979044252112874, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
+      propertyPath: textoTutorial
+      value: 
+      objectReference: {fileID: 1805878154}
+    - target: {fileID: 6537452282376401088, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
+      propertyPath: textoTutorial
+      value: 
+      objectReference: {fileID: 472713402}
     - target: {fileID: 6628566582593642398, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -12165,6 +12173,11 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &472713402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2725366017124867624, guid: 3fe57bb425a6dc2498114798150f2b92, type: 3}
+  m_PrefabInstance: {fileID: 6589438115474366365}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &520441752
 GameObject:
   m_ObjectHideFlags: 0
@@ -23889,6 +23902,11 @@ GameObject:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4867333704394828028, guid: 03cd40044f29f004ca37d7021f9e6b32, type: 3}
   m_PrefabInstance: {fileID: 4867333703965066744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1805878154 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2725366017124867624, guid: e6cf01865b9c5604689652394058120d, type: 3}
+  m_PrefabInstance: {fileID: 87307569}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1875162936
 GameObject:

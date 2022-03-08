@@ -24,7 +24,7 @@ public class PickUpObjects : MonoBehaviour
     void PickUpObject(Collider2D item)
 	{
         if (item.GetComponent<PassiveObject>() != null) 
-        { 
+        {
             Inventory.Instance.passiveItemList.Add(item.gameObject);
             item.GetComponent<PassiveObject>().Activate();
         }
@@ -38,9 +38,9 @@ public class PickUpObjects : MonoBehaviour
             activeObjectPickedUp = true;
             if (Inventory.Instance.activeItem.GetComponent<ActiveObject>().cooldown != 0) GameManager.Instance.SetCooldownBar(true);
             else GameManager.Instance.SetCooldownBar(false);
-            GameManager.Instance.SetUsesText(Inventory.Instance.activeItem.GetComponent<ActiveObject>().maxUses);
+            if (Inventory.Instance.activeItem.GetComponent<ActiveObject>().sonCreated) GameManager.Instance.SetUsesText(0);
+            else GameManager.Instance.SetUsesText(Inventory.Instance.activeItem.GetComponent<ActiveObject>().maxUses);
         }
         item.gameObject.SetActive(false);
-        //else if (item.GetComponent<ActiveObject>() != null)
     }
 }
