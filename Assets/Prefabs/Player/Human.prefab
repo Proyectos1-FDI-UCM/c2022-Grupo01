@@ -130,7 +130,7 @@ MonoBehaviour:
   icebagPrefab: {fileID: 8467541936118930963, guid: 5c698bc38c4cec04eb825f50e627dba2, type: 3}
   gunRB: {fileID: 5757689141440673754}
   meleeDamage: 20
-  shotForce: 20
+  shotForce: 40
   rangeDamage: 50
   iceForce: 20
   enemyLayers:
