@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fregona : MonoBehaviour
+public class FregonaController : MonoBehaviour
 {
     #region parameters
     [SerializeField] private float timeToComplete = 0.5f;
     [HideInInspector] public int maxUses;
+    [HideInInspector] public FregonaActivo fregonaActivo;
     #endregion
+
     #region properties
     private float _elapsedTime;
     private int _uses = 0;
@@ -15,6 +17,7 @@ public class Fregona : MonoBehaviour
     private Puddle _newPuddle;
     private bool fregar = false;
     #endregion
+    
     #region references
     private Transform _myTransform;
     #endregion
@@ -34,6 +37,7 @@ public class Fregona : MonoBehaviour
             fregar = true;
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         _puddle = collision.gameObject.GetComponent<Puddle>();
@@ -47,16 +51,10 @@ public class Fregona : MonoBehaviour
     private void Update()
     {
         _myTransform.position = PlayerManager.Instance._playerPosition;
-        if (_uses < maxUses && fregar)
+        if (Input.GetKey(KeyCode.Q) && _uses < maxUses && fregar)
         {
-            if (Input.GetKey(KeyCode.Q))
-            {
-                _elapsedTime += Time.deltaTime;
-                if (_elapsedTime >= timeToComplete)
-                {
-                    Use();
-                }
-            }
+            _elapsedTime += Time.deltaTime;
+            if (_elapsedTime >= timeToComplete) Use(); 
         }
     }
 
@@ -66,5 +64,6 @@ public class Fregona : MonoBehaviour
         _newPuddle.UsedPuddle();
         _elapsedTime = 0;
         _uses++;
+        GameManager.Instance.SetUsesText(maxUses-_uses);
     }
 }
