@@ -14,31 +14,31 @@ public class PlayerManager : MonoBehaviour
     private PlayerMovement _playerMovement;
     private Transform _playerTransform;
     #endregion
+
     #region properties
     public enum LifeStates { Normal, Shield, HolyFlotador };   // Añadir shields en el futuro
     //[HideInInspector]
     public LifeStates myLifeState;
     #endregion
 
-    #region Singleton
-    private static PlayerManager _instance;
-    public static PlayerManager Instance
-    {
-        get
-        {
-            return _instance;
-        }
-    }
-    #endregion
-
     #region paremeters
     public float health, maxHealth, meleeDamage, rangeDamage, speed;
+    public int uses;
     public Vector3 _playerPosition;
     public bool playerInRoll = false;
-    #endregion
+	#endregion
 
-    #region Actualizar Referencias al jugador
-    public void UpdateLife(float playerHealth)
+	#region methods
+    public void UpdateUses()
+	{
+
+	}
+
+
+	#endregion
+
+	#region Actualizar Referencias al jugador
+	public void UpdateLife(float playerHealth)
     {
         health = playerHealth;
     }
@@ -94,6 +94,17 @@ public class PlayerManager : MonoBehaviour
     }
     #endregion
 
+    #region Singleton
+    private static PlayerManager _instance;
+    public static PlayerManager Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+    #endregion
+
     private void Awake()
     {
         _instance = this;
@@ -112,6 +123,4 @@ public class PlayerManager : MonoBehaviour
     {
         UpdatePosition();
     }
-
-
 }

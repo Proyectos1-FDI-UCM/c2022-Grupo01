@@ -16,7 +16,7 @@ public class FregonaActivo : ActiveObject
             fregonaCollider.isTrigger = true;
             sonToCreate.AddComponent<Rigidbody2D>().gravityScale = 0;
             sonToCreate.AddComponent<FregonaController>();
-            sonToCreate.GetComponent<FregonaController>().maxUses = maxUses;
+            sonToCreate.GetComponent<FregonaController>()._uses = maxUses;
             sonCreated = true;
         }
     }
