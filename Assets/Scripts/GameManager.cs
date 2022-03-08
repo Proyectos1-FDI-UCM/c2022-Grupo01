@@ -35,16 +35,20 @@ public class GameManager : MonoBehaviour
     }
 
 	#region methodss
+    public void SetCooldownBar(bool setter)
+	{
+        _uiManager.SetCooldownBar(setter);
+	}
+
     public void ShowHealth(float health )
 	{
         _uiManager.ShowHealth(health);
 	}
-        /*  Esto no se usa mas... por ahora
-    public void ShowCooldown(float cooldown, float maxCooldown)
+
+    public void ShowActiveCooldown(float cooldown, float maxCooldown)
 	{
-        _uiManager.ShowCooldown(cooldown, maxCooldown);
+        _uiManager.ShowActiveCooldown(cooldown, maxCooldown);
 	}
-        */
 
     public void OnPlayerDie()
 	{
@@ -55,7 +59,17 @@ public class GameManager : MonoBehaviour
         vivo = false;
 	}
 
- //Necromancer
+    // Cambiar esto
+
+    public void SetUsesText()
+    {
+        _uiManager.SetUsesTextFalse();
+    }
+    public void SetUsesText(int uses)
+    {
+        _uiManager.SetUsesText(uses);
+    }
+    //Necromancer
 
     public Vector3 PlayerPosition()
     {

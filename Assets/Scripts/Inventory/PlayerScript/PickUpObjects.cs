@@ -36,6 +36,9 @@ public class PickUpObjects : MonoBehaviour
             ActiveInventoryPanelManager.Instance.UpdateActiveDisplay();
             item.GetComponent<ActiveObject>().pickable = false;
             activeObjectPickedUp = true;
+            if (Inventory.Instance.activeItem.GetComponent<ActiveObject>().cooldown != 0) GameManager.Instance.SetCooldownBar(true);
+            else GameManager.Instance.SetCooldownBar(false);
+            GameManager.Instance.SetUsesText(Inventory.Instance.activeItem.GetComponent<ActiveObject>().maxUses);
         }
         item.gameObject.SetActive(false);
         //else if (item.GetComponent<ActiveObject>() != null)

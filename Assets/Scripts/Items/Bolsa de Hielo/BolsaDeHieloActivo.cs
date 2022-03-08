@@ -4,34 +4,37 @@ using UnityEngine;
 
 public class BolsaDeHieloActivo : ActiveObject
 {
-    #region properties
-    private bool pickedUp = false;
-    private GameObject bolsaDeHielo;
-    #endregion
+    #region parameters
+    [SerializeField] private float _iceForce = 20f;
+ 	#endregion
 
-    #region references
-    [SerializeField] GameObject iceBagPrefab;
+	#region references
+	[SerializeField] private GameObject iceBagPrefab;
     #endregion
 
     public override void Activate()
 	{
 		base.Activate();
 
-        if (!pickedUp)
+        if (!sonCreated)
         {
             base.Activate();
-            bolsaDeHielo = new GameObject("BolsaDeHielo");
-            bolsaDeHielo.transform.parent = PlayerManager.Instance.player.transform;
-            bolsaDeHielo.AddComponent<BolsaDeHieloController>();
-            bolsaDeHielo.GetComponent<BolsaDeHieloController>()._icebagPrefab = iceBagPrefab;
-            bolsaDeHielo.GetComponent<BolsaDeHieloController>().maxUses = maxUses;
-            pickedUp = true;
+            sonToCreate = new GameObject("BolsaDeHielo");
+            sonToCreate.transform.parent = PlayerManager.Instance.player.transform;
+            sonToCreate.AddComponent<BolsaDeHieloController>();
+            BolsaDeHieloController bolsaDeHieloController = sonToCreate.GetComponent<BolsaDeHieloController>();
+            bolsaDeHieloController._icebagPrefab = iceBagPrefab;
+            bolsaDeHieloController._cooldown = cooldown;
+            bolsaDeHieloController._elapsedTime = cooldown;
+            bolsaDeHieloController._iceForce = _iceForce;
+            bolsaDeHieloController.maxUses = maxUses;
+            sonCreated = true;
         }
     }
 
-    public override void ChangeActiveObject()
+	public override void ChangeActiveObject()
     {
         base.ChangeActiveObject();
-        Destroy(bolsaDeHielo);
+        Destroy(sonToCreate);
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4801010468868702659}
   - component: {fileID: -9047932053170220954}
   - component: {fileID: -3243884460879451011}
+  - component: {fileID: 8813599557920049917}
   m_Layer: 14
   m_Name: PO_BolsaDeHielo
   m_TagString: Untagged
@@ -126,8 +127,32 @@ MonoBehaviour:
   type: 2
   nameOnScreen: Bolsa de Hielo
   littleDescriptionOnScreen: Granada super chula :D
-  uses: 0
   maxUses: 2
   activePrefab: {fileID: 3998425941224310982}
   pickable: 1
+  cooldown: 0
+  uses: 0
+  _elapsedTime: 0
+  sonToCreate: {fileID: 0}
+  sonCreated: 0
+  _iceForce: 20
   iceBagPrefab: {fileID: 8467541936118930963, guid: 5c698bc38c4cec04eb825f50e627dba2, type: 3}
+--- !u!95 &8813599557920049917
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3998425941224310982}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e2a60aeaf567547138d9a5a4d4a6966b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

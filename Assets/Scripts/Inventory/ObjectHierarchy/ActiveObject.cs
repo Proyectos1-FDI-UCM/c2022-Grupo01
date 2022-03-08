@@ -1,19 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ActiveObject : Object
 {
     public int maxUses;
     public GameObject activePrefab;
     public bool pickable = true;
-    public Slider cooldownSlider;
+    public float cooldown = 0;
+    [HideInInspector] public int uses;
+    [HideInInspector] public float _elapsedTime;
+    [HideInInspector] public GameObject sonToCreate;
+    [HideInInspector] public bool sonCreated = false;
 
-    private void Start()
-    {
-
-    }
 
     public virtual void Activate()
     {
