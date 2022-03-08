@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 2
+  bulletDamage: 25
   hitEffect: {fileID: 3169677042536320471, guid: 6ef6e99f9caa9334ab613b226631909f, type: 3}
   hitSpawn: {fileID: 2380980772018185133}
   bulletRB: {fileID: -6876612951411335515}
