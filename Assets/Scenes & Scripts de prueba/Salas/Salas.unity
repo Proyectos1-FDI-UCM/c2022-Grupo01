@@ -1727,6 +1727,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2265917063309405508, guid: 79f4e60bf54c39d4798b33506e40da25, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265917063309405508, guid: 79f4e60bf54c39d4798b33506e40da25, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2265917063689777506, guid: 79f4e60bf54c39d4798b33506e40da25, type: 3}
       propertyPath: m_Name
       value: Sala 1
@@ -2443,6 +2451,10 @@ PrefabInstance:
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[2].Array.data[11].Y
       value: -190000000
       objectReference: {fileID: 0}
+    - target: {fileID: 8030744598493300465, guid: 79f4e60bf54c39d4798b33506e40da25, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: 0c4b6bed4ee87084cab40f8c7d12026b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79f4e60bf54c39d4798b33506e40da25, type: 3}
 --- !u!1001 &450646248
