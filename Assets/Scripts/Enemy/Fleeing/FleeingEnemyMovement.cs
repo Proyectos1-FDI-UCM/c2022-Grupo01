@@ -18,6 +18,7 @@ public class FleeingEnemyMovement : MonoBehaviour
     public Transform fleeingEnemyTransform;
     private PlayerManager _myPlayerManager;
     public Animator fleeingEnemyAnimator;
+    private EnemyLifeComponent _myELC;
     #endregion
 
     #region properties
@@ -33,6 +34,7 @@ public class FleeingEnemyMovement : MonoBehaviour
 
     public void FleeingEnemyHiding()
     {
+        _myELC.sala.OnEnemyDies(_myELC);
         Destroy(gameObject, 1f); 
     }
     #endregion
@@ -46,6 +48,7 @@ public class FleeingEnemyMovement : MonoBehaviour
         fleeingEnemyAnimator = GetComponent<Animator>();
         _speed = 4.5f;
         _timer = _hidingTimer;
+        _myELC = GetComponent<EnemyLifeComponent>();
     }
 
     void Update()
