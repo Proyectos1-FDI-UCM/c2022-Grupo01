@@ -26,4 +26,9 @@ public class ActiveObject : Object
         oldOBject.name = Inventory.Instance.activeItem.name;
         oldOBject.SetActive(true);
     }
+
+    public void UpdateUses(int newUses)
+	{
+        uses = newUses;
+	}
 }

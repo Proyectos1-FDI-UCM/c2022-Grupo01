@@ -11562,6 +11562,7 @@ MonoBehaviour:
   meleeDamage: 0
   rangeDamage: 0
   speed: 0
+  uses: 0
   _playerPosition: {x: 0, y: 0, z: 0}
   playerInRoll: 0
 --- !u!114 &1957454369
@@ -11678,7 +11679,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 489965834623984283, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.59
       objectReference: {fileID: 0}
     - target: {fileID: 489965834623984283, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
       propertyPath: m_LocalPosition.y

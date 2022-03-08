@@ -29,9 +29,9 @@ public class PlayerManager : MonoBehaviour
 	#endregion
 
 	#region methods
-    public void UpdateUses()
+    public void UpdateUses(int newUses)
 	{
-
+        Inventory.Instance.activeItem.GetComponent<ActiveObject>().UpdateUses(newUses);
 	}
 
 
