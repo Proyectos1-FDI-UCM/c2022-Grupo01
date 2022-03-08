@@ -5,17 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Transition : MonoBehaviour
 {
-    [SerializeField] private float _transitionTime = 1f;
+    [SerializeField] private GameObject _player;
+    [SerializeField] private Transform _target;
 
-    private Animator transitionAnimator;
-
-    void Start()
+    public void OnTriggerEnter2D (Collider2D collision)
     {
-        
-    }
-
-    void Update()
-    {
-        
+        _player.transform.position = _target.transform.position;
     }
 }

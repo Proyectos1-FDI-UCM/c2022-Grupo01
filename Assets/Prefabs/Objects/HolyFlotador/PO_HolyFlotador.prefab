@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1546278829977327594}
   - component: {fileID: 2983023384101097659}
   - component: {fileID: 4410559847831511153}
+  - component: {fileID: 3677461223453004140}
+  - component: {fileID: -397415068933445804}
   m_Layer: 14
   m_Name: PO_HolyFlotador
   m_TagString: Untagged
@@ -131,3 +133,35 @@ MonoBehaviour:
   meleeDamage: 0
   rangeDamage: 0
   speed: 0
+--- !u!95 &3677461223453004140
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102250945931165755}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e2a60aeaf567547138d9a5a4d4a6966b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-397415068933445804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102250945931165755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2bb3fd6ca469450cbecf5fb324b1591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 0, y: 0, z: 0}

@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 489965834623984285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.7, y: -10.81, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 489965836124677252}
   - {fileID: 5757689141440673753}
@@ -76,7 +76,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09, y: 0.08}
+  m_Offset: {x: 0.05, y: 0.09}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -87,7 +87,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.66994095, y: 0.9174853}
+  m_Size: {x: 0.5, y: 0.8}
   m_EdgeRadius: 0
 --- !u!114 &5757689141459901219
 MonoBehaviour:
@@ -103,9 +103,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 10
   rollSpeed: 20
-  rodarCooldown: 1
   hookSpeed: 2
   rango: 10
+  rodarCooldown: 1
   gancho: 0
   animator: {fileID: 489965836124677250}
   cam: {fileID: 0}
@@ -131,7 +131,7 @@ MonoBehaviour:
   gunRB: {fileID: 5757689141440673754}
   meleeDamage: 20
   shotForce: 20
-  rangeDamage: 10
+  rangeDamage: 50
   iceForce: 20
   enemyLayers:
     serializedVersion: 2
@@ -436,7 +436,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1}
+  m_Size: {x: 1.75, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &5757689140758480508
 GameObject:
