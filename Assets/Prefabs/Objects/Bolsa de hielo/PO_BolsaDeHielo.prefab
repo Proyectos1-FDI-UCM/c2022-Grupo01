@@ -130,7 +130,12 @@ MonoBehaviour:
   maxUses: 2
   activePrefab: {fileID: 3998425941224310982}
   pickable: 1
-  cooldownSlider: {fileID: 0}
+  cooldown: 0
+  uses: 0
+  _elapsedTime: 0
+  sonToCreate: {fileID: 0}
+  sonCreated: 0
+  _iceForce: 20
   iceBagPrefab: {fileID: 8467541936118930963, guid: 5c698bc38c4cec04eb825f50e627dba2, type: 3}
 --- !u!95 &8813599557920049917
 Animator:
