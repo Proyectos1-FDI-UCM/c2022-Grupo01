@@ -24,7 +24,6 @@ public class BubbleTrigger : MonoBehaviour
             {
                 _enemyTransform = other.gameObject.GetComponent<Transform>();
                 _myBubbleMovement._myState = BubbleMovement.BubbleStates.Detected;
-                this.gameObject.SetActive(false);
             }
         }
     }
