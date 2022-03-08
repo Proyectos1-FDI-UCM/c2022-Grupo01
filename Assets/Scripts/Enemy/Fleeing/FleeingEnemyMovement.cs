@@ -44,7 +44,7 @@ public class FleeingEnemyMovement : MonoBehaviour
         fleeingEnemyRigidbody = GetComponent<Rigidbody2D>();
         fleeingEnemyTransform = transform;
         fleeingEnemyAnimator = GetComponent<Animator>();
-        _speed = (1 * _myPlayerManager.speed) / 4;
+        _speed = 4.5f;
         _timer = _hidingTimer;
     }
 
