@@ -4139,6 +4139,7 @@ MonoBehaviour:
   meleeDamage: 0
   rangeDamage: 0
   speed: 0
+  uses: 0
   _playerPosition: {x: 0, y: 0, z: 0}
   playerInRoll: 0
 --- !u!114 &778536840
@@ -4787,6 +4788,62 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3871545352578418370, guid: c8b955a1977d6a646b350e4dac44cbce, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[9].m_Data
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871545352578418370, guid: c8b955a1977d6a646b350e4dac44cbce, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[10].m_Data
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871545352578418370, guid: c8b955a1977d6a646b350e4dac44cbce, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[12].m_Data
+      value: 
+      objectReference: {fileID: 8897469135044545092, guid: f7b37b91088c7d44b98c5e710477bd39, type: 3}
+    - target: {fileID: 3871545352578418370, guid: c8b955a1977d6a646b350e4dac44cbce, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[14].m_Data
+      value: 
+      objectReference: {fileID: 7145537068944724988, guid: f7b37b91088c7d44b98c5e710477bd39, type: 3}
+    - target: {fileID: 3871545352578418370, guid: c8b955a1977d6a646b350e4dac44cbce, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[15].m_Data
+      value: 
+      objectReference: {fileID: -708347240892218557, guid: f7b37b91088c7d44b98c5e710477bd39, type: 3}
+    - target: {fileID: 3871545352578418370, guid: c8b955a1977d6a646b350e4dac44cbce, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[16].m_Data
+      value: 
+      objectReference: {fileID: -5523947511434668376, guid: f7b37b91088c7d44b98c5e710477bd39, type: 3}
+    - target: {fileID: 3871545352578418370, guid: c8b955a1977d6a646b350e4dac44cbce, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[9].m_RefCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871545352578418370, guid: c8b955a1977d6a646b350e4dac44cbce, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[10].m_RefCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871545352578418370, guid: c8b955a1977d6a646b350e4dac44cbce, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[15].m_RefCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871545352578418370, guid: c8b955a1977d6a646b350e4dac44cbce, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[16].m_RefCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871545352578418370, guid: c8b955a1977d6a646b350e4dac44cbce, type: 3}
+      propertyPath: m_Tiles.Array.data[67].second.m_TileSpriteIndex
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871545352578418370, guid: c8b955a1977d6a646b350e4dac44cbce, type: 3}
+      propertyPath: m_Tiles.Array.data[70].second.m_TileSpriteIndex
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871545352578418370, guid: c8b955a1977d6a646b350e4dac44cbce, type: 3}
+      propertyPath: m_Tiles.Array.data[73].second.m_TileSpriteIndex
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871545352578418370, guid: c8b955a1977d6a646b350e4dac44cbce, type: 3}
+      propertyPath: m_Tiles.Array.data[104].second.m_TileSpriteIndex
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3871545352578418381, guid: c8b955a1977d6a646b350e4dac44cbce, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[3].y
       value: -7
@@ -6471,7 +6528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 39436490965378181, guid: 6cbaa99ee50b8e24e873e891f805507b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -77.55585
+      value: -77.45
       objectReference: {fileID: 0}
     - target: {fileID: 39436490965378181, guid: 6cbaa99ee50b8e24e873e891f805507b, type: 3}
       propertyPath: m_LocalPosition.y
