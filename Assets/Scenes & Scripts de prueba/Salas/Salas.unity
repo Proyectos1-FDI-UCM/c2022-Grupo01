@@ -7173,6 +7173,10 @@ PrefabInstance:
       propertyPath: meleeDamage
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5757689141459901246, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
+      propertyPath: rangeDamage
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 5757689141459901247, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
       propertyPath: maxHealth
       value: 100

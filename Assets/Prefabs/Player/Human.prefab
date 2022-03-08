@@ -131,7 +131,7 @@ MonoBehaviour:
   gunRB: {fileID: 5757689141440673754}
   meleeDamage: 20
   shotForce: 40
-  rangeDamage: 50
+  rangeDamage: 25
   iceForce: 20
   enemyLayers:
     serializedVersion: 2
