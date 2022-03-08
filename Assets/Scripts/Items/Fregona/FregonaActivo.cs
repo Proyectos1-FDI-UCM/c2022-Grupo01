@@ -9,6 +9,7 @@ public class FregonaActivo : ActiveObject
     private bool fregonaCreada = false;
     private GameObject fregona;
     #endregion
+
     public override void Activate()
 	{
         if (!fregonaCreada)
@@ -21,6 +22,7 @@ public class FregonaActivo : ActiveObject
             fregonaCollider.isTrigger = true;
             fregona.AddComponent<Rigidbody2D>().gravityScale = 0;
             fregona.AddComponent<Fregona>();
+            fregona.GetComponent<Fregona>().maxUses = maxUses;
             fregonaCreada = true;
         }
 	}

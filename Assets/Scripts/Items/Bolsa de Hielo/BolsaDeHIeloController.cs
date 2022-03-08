@@ -7,6 +7,8 @@ public class BolsaDeHieloController : MonoBehaviour
     #region parameters
 	[SerializeField] private float _iceForce = 20f;
 	[SerializeField] private float _cooldown = 40f;
+	[HideInInspector] public float uses = 0;
+	[HideInInspector] public float maxUses;
     #endregion
 
     #region properties
@@ -28,8 +30,8 @@ public class BolsaDeHieloController : MonoBehaviour
     private void Update()
     {
 		_elapsedTime += Time.deltaTime;
-		if (_elapsedTime >= _cooldown) _canShoot = true;
-		if (Input.GetKeyDown(KeyCode.Q) && _canShoot) LanzaHielo();
+		if (uses < maxUses && _elapsedTime >= _cooldown) _canShoot = true;
+		if (Input.GetKeyDown(KeyCode.Q) && _canShoot) LanzaHielo(); 
 	}
 
 	void LanzaHielo()
