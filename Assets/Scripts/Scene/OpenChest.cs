@@ -22,11 +22,6 @@ public class OpenChest : MonoBehaviour
     [SerializeField] private GameObject chest;
     #endregion
 
-    private void Start()
-    {
-        _objectHeld = GameManager.Instance.itemList[Random.Range(0, GameManager.Instance.itemList.Count)];
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         PlayerLife player = other.GetComponent<PlayerLife>();
@@ -59,10 +54,13 @@ public class OpenChest : MonoBehaviour
             }
             if(Input.GetKey(KeyCode.O))
             {
+                int rnd = Random.Range(3, GameManager.Instance.itemList.Count);
+                _objectHeld = GameManager.Instance.itemList[rnd];
                 GetComponent<SpriteRenderer>().sprite = _newSprite;
                 _shadowObject.GetComponent<SpriteRenderer>().sprite = _newOpenedSprite;
                 Instantiate(_objectHeld, transform.position + _offset, Quaternion.identity);
                 _chestOpen = false;
+                GameManager.Instance.itemList.RemoveAt(rnd);
             }
         }
 
