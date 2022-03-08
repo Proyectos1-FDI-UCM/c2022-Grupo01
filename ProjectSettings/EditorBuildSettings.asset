@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes & Scripts de prueba/Salas/Salas.unity
     guid: a344bb0bd7c24ad44a42bbe4b2163285
+  - enabled: 1
+    path: Assets/Scenes & Scripts de prueba/Tutorial/Tutorial.unity
+    guid: abb4a10623915d242a711ecf6accdc0b
   m_configObjects: {}
