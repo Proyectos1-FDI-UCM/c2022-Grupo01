@@ -7,15 +7,15 @@ public class UI_Manager : MonoBehaviour
 {
 
     #region references
-    [SerializeField]
-    private Slider _healthSlider, _cooldownSlider, _secondaryHealthSlider;
-    private PlayerManager _myPlayerManager;
+    [SerializeField] private Slider _healthSlider, _cooldownSlider, _secondaryHealthSlider;
+    [SerializeField] private Text _usesText;
     #endregion
 
     #region properties
     private float _normalMaxHealth = 100f;
     private float _sliderWidth = 275.5359f;   //width of the slider
     #endregion
+
     #region methods
     public void ShowHealth(float health)
 	{
@@ -33,15 +33,31 @@ public class UI_Manager : MonoBehaviour
             _healthSlider.value = health;
         }
     }
-    /*  Esto no se usa mas... por ahora
-    public void ShowCooldown(float cooldown, float maxCooldown)
+
+    public void ShowActiveCooldown(float cooldown, float maxCooldown)
 	{
         _cooldownSlider.value = cooldown/maxCooldown;
 	}
-    */
+
+    public void SetCooldownBar(bool setter)
+	{
+        _cooldownSlider.gameObject.SetActive(setter);
+        if(setter) _cooldownSlider.value = _cooldownSlider.maxValue;
+	}
+
+    public void SetUsesTextFalse()
+	{
+        _usesText.text = "";
+	}
+
+    public void SetUsesText(int uses)
+    {
+        _usesText.text = ""+uses;
+    }
     #endregion
     private void Start()
     {
-        
+        _cooldownSlider.gameObject.SetActive(false);
+        _usesText.text = "";
     }
 }
