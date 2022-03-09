@@ -33,9 +33,9 @@ public class BubbleMovement : MonoBehaviour
         _myRB = GetComponent<Rigidbody2D>();
         _myTransform = transform;
     }
-
+    
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector3 desiredPosition = _myPlayerManager._playerPosition + _positionOffset;
         Vector3 direction = (desiredPosition - _myTransform.position);
@@ -44,7 +44,7 @@ public class BubbleMovement : MonoBehaviour
         {
             if (distance > 0.5)
             {
-                _myRB.velocity = direction * _shotForce * Time.deltaTime;
+                _myRB.velocity = direction.normalized * _shotForce * Time.deltaTime;
             }
             else
             {
