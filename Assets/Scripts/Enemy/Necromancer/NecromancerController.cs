@@ -24,7 +24,7 @@ public class NecromancerController : MonoBehaviour
     void Start()
     {
         _mytransform = transform;
-        _currentTime = _timeLeft;
+        _currentTime = -1;
     }
 
     // Update is called once per frame
