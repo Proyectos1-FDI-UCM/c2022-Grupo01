@@ -17,6 +17,7 @@ public class PlayerLife : MonoBehaviour
     #region methods
     public void SetHealth(float healthToAdd)
 	{
+        if (healthToAdd < 0) animator.SetTrigger("Hurt");
         if(_playerManager.myLifeState == PlayerManager.LifeStates.Normal || healthToAdd >= 0)
         {
             health += healthToAdd;

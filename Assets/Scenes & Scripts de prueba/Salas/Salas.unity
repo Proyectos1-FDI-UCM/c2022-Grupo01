@@ -3544,6 +3544,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6730371786714730599, guid: d154771b5f7260a44b5552900aa95fff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.26
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d154771b5f7260a44b5552900aa95fff, type: 3}
 --- !u!1001 &725950723
@@ -7431,7 +7435,7 @@ PrefabInstance:
       objectReference: {fileID: 941445471}
     - target: {fileID: 5757689141459901246, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
       propertyPath: attackRange
-      value: 2.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5757689141459901246, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
       propertyPath: meleeDamage
