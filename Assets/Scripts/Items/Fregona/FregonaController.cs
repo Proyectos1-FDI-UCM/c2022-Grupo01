@@ -54,10 +54,10 @@ public class FregonaController : MonoBehaviour
         _myTransform.position = PlayerManager.Instance._playerPosition;
         if (_elapsedTime >= _cooldown && Input.GetKey(KeyCode.Q) && fregar)
         {
-            Debug.Log(_cooldown);
             _timeUntilComplete += Time.deltaTime;
-            if (_timeUntilComplete >= timeToComplete) Use(); Debug.Log(_elapsedTime);
+            if (_timeUntilComplete >= timeToComplete) Use();
         }
+        PlayerManager.Instance._previusCooldown = _elapsedTime;
     }
 
     void Use()

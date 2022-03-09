@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-	#region methodss
+	#region methods
     public void SetCooldownBar(bool setter)
 	{
         _uiManager.SetCooldownBar(setter);
@@ -48,6 +48,11 @@ public class GameManager : MonoBehaviour
     public void ShowActiveCooldown(float cooldown, float maxCooldown)
 	{
         _uiManager.ShowActiveCooldown(cooldown, maxCooldown);
+	}
+
+    public void ActiveObjectInfo(string name, string description)
+	{
+        _uiManager.ActiveObjectInfo(name, description);
 	}
 
     public void OnPlayerDie()
@@ -100,7 +105,6 @@ public class GameManager : MonoBehaviour
         _elapsedTime += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.K))
         {
-
             PlayerManager.Instance.ChangeMaxLife(10);
             _elapsedTime = 0;
         }

@@ -19,8 +19,6 @@ public class PlayerManager : MonoBehaviour
     public enum LifeStates { Normal, Shield, HolyFlotador };   // Añadir shields en el futuro
     //[HideInInspector]
     public LifeStates myLifeState;
-    private List<int> lastItemsID = new List<int>();
-    private List<int> lastItemsUses = new List<int>();
     #endregion
 
     #region paremeters
@@ -28,6 +26,8 @@ public class PlayerManager : MonoBehaviour
     public int uses;
     public Vector3 _playerPosition;
     public bool playerInRoll = false;
+
+    [SerializeField] public float _previusCooldown = -2;
 	#endregion
 
 	#region Actualizar Referencias al jugador
@@ -110,6 +110,7 @@ public class PlayerManager : MonoBehaviour
         _playerLife = player.GetComponent<PlayerLife>();
         _playerMovement = player.GetComponent<PlayerMovement>();
         _playerTransform = player.transform;
+        _previusCooldown = -2;
     }
 
     private void FixedUpdate()

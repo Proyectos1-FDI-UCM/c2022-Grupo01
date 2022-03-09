@@ -29,6 +29,7 @@ public class BolsaDeHieloController : MonoBehaviour
 		_elapsedTime += Time.deltaTime;
 		GameManager.Instance.ShowActiveCooldown(_elapsedTime, _cooldown);
 		if (Input.GetKeyDown(KeyCode.Q) &&_elapsedTime >= _cooldown) LanzaHielo();
+		PlayerManager.Instance._previusCooldown = _elapsedTime;
 	}
 
 	public void LanzaHielo()

@@ -11,17 +11,16 @@ public class ActiveObject : Object
     [HideInInspector] public GameObject sonToCreate;
     [HideInInspector] public bool sonCreated = false;
 
-
     public virtual void Activate()
     {
-        Debug.Log("Objeto activo " + gameObject.name + " activado");
+
     }
 
     public virtual void ChangeActiveObject()
     {
-        Debug.Log("Cambiado Objeto Activo");
         GameObject oldOBject = Instantiate(activePrefab, PlayerManager.Instance._playerPosition, Quaternion.identity);
         oldOBject.name = Inventory.Instance.activeItem.name;
         oldOBject.SetActive(true);
+        oldOBject.GetComponent<ActiveObject>().sonCreated = false;
     }
 }

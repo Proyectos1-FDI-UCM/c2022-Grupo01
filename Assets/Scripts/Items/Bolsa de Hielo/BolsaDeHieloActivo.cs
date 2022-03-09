@@ -11,12 +11,17 @@ public class BolsaDeHieloActivo : ActiveObject
 	#region references
 	[SerializeField] private GameObject iceBagPrefab;
     private BolsaDeHieloController bolsaDeHieloController;
-    #endregion
+	#endregion
 
-	public override void Activate()
+	private void Start()
+	{
+
+    }
+
+    public override void Activate()
 	{
 		base.Activate();
-
+        Debug.Log(sonCreated);
         if (!sonCreated)
         {
             base.Activate();
@@ -37,9 +42,10 @@ public class BolsaDeHieloActivo : ActiveObject
         bolsaDeHieloController._iceForce = _iceForce;
     }
 
-	public override void ChangeActiveObject()
+    public override void ChangeActiveObject()
     {
         base.ChangeActiveObject();
+        sonCreated = false;
         Destroy(sonToCreate);
     }
 }

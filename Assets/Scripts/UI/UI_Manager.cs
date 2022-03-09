@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class UI_Manager : MonoBehaviour
 {
-
     #region references
     [SerializeField] private Slider _healthSlider, _cooldownSlider, _secondaryHealthSlider;
+    [SerializeField] private GameObject _objectInfo, _objectInfoPrefab;
     #endregion
 
     #region properties
@@ -43,7 +43,27 @@ public class UI_Manager : MonoBehaviour
         _cooldownSlider.gameObject.SetActive(setter);
         if(setter) _cooldownSlider.value = _cooldownSlider.maxValue;
 	}
+
+    public void ActiveObjectInfo(string name, string description)
+	{
+        GameObject objectInfo = Instantiate(_objectInfoPrefab, _objectInfo.transform.position, Quaternion.identity);
+        objectInfo.transform.SetParent(_objectInfo.transform);
+        objectInfo.transform.GetChild(0).GetComponentInChildren<Text>().text = name.ToUpper();
+        objectInfo.transform.GetChild(1).GetComponentInChildren<Text>().text = description.ToUpper();
+        StartCoroutine(Cosas(objectInfo));
+	}
+
+    public void DeactivateObjectInfo(GameObject objectInfo)
+	{
+        Destroy(objectInfo);
+    }
     #endregion
+
+    IEnumerator Cosas(GameObject objectInfo)
+	{
+        yield return new WaitForSeconds(4);
+        DeactivateObjectInfo(objectInfo);
+	}
     private void Start()
     {
         _cooldownSlider.gameObject.SetActive(false);

@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class FregonaActivo : ActiveObject
 {
-	public override void Activate()
+	private void Start()
+	{
+
+    }
+    public override void Activate()
 	{
         if (!sonCreated)
         {
@@ -19,12 +23,14 @@ public class FregonaActivo : ActiveObject
             sonToCreate.GetComponent<FregonaController>()._elapsedTime = cooldown;
             sonToCreate.GetComponent<FregonaController>()._cooldown = cooldown;
             sonCreated = true;
+            GameManager.Instance.ShowActiveCooldown(_elapsedTime,cooldown);
         }
     }
 
     public override void ChangeActiveObject()
     {
         base.ChangeActiveObject();
+        sonCreated = false;
         Destroy(sonToCreate);
     }
 }

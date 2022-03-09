@@ -72,11 +72,6 @@ public class PlayerAttack : MonoBehaviour
             _meleeCooldownCounter = 0;
 		}
 
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            LanzaHielo();
-        }
-
         mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         
         _shotCooldownCounter += Time.deltaTime;
@@ -129,12 +124,5 @@ public class PlayerAttack : MonoBehaviour
     {
         rangeDamage += newRangeDamage;
         _playerManager.UpdateMeleeDamage(rangeDamage);
-    }
-
-    //Si tiene el objeto activo "Bolsa de Hielo", este método lo activa.
-    public void LanzaHielo()
-    {
-        GameObject nuevoIcebagPrefab = Instantiate(icebagPrefab, shotPoint.position, Quaternion.identity);
-        nuevoIcebagPrefab.GetComponent<Rigidbody2D>().AddForce(iceForce * shotPoint.right, ForceMode2D.Impulse);
     }
 }
