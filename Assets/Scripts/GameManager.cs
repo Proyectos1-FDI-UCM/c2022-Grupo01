@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -57,12 +58,13 @@ public class GameManager : MonoBehaviour
 
     public void OnPlayerDie()
 	{
-        _playerGun.SetActive(false);
+        _player.SetActive(false);
         _cam.lerpParameter = 0;
         _cam.GetComponent<FollowComponent>().SetPlayerDead();
         //Necro
         vivo = false;
-	}
+        SceneManager.LoadScene("Menu");
+    }
 
     //Necromancer
     public Vector3 PlayerPosition()

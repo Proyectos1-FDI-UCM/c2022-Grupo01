@@ -6,7 +6,7 @@ public class Pomper : MonoBehaviour
 {
     #region parameters
     [SerializeField]
-    private float _cooldownTime;
+    private float _cooldownTime = 10f;
     [HideInInspector]
     public GameObject _bubblePrefab;
     [SerializeField]

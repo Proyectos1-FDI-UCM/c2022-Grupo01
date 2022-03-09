@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7962218177975590324}
   - component: {fileID: -5875565251886537097}
   - component: {fileID: 7319941351202782791}
-  m_Layer: 3
+  m_Layer: 17
   m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: f349f2a4a12424f49a7e0d7860aa027d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _myState: 0
   _positionOffset: {x: -0.3, y: 0.78, z: 0}
-  _shotForce: 200
+  _shotForce: 450
 --- !u!58 &-5875565251886537097
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -167,7 +167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4169783195888425603}
-  m_Layer: 3
+  m_Layer: 17
   m_Name: HitSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 1226148260819826605}
   - component: {fileID: 5481244079875941920}
   - component: {fileID: 2157136675152745243}
-  m_Layer: 3
+  m_Layer: 17
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
