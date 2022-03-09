@@ -23877,11 +23877,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 489965834623984283, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.48
+      value: -122.67
       objectReference: {fileID: 0}
     - target: {fileID: 489965834623984283, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.8
+      value: -9.62
       objectReference: {fileID: 0}
     - target: {fileID: 489965834623984283, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
       propertyPath: m_LocalPosition.z
@@ -24104,10 +24104,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 799718556}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: textoTutorial
-      value: 
-      objectReference: {fileID: 1060437860}
     - target: {fileID: 3630381811472245964, guid: 816c2fb311d4c714c80a6e16538f9628, type: 3}
       propertyPath: m_Name
       value: TriggerTutorial7
