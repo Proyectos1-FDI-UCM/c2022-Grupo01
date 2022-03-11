@@ -16,12 +16,12 @@ public class PlayerManager : MonoBehaviour
     #endregion
 
     #region properties
-    public enum LifeStates { Normal, Shield, HolyFlotador };   // Añadir shields en el futuro
+    public enum LifeStates { Normal, Shield, HolyFlotador };   // Aï¿½adir shields en el futuro
     //[HideInInspector]
     public LifeStates myLifeState;
     #endregion
 
-    #region paremeters
+    #region parameters
     public float health, maxHealth, meleeDamage, rangeDamage, speed;
     public int uses;
     public Vector3 _playerPosition;
