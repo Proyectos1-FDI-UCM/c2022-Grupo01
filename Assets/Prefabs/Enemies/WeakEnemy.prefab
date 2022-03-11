@@ -403,6 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223f2aa498f2ec44cb1d4e8036ba300c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerDistance: 0
   _timeToBeElapsed: 0.3
   _animator: {fileID: 9195848397771939019}
 --- !u!114 &-8675844643101548979

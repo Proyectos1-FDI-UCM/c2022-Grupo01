@@ -264,6 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223f2aa498f2ec44cb1d4e8036ba300c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerDistance: 1
   _timeToBeElapsed: 0.5
   _animator: {fileID: 9191831522005992302}
 --- !u!114 &894022324
@@ -279,7 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meleeCooldown: 0.8
-  _attackRange: 2
+  _attackRange: 1
   _meleeDamage: 10
   _playerLayer:
     serializedVersion: 2

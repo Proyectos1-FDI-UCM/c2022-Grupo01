@@ -8,6 +8,8 @@ public class MeleeMovement : MonoBehaviour
     #region properties
     private NavMeshAgent _agent;
     private float _elapsedTime = 0;
+    [SerializeField]
+    private float _playerDistance = 1;
     #endregion
     #region parameters
     [SerializeField]
@@ -29,6 +31,7 @@ public class MeleeMovement : MonoBehaviour
     [SerializeField]
     private Animator _animator;
     private PlayerManager _myPlayerManager;
+    private Transform _mytransform;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -39,15 +42,21 @@ public class MeleeMovement : MonoBehaviour
         _agent.updateUpAxis = false;
         _elapsedTime += _timeToBeElapsed;
         _agent.SetDestination(_myPlayerManager._playerPosition);
+        _mytransform = transform;
     }
 
     // Update is called once per frame
     void Update()
     {
         _elapsedTime += Time.deltaTime;
-        if(_elapsedTime > _timeToBeElapsed)
+
+        Vector3 direction = ( _myPlayerManager._playerPosition-_mytransform.position).normalized;
+       // float distance = direction.magnitude;
+
+        if( _elapsedTime > _timeToBeElapsed)
 		{
-            _agent.SetDestination(_myPlayerManager._playerPosition);
+            _agent.SetDestination(_myPlayerManager._playerPosition-direction*_playerDistance);
+            
             _elapsedTime = 0;
 		}
     }
