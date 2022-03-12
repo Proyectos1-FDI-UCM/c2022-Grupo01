@@ -26587,6 +26587,22 @@ PrefabInstance:
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[2].Array.data[11].Y
       value: -190000000
       objectReference: {fileID: 0}
+    - target: {fileID: 2376785848211576367, guid: 0849cb3afddec9f4c968688577720c4d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2376785848708590365, guid: 0849cb3afddec9f4c968688577720c4d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2376785848708590366, guid: 0849cb3afddec9f4c968688577720c4d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6878113955703495387, guid: 0849cb3afddec9f4c968688577720c4d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6900261781753357817, guid: 0849cb3afddec9f4c968688577720c4d, type: 3}
       propertyPath: m_Enabled
       value: 1

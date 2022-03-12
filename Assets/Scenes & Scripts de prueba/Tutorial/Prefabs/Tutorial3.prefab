@@ -8403,7 +8403,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9191831521576042048, guid: 2ef4148efb197954594ebac486b53e9e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9191831522005992300, guid: 2ef4148efb197954594ebac486b53e9e, type: 3}
       propertyPath: m_RootOrder
