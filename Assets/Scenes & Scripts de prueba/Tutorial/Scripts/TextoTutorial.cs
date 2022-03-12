@@ -16,9 +16,9 @@ public class TextoTutorial : MonoBehaviour
 		PlayerLife player = collision.gameObject.GetComponent<PlayerLife>();
 		if (player != null)
 		{
+			Destroy(gameObject); // elimina el trigger para no volver a activarse al pasar de vuelta
 			textoTutorial.SetActive(true);
-			Destroy(textoTutorial, 5f);
-			Destroy(gameObject, 5f);
+			Destroy(textoTutorial, 5f); // desaparece el objeto activado (caja de texto) en 5seg
 			Debug.Log("activa texto tutorial");
 		}
 	}
