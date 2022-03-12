@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tutorial6 : MonoBehaviour
+public class TextoTutorial : MonoBehaviour
 {
 	public GameObject textoTutorial;
+
 
 	void Start()
 	{
@@ -18,7 +19,8 @@ public class Tutorial6 : MonoBehaviour
 			textoTutorial.SetActive(true);
 			Destroy(textoTutorial, 5f);
 			Destroy(gameObject, 5f);
-			Debug.Log("activa texto del tutorial 6");
+			Debug.Log("activa texto tutorial");
 		}
 	}
+
 }
