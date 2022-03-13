@@ -8,6 +8,7 @@ public class UI_Manager : MonoBehaviour
     #region references
     [SerializeField] private Slider _healthSlider, _cooldownSlider, _secondaryHealthSlider;
     [SerializeField] private GameObject _objectInfo, _objectInfoPrefab;
+    //[SerializeField] private Text _healthBarText;
     #endregion
 
     #region properties
@@ -31,6 +32,8 @@ public class UI_Manager : MonoBehaviour
             _secondaryHealthSlider.gameObject.SetActive(false);
             _healthSlider.value = health;
         }
+
+        //_healthBarText.text = "Hidratación: " + health;
     }
 
     public void ShowActiveCooldown(float cooldown, float maxCooldown)
@@ -67,5 +70,6 @@ public class UI_Manager : MonoBehaviour
     private void Start()
     {
         _cooldownSlider.gameObject.SetActive(false);
+       // _healthBarText = GetComponent<Text>();
     }
 }
