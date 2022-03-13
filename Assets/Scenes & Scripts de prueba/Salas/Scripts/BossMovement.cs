@@ -16,17 +16,17 @@ public class BossMovement : MonoBehaviour
     public void Giro()
     {
         giro++;
-        if (_direction.x == 1 && _direction.y == 0)
+        if (_direction.x == 1)
         {
             _direction.x = 0;
             _direction.y =1;
         }
-        else if(_direction.x == 0 && _direction.y == 1)
+        else if(_direction.y == 1)
         {
             _direction.x = -1;
             _direction.y = 0;
         }
-        else if (_direction.x == -1 && _direction.y == 0)
+        else if (_direction.x == -1)
         {
             _direction.x = 0;
             _direction.y = -1;
