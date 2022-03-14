@@ -4162,6 +4162,7 @@ MonoBehaviour:
   _secondaryHealthSlider: {fileID: 1267481493}
   _objectInfo: {fileID: 0}
   _objectInfoPrefab: {fileID: 0}
+  _healthBarText: {fileID: 0}
 --- !u!114 &1084336043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12713,7 +12714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6261920538391311324, guid: 1bdb760a04770474ea05d94d0cc6dd88, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bdb760a04770474ea05d94d0cc6dd88, type: 3}
