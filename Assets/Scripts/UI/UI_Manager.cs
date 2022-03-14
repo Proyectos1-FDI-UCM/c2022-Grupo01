@@ -71,6 +71,5 @@ public class UI_Manager : MonoBehaviour
     private void Start()
     {
         _cooldownSlider.gameObject.SetActive(false);
-       _healthBarText = GetComponent<TextMeshProUGUI>();
     }
 }
