@@ -17,7 +17,20 @@ public class PlayerLife : MonoBehaviour
     #region methods
     public void SetHealth(float healthToAdd)
 	{
-        if (healthToAdd < 0) animator.SetTrigger("Hurt");
+        if (healthToAdd < 0) 
+        {
+            animator.SetTrigger("Hurt");
+            
+            /*if (_playerManager.playerInRoll)
+            {
+                animator.SetBool("RuedoHurt", true);
+            }
+            else
+            {
+                animator.SetTrigger("Hurt");
+            }*/
+        }
+        
         if(_playerManager.myLifeState == PlayerManager.LifeStates.Normal || healthToAdd >= 0)
         {
             health += healthToAdd;
@@ -31,7 +44,7 @@ public class PlayerLife : MonoBehaviour
         }
         else if(_playerManager.myLifeState == PlayerManager.LifeStates.HolyFlotador)
         {
-            _playerManager.myLifeState = PlayerManager.LifeStates.Normal;   // Si tiene escudos hay que comprobar en que estado está, pero por ahora es así
+            _playerManager.myLifeState = PlayerManager.LifeStates.Normal;   // Si tiene escudos hay que comprobar en que estado estï¿½, pero por ahora es asï¿½
             HolyFlotadorImage.Instance.enabled = false;
         }
     }
@@ -50,7 +63,7 @@ public class PlayerLife : MonoBehaviour
         GameManager.Instance.OnPlayerDie();
 	}
 	#endregion
-	// Start is called before the first frame update
+	
 	void Start()
     {
         _playerManager = PlayerManager.Instance;
