@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 357.1625, y: 149.1115}
+  m_AnchoredPosition: {x: 0, y: -0.0000019073486}
+  m_SizeDelta: {x: 357.1625, y: 130.7986}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4867333704297374194
 CanvasRenderer:
@@ -162,7 +162,7 @@ RectTransform:
   m_GameObject: {fileID: 4867333704394828027}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 4867333704297374192}
   m_Father: {fileID: 0}
@@ -170,8 +170,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 395.1607, y: 219.68}
+  m_AnchoredPosition: {x: 0, y: 46.6147}
+  m_SizeDelta: {x: 395.1607, y: 173.0653}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4867333704394828030
 CanvasRenderer:

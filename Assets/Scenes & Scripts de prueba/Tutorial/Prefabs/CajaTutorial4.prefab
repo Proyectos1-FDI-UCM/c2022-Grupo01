@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 2725366017124867624}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 6589438116135035541}
   m_Father: {fileID: 0}
@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 395.1607, y: 219.68}
+  m_AnchoredPosition: {x: 0, y: 90}
+  m_SizeDelta: {x: 395.1607, y: 93.3168}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6589438114497697016
 CanvasRenderer:
@@ -110,8 +110,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 357.1625, y: 149.1115}
+  m_AnchoredPosition: {x: 0, y: -1.5319}
+  m_SizeDelta: {x: 357.1625, y: 77.0343}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6589438116135035543
 CanvasRenderer:
@@ -141,10 +141,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lanza (boton derecho) tu flotador a los postes para transportarte a ellos.
-
-
-'
+  m_text: "Vaya, arriba hay otro charco como el de antes... prueba a rodar (space)
+    sobre \xE9l, quizas mojarte sirva de algo.\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -207,7 +205,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -13.215515, y: 0, z: -11.563538, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
