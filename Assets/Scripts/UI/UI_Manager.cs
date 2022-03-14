@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UI_Manager : MonoBehaviour
 {
     #region references
     [SerializeField] private Slider _healthSlider, _cooldownSlider, _secondaryHealthSlider;
     [SerializeField] private GameObject _objectInfo, _objectInfoPrefab;
-    //[SerializeField] private Text _healthBarText;
+    [SerializeField] private TextMeshProUGUI _healthBarText;
     #endregion
 
     #region properties
@@ -33,7 +34,7 @@ public class UI_Manager : MonoBehaviour
             _healthSlider.value = health;
         }
 
-        //_healthBarText.text = "Hidratación: " + health;
+        _healthBarText.text = "Hidratación: " + health;
     }
 
     public void ShowActiveCooldown(float cooldown, float maxCooldown)
@@ -70,6 +71,6 @@ public class UI_Manager : MonoBehaviour
     private void Start()
     {
         _cooldownSlider.gameObject.SetActive(false);
-       // _healthBarText = GetComponent<Text>();
+       _healthBarText = GetComponent<TextMeshProUGUI>();
     }
 }
