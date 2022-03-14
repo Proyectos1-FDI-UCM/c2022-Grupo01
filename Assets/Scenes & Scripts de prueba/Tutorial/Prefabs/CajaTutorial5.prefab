@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 2725366017124867624}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 6589438116135035541}
   m_Father: {fileID: 0}
@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 395.1607, y: 219.68}
+  m_AnchoredPosition: {x: 0, y: 31.7829}
+  m_SizeDelta: {x: 395.1607, y: 132.9771}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6589438114497697016
 CanvasRenderer:
@@ -110,8 +110,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 357.1625, y: 149.1115}
+  m_AnchoredPosition: {x: -1.7872, y: -2.8921}
+  m_SizeDelta: {x: 376.1576, y: 97.9823}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6589438116135035543
 CanvasRenderer:
@@ -141,10 +141,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lanza (boton derecho) tu flotador a los postes para transportarte a ellos.
-
-
-'
+  m_text: "Bienvenido al gran reto, la terrible y ultrapeligrosa \xA1\xA1SALA DEL
+    JEFE !!\nPreparate para lo peor ... y tomate tu tiempo... a\xFAn no hay jefe.\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
