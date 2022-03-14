@@ -45,7 +45,7 @@ public class DetectPlayer : MonoBehaviour
         {
             case typeofEnemy.Fleeing: { GetComponentInParent<FleeingEnemyMovement>().ExecuteFleeingEnemyMovement(); break; }
             case typeofEnemy.CAC: { GetComponentInParent<NavMeshAgent>().enabled = true; GetComponentInParent<MeleeMovement>().ExecuteMeleeEnemyMovement(); GetComponentInParent<MeleeAttack>().ExecuteMeleeAttack(); break; }
-            case typeofEnemy.Range: { GetComponentInParent<RangeMovement>().ExecuteRangeEnemyMovement(); GetComponentInParent<RangeAttack>().ExecuteRangeAttack(); break; }
+            case typeofEnemy.Range: { /*GetComponentInParent<RangeMovement>().ExecuteRangeEnemyMovement(); */GetComponentInParent<RangeAttack>().ExecuteRangeAttack(); break; }
             case typeofEnemy.Necromancer: { GetComponentInParent<NecromancerController>().ExecuteNecromancerController();Debug.Log("Si"); break; }
             case typeofEnemy.Weak: { GetComponentInParent<NavMeshAgent>().enabled = true; GetComponentInParent<MeleeMovement>().ExecuteMeleeEnemyMovement(); break; }
         }

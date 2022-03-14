@@ -29,6 +29,8 @@ public class PlayerAttack : MonoBehaviour
     //public float iceDamage = 20f;
     [SerializeField]
     private LayerMask enemyLayers;
+    [SerializeField]
+    private LayerMask bulletLayer;
 
     [SerializeField]
     private float _shotCooldown = 5, _meleeCooldown = 0.2f, attackRange = 0.5f;
@@ -82,21 +84,34 @@ public class PlayerAttack : MonoBehaviour
 
     public void SetAttackPoint(Vector3 movement)
     {
-        if (movement.x > 0) _attackPointPosition.x = attackRange;
-        else _attackPointPosition.x = -attackRange;
+        if (movement.x > 0) { _attackPointPosition.x = attackRange; _attackPointPosition.y = 0f; }
+        else if (movement.x < 0) { _attackPointPosition.x = -attackRange; _attackPointPosition.y = 0f; }
+        else if (movement.y > 0) { _attackPointPosition.y = attackRange; _attackPointPosition.x = 0f; }
+        else if (movement.y < 0) { _attackPointPosition.y = -attackRange; _attackPointPosition.x = 0f; }
+
     }
 
-    void Melee()
+        void Melee()
     {
         animator.SetTrigger("Attack");
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position + _attackPointPosition, attackRange, enemyLayers);
+        Collider2D[] hitSponge = Physics2D.OverlapCircleAll(transform.position + _attackPointPosition, attackRange, bulletLayer);
 
-        foreach(Collider2D enemy in hitEnemies)
+
+        foreach (Collider2D enemy in hitEnemies)
 		{
             EnemyLifeComponent enemyLife = enemy.GetComponent<EnemyLifeComponent>();
             if (enemyLife != null) enemyLife.Damage(meleeDamage);
 		}
+
+        foreach(Collider2D spongeCollider in hitSponge)
+        {
+            SpongeMovement sponge = spongeCollider.GetComponent<SpongeMovement>();
+            sponge.SetMovement(_attackPointPosition);
+        }
+
+
         //Drawing things
     }
 	private void OnDrawGizmosSelected()

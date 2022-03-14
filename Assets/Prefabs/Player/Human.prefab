@@ -129,16 +129,19 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4258877983288083039, guid: 943b5deb76f8eab4d9662d97b69ad1a9, type: 3}
   icebagPrefab: {fileID: 8467541936118930963, guid: 5c698bc38c4cec04eb825f50e627dba2, type: 3}
   gunRB: {fileID: 5757689141440673754}
-  meleeDamage: 20
+  meleeDamage: 10
   shotForce: 40
   rangeDamage: 25
   iceForce: 20
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
+  bulletLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   _shotCooldown: 0.5
   _meleeCooldown: 0.4
-  attackRange: 2
+  attackRange: 1.5
 --- !u!114 &5757689141459901247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 2000
+  maxHealth: 100
   animator: {fileID: 489965836124677250}
 --- !u!114 &5272552500916890695
 MonoBehaviour:
