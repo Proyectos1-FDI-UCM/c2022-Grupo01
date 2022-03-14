@@ -13,7 +13,7 @@ public class SpikeHurtComponent : MonoBehaviour
 	{
         PlayerLife player = collision.gameObject.GetComponent<PlayerLife>();
 
-        if(player != null)
+        if (player != null)
 		{
 			PlayerManager.Instance.ChangePlayerLife(-_touchDamage);
 		}

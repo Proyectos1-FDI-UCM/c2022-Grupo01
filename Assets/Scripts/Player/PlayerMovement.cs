@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator RodarCourritine(Vector3 movement)
     {
         _playerManager.PlayerInRoll(true);
-        //Empezamos la animación de ruedo
+        //Empezamos la animaciï¿½n de ruedo
         animator.SetTrigger("Ruedo");
         //Hacemos que el jugador pueda atravesar enemigos
         _playerCollider.isTrigger = true;
@@ -99,7 +99,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        //comentario de prueba
         _playerManager = PlayerManager.Instance;
         _myTransform = transform;
         _hookTransform = hook.transform;
@@ -111,7 +110,6 @@ public class PlayerMovement : MonoBehaviour
         _playerManager.UpdateSpeed(movementSpeed);
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         _timeForRoll += Time.fixedDeltaTime;
@@ -159,7 +157,7 @@ public class PlayerMovement : MonoBehaviour
                 getInput = false;
             }
 
-            //Si has recibido un input y no estás rodando te movés
+            //Si has recibido un input y no estï¿½s rodando te movï¿½s
             if (movement != Vector3.zero && getInput) Move(movement);
 
             else playerRB.velocity = Vector2.zero;   // para que no se acumule la fuerza que le aplica el enemigo al colisoniar con el. Revisar si se puede hacer mejor
