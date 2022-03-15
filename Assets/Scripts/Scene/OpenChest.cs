@@ -54,7 +54,7 @@ public class OpenChest : MonoBehaviour
             }
             if(Input.GetKey(KeyCode.O))
             {
-                int rnd = Random.Range(3, GameManager.Instance.itemList.Count);
+                int rnd = Random.Range(0, GameManager.Instance.itemList.Count);
                 _objectHeld = GameManager.Instance.itemList[rnd];
                 GetComponent<SpriteRenderer>().sprite = _newSprite;
                 _shadowObject.GetComponent<SpriteRenderer>().sprite = _newOpenedSprite;

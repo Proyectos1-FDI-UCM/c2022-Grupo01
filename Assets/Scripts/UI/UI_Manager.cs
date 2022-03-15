@@ -22,6 +22,7 @@ public class UI_Manager : MonoBehaviour
 	{
         if(health > _normalMaxHealth)
         {
+            _healthSlider.value = _normalMaxHealth;
             _secondaryHealthSlider.gameObject.SetActive(true);
             float healthDiff = PlayerManager.Instance.maxHealth - _normalMaxHealth;
             _secondaryHealthSlider.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2 (_sliderWidth * (healthDiff/100) , _secondaryHealthSlider.gameObject.GetComponent<RectTransform>().sizeDelta.y);
@@ -34,7 +35,7 @@ public class UI_Manager : MonoBehaviour
             _healthSlider.value = health;
         }
 
-        _healthBarText.text = "Hidratación: " + health;
+        _healthBarText.text = "Hidrataciï¿½n: " + health;
     }
 
     public void ShowActiveCooldown(float cooldown, float maxCooldown)
