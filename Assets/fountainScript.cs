@@ -16,6 +16,9 @@ public class fountainScript : MonoBehaviour
             if (_spongeMovement.movement != Vector3.zero)
             {
                 _isClogged = true;
+                // Cambio de sprite de fuente a amarillo (como si las esponjas las hubieran tapado)
+                
+                // Comprueba si están todas las fuentes tapadas
                 _salaManager.CompruebaFuente();
             }
             Destroy(_spongeMovement.gameObject);

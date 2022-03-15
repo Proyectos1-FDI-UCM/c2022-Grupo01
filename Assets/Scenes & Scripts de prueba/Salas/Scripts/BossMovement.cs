@@ -80,7 +80,7 @@ public class BossMovement : MonoBehaviour
             _bossRB.MovePosition(_myTransform.position + _direction.normalized * speed * Time.fixedDeltaTime);
 
         }
-        else if(!agua && !recarga)
+        else if(!recarga)
         {
             bossColider.isTrigger = true;
             // Movimiento al centro
@@ -93,6 +93,7 @@ public class BossMovement : MonoBehaviour
                 timeLeft = cooldown;
                 recarga = true;
                 _bossRB.constraints = RigidbodyConstraints2D.FreezeAll;
+                //_salaManager.DestaparFuentes();
             }
         }
     }

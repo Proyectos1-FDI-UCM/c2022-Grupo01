@@ -67,6 +67,14 @@ public class SalaManager : MonoBehaviour
         }
     }
 
+    public void DestaparFuentes()
+    {
+        foreach (fountainScript fountain in _listOfFountains)
+        {
+            fountain._isClogged = false;
+        }
+    }
+
     public void OnTriggerExit2D(Collider2D collision)
     {
 
@@ -122,7 +130,6 @@ public class SalaManager : MonoBehaviour
     }
     public void DestroyDoors()
     {
-
         foreach(Door _door in _listOfDoors)
         {
             _door.gameObject.GetComponent<SpriteRenderer>().enabled = false;
