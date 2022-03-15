@@ -12,9 +12,8 @@ public class SalaManager : MonoBehaviour
     public enum SalaStates {Inicial, Inactiva, Activa,Completada};
     [SerializeField]
     private List<fountainScript> _listOfFountains;
-
     public SalaStates myState;
-
+    private BossMovement _bossMovement;
     
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -27,7 +26,6 @@ public class SalaManager : MonoBehaviour
 
         if (_player != null)
         {
-
             EnterSala();
         }
         if (_enemy != null)
@@ -35,6 +33,11 @@ public class SalaManager : MonoBehaviour
             _enemy.sala = this;
             _enemy.gameObject.GetComponentInChildren<DetectPlayer>().sala = this;
             _enemy.Register();
+            // Si está el jefe Boss Esponja se coge su script de movimiento
+            // Si no, _bossMovement = null
+            // **Pensar en otra manera para que sea más eficiente, ya que por cada enemigo
+            // se ejecuta este GetComponent
+            _bossMovement = _enemy.GetComponent<BossMovement>();
         }
         if (_door != null)
         {
@@ -44,6 +47,23 @@ public class SalaManager : MonoBehaviour
         if (_fountain != null)
         {
             _listOfFountains.Add(_fountain);
+            _fountain._salaManager = this;
+        }
+    }
+
+    public void CompruebaFuente()
+    {
+        int numFuentesLlenas = 0;
+        foreach (fountainScript fountain in _listOfFountains)
+        {
+            if (fountain._isClogged)
+            {
+                numFuentesLlenas++;
+            }
+        }
+        if (numFuentesLlenas == _listOfFountains.Count)
+        {
+            _bossMovement.agua = false;
         }
     }
 

@@ -8,17 +8,9 @@ public class Esquinas : MonoBehaviour
     {
         BossMovement _boss = collision.gameObject.GetComponent<BossMovement>();
 
-        if (_boss!=null)
+        if (_boss != null)
         {
-            if (_boss.giro != 4)
-            {
-                _boss.Giro();
-            }
-            else
-            {
-                _boss.agua = false;
-
-            }
+            _boss.Giro();
         }
        
     }

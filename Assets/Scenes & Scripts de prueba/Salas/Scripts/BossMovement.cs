@@ -55,12 +55,14 @@ public class BossMovement : MonoBehaviour
     void Update()
     {
         timeLeft = timeLeft - Time.deltaTime;
-        if (timeLeft < 0 && agua == false)
+        if (timeLeft < 0 && !agua)
         {
             bossColider.isTrigger = true;
             _bossRB.constraints = RigidbodyConstraints2D.None;
             _bossRB.constraints = RigidbodyConstraints2D.FreezeRotation;
+            // Vuelta a los bordes desde el centro
             _bossRB.MovePosition(_myTransform.position + (InitialPosition - _myTransform.position) * speed * Time.fixedDeltaTime);
+            // Detección de si ha llegado al borde
             if (Vector3.Magnitude(InitialPosition-_myTransform.position)< 0.1)
             {
                 vuelta++;
@@ -72,16 +74,19 @@ public class BossMovement : MonoBehaviour
                 giro = -(vuelta % 4);
             }
         }
+        // Movimiento principal en los bordes
         if (agua)
         {
             _bossRB.MovePosition(_myTransform.position + _direction.normalized * speed * Time.fixedDeltaTime);
 
         }
-        else if(!agua&&!recarga)
+        else if(!agua && !recarga)
         {
             bossColider.isTrigger = true;
+            // Movimiento al centro
             _bossRB.MovePosition(_myTransform.position+( centro.transform.position - _myTransform.position).normalized * speed * Time.fixedDeltaTime);
-            if (Vector3.Magnitude( centro.transform.position - _myTransform.position) < 0.1)
+            // Detección de si está en el centro
+            if (Vector3.Magnitude(centro.transform.position - _myTransform.position) < 0.1)
             {
                 //agua = true;
                 bossColider.isTrigger = false;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class fountainScript : MonoBehaviour
 {
     public bool _isClogged;
+    public SalaManager _salaManager;
 
     #region methods
     private void OnTriggerEnter2D(Collider2D collision)
@@ -15,6 +16,7 @@ public class fountainScript : MonoBehaviour
             if (_spongeMovement.movement != Vector3.zero)
             {
                 _isClogged = true;
+                _salaManager.CompruebaFuente();
             }
             Destroy(_spongeMovement.gameObject);
         }
