@@ -676,11 +676,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520441752}
   m_CullTransparentMesh: 1
---- !u!1 &627397991 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5757689140758480508, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
-  m_PrefabInstance: {fileID: 2028240744}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &655508093
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,7 +823,7 @@ MonoBehaviour:
   gun: {fileID: 1525701672}
   rotationPoint: {fileID: 247836500}
   model: {fileID: 933494365}
-  attackPoint: {fileID: 627397991}
+  shotPoint: {fileID: 0}
   gancho: {fileID: 0}
   myLifeState: 0
   health: 0
@@ -836,8 +831,10 @@ MonoBehaviour:
   meleeDamage: 0
   rangeDamage: 0
   speed: 0
+  uses: 0
   _playerPosition: {x: 0, y: 0, z: 0}
   playerInRoll: 0
+  _previusCooldown: -2
 --- !u!114 &778536840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -853,6 +850,9 @@ MonoBehaviour:
   _healthSlider: {fileID: 414001353}
   _cooldownSlider: {fileID: 2107814664}
   _secondaryHealthSlider: {fileID: 992250058}
+  _objectInfo: {fileID: 0}
+  _objectInfoPrefab: {fileID: 0}
+  _healthBarText: {fileID: 0}
 --- !u!114 &778536841
 MonoBehaviour:
   m_ObjectHideFlags: 0

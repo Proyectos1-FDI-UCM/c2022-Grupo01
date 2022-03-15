@@ -60,7 +60,6 @@ public class RandomGenerator : MonoBehaviour
             if (rooms[j, k] == -1 && ComprobarAdyacencia(rooms, j, k))
             {
                 rooms[j, k] = numSalasCreadas;
-                Debug.Log(rooms[j, k]);
                 numSalasCreadas++;
             }
             i++;
@@ -125,8 +124,6 @@ public class RandomGenerator : MonoBehaviour
 
                         lastRoomPosition[0] = i;
                         lastRoomPosition[1] = j;
-
-                        Debug.Log(comprobarPosicion[0] + " " + comprobarPosicion[1]);
 
                         newRoom = Instantiate(roomPrefabs[rnd], newRoom.transform.position + new Vector3(comprobarPosicion[1]*instanceOffset.x,-comprobarPosicion[0]*instanceOffset.y,0), Quaternion.identity);
                         gameObjectPrefabs[i, j] = newRoom;

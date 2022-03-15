@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     #region references
-    public GameObject player, gun, rotationPoint, model, attackPoint, gancho;
+    public GameObject player, gun, rotationPoint, model, shotPoint, gancho;
     
     private Animator _animator;
 
@@ -66,7 +66,7 @@ public class PlayerManager : MonoBehaviour
     #region cambiar stats de jugador
     public void ChangePlayerLife(float health)
     {
-        _playerLife.SetHealth(health);  
+        _playerLife.SetHealth(health, false);  
     }
     public void ChangeMaxLife(int myMaxHealth)
     {

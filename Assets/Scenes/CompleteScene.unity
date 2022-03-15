@@ -15512,15 +15512,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomPrefabs:
   - {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
-  - {fileID: 7754045428617506983, guid: 1e526fc088666b04296dd0083923afec, type: 3}
-  - {fileID: 7754045428617506983, guid: 1e526fc088666b04296dd0083923afec, type: 3}
+  - {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
+  - {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
+  - {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
   - {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
   - {fileID: 7754045428617506983, guid: 1e526fc088666b04296dd0083923afec, type: 3}
-  - {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
   - {fileID: 7754045428617506983, guid: 1e526fc088666b04296dd0083923afec, type: 3}
-  instanceOffset:
-  - {x: 40, y: 0, z: 0}
-  - {x: 0, y: -27, z: 0}
+  - {fileID: 7754045428617506983, guid: 1e526fc088666b04296dd0083923afec, type: 3}
+  - {fileID: 7754045428617506983, guid: 1e526fc088666b04296dd0083923afec, type: 3}
+  - {fileID: 7754045428617506983, guid: 1e526fc088666b04296dd0083923afec, type: 3}
 --- !u!4 &1985706465 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6782809854696887245, guid: c179726ff0ec3464ca47d7f86fbf0c06, type: 3}
