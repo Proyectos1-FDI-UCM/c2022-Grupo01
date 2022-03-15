@@ -63,7 +63,7 @@ public class SalaManager : MonoBehaviour
         foreach(EnemyLifeComponent enemy in _listOfEnemies)
         {
             enemy.gameObject.transform.position = _listEnemyPosition[enemy.ID];
-            enemy.gameObject.GetComponentInChildren<DetectPlayer>().Desactivate() ;
+            enemy.gameObject.GetComponentInChildren<DetectPlayer>().Deactivate() ;
             
         }
     }

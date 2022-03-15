@@ -8,8 +8,7 @@ public class EnemyAttackComponent : MonoBehaviour
 	/// <summary>
     /// Daño a contacto de los enemigos
     /// </summary>
-    [SerializeField]
-	private float _touchDamage = 30;
+    [SerializeField] private float _touchDamage = 30;
     #endregion
 
     #region methods
