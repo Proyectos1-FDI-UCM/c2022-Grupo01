@@ -36,14 +36,13 @@ public class PlayerAttack : MonoBehaviour
     private float _shotCooldown = 5, _meleeCooldown = 0.2f, attackRange = 0.5f;
 
     private PlayerManager _playerManager;
-    // Añadido por Laura
     private Transform _myTransform;
+    private PlayerLife _playerLife;
 	#endregion
 
 	#region properties
 	private float _shotCooldownCounter = 0, _meleeCooldownCounter = 0;
     private Vector3 _attackPointPosition = Vector3.zero;
-    // Añadido por Laura
     Vector3 mouseWorldPosition;
 	#endregion
 
@@ -55,8 +54,8 @@ public class PlayerAttack : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         _playerManager.UpdateMeleeDamage(meleeDamage);
         _playerManager.UpdateRangeDamage(rangeDamage);
-        // Añadido por Laura
         _myTransform = transform;
+        _playerLife = GetComponent<PlayerLife>();
     }
 
     void Update()
@@ -127,7 +126,7 @@ public class PlayerAttack : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.rotation = gunRB.rotation;
         rb.AddForce(shotPoint.right * shotForce, ForceMode2D.Impulse);
-        GetComponent<PlayerLife>().SetHealth(-10);
+        _playerLife.SetHealth(-10);
 	}
 
     public void SetMeleeDamage(float newMeleeDamage)
