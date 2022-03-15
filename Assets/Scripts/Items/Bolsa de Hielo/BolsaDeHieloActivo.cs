@@ -21,7 +21,6 @@ public class BolsaDeHieloActivo : ActiveObject
     public override void Activate()
 	{
 		base.Activate();
-        Debug.Log(sonCreated);
         if (!sonCreated)
         {
             base.Activate();

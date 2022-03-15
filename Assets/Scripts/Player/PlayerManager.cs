@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     #region references
-    public GameObject player, gun, rotationPoint, model, attackPoint, gancho;
+    public GameObject player, gun, rotationPoint, model, shotPoint, gancho;
     
     private Animator _animator;
 

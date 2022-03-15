@@ -20,7 +20,7 @@ public class BolsaDeHieloController : MonoBehaviour
 
     private void Start()
 	{
-		_shotPoint = PlayerManager.Instance.attackPoint.transform;
+		_shotPoint = PlayerManager.Instance.shotPoint.transform;
 		LanzaHielo();
 	}
 
@@ -35,7 +35,7 @@ public class BolsaDeHieloController : MonoBehaviour
 	public void LanzaHielo()
 	{
 		_elapsedTime = 0;
-		_shotPoint = PlayerManager.Instance.attackPoint.transform;
+		_shotPoint = PlayerManager.Instance.shotPoint.transform;
 		GameObject nuevoIcebagPrefab = Instantiate(_icebagPrefab, _shotPoint.position, Quaternion.identity);
 		Rigidbody2D rb = nuevoIcebagPrefab.GetComponent<Rigidbody2D>();
 		rb.rotation = PlayerManager.Instance.gun.GetComponent<Rigidbody2D>().rotation;
