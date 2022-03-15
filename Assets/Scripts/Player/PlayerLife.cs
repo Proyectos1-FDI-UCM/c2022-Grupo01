@@ -6,32 +6,21 @@ public class PlayerLife : MonoBehaviour
 {
     #region parameters
     public float health, maxHealth = 100;
+    private bool _invulnerability = false;
+    [SerializeField] private float _invulnerabilityTime = 2f;
     #endregion
 
     #region references
     [SerializeField]
     private Animator animator;
     private PlayerManager _playerManager;
+    private PlayerAttack _playerAttack;
     #endregion
 
     #region methods
     public void SetHealth(float healthToAdd)
 	{
-        if (healthToAdd < 0) 
-        {
-            animator.SetTrigger("Hurt");
-            
-            /*if (_playerManager.playerInRoll)
-            {
-                animator.SetBool("RuedoHurt", true);
-            }
-            else
-            {
-                animator.SetTrigger("Hurt");
-            }*/
-        }
-        
-        if(_playerManager.myLifeState == PlayerManager.LifeStates.Normal || healthToAdd >= 0)
+        if(_invulnerability == false && _playerManager.myLifeState == PlayerManager.LifeStates.Normal || healthToAdd >= 0)
         {
             health += healthToAdd;
             health = Mathf.Clamp(health, 0, maxHealth);
@@ -46,6 +35,11 @@ public class PlayerLife : MonoBehaviour
         {
             _playerManager.myLifeState = PlayerManager.LifeStates.Normal;   // Si tiene escudos hay que comprobar en que estado est�, pero por ahora es as�
             HolyFlotadorImage.Instance.enabled = false;
+        }
+        if (_invulnerability == false && healthToAdd < 0) 
+        {
+            StartCoroutine("GetInvulnerable");
+            animator.SetTrigger("Hurt");
         }
     }
 
@@ -62,6 +56,13 @@ public class PlayerLife : MonoBehaviour
 
         GameManager.Instance.OnPlayerDie();
 	}
+
+    IEnumerator GetInvulnerable()
+    {
+        _invulnerability = true;
+        yield return new WaitForSeconds(_invulnerabilityTime);
+        _invulnerability = false;
+    }
 	#endregion
 	
 	void Start()
@@ -71,6 +72,7 @@ public class PlayerLife : MonoBehaviour
         GameManager.Instance.ShowHealth(health);
         _playerManager.UpdateLife(health);
         _playerManager.UpdateMaxLife(maxHealth);
+        _playerAttack = GetComponent<PlayerAttack>();
     }
 
 

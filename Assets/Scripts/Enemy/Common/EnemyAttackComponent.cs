@@ -17,7 +17,11 @@ public class EnemyAttackComponent : MonoBehaviour
 	{
         PlayerLife player = collision.gameObject.GetComponent<PlayerLife>();
 
-        if(player != null) PlayerManager.Instance.ChangePlayerLife(-_touchDamage);
+        if (player != null)
+        {
+            PlayerManager.Instance.ChangePlayerLife(-_touchDamage);
+        }
+        
 	}
     #endregion
 }
