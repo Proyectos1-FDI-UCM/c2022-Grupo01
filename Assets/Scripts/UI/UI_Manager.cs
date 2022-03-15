@@ -35,7 +35,7 @@ public class UI_Manager : MonoBehaviour
             _healthSlider.value = health;
         }
 
-        _healthBarText.text = "Hidrataci�n: " + health;
+        _healthBarText.text = "Hidratación: " + health;
     }
 
     public void ShowActiveCooldown(float cooldown, float maxCooldown)
