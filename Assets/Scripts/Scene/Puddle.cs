@@ -25,7 +25,7 @@ public class Puddle : MonoBehaviour
         PlayerLife player = collision.gameObject.GetComponent<PlayerLife>();
 		if (player != null && _playerManager.playerInRoll)
 		{
-			player.SetHealth(+_touchHydrate);
+			player.SetHealth(+_touchHydrate, false);
 			UsedPuddle();
 		}
 	}

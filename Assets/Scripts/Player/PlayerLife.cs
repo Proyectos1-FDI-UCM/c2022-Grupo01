@@ -18,7 +18,7 @@ public class PlayerLife : MonoBehaviour
     #endregion
 
     #region methods
-    public void SetHealth(float healthToAdd)
+    public void SetHealth(float healthToAdd, bool isShot)
 	{
         if(_invulnerability == false && _playerManager.myLifeState == PlayerManager.LifeStates.Normal || healthToAdd >= 0)
         {
@@ -36,7 +36,7 @@ public class PlayerLife : MonoBehaviour
             _playerManager.myLifeState = PlayerManager.LifeStates.Normal;   // Si tiene escudos hay que comprobar en que estado est�, pero por ahora es as�
             HolyFlotadorImage.Instance.enabled = false;
         }
-        if (_invulnerability == false && healthToAdd < 0) 
+        if (_invulnerability == false && healthToAdd < 0 && !isShot) 
         {
             StartCoroutine("GetInvulnerable");
             animator.SetTrigger("Hurt");
