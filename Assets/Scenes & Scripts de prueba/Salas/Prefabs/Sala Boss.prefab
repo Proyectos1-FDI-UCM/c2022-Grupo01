@@ -2629,8 +2629,8 @@ GameObject:
   m_Component:
   - component: {fileID: 39436490965378181}
   - component: {fileID: 39436490965378180}
-  - component: {fileID: 2305346957647952074}
   - component: {fileID: 2305346955848811609}
+  - component: {fileID: 8628671713418063210}
   m_Layer: 0
   m_Name: Sala Boss
   m_TagString: Untagged
@@ -2681,22 +2681,6 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &2305346957647952074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 39436490965378203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43fe3db3416112f408f3ed6c3cd515ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _listOfDoors: []
-  _listOfEnemies: []
-  _listOfFountains: []
-  myState: 0
 --- !u!61 &2305346955848811609
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2723,6 +2707,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 28.5, y: 14.5}
   m_EdgeRadius: 0
+--- !u!114 &8628671713418063210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39436490965378203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8088bbb9c6c3b8c428bd7d4ee21181ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listOfDoors: []
+  _listOfEnemies: []
+  _listOfFountains: []
+  myState: 0
 --- !u!1 &39436491274451132
 GameObject:
   m_ObjectHideFlags: 0
@@ -7958,6 +7958,39 @@ MonoBehaviour:
   m_Area: 0
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &3501580068580307457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6316753049352870142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a022214237906b45b95cb84ddae0729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sala: {fileID: 0}
+  _myState: 0
+  _thisTypeOfEnemy: 0
+--- !u!114 &7530989360883216116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6316753049984165335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790d628de0af6404287c271895b4a455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sala: {fileID: 0}
+  _currentLife: 0
+  maxLife: 1000
+  ID: 0
+  dead: 0
+  animator: {fileID: 0}
 --- !u!1 &7983475400133774161
 GameObject:
   m_ObjectHideFlags: 0
@@ -8318,9 +8351,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
+--- !u!1 &6316753049352870142 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6316753048233789262, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
+  m_PrefabInstance: {fileID: 1297899440}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6316753049984165330 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6316753048730843746, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
+  m_PrefabInstance: {fileID: 1297899440}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6316753049984165335 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6316753048730843751, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
   m_PrefabInstance: {fileID: 1297899440}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1325653741
@@ -8489,7 +8532,7 @@ PrefabInstance:
     - target: {fileID: -7724965039430733357, guid: 4296ff90aa50e1e4d8d569a1ced23907, type: 3}
       propertyPath: sala
       value: 
-      objectReference: {fileID: 2305346957647952074}
+      objectReference: {fileID: 0}
     - target: {fileID: 979439951788322032, guid: 4296ff90aa50e1e4d8d569a1ced23907, type: 3}
       propertyPath: m_Name
       value: Door (3)
