@@ -6,35 +6,39 @@ public class RandomGenerator : MonoBehaviour
 {
     #region references
     [SerializeField] private List<GameObject> roomPrefabs;
-    [SerializeField] private Vector3[] instanceOffset;
     #endregion
 
     #region properties
+    private Vector3 instanceOffset = new Vector3(40,27,0);
     const int DIM = 16;
-    const int NUMSALAS = 10;
     const float ITERATIONS = DIM * DIM * 1.2f;
 
     private int[,] rooms;
+    private GameObject[,] gameObjectPrefabs;
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
-        Inicializa(out rooms);
+        int NUMSALAS = roomPrefabs.Count;
+        Inicializa(out rooms, out gameObjectPrefabs);
 
         GeneraSala(rooms, ITERATIONS, NUMSALAS);
-        ColocarSalas(rooms);
+        ColocarSalas(rooms, gameObjectPrefabs);
+        AbrirPuertas(gameObjectPrefabs);
     }
 
-    void Inicializa(out int[,] rooms)
+    void Inicializa(out int[,] rooms, out GameObject[,] gameObjectPrefabs)
     {
         rooms = new int[DIM, DIM];
+        gameObjectPrefabs = new GameObject[DIM, DIM];
 
         for(int i = 0; i < DIM; i++)
         {
             for(int j = 0; j < DIM; j++)
             {
                 rooms[i, j] = -1;
+                gameObjectPrefabs[i, j] = null;
             }
         }
 
@@ -56,6 +60,7 @@ public class RandomGenerator : MonoBehaviour
             if (rooms[j, k] == -1 && ComprobarAdyacencia(rooms, j, k))
             {
                 rooms[j, k] = numSalasCreadas;
+                Debug.Log(rooms[j, k]);
                 numSalasCreadas++;
             }
             i++;
@@ -88,35 +93,66 @@ public class RandomGenerator : MonoBehaviour
         return adyacente;
     }
 
-    void ColocarSalas(int[,] rooms)
+    void ColocarSalas(int[,] rooms, GameObject[,] gameObjectPrefabs)
     {
-        bool firstRoom = false;
         GameObject newRoom = null;
+        int[] lastRoomPosition = new int[2];
+
         for(int i = 0; i < DIM; i++)
         {
             for(int j = 0; j < DIM; j++)
             {
                 if(rooms[i,j] != -1 && roomPrefabs.Count > 0)
                 {
-                    if (!firstRoom)
+                    if (newRoom == null)
                     {
                         int rnd = Random.Range(0, roomPrefabs.Count);
                         newRoom = Instantiate(roomPrefabs[rnd], Vector3.zero, Quaternion.identity);
+                        gameObjectPrefabs[i, j] = newRoom;
                         roomPrefabs.Remove(roomPrefabs[rnd]);
-                        firstRoom = true;
                         PlayerManager.Instance.player.transform.position = newRoom.transform.position + new Vector3(-122,45,0);
+                        lastRoomPosition[0] = i;
+                        lastRoomPosition[1] = j;
                     }
 
                     else
                     {
                         int rnd = Random.Range(0, roomPrefabs.Count);
-                        int otherRnd = Random.Range(0, 4);
-                        newRoom = Instantiate(roomPrefabs[rnd], newRoom.transform.position + instanceOffset[otherRnd], Quaternion.identity);
+                        int[] comprobarPosicion = new int[2];
+
+                        comprobarPosicion[0] = i - lastRoomPosition[0];
+                        comprobarPosicion[1] = j - lastRoomPosition[1];
+
+                        lastRoomPosition[0] = i;
+                        lastRoomPosition[1] = j;
+
+                        Debug.Log(comprobarPosicion[0] + " " + comprobarPosicion[1]);
+
+                        newRoom = Instantiate(roomPrefabs[rnd], newRoom.transform.position + new Vector3(comprobarPosicion[1]*instanceOffset.x,-comprobarPosicion[0]*instanceOffset.y,0), Quaternion.identity);
+                        gameObjectPrefabs[i, j] = newRoom;
                         roomPrefabs.Remove(roomPrefabs[rnd]);
                     }
-
                 }
             }
+        }
+    }
+
+    void AbrirPuertas(GameObject[,] rooms)
+	{
+        bool closeDoor = false;
+        for(int i = 0; i < DIM; i++)
+		{
+            for(int j = 0; j < DIM; j++)
+			{
+                if (rooms[i, j] != null)
+                {
+                    DoorManager doorManager = rooms[i,j].GetComponent<DoorManager>();
+                    if(i > 0 && rooms[i - 1,j] != null) { doorManager.Upper(closeDoor); }
+                    if (i < DIM - 1 && rooms[i + 1, j] != null) doorManager.Lower(closeDoor);
+                    if (j < DIM - 1 && rooms[i, j + 1] != null) doorManager.Right(closeDoor);
+                    if (j > 0 && rooms[i, j - 1] != null) doorManager.Left(closeDoor);
+                }
+	        }
         }
     }
 }
