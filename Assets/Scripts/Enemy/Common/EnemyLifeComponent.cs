@@ -4,29 +4,65 @@ using UnityEngine;
 
 public class EnemyLifeComponent : MonoBehaviour
 {
-    public float maxLife = 100f;
-	public Animator animator;
-	//[HideInInspector]
-	public SalaManager sala;
+	#region properties
+	/// <summary>
+    /// Sala en la que se encuentra el enemigo
+    /// </summary>
+	[HideInInspector] public SalaManager sala;
 
-    public float _currentLife;
+	/// <summary>
+    /// Vida del enemigo
+    /// </summary>
+	public float _currentLife;
 
-	private BulletLife bullet;
-	private BubbleAttack bubble;
-	private BolsaDeHielo ice;
-	public bool dead = false;
+	/// <summary>
+    /// Vida máxima del enemigo
+    /// </summary>
+	public float maxLife = 100f;
 
+	/// <summary>
+    /// ID del enemigo
+    /// </summary>
 	public int ID;
+	#endregion
 
-    void Start()
-    {
-		_currentLife = maxLife;
-		
-    }
-    public void Register()
+	#region parameters
+	/// <summary>
+    /// Booleano que indica si un enemigo está o no muerto
+    /// </summary>
+	public bool dead = false;
+	#endregion
+
+	#region references
+	/// <summary>
+    /// Referencia al Animator
+    /// </summary>
+	public Animator animator;
+
+	/// <summary>
+    /// Referencia al BulletLife
+    /// </summary>
+	private BulletLife bullet;
+
+	/// <summary>
+    /// Referencia a BubbleAttack
+    /// </summary>
+	private BubbleAttack bubble;
+
+	/// <summary>
+    /// Referencia a BolsaDeHielo
+    /// </summary>
+	private BolsaDeHielo ice;
+	#endregion
+
+	#region methods
+	/// <summary>
+    /// Registra al enemigo en la sala actual
+    /// </summary>
+	public void Register()
 	{
-		Debug.LogWarning("Sala" + sala);
-		Debug.LogWarning("This " + this);
+		//Debug.LogWarning("Sala" + sala);
+		//Debug.LogWarning("This " + this);
 		sala.RegisterEnemy(this);
 	}
 
@@ -35,28 +71,27 @@ public class EnemyLifeComponent : MonoBehaviour
 		bullet = collision.gameObject.GetComponent<BulletLife>();
 		bubble = collision.gameObject.GetComponent<BubbleAttack>();
 
-		if (bullet != null)
-		{
-			Damage(bullet.bulletDamage);
-		}
-		if (bubble != null)
-		{
-			Damage(bubble.bulletDamage);
-		}
-		
+		if (bullet != null) Damage(bullet.bulletDamage);
+		if (bubble != null) Damage(bubble.bulletDamage);
 	}
 
+	/// <summary>
+    /// Métod. para dañar a los enemigos
+    /// </summary>
+    /// <param name="damage">Float que contiene el daño causado al enemigo</param>
 	public void Damage(float damage)
 	{
 		if (!dead)
 		{
 			animator.SetTrigger("Hurt");
 			_currentLife -= damage;
-			if (_currentLife <= 0)
-				Die();
+			if (_currentLife <= 0) Die();
 		}
 	}
 
+	/// <summary>
+    /// Métod. que mata a los enemigos
+    /// </summary>
 	void Die()
 	{
 		//play die animation
@@ -68,4 +103,10 @@ public class EnemyLifeComponent : MonoBehaviour
 			sala.OnEnemyDies(this);
 		}
 	}
+	#endregion
+
+	void Start()
+    {
+		_currentLife = maxLife;
+    }  
 }

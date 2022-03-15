@@ -5,29 +5,56 @@ using UnityEngine;
 public class MeleeAttack : MonoBehaviour
 {
 	#region parameters
-	[SerializeField]
-	private float _meleeCooldown = 0.8f;
-	[SerializeField]
-	private float _attackRange = 2f;
-	[SerializeField]
-	private int _meleeDamage = 20;
-	[SerializeField]
-	private LayerMask _playerLayer;
-	[SerializeField]
-	private Animator _animator;
+	/// <summary>
+    /// Cooldown de los enemigos a melee
+    /// </summary>
+	[SerializeField] private float _meleeCooldown = 0.8f;
+
+	/// <summary>
+    /// Rango de ataque de los enemigos a melee
+    /// </summary>
+	[SerializeField] private float _attackRange = 2f;
+
+	/// <summary>
+    /// Daño de los enemigos a melee
+    /// </summary>
+	[SerializeField] private int _meleeDamage = 20;
 	#endregion
+
 	#region references
+	/// <summary>
+    /// Referencia al PlayerManager
+    /// </summary>
 	private PlayerManager _myPlayerManager;
+
+	/// <summary>
+	/// Referencia al LayerMask del jugador
+	/// </summary>
+	[SerializeField] private LayerMask _playerLayer;
+
+	/// <summary>
+    /// Referencia al Animator
+    /// </summary>
+	[SerializeField] private Animator _animator;
 	#endregion
+
 	#region methods
+	/// <summary>
+    /// Activa el script de ataque a melee
+    /// </summary>
 	public void ExecuteMeleeAttack()
     {
 		this.enabled = true;
     }
+
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.DrawWireSphere(transform.position, _attackRange);
 	}
+
+	/// <summary>
+    /// Ataque a melee del enemigo
+    /// </summary>
 	private void Melee()
 	{
 		_animator.SetTrigger("Attack");
@@ -42,6 +69,7 @@ public class MeleeAttack : MonoBehaviour
     {
 		_myPlayerManager = PlayerManager.Instance;
     }
+
     private void FixedUpdate()
 	{
 		//checkear distancia entre PJ y enemigo
