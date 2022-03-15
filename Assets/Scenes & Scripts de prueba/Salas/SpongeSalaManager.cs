@@ -30,6 +30,7 @@ public class SpongeSalaManager : MonoBehaviour
         {
             _enemy.sala = this;
             _enemy.gameObject.GetComponentInChildren<SpongeDetectPlayer>().sala = this;
+            _enemy.GetComponent<BossMovement>()._mySpongeSalaManager = this;
             _enemy.Register();
             _bossMovement = _enemy.GetComponent<BossMovement>();
         }

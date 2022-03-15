@@ -21,6 +21,8 @@ public class fountainScript : MonoBehaviour
                 // Comprueba si están todas las fuentes tapadas
                 _salaManager.CompruebaFuente();
             }
+            // Si queremos que se destruya en la pared, meter el destroy en el if
+            // Como está ahora, se destruye siempre al tocar la fuente
             Destroy(_spongeMovement.gameObject);
         }
     }

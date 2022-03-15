@@ -645,6 +645,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sala Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 8607600844938020560, guid: 6cbaa99ee50b8e24e873e891f805507b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8607600845796489449, guid: 6cbaa99ee50b8e24e873e891f805507b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8607600846021027208, guid: 6cbaa99ee50b8e24e873e891f805507b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8607600846054843909, guid: 6cbaa99ee50b8e24e873e891f805507b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cbaa99ee50b8e24e873e891f805507b, type: 3}
 --- !u!1001 &1485854761

@@ -11,6 +11,8 @@ public class BossMovement : MonoBehaviour
     public bool agua=true, recarga=false;
     public GameObject centro;
     private BoxCollider2D bossColider;
+    public SpongeSalaManager _mySpongeSalaManager;
+    private RangeAttack _myRangeAttack;
     
 
     public void Giro()
@@ -49,6 +51,7 @@ public class BossMovement : MonoBehaviour
         _myTransform = transform;
         bossColider = GetComponent<BoxCollider2D>();
         InitialPosition = _myTransform.position;
+        _myRangeAttack = GetComponent<RangeAttack>();
     }
 
     // Update is called once per frame
@@ -72,6 +75,7 @@ public class BossMovement : MonoBehaviour
                 _direction.x = 1;
                 _direction.y = 0;
                 giro = -(vuelta % 4);
+                _myRangeAttack.enabled = true;
             }
         }
         // Movimiento principal en los bordes
@@ -82,6 +86,7 @@ public class BossMovement : MonoBehaviour
         }
         else if(!recarga)
         {
+            _myRangeAttack.enabled = false;
             bossColider.isTrigger = true;
             // Movimiento al centro
             _bossRB.MovePosition(_myTransform.position+( centro.transform.position - _myTransform.position).normalized * speed * Time.fixedDeltaTime);
@@ -93,7 +98,7 @@ public class BossMovement : MonoBehaviour
                 timeLeft = cooldown;
                 recarga = true;
                 _bossRB.constraints = RigidbodyConstraints2D.FreezeAll;
-                //_salaManager.DestaparFuentes();
+                _mySpongeSalaManager.DestaparFuentes();
             }
         }
     }
