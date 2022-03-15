@@ -28,8 +28,4 @@ public class fountainScript : MonoBehaviour
         _isClogged = false;
     }
 
-    void Update()
-    {
-        
-    }
 }
