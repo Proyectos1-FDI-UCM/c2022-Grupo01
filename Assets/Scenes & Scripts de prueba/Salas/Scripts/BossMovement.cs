@@ -69,7 +69,7 @@ public class BossMovement : MonoBehaviour
                 bossColider.isTrigger = false;
                 _direction.x = 1;
                 _direction.y = 0;
-                giro = -(vuelta%4);
+                giro = -(vuelta % 4);
             }
         }
         if (agua)

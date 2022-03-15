@@ -81,7 +81,7 @@ GameObject:
   - component: {fileID: 974487679}
   - component: {fileID: 974487686}
   m_Layer: 7
-  m_Name: Boss ESponja
+  m_Name: Boss Esponja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,7 +141,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -8857106473960092384, guid: beb4daa1238457e439fd43cfcf4dab05, type: 3}
   m_Color: {r: 0.7559024, g: 0.7830189, b: 0.2696244, a: 1}
   m_FlipX: 0

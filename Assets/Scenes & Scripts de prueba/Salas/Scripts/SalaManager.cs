@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SalaManager : MonoBehaviour
 {
-     
-    
     [SerializeField]
     private List<Door> _listOfDoors;
     [SerializeField]
     private List<EnemyLifeComponent> _listOfEnemies;
     private List<Vector3> _listEnemyPosition;
     public enum SalaStates {Inicial, Inactiva, Activa,Completada};
+    [SerializeField]
+    private List<fountainScript> _listOfFountains;
 
     public SalaStates myState;
 
@@ -23,6 +23,8 @@ public class SalaManager : MonoBehaviour
         PlayerAttack _player = collision.gameObject.GetComponent<PlayerAttack>();
         EnemyLifeComponent _enemy = collision.gameObject.GetComponent<EnemyLifeComponent>();
         Door _door = collision.gameObject.GetComponent<Door>();
+        fountainScript _fountain = collision.gameObject.GetComponent<fountainScript>();
+
         if (_player != null)
         {
 
@@ -30,7 +32,6 @@ public class SalaManager : MonoBehaviour
         }
         if (_enemy != null)
         {
-            
             _enemy.sala = this;
             _enemy.gameObject.GetComponentInChildren<DetectPlayer>().sala = this;
             _enemy.Register();
@@ -39,6 +40,10 @@ public class SalaManager : MonoBehaviour
         {
             _door.sala = this;
             _door.Register();
+        }
+        if (_fountain != null)
+        {
+            _listOfFountains.Add(_fountain);
         }
     }
 
@@ -111,8 +116,7 @@ public class SalaManager : MonoBehaviour
         _listOfEnemies = new List<EnemyLifeComponent>();
         _listEnemyPosition = new List<Vector3>();
         myState = SalaStates.Inicial;
-
-
+        _listOfFountains = new List<fountainScript>();
     }
 
     public void Start()
