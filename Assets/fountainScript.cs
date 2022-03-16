@@ -7,6 +7,12 @@ public class fountainScript : MonoBehaviour
     public bool _isClogged;
     public SpongeSalaManager _salaManager;
 
+   
+    private Transform _myTransform;
+    
+    [SerializeField]
+    private GameObject _bulletPrefab, _center;
+
     #region methods
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -26,11 +32,21 @@ public class fountainScript : MonoBehaviour
             Destroy(_spongeMovement.gameObject);
         }
     }
+
+    public void Destaponar()
+    {
+        
+        Vector3 direction = (_center.transform.position - _myTransform.position).normalized;
+        GameObject bullet = Instantiate(_bulletPrefab, _myTransform.position + direction , Quaternion.identity);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();   
+        rb.AddForce(direction * 5, ForceMode2D.Impulse);
+    }
     #endregion
 
     void Start()
     {
         _isClogged = false;
+        _myTransform = transform;
     }
 
 }

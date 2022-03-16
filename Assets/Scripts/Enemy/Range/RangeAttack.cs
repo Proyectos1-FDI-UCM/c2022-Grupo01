@@ -11,7 +11,7 @@ public class RangeAttack : MonoBehaviour
     #endregion
     #region parameters
     [SerializeField]
-    private float _shotForce, _cooldownTime, _attackOffset,_bulletOffset=1;
+    private float _shotForce, _cooldownTime, _attackOffset;
     #endregion
     #region methods
     public void ExecuteRangeAttack()

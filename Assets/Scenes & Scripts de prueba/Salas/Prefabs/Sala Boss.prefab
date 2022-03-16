@@ -2739,6 +2739,7 @@ GameObject:
   - component: {fileID: 39436491274451134}
   - component: {fileID: 489034934}
   - component: {fileID: 1737075063}
+  - component: {fileID: 6599930494456456830}
   m_Layer: 15
   m_Name: Vacio
   m_TagString: Untagged
@@ -5256,6 +5257,22 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
 --- !u!114 &1737075063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39436491274451132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
+--- !u!114 &6599930494456456830
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8126,6 +8143,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7605760296955055953, guid: 1536ecec3e3d0964dbd9140632f4ec0c, type: 3}
+      propertyPath: _center
+      value: 
+      objectReference: {fileID: 1765694679}
     - target: {fileID: 8607600845927864381, guid: 1536ecec3e3d0964dbd9140632f4ec0c, type: 3}
       propertyPath: m_Name
       value: Fuente
@@ -8204,6 +8225,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7605760296955055953, guid: 1536ecec3e3d0964dbd9140632f4ec0c, type: 3}
+      propertyPath: _center
+      value: 
+      objectReference: {fileID: 1765694679}
     - target: {fileID: 8607600845927864381, guid: 1536ecec3e3d0964dbd9140632f4ec0c, type: 3}
       propertyPath: m_Name
       value: Fuente (1)
@@ -8440,6 +8465,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7605760296955055953, guid: 1536ecec3e3d0964dbd9140632f4ec0c, type: 3}
+      propertyPath: _center
+      value: 
+      objectReference: {fileID: 1765694679}
     - target: {fileID: 8607600845927864381, guid: 1536ecec3e3d0964dbd9140632f4ec0c, type: 3}
       propertyPath: m_Name
       value: Fuente (2)
@@ -8518,6 +8547,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7605760296955055953, guid: 1536ecec3e3d0964dbd9140632f4ec0c, type: 3}
+      propertyPath: _center
+      value: 
+      objectReference: {fileID: 1765694679}
     - target: {fileID: 8607600845927864381, guid: 1536ecec3e3d0964dbd9140632f4ec0c, type: 3}
       propertyPath: m_Name
       value: Fuente (3)
