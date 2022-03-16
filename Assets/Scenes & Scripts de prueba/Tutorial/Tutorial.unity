@@ -12242,7 +12242,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557946465}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1004.8, y: -538.8, z: 0}
+  m_LocalPosition: {x: -1004.8, y: -481.6, z: 0}
   m_LocalScale: {x: 20, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 1380085351}
@@ -12299,11 +12299,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &627397991 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5757689140758480508, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
-  m_PrefabInstance: {fileID: 2028240744}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &649126156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12449,7 +12444,7 @@ MonoBehaviour:
   gun: {fileID: 1525701672}
   rotationPoint: {fileID: 247836500}
   model: {fileID: 933494365}
-  attackPoint: {fileID: 627397991}
+  shotPoint: {fileID: 0}
   gancho: {fileID: 0}
   myLifeState: 0
   health: 0
