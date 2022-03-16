@@ -5,11 +5,36 @@ using UnityEngine.SceneManagement;
 
 public class Transition : MonoBehaviour
 {
-    [SerializeField] private GameObject _player;
-    [SerializeField] private Transform _target;
+    [SerializeField] private float _transitionTime = 1f;
 
-    public void OnTriggerEnter2D (Collider2D collision)
+    private Animator transitionAnimator;
+
+    public void Start()
     {
-        _player.transform.position = _target.transform.position;
+        transitionAnimator = GetComponentInChildren<Animator>();
+    }
+
+    void Update()
+    {   
+        if (Input.anyKeyDown)
+        {
+            LoadNextScene();
+        }
+    }
+
+    public void LoadNextScene()
+    {
+        StartCoroutine(SceneLoad(SceneManager.GetActiveScene().buildIndex + 1));
+    }
+
+    public IEnumerator SceneLoad(int sceneIndex)
+    {
+        //Disparar el trigger para reproducir animación FadeIn
+        transitionAnimator.SetTrigger("StartTransition");
+        //Esperar un segundo / lo que indique el usuario
+        yield return new WaitForSeconds(_transitionTime);
+        //Cargar la escena
+        SceneManager.LoadScene(sceneIndex);
+
     }
 }
