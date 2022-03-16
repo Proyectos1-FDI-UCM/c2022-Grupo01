@@ -11,6 +11,7 @@ public class RandomGenerator : MonoBehaviour
     #region properties
     private Vector3 instanceOffset = new Vector3(40,27,0);
     const int DIM = 16;
+    const int MIN_SALAS = 7;
     const float ITERATIONS = DIM * DIM * 1.2f;
 
     private int[,] rooms;
@@ -22,7 +23,7 @@ public class RandomGenerator : MonoBehaviour
     {
         int NUMSALAS = roomPrefabs.Count;
         Inicializa(out rooms, out gameObjectPrefabs);
-
+        
         GeneraSala(rooms, ITERATIONS, NUMSALAS);
         ColocarSalas(rooms, gameObjectPrefabs);
         AbrirPuertas(gameObjectPrefabs);
@@ -52,7 +53,7 @@ public class RandomGenerator : MonoBehaviour
     {
         int i = 0;
         int numSalasCreadas = 1;
-        while (i < iterations && numSalasCreadas < numSalas)
+        while (i < iterations && numSalasCreadas < numSalas || numSalasCreadas < MIN_SALAS)
         {
             int j = Random.Range(0, DIM);
             int k = Random.Range(0, DIM);

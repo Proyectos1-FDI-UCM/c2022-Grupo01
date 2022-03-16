@@ -21,7 +21,7 @@ public class RangeAttack : MonoBehaviour
     private void Shoot()
     {
         Vector3 direction = (_shotPosition - _myTransform.position).normalized;
-        GameObject bullet = Instantiate(_bulletPrefab, _myTransform.position + direction, Quaternion.identity);
+        GameObject bullet = Instantiate(_bulletPrefab, _myTransform.position + direction *1, Quaternion.identity);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         bullet.transform.rotation = Quaternion.Euler(bullet.transform.rotation.x, 0, 0);

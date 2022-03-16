@@ -66,6 +66,7 @@ public class SpongeSalaManager : MonoBehaviour
     {
         foreach (fountainScript fountain in _listOfFountains)
         {
+            fountain.Destaponar();
             fountain._isClogged = false;
         }
     }

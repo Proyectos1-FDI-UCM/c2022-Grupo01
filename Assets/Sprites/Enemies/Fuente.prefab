@@ -74,6 +74,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isClogged: 0
   _salaManager: {fileID: 0}
+  _bulletPrefab: {fileID: 5782515905541256436, guid: a84c8d1fffaf5524cbda9a17431b36a4, type: 3}
+  _center: {fileID: 0}
 --- !u!50 &1624379603743953559
 Rigidbody2D:
   serializedVersion: 4
