@@ -101,7 +101,9 @@ public class PlayerAttack : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
 		{
             EnemyLifeComponent enemyLife = enemy.GetComponent<EnemyLifeComponent>();
+            SpongeLifeComponent bossLife = enemy.GetComponent<SpongeLifeComponent>();
             if (enemyLife != null) enemyLife.Damage(meleeDamage);
+            else if (bossLife != null) bossLife.Damage(meleeDamage,false);
 		}
 
         foreach(Collider2D spongeCollider in hitSponge)

@@ -53,6 +53,8 @@ public class SpongeLifeComponent : MonoBehaviour
 	/// Referencia a BolsaDeHielo
 	/// </summary>
 	private BolsaDeHielo ice;
+
+	private BossMovement _bossMovement;
 	#endregion
 
 	#region methods
@@ -71,22 +73,25 @@ public class SpongeLifeComponent : MonoBehaviour
 		bullet = collision.gameObject.GetComponent<BulletLife>();
 		bubble = collision.gameObject.GetComponent<BubbleAttack>();
 
-		if (bullet != null) Damage(bullet.bulletDamage);
-		if (bubble != null) Damage(bubble.bulletDamage);
+		if (bullet != null) Damage(bullet.bulletDamage,true);
+		if (bubble != null) Damage(bubble.bulletDamage,true);
 	}
 
 	/// <summary>
 	/// Métod. para dañar a los enemigos
 	/// </summary>
 	/// <param name="damage">Float que contiene el daño causado al enemigo</param>
-	public void Damage(float damage)
+	public void Damage(float damage, bool type)
 	{
-		if (!dead)
+		if (!dead && ( _bossMovement.agua == false|| type)) 
 		{
-			animator.SetTrigger("Hurt");
-			_currentLife -= damage;
-			if (_currentLife <= 0) Die();
+				animator.SetTrigger("Hurt");
+				_currentLife -= damage;
+				if (_currentLife <= 0) Die();		
+
+			
 		}
+		
 	}
 
 	/// <summary>
@@ -108,5 +113,6 @@ public class SpongeLifeComponent : MonoBehaviour
 	void Start()
 	{
 		_currentLife = maxLife;
+		_bossMovement = GetComponent<BossMovement>();
 	}
 }
