@@ -2579,11 +2579,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6782809854696887245, guid: c179726ff0ec3464ca47d7f86fbf0c06, type: 3}
   m_PrefabInstance: {fileID: 593124689}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &232363016 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5757689142439586884, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
-  m_PrefabInstance: {fileID: 5757689141804961499}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &282374132 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8598375323967460487, guid: 5190ae259f44d6d41ac6956295c492b8, type: 3}
@@ -15471,7 +15466,7 @@ MonoBehaviour:
   gun: {fileID: 450459907}
   rotationPoint: {fileID: 450459907}
   model: {fileID: 5272552499463678556}
-  attackPoint: {fileID: 232363016}
+  shotPoint: {fileID: 0}
   gancho: {fileID: 0}
   myLifeState: 0
   health: 0
@@ -15521,6 +15516,8 @@ MonoBehaviour:
   - {fileID: 7754045428617506983, guid: 1e526fc088666b04296dd0083923afec, type: 3}
   - {fileID: 7754045428617506983, guid: 1e526fc088666b04296dd0083923afec, type: 3}
   - {fileID: 7754045428617506983, guid: 1e526fc088666b04296dd0083923afec, type: 3}
+  bossRoomPrefab: {fileID: 7754045428617506983, guid: e363d1f96c84f0f45a8b15317b33f03a, type: 3}
+  objectRoomPrefab: {fileID: 7754045428617506983, guid: b4bac0345ac629844b692800b55ccd2b, type: 3}
 --- !u!4 &1985706465 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6782809854696887245, guid: c179726ff0ec3464ca47d7f86fbf0c06, type: 3}

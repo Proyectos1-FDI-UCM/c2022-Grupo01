@@ -6,6 +6,7 @@ public class RandomGenerator : MonoBehaviour
 {
     #region references
     [SerializeField] private List<GameObject> roomPrefabs;
+    [SerializeField] private GameObject bossRoomPrefab, objectRoomPrefab;
     #endregion
 
     #region properties
@@ -13,9 +14,12 @@ public class RandomGenerator : MonoBehaviour
     const int DIM = 16;
     const int MIN_SALAS = 7;
     const float ITERATIONS = DIM * DIM * 1.2f;
+    private int numSalasCreadas;
 
     private int[,] rooms;
     private GameObject[,] gameObjectPrefabs;
+
+    private bool objectRoomGenerated = false;
     #endregion
 
     // Start is called before the first frame update
@@ -52,16 +56,16 @@ public class RandomGenerator : MonoBehaviour
     void GeneraSala(int[,] rooms, float iterations, int numSalas)
     {
         int i = 0;
-        int numSalasCreadas = 1;
-        while (i < iterations && numSalasCreadas < numSalas || numSalasCreadas < MIN_SALAS)
+        numSalasCreadas = 0;
+        while (numSalasCreadas < numSalas)
         {
             int j = Random.Range(0, DIM);
             int k = Random.Range(0, DIM);
 
             if (rooms[j, k] == -1 && ComprobarAdyacencia(rooms, j, k))
             {
-                rooms[j, k] = numSalasCreadas;
                 numSalasCreadas++;
+                rooms[j, k] = numSalasCreadas;
             }
             i++;
         }
@@ -97,6 +101,12 @@ public class RandomGenerator : MonoBehaviour
     {
         GameObject newRoom = null;
         int[] lastRoomPosition = new int[2];
+        int[] comprobarPosicion = new int[2];
+        int rndObjectRoom = Random.Range(0, numSalasCreadas/2);
+
+        Debug.Log(rndObjectRoom);
+
+        bool tutorialRoomInsteadBossRoom = false;
 
         for(int i = 0; i < DIM; i++)
         {
@@ -104,30 +114,53 @@ public class RandomGenerator : MonoBehaviour
             {
                 if(rooms[i,j] != -1 && roomPrefabs.Count > 0)
                 {
+                    Debug.Log(rooms[i, j]);
                     if (newRoom == null)
                     {
+                        if (rooms[i, j] == numSalasCreadas) numSalasCreadas -= 1; tutorialRoomInsteadBossRoom = true;
+                        if (rooms[i, j] == rndObjectRoom && rndObjectRoom > 0) rndObjectRoom -= 1;
+                        else if (rooms[i, j] == rndObjectRoom) rndObjectRoom += 1;
                         int rnd = Random.Range(0, roomPrefabs.Count);
                         newRoom = Instantiate(roomPrefabs[rnd], Vector3.zero, Quaternion.identity);
-                        gameObjectPrefabs[i, j] = newRoom;
                         roomPrefabs.Remove(roomPrefabs[rnd]);
                         PlayerManager.Instance.player.transform.position = newRoom.transform.position + new Vector3(-122,45,0);
                         lastRoomPosition[0] = i;
                         lastRoomPosition[1] = j;
+                        gameObjectPrefabs[lastRoomPosition[0], lastRoomPosition[1]] = newRoom;
                     }
-
+                    else if(!objectRoomGenerated && rndObjectRoom == rooms[i, j])
+                    {
+                        Debug.Log("OBJECT ROOM");
+                        comprobarPosicion[0] = i - lastRoomPosition[0];
+                        comprobarPosicion[1] = j - lastRoomPosition[1];
+                        newRoom = Instantiate(objectRoomPrefab, newRoom.transform.position + new Vector3(comprobarPosicion[1] * instanceOffset.x, -comprobarPosicion[0] * instanceOffset.y, 0), Quaternion.identity);
+                        lastRoomPosition[0] = i;
+                        lastRoomPosition[1] = j;
+                        gameObjectPrefabs[lastRoomPosition[0], lastRoomPosition[1]] = newRoom;
+                        objectRoomGenerated = true;
+                    }
+                    else if (rooms[i,j] == numSalasCreadas)
+                    {
+                        if (tutorialRoomInsteadBossRoom) numSalasCreadas++;
+                        Debug.Log("BOSS ROOM");
+                        comprobarPosicion[0] = i - lastRoomPosition[0];
+                        comprobarPosicion[1] = j - lastRoomPosition[1];
+                        newRoom = Instantiate(bossRoomPrefab, newRoom.transform.position + new Vector3(comprobarPosicion[1] * instanceOffset.x, -comprobarPosicion[0] * instanceOffset.y, 0), Quaternion.identity);
+                        lastRoomPosition[0] = i;
+                        lastRoomPosition[1] = j;
+                        gameObjectPrefabs[lastRoomPosition[0], lastRoomPosition[1]] = newRoom;
+                    }
                     else
                     {
                         int rnd = Random.Range(0, roomPrefabs.Count);
-                        int[] comprobarPosicion = new int[2];
 
                         comprobarPosicion[0] = i - lastRoomPosition[0];
                         comprobarPosicion[1] = j - lastRoomPosition[1];
 
                         lastRoomPosition[0] = i;
                         lastRoomPosition[1] = j;
-
-                        newRoom = Instantiate(roomPrefabs[rnd], newRoom.transform.position + new Vector3(comprobarPosicion[1]*instanceOffset.x,-comprobarPosicion[0]*instanceOffset.y,0), Quaternion.identity);
-                        gameObjectPrefabs[i, j] = newRoom;
+                        newRoom = Instantiate(roomPrefabs[rnd], newRoom.transform.position + new Vector3(comprobarPosicion[1] * instanceOffset.x, -comprobarPosicion[0] * instanceOffset.y, 0), Quaternion.identity);
+                        gameObjectPrefabs[lastRoomPosition[0], lastRoomPosition[1]] = newRoom;
                         roomPrefabs.Remove(roomPrefabs[rnd]);
                     }
                 }
