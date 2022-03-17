@@ -30,7 +30,7 @@ public class BebidaEnergeticaActive : MonoBehaviour
         // AUMENTO VELOCIDAD
         // =================
         speedUp = true;
-        speed *= speedBoost;
+        _playerMovement.movementSpeed *= speedBoost;
 
         // AUMENTO DAÑO
         // ============
@@ -49,7 +49,7 @@ public class BebidaEnergeticaActive : MonoBehaviour
 
         // DISMINUYO TODO
         // ==============
-        speed /= speedBoost;
+        _playerMovement.movementSpeed /= speedBoost;
         _playerAttack.meleeDamage -= 5f;
         _playerAttack.rangeDamage -= 5f;
     }
