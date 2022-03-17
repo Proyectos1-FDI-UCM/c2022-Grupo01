@@ -5,7 +5,7 @@ using UnityEngine;
 public class BebidaEnergeticaActive : MonoBehaviour
 {
     // Cuando el jugador tenga el objeto se activa este script que cogerá
-    // el componente PlayerAttack del jugador
+    // los componentes PlayerAttack y PlayerAttack del jugador
     #region parameters
     [SerializeField] private float _coolDown = 15f;
     private bool speedUp;
