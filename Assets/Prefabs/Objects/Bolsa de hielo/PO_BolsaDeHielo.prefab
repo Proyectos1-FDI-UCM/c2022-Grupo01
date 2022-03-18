@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
-  type: 2
+  type: 1
   nameOnScreen: Bolsa de Hielo
   littleDescriptionOnScreen: Lanza una granada que explota y ralentiza a los enemigos
   activePrefab: {fileID: 3998425941224310982}

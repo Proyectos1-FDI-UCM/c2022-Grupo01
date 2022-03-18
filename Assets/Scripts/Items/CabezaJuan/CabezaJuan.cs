@@ -6,7 +6,7 @@ public class CabezaJuan : MonoBehaviour
 {
     #region parameters
     private bool speedUp;
-    [SerializeField] private float speedBoost = 1.1;
+    [SerializeField] private float speedBoost = 1.1f;
     #endregion
 
     #region references
@@ -22,7 +22,7 @@ public class CabezaJuan : MonoBehaviour
     public void PowerUpEnabled()
     {
         speedUp = true;
-        _playerMovement.movementSpeed *= speedBoost;
+        //_playerMovement.movementSpeed *= speedBoost;
     }
 
     #endregion
