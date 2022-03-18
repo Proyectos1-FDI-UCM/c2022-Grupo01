@@ -112,7 +112,6 @@ public class PlayerAttack : MonoBehaviour
             sponge.SetMovement(_attackPointPosition);
         }
 
-
         //Drawing things
     }
 	private void OnDrawGizmosSelected()
