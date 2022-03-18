@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7607710761651581199}
   - component: {fileID: -5287821594013948354}
-  - component: {fileID: 6661245544603336128}
   - component: {fileID: 3700650522628529281}
   - component: {fileID: -4298740408883586214}
   - component: {fileID: -8780689616328215110}
+  - component: {fileID: -1895877310894180971}
   m_Layer: 14
   m_Name: PO_Plastic Bottle
   m_TagString: Untagged
@@ -61,27 +61,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.2}
   m_EdgeRadius: 0
---- !u!114 &6661245544603336128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8139309693751557280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 014fbfddf72512e459d4863a6c8c6399, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 0
-  type: 2
-  nameOnScreen: "Botella de pl\xE1stico"
-  littleDescriptionOnScreen: Cruje.
-  health: 0
-  maxHealth: 0
-  meleeDamage: 0
-  rangeDamage: 0
-  speed: 0
 --- !u!212 &3700650522628529281
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -165,3 +144,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
+--- !u!114 &-1895877310894180971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8139309693751557280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65d8265e98064617a3a7e9c624f1b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  type: 2
+  nameOnScreen: "Botella de pl\xE1stico"
+  littleDescriptionOnScreen: Cruje.
+  activePrefab: {fileID: 8139309693751557280}
+  pickable: 1
+  cooldown: 0
+  _elapsedTime: 0
+  sonToCreate: {fileID: 0}
+  sonCreated: 0

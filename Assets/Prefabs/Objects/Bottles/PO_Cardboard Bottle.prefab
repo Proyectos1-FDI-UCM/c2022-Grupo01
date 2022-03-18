@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6459373726256245120}
-  - component: {fileID: 2070354407233958255}
   - component: {fileID: 650317433776468407}
   - component: {fileID: -8031241976886424766}
   - component: {fileID: 203000937092593699}
   - component: {fileID: -2849286563140550224}
+  - component: {fileID: 5184132809602023326}
   m_Layer: 14
   m_Name: PO_Cardboard Bottle
   m_TagString: Untagged
@@ -35,27 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2070354407233958255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6070248051092452533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 014fbfddf72512e459d4863a6c8c6399, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 0
-  type: 2
-  nameOnScreen: "Botella de cart\xF3n"
-  littleDescriptionOnScreen: Es como un tetrabrik, pero sin aluminio.
-  health: 0
-  maxHealth: 0
-  meleeDamage: 0
-  rangeDamage: 0
-  speed: 0
 --- !u!212 &650317433776468407
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -165,3 +144,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
+--- !u!114 &5184132809602023326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6070248051092452533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65d8265e98064617a3a7e9c624f1b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  type: 0
+  nameOnScreen: "Botella de cart\xF3n"
+  littleDescriptionOnScreen: Es como un tetrabrik, pero sin aluminio.
+  activePrefab: {fileID: 6070248051092452533}
+  pickable: 1
+  cooldown: 0
+  _elapsedTime: 0
+  sonToCreate: {fileID: 0}
+  sonCreated: 0

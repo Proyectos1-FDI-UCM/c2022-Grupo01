@@ -54,7 +54,7 @@ public class PickUpObjects : MonoBehaviour
                 //CREAR PANELMANAGER DE BOTELLAS
                 item.GetComponent<BottleObject>().pickable = false;
                 bottleObjectPickedUp = true;
-                GameManager.Instance.ObjectInfo(item.GetComponent<BottleObject>().nameOnScreen, item.GetComponent<BottleObject>().littleDescriptionOnScreen);
+                GameManager.Instance.ObjectInfo(Inventory.Instance.bottleItem.GetComponent<BottleObject>().nameOnScreen, Inventory.Instance.bottleItem.GetComponent<BottleObject>().littleDescriptionOnScreen);
             }
             item.gameObject.SetActive(false);
         }
