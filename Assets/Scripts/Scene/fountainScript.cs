@@ -12,6 +12,8 @@ public class fountainScript : MonoBehaviour
     
     [SerializeField]
     private GameObject _bulletPrefab, _center;
+    [SerializeField]
+    private float delay=2.5f;
 
     #region methods
     private void OnTriggerEnter2D(Collider2D collision)
@@ -40,6 +42,7 @@ public class fountainScript : MonoBehaviour
         GameObject bullet = Instantiate(_bulletPrefab, _myTransform.position + direction*2 , Quaternion.identity);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();   
         rb.AddForce(direction * 5, ForceMode2D.Impulse);
+        Destroy(bullet,delay);
     }
     #endregion
 
