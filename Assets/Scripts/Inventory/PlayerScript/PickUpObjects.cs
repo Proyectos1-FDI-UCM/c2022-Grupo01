@@ -11,6 +11,7 @@ public class PickUpObjects : MonoBehaviour
 
 	#region properties
 	private bool activeObjectPickedUp = false;
+    private bool bottleObjectPickedUp = false;
 	#endregion
 	// Update is called once per frame
 	void Update()
@@ -24,22 +25,38 @@ public class PickUpObjects : MonoBehaviour
 
     void PickUpObject(Collider2D item)
 	{
-        if (item.GetComponent<PassiveObject>() != null) 
+        Object objeto = item.GetComponent<Object>();
+
+        if(objeto != null)
         {
-            Inventory.Instance.passiveItemList.Add(item.gameObject);
-            item.GetComponent<PassiveObject>().Activate();
+            if (objeto.type == ItemTypes.Passive)
+            {
+                Inventory.Instance.passiveItemList.Add(item.gameObject);
+                item.GetComponent<PassiveObject>().Activate();
+                GameManager.Instance.ObjectInfo(item.GetComponent<PassiveObject>().nameOnScreen, item.GetComponent<PassiveObject>().littleDescriptionOnScreen);
+            }
+            else if (objeto.type == ItemTypes.Active)
+            {
+                if (activeObjectPickedUp) Inventory.Instance.activeItem.GetComponent<ActiveObject>().ChangeActiveObject();
+                Destroy(Inventory.Instance.activeItem);
+                Inventory.Instance.activeItem = item.gameObject.GetComponent<ActiveObject>().activePrefab;
+                ActiveInventoryPanelManager.Instance.UpdateActiveDisplay();
+                item.GetComponent<ActiveObject>().pickable = false;
+                activeObjectPickedUp = true;
+                GameManager.Instance.SetCooldownBar(true);
+                GameManager.Instance.ObjectInfo(Inventory.Instance.activeItem.GetComponent<ActiveObject>().nameOnScreen, Inventory.Instance.activeItem.GetComponent<ActiveObject>().littleDescriptionOnScreen);
+            }
+            else if (objeto.type == ItemTypes.Bottle)
+            {
+                if (bottleObjectPickedUp) Inventory.Instance.bottleItem.GetComponent<BottleObject>().ChangeActiveObject();
+                Destroy(Inventory.Instance.bottleItem);
+                Inventory.Instance.bottleItem = item.gameObject.GetComponent<BottleObject>().activePrefab;
+                //CREAR PANELMANAGER DE BOTELLAS
+                item.GetComponent<BottleObject>().pickable = false;
+                bottleObjectPickedUp = true;
+                GameManager.Instance.ObjectInfo(item.GetComponent<BottleObject>().nameOnScreen, item.GetComponent<BottleObject>().littleDescriptionOnScreen);
+            }
+            item.gameObject.SetActive(false);
         }
-        else if (item.GetComponent<ActiveObject>() != null)
-        {
-            if (activeObjectPickedUp) Inventory.Instance.activeItem.GetComponent<ActiveObject>().ChangeActiveObject();
-            Destroy(Inventory.Instance.activeItem);
-            Inventory.Instance.activeItem = item.gameObject.GetComponent<ActiveObject>().activePrefab;
-            ActiveInventoryPanelManager.Instance.UpdateActiveDisplay();
-            item.GetComponent<ActiveObject>().pickable = false;
-            activeObjectPickedUp = true;
-            GameManager.Instance.SetCooldownBar(true);
-            GameManager.Instance.ActiveObjectInfo(Inventory.Instance.activeItem.GetComponent<ActiveObject>().nameOnScreen, Inventory.Instance.activeItem.GetComponent<ActiveObject>().littleDescriptionOnScreen);
-        }
-        item.gameObject.SetActive(false);
     }
 }

@@ -13,8 +13,11 @@ public class BossMovement : MonoBehaviour
     private BoxCollider2D bossColider;
     public SpongeSalaManager _mySpongeSalaManager;
     private RangeAttack _myRangeAttack;
-    
 
+    public void ExecuteMovementBoss()
+    {
+        this.enabled = true;
+    }
     public void Giro()
     {
         giro++;

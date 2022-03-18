@@ -49,7 +49,7 @@ public class UI_Manager : MonoBehaviour
         if(setter) _cooldownSlider.value = _cooldownSlider.maxValue;
 	}
 
-    public void ActiveObjectInfo(string name, string description)
+    public void ObjectInfo(string name, string description)
 	{
         GameObject objectInfo = Instantiate(_objectInfoPrefab, _objectInfo.transform.position, Quaternion.identity);
         objectInfo.transform.SetParent(_objectInfo.transform);
