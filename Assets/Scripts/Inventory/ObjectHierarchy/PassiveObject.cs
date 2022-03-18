@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PassiveObject : Object
 {
-    //Meter atributos aquí
+    //Meter atributos aquÃ­
     #region parameters
 
     public int health, maxHealth, meleeDamage, rangeDamage, speed;

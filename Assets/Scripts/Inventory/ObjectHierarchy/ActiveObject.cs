@@ -19,8 +19,17 @@ public class ActiveObject : Object
     public virtual void ChangeActiveObject()
     {
         GameObject oldOBject = Instantiate(activePrefab, PlayerManager.Instance._playerPosition, Quaternion.identity);
-        oldOBject.name = Inventory.Instance.activeItem.name;
-        oldOBject.SetActive(true);
-        oldOBject.GetComponent<ActiveObject>().sonCreated = false;
+
+        if (type == ItemTypes.Active)
+        {  
+            oldOBject.name = Inventory.Instance.activeItem.name;
+            oldOBject.SetActive(true);
+            oldOBject.GetComponent<ActiveObject>().sonCreated = false;
+        }
+        else if(type == ItemTypes.Bottle)
+        {
+            oldOBject.name = Inventory.Instance.bottleItem.name;
+            oldOBject.SetActive(true);
+        }
     }
 }
