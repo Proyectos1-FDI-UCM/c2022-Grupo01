@@ -37,7 +37,7 @@ public class fountainScript : MonoBehaviour
     {
         
         Vector3 direction = (_center.transform.position - _myTransform.position).normalized;
-        GameObject bullet = Instantiate(_bulletPrefab, _myTransform.position + direction , Quaternion.identity);
+        GameObject bullet = Instantiate(_bulletPrefab, _myTransform.position + direction*2 , Quaternion.identity);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();   
         rb.AddForce(direction * 5, ForceMode2D.Impulse);
     }
