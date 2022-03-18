@@ -51,7 +51,7 @@ public class PickUpObjects : MonoBehaviour
                 if (bottleObjectPickedUp) Inventory.Instance.bottleItem.GetComponent<BottleObject>().ChangeActiveObject();
                 Destroy(Inventory.Instance.bottleItem);
                 Inventory.Instance.bottleItem = item.gameObject.GetComponent<BottleObject>().activePrefab;
-                //CREAR PANELMANAGER DE BOTELLAS
+                BottleInventoryPanelManager.Instance.UpdateBottleDisplay();
                 item.GetComponent<BottleObject>().pickable = false;
                 bottleObjectPickedUp = true;
                 GameManager.Instance.ObjectInfo(Inventory.Instance.bottleItem.GetComponent<BottleObject>().nameOnScreen, Inventory.Instance.bottleItem.GetComponent<BottleObject>().littleDescriptionOnScreen);
