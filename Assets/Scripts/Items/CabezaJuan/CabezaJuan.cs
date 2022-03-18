@@ -5,8 +5,8 @@ using UnityEngine;
 public class CabezaJuan : MonoBehaviour
 {
     #region parameters
-    private bool speedUp;
-    [SerializeField] private float speedBoost = 1.1;
+    //private bool speedUp; //si lo hacemos temporal
+    [SerializeField] private float speedBoost = 1.1f;
     #endregion
 
     #region references
@@ -21,7 +21,7 @@ public class CabezaJuan : MonoBehaviour
     #region methods
     public void PowerUpEnabled()
     {
-        speedUp = true;
+        //speedUp = true;
         _playerMovement.movementSpeed *= speedBoost;
     }
 
