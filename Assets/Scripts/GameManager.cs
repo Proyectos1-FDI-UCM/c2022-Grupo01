@@ -51,9 +51,9 @@ public class GameManager : MonoBehaviour
         _uiManager.ShowActiveCooldown(cooldown, maxCooldown);
 	}
 
-    public void ActiveObjectInfo(string name, string description)
+    public void ObjectInfo(string name, string description)
 	{
-        _uiManager.ActiveObjectInfo(name, description);
+        _uiManager.ObjectInfo(name, description);
 	}
 
     public void OnPlayerDie()
