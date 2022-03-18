@@ -22,4 +22,5 @@ public class Inventory : MonoBehaviour
 
     public List<GameObject> passiveItemList;
     public GameObject activeItem;
+    public List<GameObject> bottleList;
 }

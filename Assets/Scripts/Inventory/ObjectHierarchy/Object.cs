@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ItemTypes { Passive,Active }
+public enum ItemTypes {Passive,Active,Bottle}
 
 public class Object : MonoBehaviour
 { 
