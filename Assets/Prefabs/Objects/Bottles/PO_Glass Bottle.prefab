@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5237052945441890124}
   - component: {fileID: 5797427395815947994}
-  - component: {fileID: 8376882489283539156}
   - component: {fileID: 4580629871676164678}
   - component: {fileID: 6152224751738016398}
   - component: {fileID: 5043889447608039181}
+  - component: {fileID: -1950141623455672496}
   m_Layer: 14
   m_Name: PO_Glass Bottle
   m_TagString: Untagged
@@ -61,27 +61,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.2}
   m_EdgeRadius: 0
---- !u!114 &8376882489283539156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 913765102123726307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 014fbfddf72512e459d4863a6c8c6399, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 0
-  type: 2
-  nameOnScreen: Botella de cristal
-  littleDescriptionOnScreen: Corta.
-  health: 0
-  maxHealth: 0
-  meleeDamage: 0
-  rangeDamage: 0
-  speed: 0
 --- !u!212 &4580629871676164678
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -165,3 +144,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
+--- !u!114 &-1950141623455672496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913765102123726307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65d8265e98064617a3a7e9c624f1b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  type: 2
+  nameOnScreen: Botella de cristal
+  littleDescriptionOnScreen: Corta.
+  activePrefab: {fileID: 913765102123726307}
+  pickable: 1
+  cooldown: 0
+  _elapsedTime: 0
+  sonToCreate: {fileID: 0}
+  sonCreated: 0

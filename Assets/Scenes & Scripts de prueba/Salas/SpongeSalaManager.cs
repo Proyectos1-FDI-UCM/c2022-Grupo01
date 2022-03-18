@@ -86,7 +86,7 @@ public class SpongeSalaManager : MonoBehaviour
         foreach (SpongeLifeComponent enemy in _listOfEnemies)
         {
             enemy.gameObject.transform.position = _listEnemyPosition[enemy.ID];
-            enemy.gameObject.GetComponentInChildren<DetectPlayer>().Deactivate();
+            enemy.gameObject.GetComponentInChildren<SpongeDetectPlayer>().Deactivate();
 
         }
     }

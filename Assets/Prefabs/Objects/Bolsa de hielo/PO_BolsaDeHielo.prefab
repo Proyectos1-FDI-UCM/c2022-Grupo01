@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -9047932053170220954}
   - component: {fileID: -3243884460879451011}
   - component: {fileID: 8813599557920049917}
+  - component: {fileID: 1924754389}
   m_Layer: 14
   m_Name: PO_BolsaDeHielo
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3998425941224310982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 5.555556, y: 5.555556, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -124,12 +125,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
-  type: 2
+  type: 1
   nameOnScreen: Bolsa de Hielo
   littleDescriptionOnScreen: Lanza una granada que explota y ralentiza a los enemigos
   activePrefab: {fileID: 3998425941224310982}
   pickable: 1
-  cooldown: 0
+  cooldown: 30
   _elapsedTime: 0
   sonToCreate: {fileID: 0}
   sonCreated: 0
@@ -154,3 +155,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1924754389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3998425941224310982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2bb3fd6ca469450cbecf5fb324b1591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 0, y: 0, z: 0}
