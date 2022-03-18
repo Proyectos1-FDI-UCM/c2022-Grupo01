@@ -16,6 +16,8 @@ public class SpongeMovement : MonoBehaviour
     private Rigidbody2D _rb;
     #endregion
     #region methods
+   
+
     public void SetMovement(Vector3 direction)
     {
         movement = direction;

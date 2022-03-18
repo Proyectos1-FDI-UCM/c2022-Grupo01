@@ -88,6 +88,7 @@ public class SpongeDetectPlayer : MonoBehaviour
     {
         _myState = DetectStates.Detected;
         GetComponentInParent<RangeAttack>().ExecuteRangeAttack();
+        GetComponentInParent<BossMovement>().ExecuteMovementBoss();
         /*switch (_thisTypeOfEnemy)
         {
             case typeofEnemy.Fleeing: GetComponentInParent<FleeingEnemyMovement>().ExecuteFleeingEnemyMovement(); break;
