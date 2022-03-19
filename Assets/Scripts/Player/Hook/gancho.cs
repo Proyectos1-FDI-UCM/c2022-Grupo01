@@ -13,7 +13,6 @@ public class gancho : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		ContactPoint2D punto = collision.GetContact(0);
 		player.gancho = false;
 	}
 }
