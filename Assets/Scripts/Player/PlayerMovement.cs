@@ -10,14 +10,17 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField]
     private int rollSpeed = 20, hookSpeed = 2, rango = 20;
     [SerializeField] private float rodarCooldown = 0.5f;
+
+    [SerializeField] private LayerMask[] notRollingLayers;
+    [SerializeField] private int rollRaycastDistanceModifier;
     #endregion
 
     #region properties
-    public bool gancho = false;
+    [HideInInspector] public bool gancho = false;
     private bool target = false, getInput = true;
     private float _timeForRoll = 0;
 
-    private Vector3 movement, ganchoDirection, rollDirection;
+    private Vector3 movementWalk, ganchoDirection, rollDirection;
     private Vector2 mouse, ganchoPos;
 	#endregion
 
@@ -34,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
     private Transform _myTransform, _hookTransform;
     private Collider2D _playerCollider;
     private Rigidbody2D playerRB;
-    public Collider2D player2DCollider;
     private PlayerManager _playerManager;
     #endregion
 
@@ -48,32 +50,32 @@ public class PlayerMovement : MonoBehaviour
         GetComponent<PlayerAttack>().SetAttackPoint(movement);
     }
 
-    IEnumerator RodarCourritine(Vector3 movement)
+    IEnumerator Rodar(Vector3 movement)
     {
         _playerManager.PlayerInRoll(true);
         //Empezamos la animaci�n de ruedo
         animator.SetTrigger("Ruedo");
         //Hacemos que el jugador pueda atravesar enemigos
-        _playerCollider.isTrigger = true;
         //Hacemos que no se pueda realizar movimiento durante el ruedo
         getInput = false;
 
-        rollDirection = Vector3.zero;
-        if (movement == Vector3.zero) rollDirection.x++;
+        if (movement == Vector3.zero) rollDirection = new Vector3(1, 0, 0);
         else rollDirection = movement;
 
         int n = 0;
-        while (n < 20)
-        {
-            //Damage(damage);
-            playerRB.MovePosition(_myTransform.position + rollDirection.normalized * rollSpeed * Time.fixedDeltaTime);
-            yield return new WaitForSeconds(Time.fixedDeltaTime);
+        while (n < 20 && !Physics2D.Raycast(_myTransform.position, rollDirection, Vector3.Distance(_myTransform.position, _myTransform.position + rollDirection.normalized / rollRaycastDistanceModifier), notRollingLayers[0]))
+        {   
+            playerRB.MovePosition(transform.position + rollDirection.normalized * rollSpeed * Time.fixedDeltaTime);
             n++;
+            yield return new WaitForSeconds(Time.fixedDeltaTime);
         }
 
+        movementWalk = Vector3.zero;
+        
+        animator.SetTrigger("IdleTrigger");
         getInput = true;
+        Debug.Log(getInput);
         _timeForRoll = 0;
-        _playerCollider.isTrigger = false;
         _playerManager.PlayerInRoll(false);
     }
 
@@ -85,8 +87,6 @@ public class PlayerMovement : MonoBehaviour
         ganchoDirection = _hookTransform.position - _myTransform.position;
         target = true;
         _playerCollider.isTrigger = true;
-        player2DCollider.isTrigger = true;
-        
     }
 
     public void ModifyPlayerSpeed(int speed)
@@ -110,17 +110,17 @@ public class PlayerMovement : MonoBehaviour
         _playerManager.UpdateSpeed(movementSpeed);
     }
 
-    void FixedUpdate()
+	void FixedUpdate()
     {
         _timeForRoll += Time.fixedDeltaTime;
         
         //Input movimiento personaje
         if(getInput)
 		{
-            movement.x = Input.GetAxisRaw("Horizontal");
-            movement.y = Input.GetAxisRaw("Vertical");
-            animator.SetFloat("X", movement.x);
-            animator.SetFloat("Y", movement.y);
+            movementWalk.x = Input.GetAxisRaw("Horizontal");
+            movementWalk.y = Input.GetAxisRaw("Vertical");
+            animator.SetFloat("X", movementWalk.x);
+            animator.SetFloat("Y", movementWalk.y);
         }
 
         mouse = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -137,7 +137,6 @@ public class PlayerMovement : MonoBehaviour
                 hook.SetActive(false);
                 target = false;
                 _playerCollider.isTrigger = false;
-                player2DCollider.isTrigger = false;
             }
             
             if (pickUpHook && Input.GetMouseButton(1))
@@ -153,12 +152,11 @@ public class PlayerMovement : MonoBehaviour
             //Input rodar
             if (Input.GetKey(KeyCode.Space) && _timeForRoll >= rodarCooldown && getInput)
             {
-                StartCoroutine(RodarCourritine(movement));
-                getInput = false;
+                StartCoroutine(Rodar(movementWalk));
             }
 
             //Si has recibido un input y no est�s rodando te mov�s
-            if (movement != Vector3.zero && getInput) Move(movement);
+            if (movementWalk != Vector3.zero && getInput) Move(movementWalk);
 
             else playerRB.velocity = Vector2.zero;   // para que no se acumule la fuerza que le aplica el enemigo al colisoniar con el. Revisar si se puede hacer mejor
         }
@@ -191,7 +189,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (movement == Vector3.zero) animator.SetBool("Walk", false);
+        if (movementWalk == Vector3.zero) animator.SetBool("Walk", false);
 
         Vector2 lookDir = mouse - gunRB.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
