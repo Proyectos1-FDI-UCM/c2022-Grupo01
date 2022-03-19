@@ -114,7 +114,6 @@ public class RandomGenerator : MonoBehaviour
             {
                 if(rooms[i,j] != -1 && roomPrefabs.Count > 0)
                 {
-                    Debug.Log(rooms[i, j]);
                     if (newRoom == null)
                     {
                         if (rooms[i, j] == numSalasCreadas) numSalasCreadas -= 1; tutorialRoomInsteadBossRoom = true;
@@ -130,7 +129,6 @@ public class RandomGenerator : MonoBehaviour
                     }
                     else if(!objectRoomGenerated && rndObjectRoom == rooms[i, j])
                     {
-                        Debug.Log("OBJECT ROOM");
                         comprobarPosicion[0] = i - lastRoomPosition[0];
                         comprobarPosicion[1] = j - lastRoomPosition[1];
                         newRoom = Instantiate(objectRoomPrefab, newRoom.transform.position + new Vector3(comprobarPosicion[1] * instanceOffset.x, -comprobarPosicion[0] * instanceOffset.y, 0), Quaternion.identity);
@@ -142,7 +140,6 @@ public class RandomGenerator : MonoBehaviour
                     else if (rooms[i,j] == numSalasCreadas)
                     {
                         if (tutorialRoomInsteadBossRoom) numSalasCreadas++;
-                        Debug.Log("BOSS ROOM");
                         comprobarPosicion[0] = i - lastRoomPosition[0];
                         comprobarPosicion[1] = j - lastRoomPosition[1];
                         newRoom = Instantiate(bossRoomPrefab, newRoom.transform.position + new Vector3(comprobarPosicion[1] * instanceOffset.x, -comprobarPosicion[0] * instanceOffset.y, 0), Quaternion.identity);
