@@ -67,7 +67,7 @@ public class PlayerAttack : MonoBehaviour
             _shotCooldownCounter = 0;
 		}
         
-        if (Input.GetKeyDown(KeyCode.E) && _meleeCooldownCounter >= _meleeCooldown)
+        if (/*Input.GetKeyDown(KeyCode.E)*/ Input.GetMouseButton(1) && _meleeCooldownCounter >= _meleeCooldown)
 		{
             Melee();
             _meleeCooldownCounter = 0;

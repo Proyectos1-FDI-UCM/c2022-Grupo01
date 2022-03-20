@@ -15,6 +15,8 @@ public class SpongeSalaManager : MonoBehaviour
     public SalaStates myState;
     private BossMovement _bossMovement;
 
+    public GameObject water;
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerAttack _player = collision.gameObject.GetComponent<PlayerAttack>();
@@ -59,6 +61,7 @@ public class SpongeSalaManager : MonoBehaviour
         if (numFuentesLlenas == _listOfFountains.Count)
         {
             _bossMovement.agua = false;
+            water.SetActive(false);
         }
     }
 
@@ -68,6 +71,8 @@ public class SpongeSalaManager : MonoBehaviour
         {
             fountain.Destaponar();
             fountain._isClogged = false;
+            fountain.animator.enabled = true;
+            water.SetActive(true);
         }
     }
 

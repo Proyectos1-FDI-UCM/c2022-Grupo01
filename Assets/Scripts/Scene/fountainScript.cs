@@ -7,6 +7,10 @@ public class fountainScript : MonoBehaviour
     public bool _isClogged;
     public SpongeSalaManager _salaManager;
 
+    private SpriteRenderer render;
+    public Animator animator;
+    public Sprite clogged;
+
    
     private Transform _myTransform;
     
@@ -24,6 +28,9 @@ public class fountainScript : MonoBehaviour
             if (_spongeMovement.movement != Vector3.zero)
             {
                 _isClogged = true;
+                animator.enabled = false;
+                render.sprite= clogged;
+
                 // Cambio de sprite de fuente a amarillo (como si las esponjas las hubieran tapado)
                 
                 // Comprueba si están todas las fuentes tapadas
@@ -50,6 +57,9 @@ public class fountainScript : MonoBehaviour
     {
         _isClogged = false;
         _myTransform = transform;
+        render = this.GetComponent<SpriteRenderer>();
+        animator = this.GetComponent<Animator>();
+        animator.enabled = true;
     }
 
 }

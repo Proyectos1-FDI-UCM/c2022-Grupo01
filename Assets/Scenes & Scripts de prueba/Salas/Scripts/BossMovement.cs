@@ -7,7 +7,8 @@ public class BossMovement : MonoBehaviour
     private Rigidbody2D _bossRB;
     private Transform _myTransform;
     public Vector3 _direction, InitialPosition;
-    public float speed = 5, giro = 0, cooldown = 5,timeLeft, vuelta=0;
+    public float speed = 5, giro = 0, cooldown = 5, timeLeft, vuelta = 0, carga;
+
     public bool agua=true, recarga=false;
     public GameObject centro;
     private BoxCollider2D bossColider;
@@ -41,10 +42,7 @@ public class BossMovement : MonoBehaviour
             _direction.x = 1;
             _direction.y = 0;
         }
-        /*if (vuelta % 4 == 0)
-        {
-            speed = speed + 1;
-        }*/
+      
     }
     // Start is called before the first frame update
     void Start()
@@ -61,6 +59,8 @@ public class BossMovement : MonoBehaviour
     void Update()
     {
         timeLeft = timeLeft - Time.deltaTime;
+        carga = carga - Time.deltaTime;
+
         if (timeLeft < 0 && !agua)
         {
             bossColider.isTrigger = true;
@@ -91,17 +91,26 @@ public class BossMovement : MonoBehaviour
         {
             _myRangeAttack.enabled = false;
             bossColider.isTrigger = true;
+            
             // Movimiento al centro
             _bossRB.MovePosition(_myTransform.position+( centro.transform.position - _myTransform.position).normalized * speed * Time.fixedDeltaTime);
             // Detección de si está en el centro
             if (Vector3.Magnitude(centro.transform.position - _myTransform.position) < 0.1)
             {
                 //agua = true;
+                
                 bossColider.isTrigger = false;
                 timeLeft = cooldown;
-                recarga = true;
                 _bossRB.constraints = RigidbodyConstraints2D.FreezeAll;
-                _mySpongeSalaManager.DestaparFuentes();
+                if (carga < 0)
+                {
+                    _mySpongeSalaManager.DestaparFuentes();
+                    recarga = true;
+                }
+            }
+            else
+            {
+                carga = cooldown;
             }
         }
     }
