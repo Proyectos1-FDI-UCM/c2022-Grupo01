@@ -890,6 +890,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 489965834623984283, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 489965834623984283, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 489965834623984283, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
       propertyPath: m_LocalPosition.x
       value: -136.7
       objectReference: {fileID: 0}
@@ -14684,6 +14692,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3545999149644032289, guid: 972390721b487d847b5a41c43e518fd6, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1809421805}
     - target: {fileID: 3545999149644032293, guid: 972390721b487d847b5a41c43e518fd6, type: 3}
       propertyPath: m_Name
       value: FleeingEnemy
@@ -15256,6 +15268,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!95 &1809421805 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3545999149644032290, guid: 972390721b487d847b5a41c43e518fd6, type: 3}
+  m_PrefabInstance: {fileID: 1682861846}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1812623610
 GameObject:
   m_ObjectHideFlags: 0

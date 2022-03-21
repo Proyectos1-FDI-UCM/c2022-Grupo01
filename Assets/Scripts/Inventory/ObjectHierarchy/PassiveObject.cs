@@ -7,11 +7,11 @@ public class PassiveObject : Object
     //Meter atributos aquí
     #region parameters
 
-    public int health, maxHealth, meleeDamage, rangeDamage, speed;
+    public int health, maxHealth, meleeDamage, rangeDamage, speed, manguitos;
     #endregion
 
     #region properties
-    private int[] stats = new int[5];
+    private int[] stats = new int[6];
     #endregion
     private void Start()
     {
@@ -33,6 +33,9 @@ public class PassiveObject : Object
                     break;
                 case 4:
                     stats[i] = speed;
+                    break;
+                case 5:
+                    stats[i] = manguitos;
                     break;
             }
         }
@@ -61,6 +64,9 @@ public class PassiveObject : Object
                         break;
                     case 4:
                         PlayerManager.Instance.ChangePlayerSpeed(stats[i]);
+                        break;
+                    case 5:
+                        PlayerManager.Instance.ChangePlayerShields(stats[i]);
                         break;
                 }
             }

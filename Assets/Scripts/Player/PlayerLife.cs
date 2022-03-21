@@ -24,6 +24,7 @@ public class PlayerLife : MonoBehaviour
     #region methods
     public void SetHealth(float healthToAdd, bool isShot)
 	{
+        Debug.Log("HOLA");
         if(_invulnerability == false && _playerManager.myLifeState == PlayerManager.LifeStates.Normal || healthToAdd >= 0)
         {
             health += healthToAdd;
@@ -40,10 +41,12 @@ public class PlayerLife : MonoBehaviour
             _playerManager.myLifeState = PlayerManager.LifeStates.Normal;   // Si tiene escudos hay que comprobar en que estado est�, pero por ahora es as�
             HolyFlotadorImage.Instance.enabled = false;
         }
-        else if (_playerManager.myLifeState == PlayerManager.LifeStates.Shield && healthToAdd < 0)
+        else if (_playerManager.myLifeState == PlayerManager.LifeStates.Shield)
         {
-            _shields--;
-            if (_shields <= 0) _playerManager.myLifeState = PlayerManager.LifeStates.Normal;
+            Debug.Log("WEWE");
+            _shields -= 1;
+            Debug.Log(_shields);
+            if (_shields <= 0) _playerManager.myLifeState = PlayerManager.LifeStates.Normal; Debug.Log("mega uwu");
         }
 
         if (_invulnerability == false && healthToAdd < 0 && !isShot) 
@@ -58,6 +61,7 @@ public class PlayerLife : MonoBehaviour
     {
         _playerManager.myLifeState = PlayerManager.LifeStates.Shield;
         _shields += numberOfShields;
+        Debug.Log(_shields);
         //set HUD (ALEX)
     }
 

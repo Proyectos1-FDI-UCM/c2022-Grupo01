@@ -85,6 +85,11 @@ public class PlayerManager : MonoBehaviour
     {
         _playerMovement.ModifyPlayerSpeed(speed);
     }
+
+    public void ChangePlayerShields(int shields)
+    {
+        _playerLife.SetShields(shields);
+    }
     #endregion
 
     #region Singleton
