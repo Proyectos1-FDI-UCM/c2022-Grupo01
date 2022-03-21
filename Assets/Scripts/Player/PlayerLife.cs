@@ -49,6 +49,7 @@ public class PlayerLife : MonoBehaviour
         if (_invulnerability == false && healthToAdd < 0 && !isShot) 
         {
             StartCoroutine("GetInvulnerable");
+            StartCoroutine("InvulnerableAnimation");
             animator.SetTrigger("Hurt");
         }
     }
@@ -79,6 +80,24 @@ public class PlayerLife : MonoBehaviour
         _invulnerability = true;
         yield return new WaitForSeconds(_invulnerabilityTime);
         _invulnerability = false;
+    }
+
+    IEnumerator InvulnerableAnimation()
+    {
+        yield return new WaitForSeconds(0.2f);
+        SpriteRenderer sprite = transform.GetChild(0).GetComponentInChildren<SpriteRenderer>();
+        SpriteRenderer shadow = transform.GetChild(0).GetChild(0).GetComponentInChildren<SpriteRenderer>();
+        shadow.enabled = false;
+        sprite.enabled = false;
+        yield return new WaitForSeconds(_invulnerabilityTime / 3);
+        shadow.enabled = true;
+        sprite.enabled = true;
+        yield return new WaitForSeconds(_invulnerabilityTime / 3);
+        shadow.enabled = false;
+        sprite.enabled = false;
+        yield return new WaitForSeconds(_invulnerabilityTime / 3);
+        shadow.enabled = true;
+        sprite.enabled = true;
     }
 	#endregion
 	
