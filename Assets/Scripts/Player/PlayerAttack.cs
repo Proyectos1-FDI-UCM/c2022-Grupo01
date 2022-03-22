@@ -109,7 +109,20 @@ public class PlayerAttack : MonoBehaviour
         foreach(Collider2D spongeCollider in hitSponge)
         {
             SpongeMovement sponge = spongeCollider.GetComponent<SpongeMovement>();
-            sponge.SetMovement(_attackPointPosition);
+            if(sponge != null)
+            {
+                sponge.SetMovement(_attackPointPosition);
+            }
+            else
+            {
+                // boss juan
+                EnemyLifeComponent enemyLife = spongeCollider.GetComponent<EnemyLifeComponent>();
+                if(enemyLife != null)
+                {
+                    enemyLife.Damage(meleeDamage);
+
+                }
+            }
         }
 
         //Drawing things
