@@ -101,6 +101,7 @@ public class EnemyLifeComponent : MonoBehaviour
 			Destroy(gameObject, 1f);
 			dead = true;
 			sala.OnEnemyDies(this);
+			GameManager.Instance.DeadEnemies();
 		}
 	}
 	#endregion

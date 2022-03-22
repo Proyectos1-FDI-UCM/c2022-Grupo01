@@ -26,6 +26,10 @@ public class GameManager : MonoBehaviour
     private float cooldown = 2.5f;
     private float _elapsedTime = 0f;
 
+    //Numero de enemigos eliminados durante la partida, para objeto Bayeta
+    [SerializeField]
+    private int _deadEnemyCount = 0;
+
     static private GameManager _instance;
     static public GameManager Instance
     {
@@ -87,9 +91,15 @@ public class GameManager : MonoBehaviour
     {
         Instantiate(weakEnemy, pos, Quaternion.identity);
     }
-	#endregion
 
-	private void Awake()
+    public void DeadEnemies()
+    {
+        _deadEnemyCount += 1;
+    }
+
+    #endregion
+
+    private void Awake()
 	{
         _instance = this;
 	}
