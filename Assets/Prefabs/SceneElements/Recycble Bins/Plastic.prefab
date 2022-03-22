@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 343411993483924852}
   - component: {fileID: 7695076734156784789}
   - component: {fileID: 4811054784573120872}
-  m_Layer: 0
+  - component: {fileID: 130099187025165312}
+  m_Layer: 18
   m_Name: Plastic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,3 +110,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &130099187025165312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7060357850328769753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a07b36a34a44ec5b8a844c3bd58bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionRange: 1
+  _objectLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  _binType: 1
