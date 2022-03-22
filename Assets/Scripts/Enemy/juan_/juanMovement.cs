@@ -12,7 +12,7 @@ public class juanMovement : MonoBehaviour
     private Vector3 _playerPosition;
     private bool _collision;
     [SerializeField]
-    private Transform[] _teleportPoints = new Transform [5];
+    private Transform[] _teleportPoints = new Transform [6];
     //private int _wallsLayerMask;
     #endregion
 
@@ -40,14 +40,20 @@ public class juanMovement : MonoBehaviour
 
     #region methods
     private void OnCollisionEnter2D(Collision2D collision)
-    {
-        PlayerAttack _myPA = collision.gameObject.GetComponent<PlayerAttack>();
-        if(_myPA == null) // Solo si no es el jugador
+    { 
+        BulletLife bullet = collision.gameObject.GetComponent<BulletLife>();
+
+
+        if (bullet == null && _myState == juanStates.Move)
         {
             _rb.velocity = Vector2.zero;
             _collision = true;
         }
-        
+        else if (bullet != null)
+        {
+            _rb.velocity = Vector2.zero;
+        }
+
     }
 
     private bool cooldownsTime(float cooldownTime)
@@ -59,42 +65,54 @@ public class juanMovement : MonoBehaviour
     private void bossTeleport()
     {
         _mySpriteRenderer.enabled = false;
-        _rb.constraints = RigidbodyConstraints2D.None;
-        _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        _myTransform.position = _teleportPoints[Random.Range(0, 5)].position;
+        //_rb.constraints = RigidbodyConstraints2D.None;
+        //_rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        _myTransform.position = _teleportPoints[Random.Range(0, 6)].position;
     }
 
     private void spawn()
     {
         _mySpriteRenderer.enabled = true;
     }
+
+    private void Awake()
+    {
+        _mySpriteRenderer = GetComponent<SpriteRenderer>();
+        _myState = juanStates.Channel;
+        _elapsedTime = 0;
+        _rb = GetComponent<Rigidbody2D>();
+        _myTransform = transform;
+        _mySpriteRenderer = GetComponent<SpriteRenderer>();
+        _collision = false;
+    }
+    private void OnEnable()
+    {
+        bossTeleport();
+        spawn();
+    }
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
-        _myState = juanStates.Channel;
         _myPlayerManager = PlayerManager.Instance;
-        _elapsedTime = 0;
-        _rb = GetComponent<Rigidbody2D>();
-        _myTransform = transform;
-        _mySpriteRenderer = GetComponent<SpriteRenderer>();
-        _myTransform.position = _teleportPoints[0].position;
-        _collision = false;
         //_wallsLayerMask = 1 << 8;
     }
+
 
     // Update is called once per frame
     void Update()
     {
         if(_myState == juanStates.Channel)
         {
-            Debug.Log("Canalizar");
             if(cooldownsTime(_cooldownChannelTime))
             {
                 _playerPosition = _myPlayerManager._playerPosition;
                 _playerDirection = (_playerPosition - _myTransform.position).normalized;
                 _myState = juanStates.Move;
+                _rb.constraints = RigidbodyConstraints2D.None;
+                _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
                 _elapsedTime = 0;
             }
         }
@@ -106,9 +124,8 @@ public class juanMovement : MonoBehaviour
             }
 
 
-            if ((_playerPosition + _movementOffset * _playerDirection - _myTransform.position).magnitude < _distanceOffset || _rb.velocity == Vector2.zero)
+            if ((_playerPosition + _movementOffset * _playerDirection - _myTransform.position).magnitude < _distanceOffset || _collision)
             {
-                Debug.Log("Rest");
                 _rb.constraints = RigidbodyConstraints2D.FreezeAll;
                 _rb.velocity = Vector2.zero;
                 _myState = juanStates.Rest;
@@ -120,7 +137,6 @@ public class juanMovement : MonoBehaviour
         {
             if (cooldownsTime(_cooldownRestTime))
             {
-                Debug.Log("TP");
 
                 _myState = juanStates.Teleport;
                 _elapsedTime = 0;
@@ -129,8 +145,6 @@ public class juanMovement : MonoBehaviour
         }
         else
         {
-            Debug.Log("Spawn");
-
             if (cooldownsTime(_cooldownSpawnTime))
             {
                 _myState = juanStates.Channel;
