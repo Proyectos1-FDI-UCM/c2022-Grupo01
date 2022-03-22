@@ -24,7 +24,7 @@ public class DetectPlayer : MonoBehaviour
     /// <summary>
     /// Tipos de enemigo
     /// </summary>
-    private enum typeofEnemy { CAC, Range, Fleeing, Necromancer, Weak };
+    private enum typeofEnemy { CAC, Range, Fleeing, Necromancer, Weak , juan};
 
     /// <summary>
     /// Número con LayerMask de la pared
@@ -107,7 +107,10 @@ public class DetectPlayer : MonoBehaviour
             case typeofEnemy.Weak:
                 GetComponentInParent<NavMeshAgent>().enabled = true;
                 GetComponentInParent<MeleeMovement>().ExecuteMeleeEnemyMovement();
-                break; 
+                break;
+            case typeofEnemy.juan:
+                GetComponentInParent<juanMovement>().enabled = true;
+                break;
         }
     }
 
@@ -133,7 +136,10 @@ public class DetectPlayer : MonoBehaviour
             case typeofEnemy.Weak:
                 GetComponentInParent<NavMeshAgent>().enabled = false;
                 GetComponentInParent<MeleeMovement>().StopMeleeEnemyMovement();
-                break; 
+                break;
+            case typeofEnemy.juan:
+                GetComponentInParent<juanMovement>().enabled = false;
+                break;
         }
 
     }
