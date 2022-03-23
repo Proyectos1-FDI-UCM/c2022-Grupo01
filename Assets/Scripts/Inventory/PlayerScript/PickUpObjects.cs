@@ -11,7 +11,7 @@ public class PickUpObjects : MonoBehaviour
 
 	#region properties
 	private bool activeObjectPickedUp = false;
-    private bool bottleObjectPickedUp = false;
+    [HideInInspector]public bool bottleObjectPickedUp = false;
 	#endregion
 	// Update is called once per frame
 	void Update()
