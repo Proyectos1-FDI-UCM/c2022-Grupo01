@@ -15,6 +15,8 @@ public class BottleInventoryPanelManager : MonoBehaviour
         get { return _instance; }
     }
 
+    private PickUpObjects _pUObjects;
+
     public void CreateBottleDisplay()
     {
         if (bottleItemDisplayed != null)
@@ -43,6 +45,13 @@ public class BottleInventoryPanelManager : MonoBehaviour
         }
     }
 
+    public void RemoveBottleDisplay()
+    {
+        bottleItemDisplayed = null;
+        obj2.transform.GetChild(0).GetComponentInChildren<Image>().sprite = null;
+        _pUObjects.bottleObjectPickedUp = false;
+    }
+
     public Vector3 GetBottleSlotPosition()
     {
         return new Vector3(_xStart, _yStart, 0f);
@@ -56,6 +65,7 @@ public class BottleInventoryPanelManager : MonoBehaviour
 
     void Start()
     {
+        _pUObjects = GetComponent<PickUpObjects>();
         CreateBottleDisplay();
     }
 }

@@ -80,7 +80,7 @@ public class SalaManager : MonoBehaviour
         Debug.Log("enemy: " + _listOfEnemies.Count);
     }
 
-    public void OnEnemyDies( EnemyLifeComponent enemy)
+    public void OnEnemyDies(EnemyLifeComponent enemy)
     {
         _listOfEnemies.Remove(enemy);
         //_listEnemyPosition.Remove(_listEnemyPosition[enemy.ID]);
