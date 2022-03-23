@@ -49,6 +49,9 @@ public class BottleInventoryPanelManager : MonoBehaviour
     {
         bottleItemDisplayed = null;
         obj2.transform.GetChild(0).GetComponentInChildren<Image>().sprite = null;
+        Color temp = obj2.transform.GetChild(0).GetComponentInChildren<Image>().color;
+        temp.a = 0;
+        obj2.transform.GetChild(0).GetComponentInChildren<Image>().color = temp;
         _pUObjects.bottleObjectPickedUp = false;
     }
 

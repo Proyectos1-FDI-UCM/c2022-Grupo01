@@ -62,7 +62,8 @@ public class PlayerLife : MonoBehaviour
         _playerManager.myLifeState = PlayerManager.LifeStates.Shield;
         _shields += numberOfShields;
         Debug.Log(_shields);
-        ManguitoPanelManager.Instance.CreateManguitoSlot(_shields);
+        if (numberOfShields >= 0) ManguitoPanelManager.Instance.CreateManguitoSlot(numberOfShields);
+        else ManguitoPanelManager.Instance.RemoveManguitoSlot(numberOfShields);
     }
 
     public void SetMaxHealth(float maxHealthToAdd)
