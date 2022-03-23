@@ -2592,7 +2592,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0.0625, z: 0}
+  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -4440,7 +4440,6 @@ Transform:
   - {fileID: 3563487410945095753}
   - {fileID: 6683569933895567603}
   - {fileID: 7907475859593059679}
-  - {fileID: 6624153214835887579}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5404,36 +5403,6 @@ CompositeCollider2D:
       - {x: -124.99998, y: 54}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
---- !u!1 &6550279472572353774
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6624153214835887579}
-  m_Layer: 0
-  m_Name: ----PROPS----
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6624153214835887579
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6550279472572353774}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -121.67517, y: 48.37, z: -6.0092883}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8102599996577686709}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6567103707740353957
 GameObject:
   m_ObjectHideFlags: 0
@@ -13826,6 +13795,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plastic
       objectReference: {fileID: 0}
+    - target: {fileID: 7695076734156784789, guid: 1c92598710c336f41a11e6ba5726f9c1, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c92598710c336f41a11e6ba5726f9c1, type: 3}
 --- !u!4 &525933488228455749 stripped
@@ -13843,6 +13816,10 @@ PrefabInstance:
     - target: {fileID: 3636156322371505681, guid: c74e8cbc9ed04e841826b176a69a156e, type: 3}
       propertyPath: m_Name
       value: Glass
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127321883631414877, guid: c74e8cbc9ed04e841826b176a69a156e, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6289661181392453564, guid: c74e8cbc9ed04e841826b176a69a156e, type: 3}
       propertyPath: m_RootOrder
@@ -13949,6 +13926,10 @@ PrefabInstance:
     - target: {fileID: 4732771860708257661, guid: 5d6f63aa14f26a44e9bfc68e4a55634b, type: 3}
       propertyPath: m_Name
       value: Paper
+      objectReference: {fileID: 0}
+    - target: {fileID: 5377059794132635441, guid: 5d6f63aa14f26a44e9bfc68e4a55634b, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d6f63aa14f26a44e9bfc68e4a55634b, type: 3}

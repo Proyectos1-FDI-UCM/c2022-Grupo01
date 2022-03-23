@@ -19,6 +19,7 @@ public class BinController : MonoBehaviour
             case BinType.Glass:
                 if(Inventory.Instance.bottleItem.GetComponent<BottleObject>().ID == 1)
                 {
+                    Debug.Log("Interactuado con una papelera de vidrio");
                     PlayerManager.Instance.ChangePlayerShields(2);
                 }
                 else
@@ -30,6 +31,7 @@ public class BinController : MonoBehaviour
             case BinType.Plastic:
                 if(Inventory.Instance.bottleItem.GetComponent<BottleObject>().ID == 2)
                 {
+                    Debug.Log("Interactuado con una papelera de plástico");
                     PlayerManager.Instance.ChangePlayerLife(20f);
                 }
                 else
@@ -41,6 +43,7 @@ public class BinController : MonoBehaviour
             case BinType.Paper:
                 if (Inventory.Instance.bottleItem.GetComponent<BottleObject>().ID == 0)
                 {
+                    Debug.Log("Interactuado con una papelera de papel");
                     PlayerManager.Instance.ChangeMaxLife(10);
                 }
                 else
