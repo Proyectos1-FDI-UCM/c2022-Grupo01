@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     //Numero de enemigos eliminados durante la partida, para objeto Bayeta
     [SerializeField]
-    private int _deadEnemyCount = 0;
+    public int _deadEnemyCount = 0;
 
     static private GameManager _instance;
     static public GameManager Instance
