@@ -11,13 +11,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: b36d9d0787e89e14fb59b01d7125f164
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/LoadingTutorial.unity
+    guid: 2a45fc5af2838aa4cb8ae4f30cfe6517
+  - enabled: 1
+    path: Assets/Scenes/LoadingGame.unity
+    guid: 4351d179f01822d41a7e5431cecc19f7
+  - enabled: 1
+    path: Assets/Scenes & Scripts de prueba/Tutorial/Tutorial.unity
+    guid: abb4a10623915d242a711ecf6accdc0b
+  - enabled: 1
     path: Assets/Scenes/CompleteScene.unity
     guid: cc5f96da75683644d8828d8c0614aa2f
   - enabled: 1
     path: Assets/Scenes & Scripts de prueba/Salas/Salas.unity
     guid: a344bb0bd7c24ad44a42bbe4b2163285
-  - enabled: 1
-    path: Assets/Scenes & Scripts de prueba/Tutorial/Tutorial.unity
-    guid: abb4a10623915d242a711ecf6accdc0b
   m_configObjects: {}
