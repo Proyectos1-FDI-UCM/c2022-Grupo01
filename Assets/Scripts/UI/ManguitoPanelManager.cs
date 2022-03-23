@@ -6,19 +6,33 @@ public class ManguitoPanelManager : MonoBehaviour
 {
     [SerializeField] private int _spaceBetweenManguitos, _xStart, _yStart, _maxManguitos;
     [SerializeField] private GameObject _manguitoPrefab;
+    private List<GameObject> _manguitoList = new List<GameObject>();
     private static ManguitoPanelManager _instance;
-    private GameObject obj2;
     public static ManguitoPanelManager Instance
     {
         get { return _instance; }
     }
 
-    public void CreateManguitoSlot(int shields)
+    public void CreateManguitoSlot(int shieldsToCreate)
     {
-        for (int i = 0; i < shields; i++)
+        for (int i = 0; i < shieldsToCreate; i++)
         {
             var obj = Instantiate(_manguitoPrefab, Vector3.zero, Quaternion.identity, transform);
-            obj.GetComponent<RectTransform>().localPosition = GetManguitoSlotPosition(i);
+            _manguitoList.Add(obj);
+            obj.GetComponent<RectTransform>().localPosition = GetManguitoSlotPosition(_manguitoList.Count - 1);
+        }
+    }
+
+    public void RemoveManguitoSlot(int numberToRemove)
+    {
+        numberToRemove = Mathf.Abs(numberToRemove);
+
+        for(int i = 0; i < numberToRemove; i++)
+        {
+            int index = _manguitoList.Count;
+            Destroy(_manguitoList[index].gameObject);
+            Debug.Log("eliminado manguito");
+            _manguitoList.RemoveAt(index);
         }
     }
 
