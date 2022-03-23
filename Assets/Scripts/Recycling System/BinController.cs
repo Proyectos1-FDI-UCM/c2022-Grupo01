@@ -7,6 +7,7 @@ public class BinController : MonoBehaviour
     #region parameters
     [SerializeField] private float _interactionRange = 1f;
     [SerializeField] private LayerMask _objectLayer;
+    [SerializeField] private GameObject _dummyBottle;
     #endregion
 
     #region methods
@@ -21,6 +22,8 @@ public class BinController : MonoBehaviour
                 {
                     Debug.Log("Interactuado con una papelera de vidrio");
                     PlayerManager.Instance.ChangePlayerShields(2);
+                    Destroy(Inventory.Instance.bottleItem);
+                    Inventory.Instance.bottleItem = _dummyBottle;
                 }
                 else
                 {
@@ -33,6 +36,8 @@ public class BinController : MonoBehaviour
                 {
                     Debug.Log("Interactuado con una papelera de plástico");
                     PlayerManager.Instance.ChangePlayerLife(20f);
+                    Destroy(Inventory.Instance.bottleItem);
+                    Inventory.Instance.bottleItem = _dummyBottle;
                 }
                 else
                 {
@@ -45,6 +50,8 @@ public class BinController : MonoBehaviour
                 {
                     Debug.Log("Interactuado con una papelera de papel");
                     PlayerManager.Instance.ChangeMaxLife(10);
+                    Destroy(Inventory.Instance.bottleItem);
+                    Inventory.Instance.bottleItem = _dummyBottle;
                 }
                 else
                 {
@@ -54,6 +61,7 @@ public class BinController : MonoBehaviour
         }
     }
     #endregion
+
 
     // Update is called once per frame
     void Update()
