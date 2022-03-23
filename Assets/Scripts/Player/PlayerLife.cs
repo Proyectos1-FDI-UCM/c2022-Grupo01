@@ -24,7 +24,6 @@ public class PlayerLife : MonoBehaviour
     #region methods
     public void SetHealth(float healthToAdd, bool isShot)
 	{
-        Debug.Log("HOLA");
         if(_invulnerability == false && _playerManager.myLifeState == PlayerManager.LifeStates.Normal || healthToAdd >= 0)
         {
             health += healthToAdd;
@@ -43,10 +42,8 @@ public class PlayerLife : MonoBehaviour
         }
         else if (_playerManager.myLifeState == PlayerManager.LifeStates.Shield)
         {
-            Debug.Log("WEWE");
-            _shields -= 1;
-            Debug.Log(_shields);
-            if (_shields <= 0) _playerManager.myLifeState = PlayerManager.LifeStates.Normal; Debug.Log("mega uwu");
+            SetShields(-1);
+            if (_shields <= 0) _playerManager.myLifeState = PlayerManager.LifeStates.Normal;
         }
 
         if (_invulnerability == false && healthToAdd < 0 && !isShot) 
@@ -59,10 +56,9 @@ public class PlayerLife : MonoBehaviour
 
     public void SetShields(int numberOfShields)
     {
-        _playerManager.myLifeState = PlayerManager.LifeStates.Shield;
         _shields += numberOfShields;
-        Debug.Log(_shields);
-        if (numberOfShields >= 0) ManguitoPanelManager.Instance.CreateManguitoSlot(numberOfShields);
+        Debug.Log(numberOfShields);
+        if (numberOfShields >= 0) { ManguitoPanelManager.Instance.CreateManguitoSlot(numberOfShields); _playerManager.myLifeState = PlayerManager.LifeStates.Shield; }
         else ManguitoPanelManager.Instance.RemoveManguitoSlot(numberOfShields);
     }
 
