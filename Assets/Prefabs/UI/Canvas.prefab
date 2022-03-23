@@ -335,6 +335,68 @@ RectTransform:
   m_AnchoredPosition: {x: -777, y: 460}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &8003802543913639458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 993811243295314302}
+  - component: {fileID: 229969106259004742}
+  - component: {fileID: 6422223140082085901}
+  m_Layer: 0
+  m_Name: ManguitoPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &993811243295314302
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8003802543913639458}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -25.937792}
+  m_LocalScale: {x: 6.694308, y: 0.83829236, z: 2.4838293}
+  m_Children: []
+  m_Father: {fileID: 8598375325437027444}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -444, y: 381}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &229969106259004742
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8003802543913639458}
+  m_CullTransparentMesh: 1
+--- !u!114 &6422223140082085901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8003802543913639458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f506147fae9874e29952539e81865d48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spaceBetweenManguitos: 3
+  _xStart: -448
+  _yStart: 0
+  _maxManguitos: 7
+  _manguitoPrefab: {fileID: 8629177816616600804, guid: 42660400816d64a19a8667e424b04250, type: 3}
 --- !u!1 &8598375323773932057
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,14 +1049,14 @@ RectTransform:
   m_GameObject: {fileID: 8598375324939739420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8598375325437027444}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 422.9, y: -25.300003}
+  m_AnchoredPosition: {x: 934, y: -71}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8598375324939739393
@@ -1453,6 +1515,7 @@ RectTransform:
   - {fileID: 598973587}
   - {fileID: 1368873253501251599}
   - {fileID: 5749507821603036104}
+  - {fileID: 993811243295314302}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

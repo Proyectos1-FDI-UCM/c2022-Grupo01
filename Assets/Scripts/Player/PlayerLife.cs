@@ -62,7 +62,7 @@ public class PlayerLife : MonoBehaviour
         _playerManager.myLifeState = PlayerManager.LifeStates.Shield;
         _shields += numberOfShields;
         Debug.Log(_shields);
-        //set HUD (ALEX)
+        ManguitoPanelManager.Instance.CreateManguitoSlot(_shields);
     }
 
     public void SetMaxHealth(float maxHealthToAdd)
