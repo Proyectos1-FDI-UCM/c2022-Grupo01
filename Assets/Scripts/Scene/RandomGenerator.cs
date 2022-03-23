@@ -120,8 +120,10 @@ public class RandomGenerator : MonoBehaviour
                         if (rooms[i, j] == rndObjectRoom && rndObjectRoom > 0) rndObjectRoom -= 1;
                         else if (rooms[i, j] == rndObjectRoom) rndObjectRoom += 1;
                         int rnd = Random.Range(0, roomPrefabs.Count);
-                        newRoom = Instantiate(roomPrefabs[rnd], Vector3.zero, Quaternion.identity);
-                        roomPrefabs.Remove(roomPrefabs[rnd]);
+
+                        //Prueba para que el player no explote
+                        newRoom = Instantiate(roomPrefabs[0], Vector3.zero, Quaternion.identity);
+                        roomPrefabs.Remove(roomPrefabs[0]);
                         PlayerManager.Instance.player.transform.position = newRoom.transform.position + new Vector3(-122,45,0);
                         lastRoomPosition[0] = i;
                         lastRoomPosition[1] = j;

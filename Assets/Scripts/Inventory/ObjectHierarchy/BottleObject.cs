@@ -9,11 +9,6 @@ public class BottleObject : ActiveObject
         base.ChangeActiveObject();
     }
 
-    public void RemoveBottle()
-    {
-        Destroy(Inventory.Instance.bottleItem);
-    }
-
     void Start()
     {
         type = ItemTypes.Bottle;
