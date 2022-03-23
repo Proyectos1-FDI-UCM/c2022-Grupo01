@@ -101,6 +101,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
 	{
+        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(_player);
         _instance = this;
 	}
 
@@ -117,12 +119,7 @@ public class GameManager : MonoBehaviour
         _elapsedTime += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.K))
         {
-            PlayerManager.Instance.ChangeMaxLife(10);
-            _elapsedTime = 0;
-        }
-        else if (Input.GetKeyDown(KeyCode.J))
-        {
-            PlayerManager.Instance.ChangePlayerLife(10);
+            SceneManager.LoadScene(SceneManager.GetSceneByName("CompleteScene").buildIndex);
             _elapsedTime = 0;
         }
     }

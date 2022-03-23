@@ -7,7 +7,8 @@ public class RandomGenerator : MonoBehaviour
 {
     #region references
     [SerializeField] private List<GameObject> roomPrefabs;
-    [SerializeField] private GameObject bossRoomPrefab, objectRoomPrefab;
+    [SerializeField] private GameObject objectRoomPrefab;
+    [SerializeField] private GameObject[] bossRoomPrefab;
     [SerializeField] private NavMeshSurface2d navMeshBaker;
     #endregion
 
@@ -16,7 +17,7 @@ public class RandomGenerator : MonoBehaviour
     const int DIM = 16;
     const int MIN_SALAS = 7;
     const float ITERATIONS = DIM * DIM * 1.2f;
-    private int numSalasCreadas;
+    private int numSalasCreadas, floorToGenerate = 0;
 
     private int[,] rooms;
     private GameObject[,] gameObjectPrefabs;
@@ -33,7 +34,7 @@ public class RandomGenerator : MonoBehaviour
         GeneraSala(rooms, ITERATIONS, NUMSALAS);
         ColocarSalas(rooms, gameObjectPrefabs);
         AbrirPuertas(gameObjectPrefabs);
-        navMeshBaker.BuildNavMesh();
+        //navMeshBaker.BuildNavMesh();
     }
 
     void Inicializa(out int[,] rooms, out GameObject[,] gameObjectPrefabs)
@@ -147,7 +148,7 @@ public class RandomGenerator : MonoBehaviour
                         if (tutorialRoomInsteadBossRoom) numSalasCreadas++;
                         comprobarPosicion[0] = i - lastRoomPosition[0];
                         comprobarPosicion[1] = j - lastRoomPosition[1];
-                        newRoom = Instantiate(bossRoomPrefab, newRoom.transform.position + new Vector3(comprobarPosicion[1] * instanceOffset.x, -comprobarPosicion[0] * instanceOffset.y, 0), Quaternion.identity);
+                        newRoom = Instantiate(bossRoomPrefab[floorToGenerate], newRoom.transform.position + new Vector3(comprobarPosicion[1] * instanceOffset.x, -comprobarPosicion[0] * instanceOffset.y, 0), Quaternion.identity);
                         lastRoomPosition[0] = i;
                         lastRoomPosition[1] = j;
                         gameObjectPrefabs[lastRoomPosition[0], lastRoomPosition[1]] = newRoom;
@@ -168,6 +169,7 @@ public class RandomGenerator : MonoBehaviour
                 }
             }
         }
+        floorToGenerate++;
     }
 
     void AbrirPuertas(GameObject[,] rooms)
@@ -188,4 +190,6 @@ public class RandomGenerator : MonoBehaviour
 	        }
         }
     }
+    
+    
 }
