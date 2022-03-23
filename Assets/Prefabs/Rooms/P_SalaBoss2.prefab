@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 1264898418}
   - component: {fileID: 124627190}
   - component: {fileID: 124627191}
+  - component: {fileID: 3120276375747197023}
   m_Layer: 10
   m_Name: juan.
   m_TagString: Untagged
@@ -327,7 +328,7 @@ MonoBehaviour:
   maxLife: 1000
   ID: 0
   dead: 0
-  animator: {fileID: 0}
+  animator: {fileID: 3120276375747197023}
 --- !u!114 &124627191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,6 +342,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _touchDamage: 10
+--- !u!95 &3120276375747197023
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264898413}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1269213036
 GameObject:
   m_ObjectHideFlags: 0
@@ -5269,6 +5289,7 @@ GameObject:
   - component: {fileID: 5348487413659402196}
   - component: {fileID: 7419645823728260728}
   - component: {fileID: 1860622598}
+  - component: {fileID: 8551121296481171393}
   m_Layer: 0
   m_Name: P_SalaBoss2
   m_TagString: Untagged
@@ -5342,6 +5363,32 @@ MonoBehaviour:
   _listOfDoors: []
   _listOfEnemies: []
   myState: 0
+--- !u!61 &8551121296481171393
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583088822720531733}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -122, y: 45.1}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 31.7, y: 17.6}
+  m_EdgeRadius: 0
 --- !u!1 &1655366809262374091
 GameObject:
   m_ObjectHideFlags: 0
