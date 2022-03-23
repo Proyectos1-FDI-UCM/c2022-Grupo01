@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 343411993483924852}
   - component: {fileID: 7695076734156784789}
   - component: {fileID: 4811054784573120872}
-  - component: {fileID: 130099187025165312}
+  - component: {fileID: -434163507105877608}
   m_Layer: 18
   m_Name: Plastic
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 7060357850328769753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.51, y: -10.51, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 86c85a77395fa184d8372c3f1a39987d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
---- !u!114 &130099187025165312
+--- !u!114 &-434163507105877608
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,11 +119,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7060357850328769753}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33a07b36a34a44ec5b8a844c3bd58bdf, type: 3}
+  m_Script: {fileID: 11500000, guid: 870c0c10c4ec64e699f5ad444c940dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionRange: 1
-  _objectLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  _binType: 1
+  binType: 2
