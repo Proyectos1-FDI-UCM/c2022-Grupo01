@@ -29,7 +29,7 @@ public class ManguitoPanelManager : MonoBehaviour
 
         for(int i = 0; i < numberToRemove; i++)
         {
-            int index = _manguitoList.Count;
+            int index = _manguitoList.Count - 1;
             Destroy(_manguitoList[index].gameObject);
             Debug.Log("eliminado manguito");
             _manguitoList.RemoveAt(index);
