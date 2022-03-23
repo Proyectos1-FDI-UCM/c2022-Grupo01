@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetSceneByName("CompleteScene").buildIndex);
             _elapsedTime = 0;
         }
-
+        
         // Menú de pausado
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -137,6 +137,7 @@ public class GameManager : MonoBehaviour
             _pauseMenu.SetActive(true);
             _player.SetActive(false);
             _canvas.SetActive(false);
+            _cam.enabled = false;
         }
         else if (!pause)
         {
@@ -144,6 +145,7 @@ public class GameManager : MonoBehaviour
             _pauseMenu.SetActive(false);
             _player.SetActive(true);
             _canvas.SetActive(true);
+            _cam.enabled = true;
         }
     }
 
