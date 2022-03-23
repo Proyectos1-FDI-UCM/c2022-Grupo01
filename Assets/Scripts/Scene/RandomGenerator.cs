@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class RandomGenerator : MonoBehaviour
 {
     #region references
     [SerializeField] private List<GameObject> roomPrefabs;
     [SerializeField] private GameObject bossRoomPrefab, objectRoomPrefab;
+    [SerializeField] private NavMeshSurface2d navMeshBaker;
     #endregion
 
     #region properties
@@ -31,6 +33,7 @@ public class RandomGenerator : MonoBehaviour
         GeneraSala(rooms, ITERATIONS, NUMSALAS);
         ColocarSalas(rooms, gameObjectPrefabs);
         AbrirPuertas(gameObjectPrefabs);
+        navMeshBaker.BuildNavMesh();
     }
 
     void Inicializa(out int[,] rooms, out GameObject[,] gameObjectPrefabs)

@@ -43,13 +43,8 @@ public class SalaManager : MonoBehaviour
         }
     }
 
-   
-
- 
-
     public void OnTriggerExit2D(Collider2D collision)
     {
-
         PlayerAttack _player = collision.gameObject.GetComponent<PlayerAttack>();
         if (_player != null && myState != SalaStates.Completada)
         {
@@ -59,12 +54,10 @@ public class SalaManager : MonoBehaviour
     }
     public void Reload()
     {
-        
         foreach(EnemyLifeComponent enemy in _listOfEnemies)
         {
             enemy.gameObject.transform.position = _listEnemyPosition[enemy.ID];
             enemy.gameObject.GetComponentInChildren<DetectPlayer>().Deactivate() ;
-            
         }
     }
 

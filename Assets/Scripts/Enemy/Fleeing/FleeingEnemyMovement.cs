@@ -74,6 +74,7 @@ public class FleeingEnemyMovement : MonoBehaviour
     /// </summary>
     public void FleeingEnemyHiding()
     {
+        Debug.Log(_myELC.sala);
         _myELC.sala.OnEnemyDies(_myELC);
         Destroy(gameObject, 1f); 
     }
