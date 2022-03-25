@@ -67,7 +67,7 @@ public class PlayerAttack : MonoBehaviour
             _shotCooldownCounter = 0;
 		}
         
-        if (/*Input.GetKeyDown(KeyCode.E)*/ Input.GetMouseButton(1) && _meleeCooldownCounter >= _meleeCooldown)
+        if (Input.GetMouseButton(1) && _meleeCooldownCounter >= _meleeCooldown)
 		{
             Melee();
             _meleeCooldownCounter = 0;
@@ -83,11 +83,13 @@ public class PlayerAttack : MonoBehaviour
 
     public void SetAttackPoint(Vector3 movement)
     {
-        if (movement.x > 0) { _attackPointPosition.x = attackRange; _attackPointPosition.y = 0f; }
+        _attackPointPosition.x = attackRange * movement.x;
+        _attackPointPosition.y = attackRange * movement.y;
+        /*if (movement.x > 0) { _attackPointPosition.x = attackRange; _attackPointPosition.y = 0f; }
         else if (movement.x < 0) { _attackPointPosition.x = -attackRange; _attackPointPosition.y = 0f; }
         else if (movement.y > 0) { _attackPointPosition.y = attackRange; _attackPointPosition.x = 0f; }
         else if (movement.y < 0) { _attackPointPosition.y = -attackRange; _attackPointPosition.x = 0f; }
-
+        */
     }
 
         void Melee()

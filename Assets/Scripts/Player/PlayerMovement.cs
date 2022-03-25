@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         playerRB.MovePosition(transform.position + movement.normalized * movementSpeed * Time.fixedDeltaTime);
         animationDirection = movement;
         animator.SetBool("Walk", true);
-        GetComponent<PlayerAttack>().SetAttackPoint(movement);
+        GetComponent<PlayerAttack>().SetAttackPoint(animationDirection);
     }
 
     IEnumerator Rodar(Vector3 movement)
@@ -190,7 +190,10 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (movementWalk == Vector3.zero) animator.SetBool("Walk", false);
+        if (movementWalk == Vector3.zero)
+        {
+            animator.SetBool("Walk", false);            
+        }
 
         Vector2 lookDir = mouse - gunRB.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
