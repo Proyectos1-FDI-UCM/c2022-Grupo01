@@ -6,9 +6,12 @@ public class TextoTutorial : MonoBehaviour
 {
 	public GameObject textoTutorial;
 
-
+	#region parameters
+	[SerializeField] 
+	private float _tiempoVisible = 5f;
+	#endregion
 	void Start()
-	{
+    {
 		textoTutorial.SetActive(false);
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
@@ -18,7 +21,7 @@ public class TextoTutorial : MonoBehaviour
 		{
 			Destroy(gameObject); // elimina el trigger para no volver a activarse al pasar de vuelta
 			textoTutorial.SetActive(true);
-			Destroy(textoTutorial, 5f); // desaparece el objeto activado (caja de texto) en 5seg
+			Destroy(textoTutorial, _tiempoVisible); // desaparece el objeto activado (caja de texto) en el tiempo definido
 			Debug.Log("activa texto tutorial");
 			/*
 			if (Input.anyKeyDown)
@@ -28,5 +31,4 @@ public class TextoTutorial : MonoBehaviour
 			*/
 		}
 	}
-
 }
