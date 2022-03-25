@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossMovement : MonoBehaviour
 {
+    public Animator animator;
     private Rigidbody2D _bossRB;
     private Transform _myTransform;
     public Vector3 _direction, InitialPosition;
@@ -18,6 +19,8 @@ public class BossMovement : MonoBehaviour
     public void ExecuteMovementBoss()
     {
         this.enabled = true;
+        
+
     }
     public void Giro()
     {
@@ -26,21 +29,25 @@ public class BossMovement : MonoBehaviour
         {
             _direction.x = 0;
             _direction.y =1;
+            animator.SetTrigger("IDLE");
         }
         else if(_direction.y == 1)
         {
             _direction.x = -1;
             _direction.y = 0;
+           animator.SetTrigger("ABAJO");
         }
         else if (_direction.x == -1)
         {
             _direction.x = 0;
             _direction.y = -1;
+           animator.SetTrigger("IDLE");
         }
         else 
         {
             _direction.x = 1;
             _direction.y = 0;
+           animator.SetTrigger("ARRIBA");
         }
       
     }
@@ -53,6 +60,7 @@ public class BossMovement : MonoBehaviour
         bossColider = GetComponent<BoxCollider2D>();
         InitialPosition = _myTransform.position;
         _myRangeAttack = GetComponent<RangeAttack>();
+        animator.SetTrigger("ARRIBA");
     }
 
     // Update is called once per frame
@@ -79,13 +87,16 @@ public class BossMovement : MonoBehaviour
                 _direction.y = 0;
                 giro = -(vuelta % 4);
                 _myRangeAttack.enabled = true;
+                animator.SetBool("RECARGA", false);
+                Debug.LogWarning("TOC");
             }
         }
         // Movimiento principal en los bordes
         if (agua)
         {
             _bossRB.MovePosition(_myTransform.position + _direction.normalized * speed * Time.fixedDeltaTime);
-
+            
+            
         }
         else if(!recarga)
         {
@@ -101,9 +112,11 @@ public class BossMovement : MonoBehaviour
                 
                 bossColider.isTrigger = false;
                 timeLeft = cooldown;
+                animator.SetBool("RECARGA", true);
                 _bossRB.constraints = RigidbodyConstraints2D.FreezeAll;
                 if (carga < 0)
                 {
+                    //animator.SetTrigger("IDLE");
                     _mySpongeSalaManager.DestaparFuentes();
                     recarga = true;
                 }

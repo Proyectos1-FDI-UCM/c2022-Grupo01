@@ -143,7 +143,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: -8857106473960092384, guid: beb4daa1238457e439fd43cfcf4dab05, type: 3}
-  m_Color: {r: 0.7559024, g: 0.7830189, b: 0.2696244, a: 1}
+  m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -189,7 +189,7 @@ Animator:
   m_GameObject: {fileID: 6316753048730843751}
   m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cdc314682bee99148b66706322264b9a, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -251,6 +251,7 @@ MonoBehaviour:
   cooldown: 5
   timeLeft: 0
   vuelta: 0
+  carga: 0
   agua: 1
   recarga: 0
   centro: {fileID: 0}

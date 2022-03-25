@@ -85,10 +85,20 @@ public class SpongeLifeComponent : MonoBehaviour
 	{
 		if (!dead && ( _bossMovement.agua == false|| type)) 
 		{
-				//animator.SetTrigger("Hurt");
+			if (_bossMovement._direction.x == -1 && _bossMovement._direction.y == 0)
+			{
+				animator.SetTrigger("DIZQ");				
+			}
+			else if (_bossMovement._direction.x == 1 && _bossMovement._direction.y == 0)
+            {
+				animator.SetTrigger("DDER");
+            }
+            else
+            {
+				animator.SetTrigger("DCARGA");
+			}
 				_currentLife -= damage;
-				if (_currentLife <= 0) Die();		
-
+				if (_currentLife <= 0) Die();
 			
 		}
 		

@@ -14417,23 +14417,23 @@ CompositeCollider2D:
       - X: -1060000000
         Y: 370000000
     - - X: -1340000000
-        Y: 410000100
+        Y: 410000000
       - X: -1340000000
-        Y: 499999900
+        Y: 500000000
       - X: -1100000000
-        Y: 499999900
+        Y: 500000000
       - X: -1100000000
-        Y: 410000100
+        Y: 410000000
   m_CompositePaths:
     m_Paths:
     - - {x: -106.00003, y: 37}
       - {x: -106.00003, y: 54}
       - {x: -138, y: 53.99997}
       - {x: -137.99997, y: 37}
-    - - {x: -110, y: 41.00004}
-      - {x: -134, y: 41.00004}
-      - {x: -133.99997, y: 49.999992}
-      - {x: -110, y: 49.99996}
+    - - {x: -110, y: 41.00003}
+      - {x: -134, y: 41.00003}
+      - {x: -133.99997, y: 50}
+      - {x: -110, y: 49.999973}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!1 &7375062331321847680
@@ -16098,6 +16098,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3858885734381484277}
     - target: {fileID: 974487679, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 5468017632128931131}
+    - target: {fileID: 974487679, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -16105,6 +16109,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5005805420399847644, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 5468017632128931131}
+    - target: {fileID: 6316753048730843744, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316753048730843744, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c705ecc6c5171d44cb70ebef3aa22ac4, type: 2}
     - target: {fileID: 6316753048730843746, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -16157,12 +16173,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6316753048730843749, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
+      propertyPath: m_Color.b
+      value: 0.990566
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316753048730843749, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
+      propertyPath: m_Color.g
+      value: 0.990566
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316753048730843749, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
+      propertyPath: m_Color.r
+      value: 0.990566
+      objectReference: {fileID: 0}
     - target: {fileID: 6316753048730843751, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
       propertyPath: m_Name
       value: Boss ESponja
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
+--- !u!95 &5468017632128931131 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6316753048730843744, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
+  m_PrefabInstance: {fileID: 2038952499924807515}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5468017632128931129 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6316753048730843746, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
