@@ -20,6 +20,12 @@ public class TextoTutorial : MonoBehaviour
 			textoTutorial.SetActive(true);
 			Destroy(textoTutorial, 5f); // desaparece el objeto activado (caja de texto) en 5seg
 			Debug.Log("activa texto tutorial");
+			/*
+			if (Input.anyKeyDown)
+			{
+				Destroy(textoTutorial);
+			}
+			*/
 		}
 	}
 
