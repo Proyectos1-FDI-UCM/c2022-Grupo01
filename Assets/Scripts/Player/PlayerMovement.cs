@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 	public int movementSpeed = 10;
 
 	[SerializeField]
-    private int rollSpeed = 20, hookSpeed = 2, rango = 20;
+    private float rollSpeed = 20, hookSpeed = 2, rango = 20;
     [SerializeField] private float rodarCooldown = 0.5f;
 
     [SerializeField] private LayerMask[] notRollingLayers;
@@ -88,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
         ganchoDirection = _hookTransform.position - _myTransform.position;
         target = true;
         _playerCollider.isTrigger = true;
+        animator.SetBool("JUMP",true);
     }
 
     public void ModifyPlayerSpeed(int speed)
@@ -130,6 +131,7 @@ public class PlayerMovement : MonoBehaviour
         
         if (gancho == false)
         {
+            
             //Vuelta del gancho
             _hookTransform.Translate(hookSpeed * 5  * Time.deltaTime * (_myTransform.position - _hookTransform.position));
 
@@ -138,6 +140,7 @@ public class PlayerMovement : MonoBehaviour
                 hook.SetActive(false);
                 target = false;
                 _playerCollider.isTrigger = false;
+                
             }
             
             if (pickUpHook && Input.GetKey(KeyCode.E)/*Input.GetMouseButton(1)*/)
@@ -178,7 +181,10 @@ public class PlayerMovement : MonoBehaviour
                 if (!pickUpHook)
                 {
                     //Move(ganchoDirection);
+                    animator.SetBool("JUMP", true);
+                    animator.SetBool("JUMP", false);
                     Move(ganchoDirection);
+                    
                     //_myTransform.Translate(ganchoSpeed * Time.deltaTime * ganchoDirection.normalized * 5);
                 }
 
@@ -186,6 +192,8 @@ public class PlayerMovement : MonoBehaviour
                 {
                     gancho = false;
                     target = false;
+                    animator.SetBool("JUMP", false);
+                    //animator.SetTrigger("IdleTrigger");
                 }               
             }
         }
