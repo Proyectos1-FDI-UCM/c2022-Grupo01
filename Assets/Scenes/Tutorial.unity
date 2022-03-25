@@ -5857,6 +5857,10 @@ PrefabInstance:
       propertyPath: textoTutorial
       value: 
       objectReference: {fileID: 1772268803}
+    - target: {fileID: 5735707753308760471, guid: f3f7e6b91759c6e48b8093753b59dc65, type: 3}
+      propertyPath: _tiempoVisible
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7602720071749895327, guid: f3f7e6b91759c6e48b8093753b59dc65, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -5901,11 +5905,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 598973587, guid: 5190ae259f44d6d41ac6956295c492b8, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 993811243295314302, guid: 5190ae259f44d6d41ac6956295c492b8, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1368873253501251599, guid: 5190ae259f44d6d41ac6956295c492b8, type: 3}
       propertyPath: m_RootOrder
@@ -5917,7 +5921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5749507821603036104, guid: 5190ae259f44d6d41ac6956295c492b8, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8087792903074933627, guid: 5190ae259f44d6d41ac6956295c492b8, type: 3}
       propertyPath: m_RootOrder
@@ -6671,6 +6675,10 @@ PrefabInstance:
       propertyPath: textoTutorial
       value: 
       objectReference: {fileID: 1918177484}
+    - target: {fileID: 3444029385549079423, guid: 21183449524d1d44b9a01ab69f172f04, type: 3}
+      propertyPath: _tiempoVisible
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4113503311630759275, guid: 21183449524d1d44b9a01ab69f172f04, type: 3}
       propertyPath: m_Size.x
       value: 28.8
@@ -6701,6 +6709,10 @@ PrefabInstance:
       propertyPath: textoTutorial
       value: 
       objectReference: {fileID: 1805878154}
+    - target: {fileID: 372199939462177397, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
+      propertyPath: _tiempoVisible
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3871545351482711993, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[0].x
       value: 10.99997
@@ -12293,6 +12305,10 @@ PrefabInstance:
       propertyPath: textoTutorial
       value: 
       objectReference: {fileID: 472713402}
+    - target: {fileID: 6576827733805894764, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
+      propertyPath: _tiempoVisible
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6628566582593642398, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
       propertyPath: m_IsActive
       value: 1
