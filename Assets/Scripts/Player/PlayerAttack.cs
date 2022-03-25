@@ -8,7 +8,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     private Transform shotPoint, attackPoint;
     [SerializeField]
-    private GameObject bulletPrefab;
+    private GameObject bulletPrefab,_gun;
     
     // BOLSA DE HIELO (Laura)
     [SerializeField]
@@ -63,12 +63,15 @@ public class PlayerAttack : MonoBehaviour
         //cambiar esto a un inputManager
         if (Input.GetButtonDown("Fire1") && GetComponent<PlayerLife>().health > 0 && _shotCooldownCounter >= _shotCooldown)
 		{
+            _gun.SetActive(true);
             Shoot();
+            
             _shotCooldownCounter = 0;
 		}
         
         if (Input.GetMouseButton(1) && _meleeCooldownCounter >= _meleeCooldown)
 		{
+            _gun.SetActive(false);
             Melee();
             _meleeCooldownCounter = 0;
 		}

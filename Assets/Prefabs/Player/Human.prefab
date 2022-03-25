@@ -112,6 +112,7 @@ MonoBehaviour:
     m_Bits: 512
   rollRaycastDistanceModifier: 2
   gancho: 0
+  animationDirection: {x: 0, y: 0, z: 0}
   animator: {fileID: 489965836124677250}
   cam: {fileID: 0}
   gunRB: {fileID: 5757689141440673754}
@@ -131,6 +132,7 @@ MonoBehaviour:
   shotPoint: {fileID: 5757689142439586885}
   attackPoint: {fileID: 5757689140758480509}
   bulletPrefab: {fileID: 4258877983288083039, guid: 943b5deb76f8eab4d9662d97b69ad1a9, type: 3}
+  _gun: {fileID: 5757689140805788999}
   icebagPrefab: {fileID: 8467541936118930963, guid: 5c698bc38c4cec04eb825f50e627dba2, type: 3}
   gunRB: {fileID: 5757689141440673754}
   meleeDamage: 10
@@ -178,6 +180,7 @@ MonoBehaviour:
   _objectLayer:
     serializedVersion: 2
     m_Bits: 16384
+  bottleObjectPickedUp: 0
 --- !u!114 &5272552500916890696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,7 +439,7 @@ GameObject:
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5757689140805788992
 Transform:
   m_ObjectHideFlags: 0
@@ -491,7 +494,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
   m_Color: {r: 0.1514774, g: 0.41644454, b: 0.8679245, a: 1}
   m_FlipX: 0

@@ -814,6 +814,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Human
       objectReference: {fileID: 0}
+    - target: {fileID: 5757689140805788992, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5757689140805788992, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5757689140805788992, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5757689140805788992, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 5757689140805788993, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 781ea6ba8a755e0489c1e056cfb57fa0, type: 3}
+    - target: {fileID: 5757689140805788993, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 5757689140805788993, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 5757689140805788993, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 5757689140805788999, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5757689141459901219, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
       propertyPath: cam
       value: 
@@ -822,9 +858,9 @@ PrefabInstance:
       propertyPath: hook
       value: 
       objectReference: {fileID: 1850754197}
-    - target: {fileID: 5757689141459901219, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
-      propertyPath: rango
-      value: 6.5
+    - target: {fileID: 5757689142439586885, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.156
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
