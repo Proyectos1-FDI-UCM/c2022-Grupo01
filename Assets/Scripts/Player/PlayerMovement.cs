@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (movement == Vector3.zero) rollDirection = new Vector3(1, 0, 0);
         else rollDirection = movement;
-
+        
         int n = 0;
         while (n < 20 && !Physics2D.Raycast(_myTransform.position, rollDirection, Vector3.Distance(_myTransform.position, _myTransform.position + rollDirection.normalized / rollRaycastDistanceModifier), notRollingLayers[0]))
         {   
@@ -156,7 +156,7 @@ public class PlayerMovement : MonoBehaviour
             //Input rodar
             if (Input.GetKey(KeyCode.Space) && _timeForRoll >= rodarCooldown && getInput)
             {
-                StartCoroutine(Rodar(movementWalk));
+                StartCoroutine(Rodar(animationDirection));
             }
 
             //Si has recibido un input y no est�s rodando te mov�s
