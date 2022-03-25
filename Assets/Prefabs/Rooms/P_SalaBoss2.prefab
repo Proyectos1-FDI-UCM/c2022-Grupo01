@@ -328,7 +328,7 @@ MonoBehaviour:
   maxLife: 1000
   ID: 0
   dead: 0
-  animator: {fileID: 3120276375747197023}
+  animator: {fileID: 0}
 --- !u!114 &124627191
 MonoBehaviour:
   m_ObjectHideFlags: 0
