@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private float _timeForRoll = 0;
 
     private Vector3 movementWalk, ganchoDirection, rollDirection;
+    public Vector3 animationDirection;
     private Vector2 mouse, ganchoPos;
 	#endregion
 
@@ -45,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //Debug.Log(movement);
         playerRB.MovePosition(transform.position + movement.normalized * movementSpeed * Time.fixedDeltaTime);
-
+        animationDirection = movement;
         animator.SetBool("Walk", true);
         GetComponent<PlayerAttack>().SetAttackPoint(movement);
     }
@@ -119,8 +120,8 @@ public class PlayerMovement : MonoBehaviour
 		{
             movementWalk.x = Input.GetAxisRaw("Horizontal");
             movementWalk.y = Input.GetAxisRaw("Vertical");
-            animator.SetFloat("X", movementWalk.x);
-            animator.SetFloat("Y", movementWalk.y);
+            animator.SetFloat("X", animationDirection.x);
+            animator.SetFloat("Y", animationDirection.y);
         }
 
         mouse = cam.ScreenToWorldPoint(Input.mousePosition);
