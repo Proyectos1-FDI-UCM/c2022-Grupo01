@@ -112,6 +112,7 @@ MonoBehaviour:
     m_Bits: 512
   rollRaycastDistanceModifier: 2
   gancho: 0
+  animationDirection: {x: 0, y: 0, z: 0}
   animator: {fileID: 489965836124677250}
   cam: {fileID: 0}
   gunRB: {fileID: 5757689141440673754}
@@ -131,6 +132,7 @@ MonoBehaviour:
   shotPoint: {fileID: 5757689142439586885}
   attackPoint: {fileID: 5757689140758480509}
   bulletPrefab: {fileID: 4258877983288083039, guid: 943b5deb76f8eab4d9662d97b69ad1a9, type: 3}
+  _gun: {fileID: 5757689140805788999}
   icebagPrefab: {fileID: 8467541936118930963, guid: 5c698bc38c4cec04eb825f50e627dba2, type: 3}
   gunRB: {fileID: 5757689141440673754}
   meleeDamage: 10
@@ -178,6 +180,7 @@ MonoBehaviour:
   _objectLayer:
     serializedVersion: 2
     m_Bits: 16384
+  bottleObjectPickedUp: 0
 --- !u!114 &5272552500916890696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,8 +448,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5757689140805788999}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.598, y: -0.113, z: 0}
-  m_LocalScale: {x: 0.9879, y: 0.1802, z: 1}
+  m_LocalPosition: {x: 0.43, y: -0.113, z: 0}
+  m_LocalScale: {x: 2, y: 1.5, z: 0}
   m_Children:
   - {fileID: 5757689142439586885}
   m_Father: {fileID: 5757689141440673753}
@@ -491,9 +494,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
-  m_Color: {r: 0.1514774, g: 0.41644454, b: 0.8679245, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 781ea6ba8a755e0489c1e056cfb57fa0, type: 3}
+  m_Color: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -580,7 +583,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5757689142439586884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.774, y: 0, z: 0}
+  m_LocalPosition: {x: 0.156, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5757689140805788992}

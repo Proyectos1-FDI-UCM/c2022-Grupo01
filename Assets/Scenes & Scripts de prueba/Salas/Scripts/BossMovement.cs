@@ -113,10 +113,12 @@ public class BossMovement : MonoBehaviour
                 bossColider.isTrigger = false;
                 timeLeft = cooldown;
                 animator.SetBool("RECARGA", true);
+                _direction.x = 0;
+                _direction.y = 0;
                 _bossRB.constraints = RigidbodyConstraints2D.FreezeAll;
                 if (carga < 0)
                 {
-                    //animator.SetTrigger("IDLE");
+                    
                     _mySpongeSalaManager.DestaparFuentes();
                     recarga = true;
                 }

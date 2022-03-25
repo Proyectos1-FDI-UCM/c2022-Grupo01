@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 	public int movementSpeed = 10;
 
 	[SerializeField]
-    private int rollSpeed = 20, hookSpeed = 2, rango = 20;
+    private float rollSpeed = 20, hookSpeed = 2, rango = 20;
     [SerializeField] private float rodarCooldown = 0.5f;
 
     [SerializeField] private LayerMask[] notRollingLayers;
@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private float _timeForRoll = 0;
 
     private Vector3 movementWalk, ganchoDirection, rollDirection;
+    public Vector3 animationDirection;
     private Vector2 mouse, ganchoPos;
 	#endregion
 
@@ -45,9 +46,9 @@ public class PlayerMovement : MonoBehaviour
     {
         //Debug.Log(movement);
         playerRB.MovePosition(transform.position + movement.normalized * movementSpeed * Time.fixedDeltaTime);
-
+        animationDirection = movement;
         animator.SetBool("Walk", true);
-        GetComponent<PlayerAttack>().SetAttackPoint(movement);
+        GetComponent<PlayerAttack>().SetAttackPoint(animationDirection);
     }
 
     IEnumerator Rodar(Vector3 movement)
@@ -61,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (movement == Vector3.zero) rollDirection = new Vector3(1, 0, 0);
         else rollDirection = movement;
-
+        
         int n = 0;
         while (n < 20 && !Physics2D.Raycast(_myTransform.position, rollDirection, Vector3.Distance(_myTransform.position, _myTransform.position + rollDirection.normalized / rollRaycastDistanceModifier), notRollingLayers[0]))
         {   
@@ -87,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
         ganchoDirection = _hookTransform.position - _myTransform.position;
         target = true;
         _playerCollider.isTrigger = true;
+        animator.SetBool("JUMP",true);
     }
 
     public void ModifyPlayerSpeed(int speed)
@@ -119,8 +121,8 @@ public class PlayerMovement : MonoBehaviour
 		{
             movementWalk.x = Input.GetAxisRaw("Horizontal");
             movementWalk.y = Input.GetAxisRaw("Vertical");
-            animator.SetFloat("X", movementWalk.x);
-            animator.SetFloat("Y", movementWalk.y);
+            animator.SetFloat("X", animationDirection.x);
+            animator.SetFloat("Y", animationDirection.y);
         }
 
         mouse = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -129,6 +131,7 @@ public class PlayerMovement : MonoBehaviour
         
         if (gancho == false)
         {
+            
             //Vuelta del gancho
             _hookTransform.Translate(hookSpeed * 5  * Time.deltaTime * (_myTransform.position - _hookTransform.position));
 
@@ -137,6 +140,7 @@ public class PlayerMovement : MonoBehaviour
                 hook.SetActive(false);
                 target = false;
                 _playerCollider.isTrigger = false;
+                
             }
             
             if (pickUpHook && Input.GetKey(KeyCode.E)/*Input.GetMouseButton(1)*/)
@@ -152,7 +156,7 @@ public class PlayerMovement : MonoBehaviour
             //Input rodar
             if (Input.GetKey(KeyCode.Space) && _timeForRoll >= rodarCooldown && getInput)
             {
-                StartCoroutine(Rodar(movementWalk));
+                StartCoroutine(Rodar(animationDirection));
             }
 
             //Si has recibido un input y no est�s rodando te mov�s
@@ -177,7 +181,10 @@ public class PlayerMovement : MonoBehaviour
                 if (!pickUpHook)
                 {
                     //Move(ganchoDirection);
+                    animator.SetBool("JUMP", true);
+                    animator.SetBool("JUMP", false);
                     Move(ganchoDirection);
+                    
                     //_myTransform.Translate(ganchoSpeed * Time.deltaTime * ganchoDirection.normalized * 5);
                 }
 
@@ -185,11 +192,16 @@ public class PlayerMovement : MonoBehaviour
                 {
                     gancho = false;
                     target = false;
+                    animator.SetBool("JUMP", false);
+                    //animator.SetTrigger("IdleTrigger");
                 }               
             }
         }
 
-        if (movementWalk == Vector3.zero) animator.SetBool("Walk", false);
+        if (movementWalk == Vector3.zero)
+        {
+            animator.SetBool("Walk", false);            
+        }
 
         Vector2 lookDir = mouse - gunRB.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
