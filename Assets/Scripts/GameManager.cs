@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     #region references
     [SerializeField]
-    private GameObject _player, _playerGun, _necromancer, _weakEnemy, _chest;
+    private GameObject _player, _playerGun, _necromancer, _weakEnemy, _chest, _pauseMenu, _canvas;
     [SerializeField]
     private FollowComponent _cam;
     [SerializeField]
@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> itemList;
     private float cooldown = 2.5f;
     private float _elapsedTime = 0f;
+    private bool pause = false;
 
     //Numero de enemigos eliminados durante la partida, para objeto Bayeta
     [SerializeField]
@@ -112,6 +113,8 @@ public class GameManager : MonoBehaviour
         _listOfWeakEnemies = new List<WeakEnemy>();
         
         vivo = true;
+
+        _pauseMenu.SetActive(false);
     }
 
     private void Update()
@@ -121,6 +124,28 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetSceneByName("CompleteScene").buildIndex);
             _elapsedTime = 0;
+        }
+        
+        // Menú de pausado
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pause = !pause;
+        }
+        if (pause)
+        {
+            Time.timeScale = 0;
+            _pauseMenu.SetActive(true);
+            _player.SetActive(false);
+            _canvas.SetActive(false);
+            _cam.enabled = false;
+        }
+        else if (!pause)
+        {
+            Time.timeScale = 1;
+            _pauseMenu.SetActive(false);
+            _player.SetActive(true);
+            _canvas.SetActive(true);
+            _cam.enabled = true;
         }
     }
 

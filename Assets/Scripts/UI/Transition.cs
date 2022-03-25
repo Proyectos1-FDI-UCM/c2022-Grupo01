@@ -35,6 +35,5 @@ public class Transition : MonoBehaviour
         yield return new WaitForSeconds(_transitionTime);
         //Cargar la escena
         SceneManager.LoadScene(sceneIndex);
-
     }
 }
