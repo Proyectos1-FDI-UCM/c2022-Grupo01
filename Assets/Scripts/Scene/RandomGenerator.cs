@@ -26,11 +26,13 @@ public class RandomGenerator : MonoBehaviour
     // Start is called before the first frame update
     public void GenerateFloor()
     {
+        Destroy(Scenary);
+        Scenary = null;
         int NUMSALAS = roomPrefabs.Count;
         Inicializa(out rooms, out gameObjectPrefabs);
         
-        GeneraSala(rooms, ITERATIONS, NUMSALAS);
-        ColocarSalas(rooms, gameObjectPrefabs);
+        GeneraMatriz(rooms, ITERATIONS, NUMSALAS);
+        ColocarSalas(rooms);
         AbrirPuertas(gameObjectPrefabs);
         floorToGenerate++;
     }
@@ -55,11 +57,11 @@ public class RandomGenerator : MonoBehaviour
         rooms[h, k] = 0;
     }
 
-    void GeneraSala(int[,] rooms, float iterations, int numSalas)
+    void GeneraMatriz(int[,] rooms, float iterations, int numSalas)
     {
         int i = 0;
         numSalasCreadas = 0;
-        while (numSalasCreadas < numSalas)
+        while (numSalasCreadas < numSalas || i < iterations)
         {
             int j = Random.Range(0, DIM);
             int k = Random.Range(0, DIM);
@@ -99,14 +101,12 @@ public class RandomGenerator : MonoBehaviour
         return adyacente;
     }
 
-    void ColocarSalas(int[,] rooms, GameObject[,] gameObjectPrefabs)
+    void ColocarSalas(int[,] rooms)
     {
         GameObject newRoom = null;
         int[] lastRoomPosition = new int[2];
         int[] comprobarPosicion = new int[2];
         int rndObjectRoom = Random.Range(0, numSalasCreadas/2);
-
-        Debug.Log(rndObjectRoom);
 
         bool tutorialRoomInsteadBossRoom = false;
 
