@@ -101,6 +101,26 @@ public class GameManager : MonoBehaviour
 	{
         _uiManager.PauseMenu(pause);
 	}
+
+    public void LoadPlayTutorial()
+    {
+        SceneManager.LoadScene("LoadingTutorial");
+    }
+
+    public void LoadingPlayNormalGame()
+    {
+        SceneManager.LoadScene("LoadingGame");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
     #endregion
 
     private void Awake()
@@ -114,8 +134,6 @@ public class GameManager : MonoBehaviour
         _listOfWeakEnemies = new List<WeakEnemy>();
         
         vivo = true;
-
-        _pauseMenu.SetActive(false);
     }
 
     private void Update()
