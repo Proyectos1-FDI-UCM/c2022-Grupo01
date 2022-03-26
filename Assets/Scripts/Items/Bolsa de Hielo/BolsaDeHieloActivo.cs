@@ -13,11 +13,6 @@ public class BolsaDeHieloActivo : ActiveObject
     private BolsaDeHieloController bolsaDeHieloController;
 	#endregion
 
-	private void Start()
-	{
-
-    }
-
     public override void Activate()
 	{
 		base.Activate();

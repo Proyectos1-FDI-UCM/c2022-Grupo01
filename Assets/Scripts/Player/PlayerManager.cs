@@ -70,11 +70,11 @@ public class PlayerManager : MonoBehaviour
     #region cambiar stats de jugador
     public void ChangePlayerLife(float health)
     {
-        _playerLife.SetHealth(health, false);  
+        _playerLife.SetHealth(health, false);
     }
     public void ChangeMaxLife(int myMaxHealth)
     {
-        _playerLife.SetMaxHealth(myMaxHealth); 
+        _playerLife.SetMaxHealth(myMaxHealth);
     }
     public void ChangePlayerMeleeDamage(float newPlayerMeleeDamage)
     {

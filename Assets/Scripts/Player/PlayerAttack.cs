@@ -95,7 +95,7 @@ public class PlayerAttack : MonoBehaviour
         */
     }
 
-        void Melee()
+    void Melee()
     {
         animator.SetTrigger("Attack");
 
@@ -145,7 +145,7 @@ public class PlayerAttack : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.rotation = gunRB.rotation;
         rb.AddForce(shotPoint.right * shotForce, ForceMode2D.Impulse);
-        _playerLife.SetHealth(-10, true);
+        _playerManager.ChangePlayerLife(-10);
 	}
 
     public void SetMeleeDamage(float newMeleeDamage)

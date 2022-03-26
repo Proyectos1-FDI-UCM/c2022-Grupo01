@@ -9,7 +9,6 @@ public class RecipienteAguaPasivo : PassiveObject
     public override void Activate()
     {
         base.Activate();
-        PlayerManager.Instance.myLifeState = PlayerManager.LifeStates.Normal;
     }
     #endregion
 }

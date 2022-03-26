@@ -5,24 +5,24 @@ using UnityEngine;
 public class CuboDeAguaActive : MonoBehaviour
 {
     #region parameters
-    [SerializeField] 
-    private int recuperaVida = 30;
+    [HideInInspector] public int recuperaVida = 30;
     #endregion
 
     #region references
-    private PlayerLife _playerLife;
+    private PlayerManager _playerManager;
     #endregion
 
     void Start()
     {
-        _playerLife = GetComponent<PlayerLife>();
+        _playerManager = PlayerManager.Instance;
     }
 
     #region methods
-    public void PowerUpEnabled()
+    public void Heal()
     {
-        _playerLife.health += recuperaVida;
+        int sobraVida = ((int)_playerManager.health + recuperaVida) % (int)_playerManager.maxHealth;
+        _playerManager.ChangePlayerLife(recuperaVida);
+        recuperaVida = sobraVida;
     }
-
     #endregion
 }

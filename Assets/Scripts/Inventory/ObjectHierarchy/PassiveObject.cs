@@ -7,7 +7,7 @@ public class PassiveObject : Object
     //Meter atributos aquí
     #region parameters
 
-    public int health, maxHealth, meleeDamage, rangeDamage, speed, manguitos;
+    public int maxHealth, health, meleeDamage, rangeDamage, speed, manguitos;
     #endregion
 
     #region properties
@@ -20,10 +20,10 @@ public class PassiveObject : Object
             switch (i)
             {
                 case 0:
-                    stats[i] = health;
+                    stats[i] = maxHealth;
                     break;
                 case 1:
-                    stats[i] = maxHealth;
+                    stats[i] = health;
                     break;
                 case 2:
                     stats[i] = meleeDamage;
@@ -51,10 +51,10 @@ public class PassiveObject : Object
                 switch (i)
                 {
                     case 0:
-                        PlayerManager.Instance.ChangePlayerLife(stats[i]);
+                        PlayerManager.Instance.ChangeMaxLife(stats[i]);
                         break;
                     case 1:
-                        PlayerManager.Instance.ChangeMaxLife(stats[i]);
+                        PlayerManager.Instance.ChangePlayerLife(stats[i]);
                         break;
                     case 2:
                         PlayerManager.Instance.ChangePlayerMeleeDamage(stats[i]);
