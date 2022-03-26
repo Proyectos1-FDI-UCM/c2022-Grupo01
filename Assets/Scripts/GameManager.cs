@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     #region references
     [SerializeField]
-    private GameObject _player, _playerGun, _necromancer, _weakEnemy, _chest, _pauseMenu, _canvas;
+    private GameObject _player;
     [SerializeField]
     private FollowComponent _cam;
     [SerializeField]
@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
 
     public Vector3 _playerDirection, _necroPosition;
     public List<GameObject> itemList;
-    private bool pause = false;
 
     //Numero de enemigos eliminados durante la partida, para objeto Bayeta
     [HideInInspector] public int _deadEnemyCount = 0;
@@ -35,7 +34,8 @@ public class GameManager : MonoBehaviour
     }
 
 	#region methods
-    public void SetCooldownBar(bool setter)
+	#region UI
+	public void SetCooldownBar(bool setter)
 	{
         _uiManager.SetCooldownBar(setter);
 	}
@@ -55,6 +55,13 @@ public class GameManager : MonoBehaviour
         _uiManager.ObjectInfo(name, description);
 	}
 
+    public void PauseMenu(bool pause)
+	{
+        _uiManager.PauseMenu(pause);
+	}
+
+	#endregion
+
     public void OnPlayerDie()
 	{
         _player.SetActive(false);
@@ -64,19 +71,14 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
     //Necromancer
-    public void WeakInstantation(GameObject weakEnemy, Vector3 pos)
-    {
-        Instantiate(weakEnemy, pos, Quaternion.identity);
-    }
-
     public void DeadEnemies()
     {
         _deadEnemyCount += 1;
     }
 
-    private void PauseMenu(bool pause)
+    public void GenerateNewFloor()
 	{
-        _uiManager.PauseMenu(pause);
+        GetComponent<RandomGenerator>().GenerateFloor();
 	}
 
     public void LoadPlayTutorial()
@@ -105,13 +107,8 @@ public class GameManager : MonoBehaviour
         _instance = this;
 	}
 
-    private void Update()
-    { 
-        // Menú de pausado
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            pause = !pause;
-            PauseMenu(pause);
-        }
-    }
+	private void Start()
+	{
+        GetComponent<RandomGenerator>().GenerateFloor();
+	}
 }

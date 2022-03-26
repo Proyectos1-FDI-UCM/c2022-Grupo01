@@ -33,7 +33,7 @@ public class DetectPlayer : MonoBehaviour
     #endregion
 
     #region parameters
-    public DetectStates _myState;
+    private DetectStates _myState;
 
     [SerializeField] private typeofEnemy _thisTypeOfEnemy;
     #endregion
@@ -74,7 +74,6 @@ public class DetectPlayer : MonoBehaviour
 
                 if (!Physics2D.Raycast(_myTransform.position, direction, _radius, _wallsLayerMask))
                 {
-                    //Debug.Log("Activate");
                     Activate();
                 }
             }

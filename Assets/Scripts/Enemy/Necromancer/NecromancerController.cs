@@ -45,5 +45,7 @@ public class NecromancerController : MonoBehaviour
         {
             GetComponent<RangeAttack>().enabled = true;
         }
+
+        else GetComponent<RangeAttack>().enabled = false;
     }
 }
