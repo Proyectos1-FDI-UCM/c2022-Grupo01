@@ -9,8 +9,9 @@ public class UI_Manager : MonoBehaviour
     #region references
     [SerializeField] private Slider _healthSlider, _cooldownSlider, _secondaryHealthSlider;
     [SerializeField] private GameObject _objectInfo, _objectInfoPrefab, _pauseMenu;
-    [SerializeField] private TextMeshProUGUI _healthBarText;
+    [SerializeField] private TextMeshProUGUI _healthBarText, _playerSpeed, _playerRangeDamage, _playerMeleeDamage;
     [SerializeField] private FollowComponent _cam;
+    PlayerManager _playerManager;
     #endregion
 
     #region properties
@@ -75,6 +76,19 @@ public class UI_Manager : MonoBehaviour
         _player.SetActive(!pause);
         _cam.enabled = !pause;
     }
+
+    public void UpdateSpeed()
+	{
+        _playerSpeed.text = _playerManager.speed.ToString();
+	}
+    public void UpdateMeleeDamage()
+	{
+        _playerMeleeDamage.text = _playerManager.meleeDamage.ToString();
+	}
+    public void UpdateRangeDamage()
+	{
+        _playerRangeDamage.text = _playerManager.rangeDamage.ToString();
+	}
     #endregion
 
     IEnumerator Cosas(GameObject objectInfo)
@@ -86,5 +100,6 @@ public class UI_Manager : MonoBehaviour
     {
         _cooldownSlider.gameObject.SetActive(false);
         _player = PlayerManager.Instance.player;
+        _playerManager = GetComponent<PlayerManager>();
     }
 }

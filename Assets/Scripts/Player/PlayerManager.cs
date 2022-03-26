@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
     private PlayerLife _playerLife;
     private PlayerMovement _playerMovement;
     private Transform _playerTransform;
+    private UI_Manager _uiManager;
     #endregion
 
     #region properties
@@ -42,14 +43,17 @@ public class PlayerManager : MonoBehaviour
     public void UpdateMeleeDamage(float playerMeleeDamage)
     {
         meleeDamage = playerMeleeDamage;
+        _uiManager.UpdateMeleeDamage();
     }
     public void UpdateRangeDamage(float playerRangeDamage)
     {
         rangeDamage = playerRangeDamage;
+        _uiManager.UpdateRangeDamage();
     }
     public void UpdateSpeed(float playerSpeed)
     {
         speed = playerSpeed;
+        _uiManager.UpdateSpeed();
     }
 
     public void UpdatePosition()
@@ -116,6 +120,7 @@ public class PlayerManager : MonoBehaviour
         _playerMovement = player.GetComponent<PlayerMovement>();
         _playerTransform = player.transform;
         _previusCooldown = -2;
+        _uiManager = GetComponent<UI_Manager>();
     }
 
     private void FixedUpdate()

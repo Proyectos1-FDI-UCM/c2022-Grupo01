@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5272552500916890695}
   - component: {fileID: 5272552500916890696}
   - component: {fileID: 5272552500916890702}
+  - component: {fileID: 170214555370818841}
   m_Layer: 6
   m_Name: Human
   m_TagString: Player
@@ -110,6 +111,8 @@ MonoBehaviour:
     m_Bits: 256
   - serializedVersion: 2
     m_Bits: 512
+  - serializedVersion: 2
+    m_Bits: 32768
   rollRaycastDistanceModifier: 2
   gancho: 0
   animationDirection: {x: 0, y: 0, z: 0}
@@ -146,7 +149,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   _shotCooldown: 0.5
-  _meleeCooldown: 0.4
+  _meleeCooldown: 0.6
   attackRange: 1.5
 --- !u!114 &5757689141459901247
 MonoBehaviour:
@@ -162,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 150
-  _invulnerabilityTime: 2
+  _invulnerabilityTime: 1.2
   animator: {fileID: 489965836124677250}
 --- !u!114 &5272552500916890695
 MonoBehaviour:
@@ -208,6 +211,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa4eaef37d181a4d8ff54e39d342a31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &170214555370818841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489965834623984285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a07b36a34a44ec5b8a844c3bd58bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionRange: 1
+  _objectLayer:
+    serializedVersion: 2
+    m_Bits: 262144
 --- !u!1 &489965835875663811
 GameObject:
   m_ObjectHideFlags: 0
