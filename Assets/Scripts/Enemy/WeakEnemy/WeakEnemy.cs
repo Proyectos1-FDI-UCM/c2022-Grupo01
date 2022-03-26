@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class WeakEnemy : MonoBehaviour
 {
-    private float _num=0;
-    [SerializeField]
-    private EnemyLifeComponent _life;
-   
-
+    private float _num = 0;
+    [SerializeField] private EnemyLifeComponent _life;
    // public Animator animator;
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -19,14 +16,11 @@ public class WeakEnemy : MonoBehaviour
             //hacer daño
             Destroy(gameObject);
             _life.sala.OnEnemyDies(_life);
-            GameManager.Instance.OnWeakDies(this);
-           
         }
     }
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.Instance.RegisterWeakEnemy(this);
         _num = 1;
         _life = GetComponent<EnemyLifeComponent>();
        
@@ -39,9 +33,7 @@ public class WeakEnemy : MonoBehaviour
 
         if (_life._currentLife <= 0 && _num>0)
         {
-            GameManager.Instance.OnWeakDies(this);
             _num--;
-            
         } 
     }
 }

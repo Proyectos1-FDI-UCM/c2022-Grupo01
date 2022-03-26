@@ -13,21 +13,17 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public UI_Manager _uiManager;
 
-    private List<WeakEnemy> _listOfWeakEnemies;
     //private WeakEnemy _weakEnemies;
     private PlayerManager _playerManager;
 
     #endregion
 
     public Vector3 _playerDirection, _necroPosition;
-    public int add = 0;
-    public bool vivo;
     public List<GameObject> itemList;
     private bool pause = false;
 
     //Numero de enemigos eliminados durante la partida, para objeto Bayeta
-    [SerializeField]
-    public int _deadEnemyCount = 0;
+    [HideInInspector] public int _deadEnemyCount = 0;
 
     static private GameManager _instance;
     static public GameManager Instance
@@ -65,28 +61,9 @@ public class GameManager : MonoBehaviour
         _cam.lerpParameter = 0;
         _cam.GetComponent<FollowComponent>().SetPlayerDead();
         //Necro
-        vivo = false;
         SceneManager.LoadScene("Menu");
     }
-
-
     //Necromancer
-    public Vector3 PlayerPosition()
-    {
-        _playerDirection = _player.transform.position;
-        return _playerDirection;
-    }  
-    public void RegisterWeakEnemy(WeakEnemy enemyToAdd)
-    {
-         _listOfWeakEnemies.Add(enemyToAdd);
-    }
-
-    public void OnWeakDies(WeakEnemy deadweak)
-    {
-        _listOfWeakEnemies.Remove(deadweak);
-        add--;
-    }
-
     public void WeakInstantation(GameObject weakEnemy, Vector3 pos)
     {
         Instantiate(weakEnemy, pos, Quaternion.identity);
@@ -127,14 +104,6 @@ public class GameManager : MonoBehaviour
 	{
         _instance = this;
 	}
-
-	// Start is called before the first frame update
-	void Start()
-    {
-        _listOfWeakEnemies = new List<WeakEnemy>();
-        
-        vivo = true;
-    }
 
     private void Update()
     { 
