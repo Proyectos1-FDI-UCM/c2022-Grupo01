@@ -22,5 +22,9 @@ public class InputManager : MonoBehaviour
             _pause = !_pause;
             GameManager.Instance.PauseMenu(_pause);
 		}
+		if (Input.GetKeyDown(KeyCode.K))
+		{
+            GameManager.Instance.GenerateNewFloor();
+		}
     }
 }

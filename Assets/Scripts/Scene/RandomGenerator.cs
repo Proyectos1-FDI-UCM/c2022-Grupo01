@@ -14,6 +14,7 @@ public class RandomGenerator : MonoBehaviour
     private Vector3 instanceOffset = new Vector3(40,27,0);
     const int DIM = 16;
     const int MIN_SALAS = 7;
+    const int MAX_SALAS = 10;
     const float ITERATIONS = DIM * DIM * 1.2f;
     private int numSalasCreadas, floorToGenerate = 0;
 
@@ -61,7 +62,7 @@ public class RandomGenerator : MonoBehaviour
     {
         int i = 0;
         numSalasCreadas = 0;
-        while (numSalasCreadas < numSalas || i < iterations)
+        while (numSalasCreadas < numSalas && MAX_SALAS > numSalasCreadas)
         {
             int j = Random.Range(0, DIM);
             int k = Random.Range(0, DIM);
