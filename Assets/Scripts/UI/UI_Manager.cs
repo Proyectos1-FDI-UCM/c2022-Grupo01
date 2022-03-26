@@ -8,13 +8,15 @@ public class UI_Manager : MonoBehaviour
 {
     #region references
     [SerializeField] private Slider _healthSlider, _cooldownSlider, _secondaryHealthSlider;
-    [SerializeField] private GameObject _objectInfo, _objectInfoPrefab;
+    [SerializeField] private GameObject _objectInfo, _objectInfoPrefab, _pauseMenu;
     [SerializeField] private TextMeshProUGUI _healthBarText;
+    [SerializeField] private FollowComponent _cam;
     #endregion
 
     #region properties
     private float _normalMaxHealth = 100f;
     private float _sliderWidth = 275.5359f;   //width of the slider
+    private GameObject _player;
     #endregion
 
     #region methods
@@ -62,6 +64,15 @@ public class UI_Manager : MonoBehaviour
 	{
         Destroy(objectInfo);
     }
+
+    public void PauseMenu(bool pause)
+	{
+        if (pause) Time.timeScale = 0;
+        else Time.timeScale = 1;
+		_pauseMenu.SetActive(pause);
+        _player.SetActive(!pause);
+        _cam.enabled = !pause;
+    }
     #endregion
 
     IEnumerator Cosas(GameObject objectInfo)
@@ -72,5 +83,6 @@ public class UI_Manager : MonoBehaviour
     private void Start()
     {
         _cooldownSlider.gameObject.SetActive(false);
+        _player = PlayerManager.Instance.player;
     }
 }

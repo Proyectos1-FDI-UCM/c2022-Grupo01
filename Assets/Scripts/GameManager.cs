@@ -23,8 +23,6 @@ public class GameManager : MonoBehaviour
     public int add = 0;
     public bool vivo;
     public List<GameObject> itemList;
-    private float cooldown = 2.5f;
-    private float _elapsedTime = 0f;
     private bool pause = false;
 
     //Numero de enemigos eliminados durante la partida, para objeto Bayeta
@@ -71,6 +69,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+
     //Necromancer
     public Vector3 PlayerPosition()
     {
@@ -98,12 +97,14 @@ public class GameManager : MonoBehaviour
         _deadEnemyCount += 1;
     }
 
+    private void PauseMenu(bool pause)
+	{
+        _uiManager.PauseMenu(pause);
+	}
     #endregion
 
     private void Awake()
 	{
-        DontDestroyOnLoad(gameObject);
-        DontDestroyOnLoad(_player);
         _instance = this;
 	}
 
@@ -119,34 +120,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     { 
-        _elapsedTime += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            SceneManager.LoadScene(SceneManager.GetSceneByName("CompleteScene").buildIndex);
-            _elapsedTime = 0;
-        }
-        
         // Menú de pausado
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             pause = !pause;
-        }
-        if (pause)
-        {
-            Time.timeScale = 0;
-            _pauseMenu.SetActive(true);
-            _player.SetActive(false);
-            _canvas.SetActive(false);
-            _cam.enabled = false;
-        }
-        else if (!pause)
-        {
-            Time.timeScale = 1;
-            _pauseMenu.SetActive(false);
-            _player.SetActive(true);
-            _canvas.SetActive(true);
-            _cam.enabled = true;
+            PauseMenu(pause);
         }
     }
-
 }
