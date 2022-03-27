@@ -610,7 +610,12 @@ MonoBehaviour:
   _secondaryHealthSlider: {fileID: 1792971207}
   _objectInfo: {fileID: 1510811928}
   _objectInfoPrefab: {fileID: 2201518572312020010, guid: 96ac578b04faf2e49a9e94f30e64cb2f, type: 3}
+  _pauseMenu: {fileID: 0}
   _healthBarText: {fileID: 345115296}
+  _playerSpeed: {fileID: 0}
+  _playerRangeDamage: {fileID: 0}
+  _playerMeleeDamage: {fileID: 0}
+  _cam: {fileID: 0}
 --- !u!114 &824022191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -624,18 +629,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1642788613}
-  _playerGun: {fileID: 1700516112}
-  _necromancer: {fileID: 4826418600712077422, guid: 4875bdc361110b640809d552878c4600, type: 3}
-  _weakEnemy: {fileID: 6708671370522219186, guid: 7a65554a7f8e37d429dc0823da17a081, type: 3}
-  _chest: {fileID: 0}
-  _pauseMenu: {fileID: 0}
-  _canvas: {fileID: 0}
   _cam: {fileID: 299918164}
   _uiManager: {fileID: 824022190}
   _playerDirection: {x: 0, y: 0, z: 0}
   _necroPosition: {x: 0, y: 0, z: 0}
-  add: 0
-  vivo: 0
   itemList:
   - {fileID: 3998425941224310982, guid: dd30a8db36068f84586478dc560c21bd, type: 3}
   - {fileID: 6371751139099512063, guid: 1cb2dad4b85e68b438e2b9d259de5ac3, type: 3}

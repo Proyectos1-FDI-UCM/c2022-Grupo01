@@ -29,7 +29,7 @@ public class BossMovement : MonoBehaviour
         {
             _direction.x = 0;
             _direction.y =1;
-            animator.SetTrigger("IDLE");
+            animator.SetTrigger("CULO");
         }
         else if(_direction.y == 1)
         {

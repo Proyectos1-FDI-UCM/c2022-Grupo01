@@ -93,6 +93,10 @@ public class SpongeLifeComponent : MonoBehaviour
             {
 				animator.SetTrigger("DDER");
             }
+			else if(_bossMovement._direction.x == 0 && _bossMovement._direction.y == 1)
+            {
+				animator.SetTrigger("DCULO");
+            }
             else
             {
 				animator.SetTrigger("DCARGA");
