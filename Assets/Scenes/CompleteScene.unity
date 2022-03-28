@@ -2640,6 +2640,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 759155d58ded8e7469eab557de913c8d, type: 3}
+--- !u!114 &363211964 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 675005832, guid: 5190ae259f44d6d41ac6956295c492b8, type: 3}
+  m_PrefabInstance: {fileID: 8598375324230892403}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &365699414 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7722612488697417026, guid: c3ca7e648ac088344b8d01b60521c505, type: 3}
@@ -4230,7 +4241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2024016870660497805, guid: a82a3a4f165f2b449b2d83b9316378b2, type: 3}
       propertyPath: cooldown
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4876336982869030968, guid: a82a3a4f165f2b449b2d83b9316378b2, type: 3}
       propertyPath: m_RootOrder
@@ -16101,7 +16112,7 @@ PrefabInstance:
     - target: {fileID: 632344021560230654, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
       propertyPath: _playerRangeDamage
       value: 
-      objectReference: {fileID: 997805950}
+      objectReference: {fileID: 363211964}
     - target: {fileID: 632344021560230654, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
       propertyPath: _secondaryHealthSlider
       value: 
@@ -16273,6 +16284,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 675005830, guid: 5190ae259f44d6d41ac6956295c492b8, type: 3}
+      propertyPath: m_Name
+      value: Range
+      objectReference: {fileID: 0}
+    - target: {fileID: 870137889, guid: 5190ae259f44d6d41ac6956295c492b8, type: 3}
+      propertyPath: m_Name
+      value: Speed
+      objectReference: {fileID: 0}
+    - target: {fileID: 997805948, guid: 5190ae259f44d6d41ac6956295c492b8, type: 3}
+      propertyPath: m_Name
+      value: Melee
+      objectReference: {fileID: 0}
     - target: {fileID: 1366739654, guid: 5190ae259f44d6d41ac6956295c492b8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

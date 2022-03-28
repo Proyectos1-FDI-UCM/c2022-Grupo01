@@ -57,7 +57,6 @@ public class FregonaController : MonoBehaviour
             _timeUntilComplete += Time.deltaTime;
             if (_timeUntilComplete >= timeToComplete) Use();
         }
-        PlayerManager.Instance._previusCooldown = _elapsedTime;
     }
 
     void Use()

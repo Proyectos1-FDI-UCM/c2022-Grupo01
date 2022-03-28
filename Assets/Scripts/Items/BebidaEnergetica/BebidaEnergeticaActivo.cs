@@ -29,7 +29,7 @@ public class BebidaEnergeticaActivo : ActiveObject
         sonToCreate.transform.parent = PlayerManager.Instance.player.transform;
         sonToCreate.AddComponent<BebidaEnergeticaController>();
         _bebidaEnergéticaController = sonToCreate.GetComponent<BebidaEnergeticaController>();
-        _bebidaEnergéticaController._coolDown = cooldown;
+        _bebidaEnergéticaController._cooldown = cooldown;
         _bebidaEnergéticaController.speedBoost = speedBoost;
     }
 

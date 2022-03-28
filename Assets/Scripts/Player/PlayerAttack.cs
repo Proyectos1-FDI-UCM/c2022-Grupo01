@@ -156,6 +156,6 @@ public class PlayerAttack : MonoBehaviour
     public void SetRangeDamage(float newRangeDamage)
     {
         rangeDamage += newRangeDamage;
-        _playerManager.UpdateMeleeDamage(rangeDamage);
+        _playerManager.UpdateRangeDamage(rangeDamage);
     }
 }

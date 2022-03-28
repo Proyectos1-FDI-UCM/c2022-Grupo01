@@ -27,8 +27,6 @@ public class PlayerManager : MonoBehaviour
     public int uses;
     public Vector3 _playerPosition;
     public bool playerInRoll = false;
-
-    [SerializeField] public float _previusCooldown = -2;
 	#endregion
 
 	#region Actualizar Referencias al jugador
@@ -119,7 +117,6 @@ public class PlayerManager : MonoBehaviour
         _playerLife = player.GetComponent<PlayerLife>();
         _playerMovement = player.GetComponent<PlayerMovement>();
         _playerTransform = player.transform;
-        _previusCooldown = -2;
         _uiManager = GetComponent<UI_Manager>();
     }
 
