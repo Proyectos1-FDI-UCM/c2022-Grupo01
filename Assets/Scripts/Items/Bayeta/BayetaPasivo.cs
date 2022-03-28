@@ -19,7 +19,8 @@ public class BayetaPasivo : PassiveObject
 
     public void IncreaseHealth()
     {
-        PlayerManager.Instance.ChangePlayerLife(recuperaVida * (PlayerManager.Instance._deadEnemyCount % 10));
+        PlayerManager.Instance.ChangePlayerLife(recuperaVida * (PlayerManager.Instance._deadEnemyCount / 10));
+        PlayerManager.Instance._deadEnemyCount %= 10;
     }
     #endregion
 }

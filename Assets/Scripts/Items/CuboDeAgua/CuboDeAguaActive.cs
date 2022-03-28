@@ -15,6 +15,7 @@ public class CuboDeAguaActive : MonoBehaviour
     void Start()
     {
         _playerManager = PlayerManager.Instance;
+        Heal();
     }
 
     #region methods
