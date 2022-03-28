@@ -51,12 +51,12 @@ MonoBehaviour:
   type: 0
   nameOnScreen: Manguito
   littleDescriptionOnScreen: Prueba
-  health: 0
   maxHealth: 0
+  health: 0
   meleeDamage: 0
   rangeDamage: 0
   speed: 0
-  manguitos: 2
+  manguitos: 1
 --- !u!95 &-9049218217943398208
 Animator:
   serializedVersion: 3

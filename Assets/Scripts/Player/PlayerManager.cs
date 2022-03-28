@@ -18,8 +18,9 @@ public class PlayerManager : MonoBehaviour
 
     #region properties
     public enum LifeStates { Normal, Shield, HolyFlotador };   // A�adir shields en el futuro
-    //[HideInInspector]
+    [HideInInspector] public bool bayeta = false;
     public LifeStates myLifeState;
+    public int _deadEnemyCount = 0;
     #endregion
 
     #region parameters
@@ -30,6 +31,19 @@ public class PlayerManager : MonoBehaviour
 	#endregion
 
 	#region Actualizar Referencias al jugador
+    public void IncreaseEnemyCounter()
+    {
+        if (bayeta) _deadEnemyCount++;
+        if(_deadEnemyCount >= 10)
+        {
+            foreach (GameObject passive in Inventory.Instance.passiveItemList)
+            {
+                BayetaPasivo bayeta = passive.GetComponent<BayetaPasivo>();
+                if (bayeta != null) bayeta.IncreaseHealth();
+            }
+        }
+    }
+
 	public void UpdateLife(float playerHealth)
     {
         health = playerHealth;

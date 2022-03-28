@@ -97,11 +97,11 @@ public class EnemyLifeComponent : MonoBehaviour
 		//play die animation
 		if (!dead)
 		{
+			GameManager.Instance.DeadEnemies();
 			animator.SetTrigger("Die");
 			Destroy(gameObject, 1f);
 			dead = true;
 			sala.OnEnemyDies(this);
-			GameManager.Instance.DeadEnemies();
 		}
 	}
 	#endregion

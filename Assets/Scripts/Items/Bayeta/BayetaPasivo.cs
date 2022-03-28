@@ -7,24 +7,19 @@ public class BayetaPasivo : PassiveObject
 {
 
     #region parameters
-    private int recuperaVida = 0;
-    #endregion
-
-    #region references
+    private int recuperaVida = 10;
     #endregion
 
     #region methods
     public override void Activate()
     {
         base.Activate();
-        PlayerManager.Instance.myLifeState = PlayerManager.LifeStates.Normal;
-        int temp = GameManager.Instance._deadEnemyCount;
-        recuperaVida = (temp/10) * 10;
-        GameManager.Instance._deadEnemyCount = temp % 10;
-        PlayerManager.Instance.ChangePlayerLife(recuperaVida);
+        PlayerManager.Instance.bayeta = true;
+    }
+
+    public void IncreaseHealth()
+    {
+        PlayerManager.Instance.ChangePlayerLife(recuperaVida * (PlayerManager.Instance._deadEnemyCount % 10));
     }
     #endregion
-
-
-
 }

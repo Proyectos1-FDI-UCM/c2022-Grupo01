@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
     public List<GameObject> itemList;
 
     //Numero de enemigos eliminados durante la partida, para objeto Bayeta
-    [HideInInspector] public int _deadEnemyCount = 0;
 
     static private GameManager _instance;
     static public GameManager Instance
@@ -73,7 +72,7 @@ public class GameManager : MonoBehaviour
     //Necromancer
     public void DeadEnemies()
     {
-        _deadEnemyCount += 1;
+        PlayerManager.Instance.IncreaseEnemyCounter();
     }
 
     public void GenerateNewFloor()
