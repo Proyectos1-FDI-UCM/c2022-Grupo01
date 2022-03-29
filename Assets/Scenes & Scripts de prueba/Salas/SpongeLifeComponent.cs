@@ -116,8 +116,9 @@ public class SpongeLifeComponent : MonoBehaviour
 		//play die animation
 		if (!dead)
 		{
-			animator.SetTrigger("Die");
-			Destroy(gameObject, 1f);
+			_bossMovement._bossRB.constraints = RigidbodyConstraints2D.FreezeAll;
+			animator.SetTrigger("DEAD");
+			Destroy(gameObject, 2.5f);
 			dead = true;
 			sala.OnEnemyDies(this);
 		}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossMovement : MonoBehaviour
 {
     public Animator animator;
-    private Rigidbody2D _bossRB;
+    public Rigidbody2D _bossRB;
     private Transform _myTransform;
     public Vector3 _direction, InitialPosition;
     public float speed = 5, giro = 0, cooldown = 5, timeLeft, vuelta = 0, carga;
