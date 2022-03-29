@@ -16066,6 +16066,10 @@ PrefabInstance:
       propertyPath: Scenary
       value: 
       objectReference: {fileID: 614648290}
+    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
+      propertyPath: bossRoomPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 1583088822720531733, guid: 94da168f94789084d94cedea19de68e0, type: 3}
     - target: {fileID: 632344021560230595, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
       propertyPath: gun
       value: 

@@ -9,10 +9,10 @@ public class SpongeSalaManager : MonoBehaviour
     [SerializeField]
     private List<SpongeLifeComponent> _listOfEnemies;
     private List<Vector3> _listEnemyPosition;
-    public enum SalaStates { Inicial, Inactiva, Activa, Completada };
+    public enum RoomStates { Inicial, Inactiva, Activa, Completada };
     [SerializeField]
     private List<fountainScript> _listOfFountains;
-    public SalaStates myState;
+    public RoomStates myState;
     private BossMovement _bossMovement;
 
     public GameObject water;
@@ -38,7 +38,7 @@ public class SpongeSalaManager : MonoBehaviour
         }
         if (_door != null)
         {
-            _door.sala = this;
+            _door.salaSponge = this;
             _door.Register();
         }
         if (_fountain != null)
@@ -80,10 +80,10 @@ public class SpongeSalaManager : MonoBehaviour
     public void OnTriggerExit2D(Collider2D collision)
     {
         PlayerAttack _player = collision.gameObject.GetComponent<PlayerAttack>();
-        if (_player != null && myState != SalaStates.Completada)
+        if (_player != null && myState != RoomStates.Completada)
         {
             Reload();
-            myState = SalaStates.Inicial;
+            myState = RoomStates.Inicial;
         }
     }
     public void Reload()
@@ -98,7 +98,7 @@ public class SpongeSalaManager : MonoBehaviour
 
     public void EnterSala()
     {
-        myState = SalaStates.Activa;
+        myState = RoomStates.Activa;
         foreach (BossDoor door in _listOfDoors)
         {
             door.gameObject.GetComponent<SpriteRenderer>().enabled = true;
@@ -137,21 +137,21 @@ public class SpongeSalaManager : MonoBehaviour
         _listOfDoors = new List<BossDoor>();
         _listOfEnemies = new List<SpongeLifeComponent>();
         _listEnemyPosition = new List<Vector3>();
-        myState = SalaStates.Inicial;
+        myState = RoomStates.Inicial;
         _listOfFountains = new List<fountainScript>();
     }
 
     void Update()
     {
-        if (myState == SalaStates.Inicial)
+        if (myState == RoomStates.Inicial)
         {
             DestroyDoors();
-            myState = SalaStates.Inactiva;
+            myState = RoomStates.Inactiva;
         }
-        else if (_listOfEnemies.Count == 0 && myState == SalaStates.Activa)
+        else if (_listOfEnemies.Count == 0 && myState == RoomStates.Activa)
         {
             DestroyDoors();
-            myState = SalaStates.Completada;
+            myState = RoomStates.Completada;
         }
 
     }

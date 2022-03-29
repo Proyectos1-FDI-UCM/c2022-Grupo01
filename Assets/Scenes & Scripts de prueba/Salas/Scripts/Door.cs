@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    //[HideInInspector]
-    public SalaManager sala;
+    [HideInInspector] public SalaManager sala;
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        BolsaDeHielo bolsa = collision.gameObject.GetComponent<BolsaDeHielo>();
-        if (bolsa != null)
+        IceBagEffect bolsaDeHielo = collision.gameObject.GetComponent<IceBagEffect>();
+        if (bolsaDeHielo != null)
         {
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponentInChildren<BoxCollider2D>().enabled = false;
@@ -21,10 +20,5 @@ public class Door : MonoBehaviour
         Debug.LogWarning("Sala" + sala);
         Debug.LogWarning("This " + this);
         sala.RegisterDoor(this);
-    }
-    // Start is called before the first frame update
-    private void Start()
-    {
-
     }
 }
