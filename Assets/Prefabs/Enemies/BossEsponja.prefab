@@ -61,7 +61,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sala: {fileID: 0}
-  _myState: 0
   _thisTypeOfEnemy: 3
 --- !u!1 &4826418600712077422
 GameObject:
@@ -209,12 +208,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf91290141004eb43af386b0eda5513e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 100
-  animator: {fileID: 2223008597245930797}
   sala: {fileID: 0}
   _currentLife: 0
-  dead: 0
+  maxLife: 100
   ID: 0
+  dead: 0
+  animator: {fileID: 2223008597245930797}
 --- !u!114 &5222318862485010865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +256,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0

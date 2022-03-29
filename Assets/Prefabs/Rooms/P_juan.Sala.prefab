@@ -302,7 +302,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -422,7 +422,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sala: {fileID: 0}
-  _myState: 0
   _thisTypeOfEnemy: 5
 --- !u!1 &1645637333
 GameObject:
@@ -5291,7 +5290,7 @@ GameObject:
   - component: {fileID: 1860622598}
   - component: {fileID: 8551121296481171393}
   m_Layer: 0
-  m_Name: P_juan
+  m_Name: P_juan.Sala
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
