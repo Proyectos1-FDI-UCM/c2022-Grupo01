@@ -583,7 +583,9 @@ MonoBehaviour:
   model: {fileID: 1138651368}
   shotPoint: {fileID: 0}
   gancho: {fileID: 0}
+  bayeta: 0
   myLifeState: 0
+  _deadEnemyCount: 0
   health: 0
   maxHealth: 0
   meleeDamage: 0
@@ -592,7 +594,6 @@ MonoBehaviour:
   uses: 0
   _playerPosition: {x: 0, y: 0, z: 0}
   playerInRoll: 0
-  _previusCooldown: -2
 --- !u!114 &824022190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,7 +639,6 @@ MonoBehaviour:
   - {fileID: 6371751139099512063, guid: 1cb2dad4b85e68b438e2b9d259de5ac3, type: 3}
   - {fileID: 3998425941224310982, guid: 2439de35a2f90234e8b4d0605d4c5d23, type: 3}
   - {fileID: 5102250945931165755, guid: c3f3439b2fbcb0e43881d11d096b833b, type: 3}
-  _deadEnemyCount: 0
 --- !u!4 &824022192
 Transform:
   m_ObjectHideFlags: 0
@@ -756,6 +756,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1382634535 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 3970942922277357721, guid: e363d1f96c84f0f45a8b15317b33f03a, type: 3}
+  m_PrefabInstance: {fileID: 1629095078}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1394241777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -837,6 +842,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -106.65
       objectReference: {fileID: 0}
+    - target: {fileID: 2038952499489812260, guid: e363d1f96c84f0f45a8b15317b33f03a, type: 3}
+      propertyPath: _bossRB
+      value: 
+      objectReference: {fileID: 1382634535}
     - target: {fileID: 3772328937205138022, guid: e363d1f96c84f0f45a8b15317b33f03a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -884,6 +893,10 @@ PrefabInstance:
     - target: {fileID: 5468017632128931132, guid: e363d1f96c84f0f45a8b15317b33f03a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427729569498908551, guid: e363d1f96c84f0f45a8b15317b33f03a, type: 3}
+      propertyPath: maxLife
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 7754045428617506983, guid: e363d1f96c84f0f45a8b15317b33f03a, type: 3}
       propertyPath: m_Name
