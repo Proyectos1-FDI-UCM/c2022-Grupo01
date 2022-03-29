@@ -10,11 +10,13 @@ public class EnemyMeleeMovement : MonoBehaviour
     private enum followStates { Player, Positions};
     private followStates _myFollowStates;
     private int _wallsLayerMask;
+    private int _vacioLayerMask;
     private int _arrayIndex;
     private int _arrayFollowIndex;
     Vector3 direction;
     Vector3 directionNormalized;
     private int signDirectionPositions;
+    private bool _changeState;
     #endregion
     #region parameters
     [SerializeField]
@@ -30,12 +32,22 @@ public class EnemyMeleeMovement : MonoBehaviour
             v[i] = _myPlayerManager._playerPosition;
         }
     }
+
+
+    public void ExecuteMeleeEnemyMovement()
+    {
+        this.enabled = true;
+    }
+    public void StopMeleeEnemyMovement()
+    {
+        this.enabled = false;
+    }
     private void ChangeState()
     {
         direction = _myPlayerManager._playerPosition - _myTransform.position;
         float distance = direction.magnitude;
         directionNormalized = direction.normalized;
-        if (!Physics2D.Raycast(_myTransform.position, directionNormalized, distance, _wallsLayerMask))
+        if (!Physics2D.Raycast(_myTransform.position, directionNormalized, distance, _wallsLayerMask) && !Physics2D.Raycast(_myTransform.position, directionNormalized, distance, _vacioLayerMask))
         {
             _myFollowStates = followStates.Player;
         }
@@ -63,11 +75,13 @@ public class EnemyMeleeMovement : MonoBehaviour
         _myPlayerManager = PlayerManager.Instance;
         _playerPositions = new Vector3[_numberOfPositions];
         _wallsLayerMask = 1 << 8;
+        _vacioLayerMask = 1 << 15;
         _myFollowStates = followStates.Player;
         _myTransform = transform;
        //InicializaPosiciones(_playerPositions);
         _arrayIndex = 0;
-        
+        _changeState = true;
+        InicializaPosiciones(_playerPositions);
     }
 
     // Update is called once per frame
@@ -91,14 +105,20 @@ public class EnemyMeleeMovement : MonoBehaviour
             }
             _elapsedTime += Time.deltaTime;
 
-            _arrayFollowIndex = _arrayIndex + 1;
-            signDirectionPositions = Sign(_myTransform.position, _playerPositions[_arrayFollowIndex % _numberOfPositions]);
+            _changeState = true;
         }
         else
         {
+            if (_changeState)
+            {
+                _arrayFollowIndex = _arrayIndex + 1;
+                signDirectionPositions = Sign(_myTransform.position, _playerPositions[_arrayFollowIndex % _numberOfPositions]);
+                _changeState = false;
+            }
             directionNormalized = (_playerPositions[_arrayFollowIndex % _numberOfPositions] - _myTransform.position).normalized;
             if (signDirectionPositions != Sign(_myTransform.position, _playerPositions[_arrayFollowIndex % _numberOfPositions]))
             {
+                _playerPositions[_arrayFollowIndex % _numberOfPositions] = _myPlayerManager._playerPosition;
                 _arrayFollowIndex++;
                 signDirectionPositions = Sign(_myTransform.position, _playerPositions[_arrayFollowIndex % _numberOfPositions]);
             }

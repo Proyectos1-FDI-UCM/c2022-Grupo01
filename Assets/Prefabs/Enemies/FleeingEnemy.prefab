@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd1928f1b824ec4c8198db2dff7dbd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sala: {fileID: 0}
   _thisTypeOfEnemy: 2
 --- !u!1 &3545999149644032293
 GameObject:
@@ -208,9 +209,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf91290141004eb43af386b0eda5513e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 100
-  animator: {fileID: 0}
+  sala: {fileID: 0}
   _currentLife: 0
+  maxLife: 20
+  ID: 0
+  dead: 0
+  animator: {fileID: 3545999149644032290}
 --- !u!114 &3545999149644032291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,10 +261,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cddb4459f0a84326a933cc5ea9f55d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 0
+  _hidingTimer: 3
   fleeingEnemyRigidbody: {fileID: 3545999149644032316}
   fleeingEnemyTransform: {fileID: 3545999149644032288}
-  playerMovement: {fileID: 0}
   fleeingEnemyAnimator: {fileID: 3545999149644032290}
+  onCollision: 0
 --- !u!114 &5963190088565364694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,7 +279,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780adda14893a49cfa276f6da57675fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bottles: []
-  blueBottle: {fileID: 0}
-  yellowBottle: {fileID: 0}
-  greenBottle: {fileID: 0}
