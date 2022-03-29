@@ -237,6 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f700b2998cbfc164fb528f8a904e4802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _necromancer: {fileID: 0}
 --- !u!114 &-7528552641812810541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,7 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numberOfPositions: 10
-  _speed: 5
+  _speed: 4
   _cooldownTime: 0.01
   _distanceOffset: 1
 --- !u!1 &8480030182928531357

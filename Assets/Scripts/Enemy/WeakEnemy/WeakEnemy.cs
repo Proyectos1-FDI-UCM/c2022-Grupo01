@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeakEnemy : MonoBehaviour
 {
-    private NecromancerController _necromancer;
+    public NecromancerController _necromancer;
 
     // Start is called before the first frame update
 	private void OnDestroy()

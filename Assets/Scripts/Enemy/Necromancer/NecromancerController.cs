@@ -11,6 +11,7 @@ public class NecromancerController : MonoBehaviour
 
     [SerializeField]
     private GameObject _weakEnemy;
+    private GameObject _weakEnemyInstance;
 
     #region properties
     [HideInInspector] public int _weakCounter;
@@ -36,7 +37,8 @@ public class NecromancerController : MonoBehaviour
         _currentTime -= Time.deltaTime;
         if (_currentTime < 0 && _weakCounter < 4)
         {
-            Instantiate(_weakEnemy, _myTransform.position, Quaternion.identity);
+            _weakEnemyInstance = Instantiate(_weakEnemy, _myTransform.position, Quaternion.identity);
+            _weakEnemyInstance.GetComponent<WeakEnemy>()._necromancer = this;
             _currentTime = _timeLeft;
             _weakCounter++;
         }
