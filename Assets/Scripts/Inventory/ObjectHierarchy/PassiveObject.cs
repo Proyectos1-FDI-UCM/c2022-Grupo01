@@ -54,7 +54,7 @@ public class PassiveObject : Object
                         PlayerManager.Instance.ChangeMaxLife(stats[i]);
                         break;
                     case 1:
-                        PlayerManager.Instance.ChangePlayerLife(stats[i]);
+                        PlayerManager.Instance.ChangePlayerLife(stats[i], false);
                         break;
                     case 2:
                         PlayerManager.Instance.ChangePlayerMeleeDamage(stats[i]);

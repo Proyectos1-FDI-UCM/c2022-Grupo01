@@ -24,7 +24,7 @@ public class PlayerLife : MonoBehaviour
     #region methods
     public void SetHealth(float healthToAdd, bool isShot)
 	{
-        if(_invulnerability == false && _playerManager.myLifeState == PlayerManager.LifeStates.Normal || healthToAdd >= 0)
+        if(!_invulnerability && _playerManager.myLifeState == PlayerManager.LifeStates.Normal || healthToAdd >= 0)
         {
             health += healthToAdd;
             health = Mathf.Clamp(health, 0, maxHealth);

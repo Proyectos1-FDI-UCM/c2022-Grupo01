@@ -18,8 +18,6 @@ public class Inventory : MonoBehaviour
 	private void Awake()
 	{
         _instance = this;
-        int i = 23;
-        Debug.Log($"{i} / 10 * 10 % 10 = {(i / 10) * 10 % 10}");
 	}
 
     public List<GameObject> passiveItemList;

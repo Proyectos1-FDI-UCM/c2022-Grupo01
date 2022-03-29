@@ -15,7 +15,7 @@ public class SpikeHurtComponent : MonoBehaviour
 
         if (player != null)
 		{
-			PlayerManager.Instance.ChangePlayerLife(-_touchDamage);
+			PlayerManager.Instance.ChangePlayerLife(-_touchDamage, false);
 		}
 	}
 

@@ -22,7 +22,7 @@ public class CuboDeAguaActive : MonoBehaviour
     public void Heal()
     {
         int sobraVida = ((int)_playerManager.health + recuperaVida) % (int)_playerManager.maxHealth;
-        _playerManager.ChangePlayerLife(recuperaVida);
+        _playerManager.ChangePlayerLife(recuperaVida, false);
         recuperaVida = sobraVida;
     }
     #endregion

@@ -61,7 +61,7 @@ public class FregonaController : MonoBehaviour
 
     void Use()
     {
-        PlayerManager.Instance.ChangePlayerLife(2 * (int)_newPuddle._touchHydrate);
+        PlayerManager.Instance.ChangePlayerLife(2 * (int)_newPuddle._touchHydrate, false);
         _newPuddle.UsedPuddle();
         _timeUntilComplete = 0;
         _elapsedTime = 0;

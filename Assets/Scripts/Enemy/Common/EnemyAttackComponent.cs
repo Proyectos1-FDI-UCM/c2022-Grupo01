@@ -18,7 +18,7 @@ public class EnemyAttackComponent : MonoBehaviour
 
         if (player != null)
         {
-            PlayerManager.Instance.ChangePlayerLife(-_touchDamage);
+            PlayerManager.Instance.ChangePlayerLife(-_touchDamage, false);
         }
         
 	}

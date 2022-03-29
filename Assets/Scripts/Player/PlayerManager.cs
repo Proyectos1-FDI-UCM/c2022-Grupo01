@@ -80,9 +80,9 @@ public class PlayerManager : MonoBehaviour
     #endregion
 
     #region cambiar stats de jugador
-    public void ChangePlayerLife(float health)
+    public void ChangePlayerLife(float health, bool isShot)
     {
-        _playerLife.SetHealth(health, false);
+        _playerLife.SetHealth(health, isShot);
     }
     public void ChangeMaxLife(int myMaxHealth)
     {

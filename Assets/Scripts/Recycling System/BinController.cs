@@ -26,7 +26,7 @@ public class BinController : MonoBehaviour
                 }
                 else
                 {
-                    PlayerManager.Instance.ChangePlayerLife(-10f);
+                    PlayerManager.Instance.ChangePlayerLife(-10f, false);
                     Inventory.Instance.bottleItem = null;
                     BottleInventoryPanelManager.Instance.RemoveBottleDisplay();
                 }
@@ -36,13 +36,13 @@ public class BinController : MonoBehaviour
                 if(Inventory.Instance.bottleItem.GetComponent<BottleObject>().ID == 2)
                 {
                     Debug.Log("Interactuado con una papelera de plástico");
-                    PlayerManager.Instance.ChangePlayerLife(20f);
+                    PlayerManager.Instance.ChangePlayerLife(20f, false);
                     Inventory.Instance.bottleItem = null;
                     BottleInventoryPanelManager.Instance.RemoveBottleDisplay();
                 }
                 else
                 {
-                    PlayerManager.Instance.ChangePlayerLife(-10f);
+                    PlayerManager.Instance.ChangePlayerLife(-10f, false);
                     Inventory.Instance.bottleItem = null;
                     BottleInventoryPanelManager.Instance.RemoveBottleDisplay();
                 }
@@ -58,7 +58,7 @@ public class BinController : MonoBehaviour
                 }
                 else
                 {
-                    PlayerManager.Instance.ChangePlayerLife(-10f);
+                    PlayerManager.Instance.ChangePlayerLife(-10f, false);
                     Inventory.Instance.bottleItem = null;
                     BottleInventoryPanelManager.Instance.RemoveBottleDisplay();
                 }

@@ -62,7 +62,7 @@ public class MeleeAttack : MonoBehaviour
 		Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(transform.position, _attackRange, _playerLayer);
 		try
 		{
-			if (hitPlayer[0] != null && hitPlayer[0].isTrigger != true) PlayerManager.Instance.ChangePlayerLife(-_meleeDamage);
+			if (hitPlayer[0] != null && hitPlayer[0].isTrigger != true) PlayerManager.Instance.ChangePlayerLife(-_meleeDamage, false);
 
 		}
 		catch { }
