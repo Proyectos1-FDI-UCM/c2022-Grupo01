@@ -9,7 +9,7 @@ public class BebidaEnergeticaActivo : ActiveObject
     #endregion
 
     #region references
-    private BebidaEnergeticaController _bebidaEnergéticaController;
+    private BebidaEnergeticaController _bebidaEnergeticaController;
     #endregion
 
     public override void Activate()
@@ -25,12 +25,12 @@ public class BebidaEnergeticaActivo : ActiveObject
 
     void CreateSon()
     {
-        sonToCreate = new GameObject("BebidaEnergética");
+        sonToCreate = new GameObject("BebidaEnergï¿½tica");
         sonToCreate.transform.parent = PlayerManager.Instance.player.transform;
         sonToCreate.AddComponent<BebidaEnergeticaController>();
-        _bebidaEnergéticaController = sonToCreate.GetComponent<BebidaEnergeticaController>();
-        _bebidaEnergéticaController._cooldown = cooldown;
-        _bebidaEnergéticaController.speedBoost = speedBoost;
+        _bebidaEnergeticaController = sonToCreate.GetComponent<BebidaEnergeticaController>();
+        _bebidaEnergeticaController._cooldown = cooldown;
+        _bebidaEnergeticaController.speedBoost = speedBoost;
     }
 
     public override void ChangeActiveObject()
