@@ -30,6 +30,9 @@ public class DetectPlayer : MonoBehaviour
     /// Número con LayerMask de la pared
     /// </summary>
     private int _wallsLayerMask;
+
+
+    private int _vacioLayerMask;
     #endregion
 
     #region parameters
@@ -67,14 +70,25 @@ public class DetectPlayer : MonoBehaviour
         if(_myState == DetectStates.Stand)
         {
             PlayerAttack _myPlayerAttack = other.gameObject.GetComponent<PlayerAttack>();
-
             if (_myPlayerAttack != null)
             {
                 Vector2 direction = (other.gameObject.transform.position - _myTransform.position).normalized;
 
                 if (!Physics2D.Raycast(_myTransform.position, direction, _radius, _wallsLayerMask))
                 {
-                    Activate();
+                    if(_thisTypeOfEnemy == typeofEnemy.CAC || _thisTypeOfEnemy == typeofEnemy.Weak)
+                    {
+
+                        if (!Physics2D.Raycast(_myTransform.position, direction, _radius, _vacioLayerMask))
+                        {
+                            Activate();
+
+                        }
+                    }
+                    else
+                    {
+                        Activate();
+                    }
                 }
             }
         }
@@ -91,8 +105,7 @@ public class DetectPlayer : MonoBehaviour
         {
             case typeofEnemy.Fleeing: GetComponentInParent<FleeingEnemyMovement>().ExecuteFleeingEnemyMovement(); break;
             case typeofEnemy.CAC:
-                GetComponentInParent<NavMeshAgent>().enabled = true;
-                GetComponentInParent<MeleeMovement>().ExecuteMeleeEnemyMovement();
+                GetComponentInParent<EnemyMeleeMovement>().ExecuteMeleeEnemyMovement();
                 GetComponentInParent<MeleeAttack>().ExecuteMeleeAttack();
                 break;
             case typeofEnemy.Range:
@@ -104,8 +117,7 @@ public class DetectPlayer : MonoBehaviour
                 //Debug.Log("Si");
                 break;
             case typeofEnemy.Weak:
-                GetComponentInParent<NavMeshAgent>().enabled = true;
-                GetComponentInParent<MeleeMovement>().ExecuteMeleeEnemyMovement();
+                GetComponentInParent<EnemyMeleeMovement>().ExecuteMeleeEnemyMovement();
                 break;
             case typeofEnemy.juan:
                 GetComponentInParent<juanMovement>().enabled = true;
@@ -123,8 +135,7 @@ public class DetectPlayer : MonoBehaviour
         {
             case typeofEnemy.Fleeing: GetComponentInParent<FleeingEnemyMovement>().enabled = false; break;
             case typeofEnemy.CAC:
-                GetComponentInParent<NavMeshAgent>().enabled = false;
-                GetComponentInParent<MeleeMovement>().StopMeleeEnemyMovement();
+                GetComponentInParent<EnemyMeleeMovement>().StopMeleeEnemyMovement();
                 GetComponentInParent<MeleeAttack>().enabled = false;
                 break; 
             case typeofEnemy.Range:
@@ -133,8 +144,7 @@ public class DetectPlayer : MonoBehaviour
                 break;
             case typeofEnemy.Necromancer: GetComponentInParent<NecromancerController>().enabled = false; break;
             case typeofEnemy.Weak:
-                GetComponentInParent<NavMeshAgent>().enabled = false;
-                GetComponentInParent<MeleeMovement>().StopMeleeEnemyMovement();
+                GetComponentInParent<EnemyMeleeMovement>().StopMeleeEnemyMovement();
                 break;
             case typeofEnemy.juan:
                 GetComponentInParent<juanMovement>().enabled = false;
@@ -150,9 +160,11 @@ public class DetectPlayer : MonoBehaviour
         _myCircleCollider2D = GetComponent<CircleCollider2D>();
         _radius = _myCircleCollider2D.radius;
         _wallsLayerMask = 1 << 8;
+        _vacioLayerMask = 1 << 15;
         _myState = DetectStates.Stand;
         _rb = GetComponentInParent<Rigidbody2D>();
         _myELC = GetComponentInParent<EnemyLifeComponent>();
+        Deactivate();
     }
 
     void Update()
@@ -161,5 +173,6 @@ public class DetectPlayer : MonoBehaviour
         {
             Deactivate();
         }
+        GetComponentInParent<EnemyAttackComponent>().enabled = false;
     }
 }

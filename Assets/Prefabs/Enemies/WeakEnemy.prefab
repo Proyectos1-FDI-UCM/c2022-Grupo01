@@ -200,9 +200,8 @@ GameObject:
   - component: {fileID: 9195848397771939019}
   - component: {fileID: -620749888355334925}
   - component: {fileID: -1881989702862749291}
-  - component: {fileID: -5273713187421605913}
-  - component: {fileID: 7022313987385209352}
   - component: {fileID: -8675844643101548979}
+  - component: {fileID: -2015909923222297419}
   m_Layer: 7
   m_Name: WeakEnemy
   m_TagString: Untagged
@@ -238,7 +237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f700b2998cbfc164fb528f8a904e4802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _life: {fileID: -8675844643101548979}
 --- !u!114 &-7528552641812810541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,43 +367,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!195 &-5273713187421605913
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6708671370522219186}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.2
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 4
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &7022313987385209352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6708671370522219186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 223f2aa498f2ec44cb1d4e8036ba300c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerDistance: 0
-  _timeToBeElapsed: 0.3
-  _animator: {fileID: 9195848397771939019}
 --- !u!114 &-8675844643101548979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,12 +379,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf91290141004eb43af386b0eda5513e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 10
-  animator: {fileID: 9195848397771939019}
   sala: {fileID: 0}
   _currentLife: 0
-  dead: 0
+  maxLife: 10
   ID: 0
+  dead: 0
+  animator: {fileID: 9195848397771939019}
+--- !u!114 &-2015909923222297419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6708671370522219186}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4263095e46d3cdf41b3b8c9f23f9eb1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _numberOfPositions: 10
+  _speed: 5
+  _cooldownTime: 0.01
+  _distanceOffset: 1
 --- !u!1 &8480030182928531357
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,5 +514,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sala: {fileID: 0}
-  _myState: 0
   _thisTypeOfEnemy: 4
