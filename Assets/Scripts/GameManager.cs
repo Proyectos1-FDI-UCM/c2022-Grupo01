@@ -44,9 +44,14 @@ public class GameManager : MonoBehaviour
         _uiManager.ShowHealth(health);
 	}
 
-    public void ShowBossBar(string name, float health)
+    public void CreateBossBar(string name, float health)
     {
-        _uiManager.ShowBossbar(name, health);
+        _uiManager.CreateBossBar(name, health);
+    }
+
+    public void UpdateBossBar(float health)
+    {
+        _uiManager.UpdateBossbar(health);
     }
 
     public void ShowActiveCooldown(float cooldown, float maxCooldown)

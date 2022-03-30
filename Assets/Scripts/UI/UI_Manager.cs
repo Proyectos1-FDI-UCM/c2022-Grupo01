@@ -41,13 +41,18 @@ public class UI_Manager : MonoBehaviour
         _healthBarText.text = "Hydration: " + health;
     }
 
-    public void ShowBossbar(string bossName, float bossHealth)
+    public void CreateBossBar(string bossName, float maxHealth)
+    {
+        _bossbarSlider.gameObject.SetActive(true);
+        _bossbarSlider.maxValue = maxHealth;
+        _bossbarText.text = bossName;
+    }
+
+    public void UpdateBossbar(float bossHealth)
     {
         if (bossHealth > 0)
         {
-            _bossbarSlider.gameObject.SetActive(true);
             _bossbarSlider.value = bossHealth;
-            _bossbarText.text = bossName;
         }
         else HideBossbar();   
     }

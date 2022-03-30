@@ -6,7 +6,7 @@ public class SpongeDetectPlayer : MonoBehaviour
 {
     #region properties
     /// <summary>
-    /// Radio de detección de los enemigos
+    /// Radio de detecciï¿½n de los enemigos
     /// </summary>
     private float _radius;
 
@@ -26,7 +26,7 @@ public class SpongeDetectPlayer : MonoBehaviour
     private enum typeofEnemy { Range };
 
     /// <summary>
-    /// Número con LayerMask de la pared
+    /// Nï¿½mero con LayerMask de la pared
     /// </summary>
     private int _wallsLayerMask;
     #endregion
@@ -113,7 +113,7 @@ public class SpongeDetectPlayer : MonoBehaviour
     }
 
     /// <summary>
-    /// Desactiva los distintos enemigos si el jugador ha salido del rango de detección
+    /// Desactiva los distintos enemigos si el jugador ha salido del rango de detecciï¿½n
     /// </summary>
     public void Deactivate()
     {
