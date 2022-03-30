@@ -127,13 +127,13 @@ public class SpongeLifeComponent : MonoBehaviour
 
 	void Start()
 	{
-		GameManager.Instance.ShowBossBar("Boss Esponja", maxLife);
+		//GameManager.Instance.ShowBossBar("Boss Esponja", maxLife);
 		_currentLife = maxLife;
 		_bossMovement = GetComponent<BossMovement>();
 	}
 
     void Update()
     {
-		GameManager.Instance.ShowBossBar("Boss Esponja", _currentLife);
+		GameManager.Instance.UpdateBossBar(_currentLife);
     }
 }

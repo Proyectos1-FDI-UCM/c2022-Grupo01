@@ -19,7 +19,8 @@ public class BossMovement : MonoBehaviour
     public void ExecuteMovementBoss()
     {
         this.enabled = true;
-        
+        SpongeLifeComponent _mySpongeLifeComponent = GetComponent<SpongeLifeComponent>();
+        GameManager.Instance.CreateBossBar("Boss Esponja", _mySpongeLifeComponent.maxLife);
 
     }
     public void Giro()
