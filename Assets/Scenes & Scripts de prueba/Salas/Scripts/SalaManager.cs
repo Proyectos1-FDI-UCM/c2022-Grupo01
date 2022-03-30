@@ -6,6 +6,7 @@ public class SalaManager : MonoBehaviour
 {
     [SerializeField]
     private List<Door> _listOfDoors;
+    private List<BossDoor> _listOfBossDoors;
     [SerializeField]
     private List<EnemyLifeComponent> _listOfEnemies;
     private List<Vector3> _listEnemyPosition;
@@ -20,7 +21,7 @@ public class SalaManager : MonoBehaviour
         PlayerAttack _player = collision.gameObject.GetComponent<PlayerAttack>();
         EnemyLifeComponent _enemy = collision.gameObject.GetComponent<EnemyLifeComponent>();
         Door _door = collision.gameObject.GetComponent<Door>();
-
+        BossDoor _bossDoor = collision.gameObject.GetComponent<BossDoor>();
         if (_player != null)
         {
             EnterSala();
@@ -40,6 +41,11 @@ public class SalaManager : MonoBehaviour
         {
             _door.sala = this;
             _door.Register();
+        }
+        if(_bossDoor != null)
+        {
+            _bossDoor.salaManager = this;
+            _bossDoor.Register();
         }
     }
 
@@ -70,6 +76,12 @@ public class SalaManager : MonoBehaviour
             door.gameObject.GetComponent<SpriteRenderer>().enabled=true;
             door.gameObject.GetComponentInChildren<BoxCollider2D>().enabled = true;
         }
+        foreach (BossDoor _bossDoor in _listOfBossDoors)
+        {
+            _bossDoor.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            _bossDoor.gameObject.GetComponentInChildren<BoxCollider2D>().enabled = true;
+        }
+
     }
     public void RegisterEnemy(EnemyLifeComponent enemy)
     {
@@ -91,7 +103,11 @@ public class SalaManager : MonoBehaviour
         _listOfDoors.Add(_door);
         Debug.Log("doors: "+_listOfDoors.Count);
         
+    }
 
+    public void RegisterDoor(BossDoor _bossDoor)
+    {
+        _listOfBossDoors.Add(_bossDoor);
     }
     public void DestroyDoors()
     {
@@ -100,11 +116,17 @@ public class SalaManager : MonoBehaviour
             _door.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             _door.gameObject.GetComponentInChildren<BoxCollider2D>().enabled = false;
         }
+        foreach(BossDoor _bossDoor in _listOfBossDoors)
+        {
+            _bossDoor.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            _bossDoor.gameObject.GetComponentInChildren<BoxCollider2D>().enabled = false;
+        }
     }
 
     private void Awake()
     {
         _listOfDoors = new List<Door>();
+        _listOfBossDoors = new List<BossDoor>();
         _listOfEnemies = new List<EnemyLifeComponent>();
         _listEnemyPosition = new List<Vector3>();
         myState = SalaStates.Inicial;
