@@ -101,17 +101,14 @@ public class UI_Manager : MonoBehaviour
     public void UpdateSpeed()
 	{
         _playerSpeed.text = _playerManager.speed.ToString();
-        Debug.Log($"SPEED {_playerManager.speed}");
     }
     public void UpdateMeleeDamage()
 	{
         _playerMeleeDamage.text = _playerManager.meleeDamage.ToString();
-        Debug.Log($"MELEE {_playerManager.meleeDamage}");
 	}
     public void UpdateRangeDamage()
 	{
         _playerRangeDamage.text = _playerManager.rangeDamage.ToString();
-        Debug.Log($"RANGE {_playerManager.rangeDamage}");
     }
     #endregion
 

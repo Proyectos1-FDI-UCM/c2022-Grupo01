@@ -111,7 +111,6 @@ public class EnemyMeleeMovement : MonoBehaviour
 
         else
         {
-            Debug.Log("a ver");
             if (_changeState)
             {
                 _arrayFollowIndex = (_arrayIndex + 1) % _numberOfPositions;

@@ -280,10 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4263095e46d3cdf41b3b8c9f23f9eb1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wallsLayerMask:
-    serializedVersion: 2
-    m_Bits: 33536
-  _numberOfPositions: 10
+  _numberOfPositions: 100
   _speed: 3
-  _cooldownTime: 0.01
+  _cooldownTime: 1
   _distanceOffset: 1.5

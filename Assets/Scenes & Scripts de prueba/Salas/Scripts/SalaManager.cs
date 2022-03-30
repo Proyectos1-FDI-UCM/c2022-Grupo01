@@ -89,20 +89,16 @@ public class SalaManager : MonoBehaviour
         _listOfEnemies.Add(enemy);
         enemy.ID = _listOfEnemies.Count - 1;
         _listEnemyPosition.Add(enemy.gameObject.transform.position);
-        Debug.Log("enemy: " + _listOfEnemies.Count);
     }
 
     public void OnEnemyDies(EnemyLifeComponent enemy)
     {
         _listOfEnemies.Remove(enemy);
-        //_listEnemyPosition.Remove(_listEnemyPosition[enemy.ID]);
     }
 
     public void RegisterDoor(Door _door)
     {
         _listOfDoors.Add(_door);
-        Debug.Log("doors: "+_listOfDoors.Count);
-        
     }
 
     public void RegisterDoor(BossDoor _bossDoor)
@@ -132,15 +128,10 @@ public class SalaManager : MonoBehaviour
         myState = SalaStates.Inicial;
     }
 
-    public void Start()
-    {
-       // Debug.LogWarning(this);
-        
-    }
-
     // Update is called once per frame
     void Update()
-    {   if(myState == SalaStates.Inicial)
+    {   
+        if(myState == SalaStates.Inicial)
         {
             DestroyDoors();
             myState = SalaStates.Inactiva;
@@ -150,6 +141,5 @@ public class SalaManager : MonoBehaviour
             DestroyDoors();
             myState = SalaStates.Completada;
         }
-        
     }
 }

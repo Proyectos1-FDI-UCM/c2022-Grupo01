@@ -19,6 +19,7 @@ public class PlayerLife : MonoBehaviour
 
     #region properties
     private int _shields;
+    private bool _dead;
     #endregion
 
     #region methods
@@ -46,7 +47,7 @@ public class PlayerLife : MonoBehaviour
             if (_shields <= 0) _playerManager.myLifeState = PlayerManager.LifeStates.Normal;
         }
 
-        if (_invulnerability == false && healthToAdd < 0 && !isShot) 
+        if (_invulnerability == false && healthToAdd < 0 && !isShot && !_dead) 
         {
             StartCoroutine("GetInvulnerable");
             StartCoroutine("InvulnerableAnimation");
@@ -72,6 +73,7 @@ public class PlayerLife : MonoBehaviour
         animator.SetBool("Walk", false);
         GetComponent<PlayerMovement>().enabled = false;
         animator.SetTrigger("Die");
+        _dead = true;
 
         GameManager.Instance.OnPlayerDie();
 	}

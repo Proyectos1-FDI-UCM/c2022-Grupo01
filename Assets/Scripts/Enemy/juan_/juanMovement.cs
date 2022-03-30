@@ -98,8 +98,7 @@ public class juanMovement : MonoBehaviour
         _myPlayerManager = PlayerManager.Instance;
         //_wallsLayerMask = 1 << 8;
     }
-
-
+        
     // Update is called once per frame
     void Update()
     {
@@ -122,7 +121,6 @@ public class juanMovement : MonoBehaviour
             {
                 _rb.velocity = _playerDirection * _speed;
             }
-
 
             if ((_playerPosition + _movementOffset * _playerDirection - _myTransform.position).magnitude < _distanceOffset || _collision)
             {
@@ -152,6 +150,10 @@ public class juanMovement : MonoBehaviour
                 spawn();
             }
         }
+    }
 
+    private void OnDestroy()
+    {
+        
     }
 }
