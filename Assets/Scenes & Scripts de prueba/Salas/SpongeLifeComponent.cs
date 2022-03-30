@@ -16,7 +16,7 @@ public class SpongeLifeComponent : MonoBehaviour
 	public float _currentLife;
 
 	/// <summary>
-	/// Vida máxima del enemigo
+	/// Vida mï¿½xima del enemigo
 	/// </summary>
 	public float maxLife = 100f;
 
@@ -28,7 +28,7 @@ public class SpongeLifeComponent : MonoBehaviour
 
 	#region parameters
 	/// <summary>
-	/// Booleano que indica si un enemigo está o no muerto
+	/// Booleano que indica si un enemigo estï¿½ o no muerto
 	/// </summary>
 	public bool dead = false;
 	#endregion
@@ -78,9 +78,9 @@ public class SpongeLifeComponent : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Métod. para dañar a los enemigos
+	/// Mï¿½tod. para daï¿½ar a los enemigos
 	/// </summary>
-	/// <param name="damage">Float que contiene el daño causado al enemigo</param>
+	/// <param name="damage">Float que contiene el daï¿½o causado al enemigo</param>
 	public void Damage(float damage, bool type)
 	{
 		if (!dead && ( _bossMovement.agua == false|| type)) 
@@ -109,7 +109,7 @@ public class SpongeLifeComponent : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Métod. que mata a los enemigos
+	/// Mï¿½tod. que mata a los enemigos
 	/// </summary>
 	void Die()
 	{
@@ -127,7 +127,13 @@ public class SpongeLifeComponent : MonoBehaviour
 
 	void Start()
 	{
+		GameManager.Instance.ShowBossBar("Boss Esponja", maxLife);
 		_currentLife = maxLife;
 		_bossMovement = GetComponent<BossMovement>();
 	}
+
+    void Update()
+    {
+		GameManager.Instance.ShowBossBar("Boss Esponja", _currentLife);
+    }
 }

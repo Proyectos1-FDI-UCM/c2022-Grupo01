@@ -76,7 +76,7 @@ public class SpongeSalaManager : MonoBehaviour
         }
     }
 
-    // ¿Queremos que salga de la sala con la bolsa de hielo?
+    // ï¿½Queremos que salga de la sala con la bolsa de hielo?
     public void OnTriggerExit2D(Collider2D collision)
     {
         PlayerAttack _player = collision.gameObject.GetComponent<PlayerAttack>();

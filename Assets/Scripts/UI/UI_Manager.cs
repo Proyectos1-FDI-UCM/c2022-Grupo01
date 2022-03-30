@@ -7,9 +7,9 @@ using TMPro;
 public class UI_Manager : MonoBehaviour
 {
     #region references
-    [SerializeField] private Slider _healthSlider, _cooldownSlider, _secondaryHealthSlider;
+    [SerializeField] private Slider _healthSlider, _cooldownSlider, _secondaryHealthSlider, _bossbarSlider;
     [SerializeField] private GameObject _objectInfo, _objectInfoPrefab, _pauseMenu;
-    [SerializeField] private TextMeshProUGUI _healthBarText, _playerSpeed, _playerRangeDamage, _playerMeleeDamage;
+    [SerializeField] private TextMeshProUGUI _healthBarText, _bossbarText, _playerSpeed, _playerRangeDamage, _playerMeleeDamage;
     [SerializeField] private FollowComponent _cam;
     PlayerManager _playerManager;
     #endregion
@@ -39,6 +39,22 @@ public class UI_Manager : MonoBehaviour
         }
 
         _healthBarText.text = "Hydration: " + health;
+    }
+
+    public void ShowBossbar(string bossName, float bossHealth)
+    {
+        if (bossHealth > 0)
+        {
+            _bossbarSlider.gameObject.SetActive(true);
+            _bossbarSlider.value = bossHealth;
+            _bossbarText.text = bossName;
+        }
+        else HideBossbar();   
+    }
+
+    public void HideBossbar()
+    {
+        _bossbarSlider.gameObject.SetActive(false);
     }
 
     public void ShowActiveCooldown(float cooldown, float maxCooldown)
