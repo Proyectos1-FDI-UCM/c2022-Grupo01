@@ -6,6 +6,7 @@ public class PlayerManager : MonoBehaviour
 {
     #region references
     public GameObject player, gun, rotationPoint, model, shotPoint, gancho;
+    public Camera cam;
     
     private Animator _animator;
 

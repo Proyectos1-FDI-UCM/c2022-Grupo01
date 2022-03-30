@@ -36,7 +36,7 @@ public class juanMovement : MonoBehaviour
     private Rigidbody2D _rb;
     private Transform _myTransform;
     private SpriteRenderer _mySpriteRenderer;
-    [SerializeField] private GameObject _trapDoor;
+    [SerializeField] private SpriteRenderer _trapDoor;
     #endregion
 
     #region methods
@@ -155,6 +155,6 @@ public class juanMovement : MonoBehaviour
 
     private void OnDestroy()
     {
-        _trapDoor.SetActive(true);
+        _trapDoor.enabled = true;
     }
 }
