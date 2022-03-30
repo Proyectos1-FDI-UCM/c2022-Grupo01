@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMeleeMovement : MonoBehaviour
+public class EnemyMovementMelee : MonoBehaviour
 {
     #region properties
     private float _elapsedTime = 0f;
     private Vector3[] _playerPositions;
-    private enum followStates { Player, Positions};
+    private enum followStates { Player, Positions };
     private followStates _myFollowStates;
     private int _wallsLayerMask = 1 << 8;
     private int _voidLayerMask = 1 << 15;
@@ -27,7 +27,7 @@ public class EnemyMeleeMovement : MonoBehaviour
     #region methods
     private void InicializaPosiciones(Vector3[] v)
     {
-        for(int i = 0; i < v.Length; i++)
+        for (int i = 0; i < v.Length; i++)
         {
             v[i] = _myPlayerManager._playerPosition;
         }
@@ -81,32 +81,34 @@ public class EnemyMeleeMovement : MonoBehaviour
         InicializaPosiciones(_playerPositions);
     }
 
-    void UpdatePlayerPositions()
+    /*void UpdatePlayerPositions()
     {
         _playerPositions[_arrayIndex] = _myPlayerManager._playerPosition;
         _arrayIndex = (_arrayIndex + 1) % _numberOfPositions;
         _elapsedTime = 0f;
-    }
+    }*/
 
     // Update is called once per frame
     void Update()
     {
         ChangeState();
 
-        
-    
-        if(_myFollowStates == followStates.Player)
+
+
+        if (_myFollowStates == followStates.Player)
         {
-            if((_myTransform.position - _myPlayerManager._playerPosition).magnitude > _distanceOffset)
+            if ((_myTransform.position - _myPlayerManager._playerPosition).magnitude > _distanceOffset)
             {
-                _myTransform.Translate(directionNormalized * _speed * Time.deltaTime); 
+                _myTransform.Translate(directionNormalized * _speed * Time.deltaTime);
             }
+
+            _playerPositions[0] = _myPlayerManager._playerPosition;
             _changeState = true;
-            if (_elapsedTime > _cooldownTime)
-            {
-                UpdatePlayerPositions();
-            }
-            _elapsedTime += Time.deltaTime;
+            //if (_elapsedTime > _cooldownTime)
+            //{
+            //    UpdatePlayerPositions();
+            //}
+            //_elapsedTime += Time.deltaTime;
         }
 
         else
@@ -114,12 +116,8 @@ public class EnemyMeleeMovement : MonoBehaviour
             Debug.Log("a ver");
             if (_changeState)
             {
-                _arrayFollowIndex = (_arrayIndex + 1) % _numberOfPositions;
-                signDirectionPositions = Sign(_myTransform.position, _playerPositions[_arrayFollowIndex]);
-                for(int i = 0; i < _numberOfPositions; i++)
-                {
-                    if ((_playerPositions[i] - _myTransform.position).magnitude < (_playerPositions[_arrayFollowIndex] - _myTransform.position).magnitude) _arrayFollowIndex = i;
-                }
+                _arrayFollowIndex = 0;
+                _arrayIndex = _arrayFollowIndex + 1;
                 _changeState = false;
             }
             directionNormalized = (_playerPositions[_arrayFollowIndex] - _myTransform.position).normalized;
@@ -134,6 +132,13 @@ public class EnemyMeleeMovement : MonoBehaviour
                 directionNormalized = (_playerPositions[_arrayFollowIndex] - _myTransform.position).normalized;
                 _myTransform.Translate(directionNormalized * _speed * Time.deltaTime);
             }
+
+            if (_elapsedTime > _cooldownTime)
+            {
+                _playerPositions[_arrayIndex] = _myPlayerManager._playerPosition;
+                _arrayIndex = (_arrayIndex + 1) % _numberOfPositions;
+            }
+            _elapsedTime += Time.deltaTime;
         }
     }
 }
