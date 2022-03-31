@@ -36,6 +36,7 @@ public class juanMovement : MonoBehaviour
     private Rigidbody2D _rb;
     private Transform _myTransform;
     private SpriteRenderer _mySpriteRenderer;
+    [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer _trapDoor;
     #endregion
 
@@ -118,6 +119,7 @@ public class juanMovement : MonoBehaviour
         }
         else if(_myState == juanStates.Move)
         {
+            animator.SetTrigger("MOVE");
             if (!_collision)
             {
                 _rb.velocity = _playerDirection * _speed;
