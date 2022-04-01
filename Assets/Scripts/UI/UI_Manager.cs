@@ -90,9 +90,10 @@ public class UI_Manager : MonoBehaviour
     public void SetLoadingScreen(bool setLoadingScreen)
     {
         _cooldownSlider.gameObject.SetActive(!setLoadingScreen);
-        _secondaryHealthSlider.gameObject.SetActive(!setLoadingScreen);
-        _healthSlider.gameObject.SetActive(!setLoadingScreen);
+        _secondaryHealthSlider.transform.parent.gameObject.SetActive(!setLoadingScreen);
         _stats.gameObject.SetActive(!setLoadingScreen);
+        _healthBarText.gameObject.SetActive(!setLoadingScreen);
+
         _loadingScreen.SetActive(setLoadingScreen);
     }
 

@@ -158,5 +158,6 @@ public class juanMovement : MonoBehaviour
     private void OnDestroy()
     {
         _trapDoor.enabled = true;
+        _trapDoor.GetComponent<NextLevel>().enabled = true;
     }
 }

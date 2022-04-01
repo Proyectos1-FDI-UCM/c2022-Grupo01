@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UI;
-
+    
 public class LoadingScreenInput : MonoBehaviour
 {
     #region properties

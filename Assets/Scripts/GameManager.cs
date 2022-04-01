@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour
 
     public void SetLoadingScreen(bool setLoadingScreen)
     {
+        _player.SetActive(!setLoadingScreen);
         _uiManager.SetLoadingScreen(setLoadingScreen);
     }
 	#endregion
