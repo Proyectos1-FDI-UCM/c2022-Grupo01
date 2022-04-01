@@ -7,7 +7,8 @@ public class BossMovement : MonoBehaviour
     public Animator animator;
     public Rigidbody2D _bossRB;
     private Transform _myTransform;
-    public Vector3 _direction, InitialPosition;
+    public Vector3 _direction;
+    public Transform InitialPosition;
     public float speed = 5, giro = 0, cooldown = 5, timeLeft, vuelta = 0, carga;
 
     public bool agua=true, recarga=false;
@@ -21,7 +22,10 @@ public class BossMovement : MonoBehaviour
         this.enabled = true;
         SpongeLifeComponent _mySpongeLifeComponent = GetComponent<SpongeLifeComponent>();
         GameManager.Instance.CreateBossBar("Boss Esponja", _mySpongeLifeComponent.maxLife);
-
+        agua = false;
+        recarga = false;
+        carga = cooldown;
+        timeLeft = cooldown;
     }
     public void Giro()
     {
@@ -59,7 +63,6 @@ public class BossMovement : MonoBehaviour
         _direction = new Vector3(1, 0, 0);
         _myTransform = transform;
         bossColider = GetComponent<BoxCollider2D>();
-        InitialPosition = _myTransform.position;
         _myRangeAttack = GetComponent<RangeAttack>();
         animator.SetTrigger("ARRIBA");
     }
@@ -76,9 +79,9 @@ public class BossMovement : MonoBehaviour
             _bossRB.constraints = RigidbodyConstraints2D.None;
             _bossRB.constraints = RigidbodyConstraints2D.FreezeRotation;
             // Vuelta a los bordes desde el centro
-            _bossRB.MovePosition(_myTransform.position + (InitialPosition - _myTransform.position) * speed * Time.fixedDeltaTime);
+            _bossRB.MovePosition(_myTransform.position + (InitialPosition.position - _myTransform.position) * speed * Time.fixedDeltaTime);
             // Detección de si ha llegado al borde
-            if (Vector3.Magnitude(InitialPosition-_myTransform.position)< 0.1)
+            if (Vector3.Magnitude(InitialPosition.position-_myTransform.position)< 0.1)
             {
                 vuelta++;
                 agua = true;

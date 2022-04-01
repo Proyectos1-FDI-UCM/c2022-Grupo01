@@ -60,6 +60,9 @@ public class fountainScript : MonoBehaviour
         render = this.GetComponent<SpriteRenderer>();
         animator = this.GetComponent<Animator>();
         animator.enabled = true;
+        render.sprite = clogged;
+        _isClogged = true;
+        animator.enabled = false;
     }
 
 }
