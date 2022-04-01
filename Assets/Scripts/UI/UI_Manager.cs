@@ -8,7 +8,7 @@ public class UI_Manager : MonoBehaviour
 {
     #region references
     [SerializeField] private Slider _healthSlider, _cooldownSlider, _secondaryHealthSlider, _bossbarSlider;
-    [SerializeField] private GameObject _objectInfo, _objectInfoPrefab, _pauseMenu;
+    [SerializeField] private GameObject _objectInfo, _objectInfoPrefab, _pauseMenu, _loadingScreen, _stats;
     [SerializeField] private TextMeshProUGUI _healthBarText, _bossbarText, _playerSpeed, _playerRangeDamage, _playerMeleeDamage;
     [SerializeField] private FollowComponent _cam;
     PlayerManager _playerManager;
@@ -79,12 +79,21 @@ public class UI_Manager : MonoBehaviour
         objectInfo.transform.SetParent(_objectInfo.transform);
         objectInfo.transform.GetChild(0).GetComponentInChildren<Text>().text = name.ToUpper();
         objectInfo.transform.GetChild(1).GetComponentInChildren<Text>().text = description.ToUpper();
-        StartCoroutine(Cosas(objectInfo));
+        StartCoroutine(DeactivateObjectInfoAfterSeconds(objectInfo, 4));
 	}
 
     public void DeactivateObjectInfo(GameObject objectInfo)
 	{
         Destroy(objectInfo);
+    }
+
+    public void SetLoadingScreen(bool setLoadingScreen)
+    {
+        _cooldownSlider.gameObject.SetActive(!setLoadingScreen);
+        _secondaryHealthSlider.gameObject.SetActive(!setLoadingScreen);
+        _healthSlider.gameObject.SetActive(!setLoadingScreen);
+        _stats.gameObject.SetActive(!setLoadingScreen);
+        _loadingScreen.SetActive(setLoadingScreen);
     }
 
     public void PauseMenu(bool pause)
@@ -112,9 +121,9 @@ public class UI_Manager : MonoBehaviour
     }
     #endregion
 
-    IEnumerator Cosas(GameObject objectInfo)
+    IEnumerator DeactivateObjectInfoAfterSeconds(GameObject objectInfo, float seconds)
 	{
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(seconds);
         DeactivateObjectInfo(objectInfo);
 	}
     private void Start()

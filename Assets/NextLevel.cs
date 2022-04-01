@@ -13,7 +13,7 @@ public class NextLevel : MonoBehaviour
     #endregion
 
     #region references
-    [SerializeField] private GameObject _message, _loadingScreen;
+    [SerializeField] private GameObject _message;
     #endregion
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -41,23 +41,13 @@ public class NextLevel : MonoBehaviour
     private void ShowMessage(bool show)
     {
         _message.SetActive(show);
-    }
-
-    IEnumerator NextFloor()
-    {
-        //añadir transición
-        PlayerManager.Instance.player.SetActive(false);
-        _loadingScreen.SetActive(true);
-        //play transition sound
-        yield return new WaitForSeconds(_transitionTime);
-        PlayerManager.Instance.player.SetActive(true);
-        GameManager.Instance.GenerateNewFloor();
+        _message.transform.position = new Vector3(0, 0.05f, 0);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        _message.SetActive(false);
+        ShowMessage(false) ;
     }
 
     // Update is called once per frame
@@ -65,7 +55,8 @@ public class NextLevel : MonoBehaviour
     {
         if (_colliding && Input.GetKeyDown(KeyCode.F))
         {
-            StartCoroutine(NextFloor());
+            GameManager.Instance.SetLoadingScreen(true);
+            gameObject.SetActive(false);
         }
     }
 }

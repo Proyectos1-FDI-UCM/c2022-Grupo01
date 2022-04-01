@@ -69,6 +69,10 @@ public class GameManager : MonoBehaviour
         _uiManager.PauseMenu(pause);
 	}
 
+    public void SetLoadingScreen(bool setLoadingScreen)
+    {
+        _uiManager.SetLoadingScreen(setLoadingScreen);
+    }
 	#endregion
 
     public void OnPlayerDie()
