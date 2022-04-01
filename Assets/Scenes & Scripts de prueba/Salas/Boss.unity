@@ -583,6 +583,7 @@ MonoBehaviour:
   model: {fileID: 1138651368}
   shotPoint: {fileID: 0}
   gancho: {fileID: 0}
+  cam: {fileID: 0}
   bayeta: 0
   myLifeState: 0
   _deadEnemyCount: 0
@@ -758,6 +759,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1288368440 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3120276375747197023, guid: 94da168f94789084d94cedea19de68e0, type: 3}
+  m_PrefabInstance: {fileID: 6262640645375754950}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1382634535 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 3970942922277357721, guid: e363d1f96c84f0f45a8b15317b33f03a, type: 3}
@@ -1051,6 +1057,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1138651370}
+    - target: {fileID: 1264898414, guid: 94da168f94789084d94cedea19de68e0, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1288368440}
     - target: {fileID: 1264898415, guid: 94da168f94789084d94cedea19de68e0, type: 3}
       propertyPath: m_Size.x
       value: 0.5
