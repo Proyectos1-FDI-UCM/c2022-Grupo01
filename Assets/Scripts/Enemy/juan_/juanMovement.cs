@@ -8,9 +8,9 @@ public class juanMovement : MonoBehaviour
     private enum juanStates { Channel, Move, Teleport, Rest };
     private juanStates _myState;
     private float _elapsedTime;
-    private Vector3 _playerDirection;
+    private Vector3 _playerDirection, _lastDirecion;
     private Vector3 _playerPosition;
-    private bool _collision;
+    private bool _collision, rest;
     [SerializeField]
     private Transform[] _teleportPoints = new Transform [6];
     //private int _wallsLayerMask;
@@ -23,6 +23,8 @@ public class juanMovement : MonoBehaviour
     private float _cooldownRestTime = 2f;
     [SerializeField]
     private float _cooldownSpawnTime = 2f;
+    [SerializeField]
+    private float _cooldownPortalTime = 0.75f;
     [SerializeField]
     private float _speed = 1f;
     [SerializeField]
@@ -70,10 +72,12 @@ public class juanMovement : MonoBehaviour
         //_rb.constraints = RigidbodyConstraints2D.None;
         //_rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         _myTransform.position = _teleportPoints[Random.Range(0, 6)].position;
+        
     }
 
     private void spawn()
     {
+        
         _mySpriteRenderer.enabled = true;
     }
 
@@ -106,42 +110,61 @@ public class juanMovement : MonoBehaviour
     {
         if(_myState == juanStates.Channel)
         {
-            if(cooldownsTime(_cooldownChannelTime))
+            animator.SetTrigger("CHARGE");
+            _playerPosition = _myPlayerManager._playerPosition;
+            _playerDirection = (_playerPosition - _myTransform.position).normalized; 
+            if (_playerDirection.x > 0) _mySpriteRenderer.flipX = true;
+            else _mySpriteRenderer.flipX = false;
+
+            if (cooldownsTime(_cooldownChannelTime))
             {
-                _playerPosition = _myPlayerManager._playerPosition;
-                _playerDirection = (_playerPosition - _myTransform.position).normalized;
+                              
+                
                 _myState = juanStates.Move;
                 _rb.constraints = RigidbodyConstraints2D.None;
                 _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
+                
                 _elapsedTime = 0;
             }
         }
         else if(_myState == juanStates.Move)
         {
-            animator.SetTrigger("MOVE");
+            
             if (!_collision)
             {
                 _rb.velocity = _playerDirection * _speed;
+                animator.SetBool("MOVE", true);
             }
 
             if ((_playerPosition + _movementOffset * _playerDirection - _myTransform.position).magnitude < _distanceOffset || _collision)
             {
+                animator.SetBool("MOVE", false);
                 _rb.constraints = RigidbodyConstraints2D.FreezeAll;
                 _rb.velocity = Vector2.zero;
                 _myState = juanStates.Rest;
                 _collision = false;
-                
+                rest = true;
+
             }
         }
         else if(_myState == juanStates.Rest)
         {
-            if (cooldownsTime(_cooldownRestTime))
+            
+            if (rest&&cooldownsTime(_cooldownRestTime))
             {
-
-                _myState = juanStates.Teleport;
+                animator.SetBool("PORTAL", true);
+               
                 _elapsedTime = 0;
+                rest = false;
+                
+            }
+            else if (!rest&&cooldownsTime(_cooldownPortalTime))
+            {
+                animator.SetBool("PORTAL", false);
+                _myState = juanStates.Teleport;
                 bossTeleport();
+                _elapsedTime = 0;
             }
         }
         else
@@ -149,8 +172,9 @@ public class juanMovement : MonoBehaviour
             if (cooldownsTime(_cooldownSpawnTime))
             {
                 _myState = juanStates.Channel;
-                _elapsedTime = 0;
                 spawn();
+                _elapsedTime = 0;
+                
             }
         }
     }

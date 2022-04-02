@@ -1061,13 +1061,25 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1288368440}
+    - target: {fileID: 1264898414, guid: 94da168f94789084d94cedea19de68e0, type: 3}
+      propertyPath: _cooldownPortalTime
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 1264898415, guid: 94da168f94789084d94cedea19de68e0, type: 3}
       propertyPath: m_Size.x
-      value: 0.5
+      value: 0.28794783
       objectReference: {fileID: 0}
     - target: {fileID: 1264898415, guid: 94da168f94789084d94cedea19de68e0, type: 3}
       propertyPath: m_Size.y
-      value: 0.4
+      value: 0.22358018
+      objectReference: {fileID: 0}
+    - target: {fileID: 1264898415, guid: 94da168f94789084d94cedea19de68e0, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.014897227
+      objectReference: {fileID: 0}
+    - target: {fileID: 1264898415, guid: 94da168f94789084d94cedea19de68e0, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.011110615
       objectReference: {fileID: 0}
     - target: {fileID: 1264898415, guid: 94da168f94789084d94cedea19de68e0, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
