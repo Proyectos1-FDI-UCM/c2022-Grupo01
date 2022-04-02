@@ -36,6 +36,7 @@ public class juanMovement : MonoBehaviour
     #region references
     private PlayerManager _myPlayerManager;
     private Rigidbody2D _rb;
+    private Collider2D _collider;
     private Transform _myTransform;
     private SpriteRenderer _mySpriteRenderer;
     [SerializeField] private Animator animator;
@@ -88,6 +89,7 @@ public class juanMovement : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _myTransform = transform;
         _mySpriteRenderer = GetComponent<SpriteRenderer>();
+        _collider = GetComponent<Collider2D>();
         _collision = false;
     }
     private void OnEnable()
@@ -154,6 +156,7 @@ public class juanMovement : MonoBehaviour
             
             if (rest&&cooldownsTime(_cooldownRestTime))
             {
+                _collider.isTrigger = true;
                 animator.SetBool("PORTAL", true);
                
                 _elapsedTime = 0;
@@ -162,6 +165,7 @@ public class juanMovement : MonoBehaviour
             }
             else if (!rest&&cooldownsTime(_cooldownPortalTime))
             {
+                _collider.isTrigger = false;
                 animator.SetBool("PORTAL", false);
                 _myState = juanStates.Teleport;
                 bossTeleport();
