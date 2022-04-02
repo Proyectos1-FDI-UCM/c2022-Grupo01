@@ -614,6 +614,8 @@ MonoBehaviour:
   _objectInfo: {fileID: 1510811928}
   _objectInfoPrefab: {fileID: 2201518572312020010, guid: 96ac578b04faf2e49a9e94f30e64cb2f, type: 3}
   _pauseMenu: {fileID: 0}
+  _loadingScreen: {fileID: 0}
+  _stats: {fileID: 0}
   _healthBarText: {fileID: 345115296}
   _bossbarText: {fileID: 0}
   _playerSpeed: {fileID: 0}
@@ -759,11 +761,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &1288368440 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3120276375747197023, guid: 94da168f94789084d94cedea19de68e0, type: 3}
-  m_PrefabInstance: {fileID: 6262640645375754950}
-  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1382634535 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 3970942922277357721, guid: e363d1f96c84f0f45a8b15317b33f03a, type: 3}
@@ -1057,78 +1054,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1138651370}
-    - target: {fileID: 1264898414, guid: 94da168f94789084d94cedea19de68e0, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1288368440}
-    - target: {fileID: 1264898414, guid: 94da168f94789084d94cedea19de68e0, type: 3}
-      propertyPath: _cooldownPortalTime
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 1264898415, guid: 94da168f94789084d94cedea19de68e0, type: 3}
-      propertyPath: m_Size.x
-      value: 0.28794783
-      objectReference: {fileID: 0}
-    - target: {fileID: 1264898415, guid: 94da168f94789084d94cedea19de68e0, type: 3}
-      propertyPath: m_Size.y
-      value: 0.22358018
-      objectReference: {fileID: 0}
-    - target: {fileID: 1264898415, guid: 94da168f94789084d94cedea19de68e0, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.014897227
-      objectReference: {fileID: 0}
-    - target: {fileID: 1264898415, guid: 94da168f94789084d94cedea19de68e0, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.011110615
-      objectReference: {fileID: 0}
-    - target: {fileID: 1264898415, guid: 94da168f94789084d94cedea19de68e0, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.51
-      objectReference: {fileID: 0}
-    - target: {fileID: 1264898415, guid: 94da168f94789084d94cedea19de68e0, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1264898416, guid: 94da168f94789084d94cedea19de68e0, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: da088f368b1209c4892946f01ea09899, type: 3}
-    - target: {fileID: 1264898416, guid: 94da168f94789084d94cedea19de68e0, type: 3}
-      propertyPath: m_Color.b
-      value: 0.8483891
-      objectReference: {fileID: 0}
-    - target: {fileID: 1264898416, guid: 94da168f94789084d94cedea19de68e0, type: 3}
-      propertyPath: m_Color.g
-      value: 0.86432225
-      objectReference: {fileID: 0}
-    - target: {fileID: 1264898416, guid: 94da168f94789084d94cedea19de68e0, type: 3}
-      propertyPath: m_Color.r
-      value: 0.8773585
-      objectReference: {fileID: 0}
-    - target: {fileID: 1264898416, guid: 94da168f94789084d94cedea19de68e0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1264898417, guid: 94da168f94789084d94cedea19de68e0, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1264898417, guid: 94da168f94789084d94cedea19de68e0, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1269213038, guid: 94da168f94789084d94cedea19de68e0, type: 3}
-      propertyPath: m_Radius
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1583088822720531733, guid: 94da168f94789084d94cedea19de68e0, type: 3}
       propertyPath: m_Name
       value: P_SalaBoss2
       objectReference: {fileID: 0}
-    - target: {fileID: 3120276375747197023, guid: 94da168f94789084d94cedea19de68e0, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: a13ea9d62bbb6d54bad6f18b123f4c67, type: 2}
     - target: {fileID: 5348487413659402196, guid: 94da168f94789084d94cedea19de68e0, type: 3}
       propertyPath: m_RootOrder
       value: 2

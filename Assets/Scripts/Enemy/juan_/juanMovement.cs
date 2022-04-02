@@ -76,8 +76,7 @@ public class juanMovement : MonoBehaviour
     }
 
     private void spawn()
-    {
-        
+    {        
         _mySpriteRenderer.enabled = true;
     }
 
@@ -93,8 +92,10 @@ public class juanMovement : MonoBehaviour
     }
     private void OnEnable()
     {
+        _myState = juanStates.Channel;
         bossTeleport();
         spawn();
+        
     }
     #endregion
 

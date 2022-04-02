@@ -182,7 +182,7 @@ Transform:
   m_GameObject: {fileID: 1264898413}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -122, y: 45, z: 0}
-  m_LocalScale: {x: 4, y: 3, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
   - {fileID: 1269213037}
   m_Father: {fileID: 5348487413659402196}
@@ -228,8 +228,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.4811321, g: 0.2698155, b: 0.011347453, a: 1}
+  m_Sprite: {fileID: 21300000, guid: da088f368b1209c4892946f01ea09899, type: 3}
+  m_Color: {r: 0.8773585, g: 0.86432225, b: 0.8483891, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -252,18 +252,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.014897227, y: -0.011110615}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.51, y: 0.4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.28794783, y: 0.22358018}
   m_EdgeRadius: 0
 --- !u!114 &1264898414
 MonoBehaviour:
@@ -287,10 +287,11 @@ MonoBehaviour:
   _cooldownChannelTime: 2
   _cooldownRestTime: 2
   _cooldownSpawnTime: 2
+  _cooldownPortalTime: 0.75
   _speed: 15
   _distanceOffset: 0.3
   _movementOffset: 2
-  animator: {fileID: 0}
+  animator: {fileID: 3120276375747197023}
   _trapDoor: {fileID: 4319589080418578429}
 --- !u!50 &1264898418
 Rigidbody2D:
@@ -330,7 +331,7 @@ MonoBehaviour:
   maxLife: 1000
   ID: 0
   dead: 0
-  animator: {fileID: 3120276375747197023}
+  animator: {fileID: 0}
 --- !u!114 &124627191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,7 +355,7 @@ Animator:
   m_GameObject: {fileID: 1264898413}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a13ea9d62bbb6d54bad6f18b123f4c67, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -410,7 +411,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.2
+  m_Radius: 0.5
 --- !u!114 &1382639634
 MonoBehaviour:
   m_ObjectHideFlags: 0
