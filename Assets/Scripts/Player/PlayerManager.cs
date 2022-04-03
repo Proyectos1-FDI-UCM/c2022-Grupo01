@@ -8,8 +8,6 @@ public class PlayerManager : MonoBehaviour
     public GameObject player, gun, rotationPoint, model, shotPoint, gancho;
     public Camera cam;
     
-    private Animator _animator;
-
     private PlayerAttack _playerAttack;
     private PlayerLife _playerLife;
     private PlayerMovement _playerMovement;
@@ -18,10 +16,10 @@ public class PlayerManager : MonoBehaviour
     #endregion
 
     #region properties
-    public enum LifeStates { Normal, Shield, HolyFlotador };   // A�adir shields en el futuro
     [HideInInspector] public bool bayeta = false;
+    [HideInInspector] public int _deadEnemyCount = 0;
+    public enum LifeStates { Normal, Shield, HolyFlotador };   // A�adir shields en el futuro
     public LifeStates myLifeState;
-    public int _deadEnemyCount = 0;
     #endregion
 
     #region parameters
@@ -35,7 +33,7 @@ public class PlayerManager : MonoBehaviour
     public void IncreaseEnemyCounter()
     {
         if (bayeta) _deadEnemyCount++;
-        if(_deadEnemyCount >= 10)
+        if(_deadEnemyCount >= 10 && bayeta)
         {
             foreach (GameObject passive in Inventory.Instance.passiveItemList)
             {
@@ -127,7 +125,6 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        _animator = model.GetComponent<Animator>();
         _playerAttack = player.GetComponent<PlayerAttack>();
         _playerLife = player.GetComponent<PlayerLife>();
         _playerMovement = player.GetComponent<PlayerMovement>();

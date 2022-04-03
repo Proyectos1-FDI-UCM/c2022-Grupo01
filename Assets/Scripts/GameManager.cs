@@ -76,13 +76,14 @@ public class GameManager : MonoBehaviour
     }
 	#endregion
 
-    public void OnPlayerDie()
+    public IEnumerator OnPlayerDie()
 	{
         _player.SetActive(false);
         _cam.lerpParameter = 0;
         _cam.GetComponent<FollowComponent>().SetPlayerDead();
-        //Necro
-        SceneManager.LoadScene("Menu");
+        _uiManager.HideHUD(true);
+        yield return new WaitForSeconds(3f);
+        SetDeathMenu(true);
     }
     //Necromancer
     public void DeadEnemies()
@@ -113,6 +114,11 @@ public class GameManager : MonoBehaviour
     public void BackToMenu()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    void SetDeathMenu(bool setDeathMenu)
+    {
+        _uiManager.SetDeathMenu(setDeathMenu);
     }
     #endregion
 

@@ -19,17 +19,20 @@ public class PlayerLife : MonoBehaviour
 
     #region properties
     private int _shields;
-    private bool _dead;
+    private bool _dead = false;
     #endregion
 
     #region methods
     public void SetHealth(float healthToAdd, bool isShot)
 	{
-        if(!_invulnerability && _playerManager.myLifeState == PlayerManager.LifeStates.Normal || healthToAdd >= 0)
+        if(!_invulnerability && _playerManager.myLifeState == PlayerManager.LifeStates.Normal || healthToAdd >= 0 || (healthToAdd < 0 && isShot))
         {
             health += healthToAdd;
             health = Mathf.Clamp(health, 0, maxHealth);
             PlayerManager.Instance.UpdateLife(health);
+            GameManager.Instance.ShowHealth(health);
+            _playerManager.UpdateLife(health);
+            _playerManager.UpdateMaxLife(maxHealth);
             GameManager.Instance.ShowHealth(health);
             if (health <= 0)
             {
@@ -47,7 +50,7 @@ public class PlayerLife : MonoBehaviour
             if (_shields <= 0) _playerManager.myLifeState = PlayerManager.LifeStates.Normal;
         }
 
-        if (_invulnerability == false && healthToAdd < 0 && !isShot && !_dead) 
+        if (!_invulnerability && healthToAdd < 0 && !isShot && !_dead) 
         {
             StartCoroutine("GetInvulnerable");
             StartCoroutine("InvulnerableAnimation");
@@ -75,7 +78,7 @@ public class PlayerLife : MonoBehaviour
         animator.SetTrigger("Die");
         _dead = true;
 
-        GameManager.Instance.OnPlayerDie();
+        GameManager.Instance.StartCoroutine(GameManager.Instance.OnPlayerDie());
 	}
 
     IEnumerator GetInvulnerable()
@@ -111,13 +114,12 @@ public class PlayerLife : MonoBehaviour
         GameManager.Instance.ShowHealth(health);
         _playerManager.UpdateLife(health);
         _playerManager.UpdateMaxLife(maxHealth);
-        _playerAttack = GetComponent<PlayerAttack>();
+        _playerAttack = GetComponent<PlayerAttack>(); 
+        _dead = false;
     }
 
     private void Update()
     {
-        _playerManager.UpdateLife(health);
-        _playerManager.UpdateMaxLife(maxHealth);
-        GameManager.Instance.ShowHealth(health);
+
     }
 }

@@ -30,7 +30,6 @@ public class EnemyLifeComponent : MonoBehaviour
 	/// <summary>
     /// Booleano que indica si un enemigo está o no muerto
     /// </summary>
-	public bool dead = false;
 	#endregion
 
 	#region references
@@ -81,12 +80,9 @@ public class EnemyLifeComponent : MonoBehaviour
     /// <param name="damage">Float que contiene el daño causado al enemigo</param>
 	public void Damage(float damage)
 	{
-		if (!dead)
-		{
-			animator.SetTrigger("Hurt");
-			_currentLife -= damage;
-			if (_currentLife <= 0) Die();
-		}
+		animator.SetTrigger("Hurt");
+		_currentLife -= damage;
+		if (_currentLife <= 0) Die();
 	}
 
 	/// <summary>
@@ -94,15 +90,13 @@ public class EnemyLifeComponent : MonoBehaviour
     /// </summary>
 	void Die()
 	{
-		//play die animation
-		if (!dead)
-		{
-			GameManager.Instance.DeadEnemies();
-			animator.SetTrigger("Die");
-			Destroy(gameObject, 1f);
-			dead = true;
-			sala.OnEnemyDies(this);
-		}
+		GameManager.Instance.DeadEnemies();
+		animator.SetTrigger("Die");
+		Destroy(gameObject, 1f);
+		sala.OnEnemyDies(this);
+		GetComponent<BoxCollider2D>().enabled = false;
+		transform.GetChild(0).GetComponentInChildren<DetectPlayer>().Deactivate();
+		this.enabled = false;
 	}
 	#endregion
 

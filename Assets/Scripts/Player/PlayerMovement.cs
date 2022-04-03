@@ -57,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
         //Empezamos la animaci�n de ruedo
         animator.SetTrigger("Ruedo");
         //Hacemos que el jugador pueda atravesar enemigos
+        _playerCollider.gameObject.layer = 12;
         //Hacemos que no se pueda realizar movimiento durante el ruedo
         getInput = false;
 
@@ -73,9 +74,9 @@ public class PlayerMovement : MonoBehaviour
 
         movementWalk = Vector3.zero;
         
+        _playerCollider.gameObject.layer = 6;
         animator.SetTrigger("IdleTrigger");
         getInput = true;
-        Debug.Log(getInput);
         _timeForRoll = 0;
         _playerManager.PlayerInRoll(false);
     }

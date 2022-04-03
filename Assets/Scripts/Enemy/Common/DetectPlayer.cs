@@ -164,15 +164,7 @@ public class DetectPlayer : MonoBehaviour
         _myState = DetectStates.Stand;
         _rb = GetComponentInParent<Rigidbody2D>();
         _myELC = GetComponentInParent<EnemyLifeComponent>();
-        Deactivate();
-    }
-
-    void Update()
-    {
-        if (_myELC.dead)
-        {
-            Deactivate();
-        }
         GetComponentInParent<EnemyAttackComponent>().enabled = false;
+        Deactivate();
     }
 }

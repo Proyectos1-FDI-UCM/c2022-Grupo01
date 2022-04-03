@@ -8,7 +8,7 @@ public class UI_Manager : MonoBehaviour
 {
     #region references
     [SerializeField] private Slider _healthSlider, _cooldownSlider, _secondaryHealthSlider, _bossbarSlider;
-    [SerializeField] private GameObject _objectInfo, _objectInfoPrefab, _pauseMenu, _loadingScreen, _stats;
+    [SerializeField] private GameObject _objectInfo, _objectInfoPrefab, _pauseMenu, _loadingScreen, _stats, _deathMenu;
     [SerializeField] private TextMeshProUGUI _healthBarText, _bossbarText, _playerSpeed, _playerRangeDamage, _playerMeleeDamage;
     [SerializeField] private FollowComponent _cam;
     PlayerManager _playerManager;
@@ -89,12 +89,17 @@ public class UI_Manager : MonoBehaviour
 
     public void SetLoadingScreen(bool setLoadingScreen)
     {
-        _cooldownSlider.gameObject.SetActive(!setLoadingScreen);
-        _secondaryHealthSlider.transform.parent.gameObject.SetActive(!setLoadingScreen);
-        _stats.gameObject.SetActive(!setLoadingScreen);
-        _healthBarText.gameObject.SetActive(!setLoadingScreen);
+        HideHUD(setLoadingScreen);
 
         _loadingScreen.SetActive(setLoadingScreen);
+    }
+
+    public void HideHUD(bool hideHUD)
+    {
+        _cooldownSlider.gameObject.SetActive(!hideHUD);
+        _secondaryHealthSlider.transform.parent.gameObject.SetActive(!hideHUD);
+        _stats.gameObject.SetActive(!hideHUD);
+        _healthBarText.gameObject.SetActive(!hideHUD);
     }
 
     public void PauseMenu(bool pause)
@@ -120,6 +125,11 @@ public class UI_Manager : MonoBehaviour
 	{
         _playerRangeDamage.text = _playerManager.rangeDamage.ToString();
     }
+
+    public void SetDeathMenu(bool setDeathMenu)
+    {
+        _deathMenu.SetActive(setDeathMenu);
+    }
     #endregion
 
     IEnumerator DeactivateObjectInfoAfterSeconds(GameObject objectInfo, float seconds)
@@ -132,5 +142,6 @@ public class UI_Manager : MonoBehaviour
         _cooldownSlider.gameObject.SetActive(false);
         _player = PlayerManager.Instance.player;
         _playerManager = GetComponent<PlayerManager>();
+        _deathMenu.SetActive(false);
     }
 }

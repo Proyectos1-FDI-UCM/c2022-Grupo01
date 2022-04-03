@@ -21,4 +21,4 @@ public class Door : MonoBehaviour
         Debug.LogWarning("This " + this);
         sala.RegisterDoor(this);
     }
-}
+}   

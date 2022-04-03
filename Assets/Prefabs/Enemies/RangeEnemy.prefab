@@ -61,7 +61,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sala: {fileID: 0}
-  _myState: 0
   _thisTypeOfEnemy: 1
 --- !u!1 &6261920538391311324
 GameObject:
@@ -210,12 +209,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf91290141004eb43af386b0eda5513e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 10
-  animator: {fileID: 6261920538391311323}
   sala: {fileID: 0}
   _currentLife: 0
-  dead: 0
+  maxLife: 10
   ID: 0
+  animator: {fileID: 6261920538391311323}
 --- !u!50 &6261920538391311301
 Rigidbody2D:
   serializedVersion: 4
