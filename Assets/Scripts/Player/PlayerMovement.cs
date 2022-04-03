@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private float rollSpeed = 20, hookSpeed = 2, rango = 20;
     [SerializeField] private float rodarCooldown = 0.5f;
 
-    [SerializeField] private LayerMask[] notRollingLayers;
+    [SerializeField] private LayerMask notRollingLayers;
     [SerializeField] private int rollRaycastDistanceModifier;
     #endregion
 
@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
         //Empezamos la animaci�n de ruedo
         animator.SetTrigger("Ruedo");
         //Hacemos que el jugador pueda atravesar enemigos
-        _playerCollider.gameObject.layer = 12;
+        _playerCollider.isTrigger = true;
         //Hacemos que no se pueda realizar movimiento durante el ruedo
         getInput = false;
 
@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         else rollDirection = movement;
         
         int n = 0;
-        while (n < 20 && !Physics2D.Raycast(_myTransform.position, rollDirection, Vector3.Distance(_myTransform.position, _myTransform.position + rollDirection.normalized / rollRaycastDistanceModifier), notRollingLayers[0]))
+        while (n < 20 && !Physics2D.Raycast(_myTransform.position, rollDirection, Vector3.Distance(_myTransform.position, _myTransform.position + rollDirection.normalized / rollRaycastDistanceModifier), notRollingLayers))
         {   
             playerRB.MovePosition(transform.position + rollDirection.normalized * rollSpeed * Time.fixedDeltaTime);
             n++;
@@ -74,9 +74,10 @@ public class PlayerMovement : MonoBehaviour
 
         movementWalk = Vector3.zero;
         
-        _playerCollider.gameObject.layer = 6;
+        _playerCollider.isTrigger = false;
         animator.SetTrigger("IdleTrigger");
         getInput = true;
+        Debug.Log(getInput);
         _timeForRoll = 0;
         _playerManager.PlayerInRoll(false);
     }
