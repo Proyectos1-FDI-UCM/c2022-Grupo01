@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2546281743042396175}
   - component: {fileID: 4199000920160050994}
   - component: {fileID: 2856689948395514240}
-  - component: {fileID: -2339615187571178563}
+  - component: {fileID: 6585985629952015446}
   m_Layer: 0
-  m_Name: TrampillaParaPrimerPiso
+  m_Name: SalidaTutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-2339615187571178563
+--- !u!114 &6585985629952015446
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,6 +119,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 820903466181620389}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3548e82b71fc024bbcb54b8696a3457, type: 3}
+  m_Script: {fileID: 11500000, guid: 722b3c70f6c75b443abc1bdbb54143fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
