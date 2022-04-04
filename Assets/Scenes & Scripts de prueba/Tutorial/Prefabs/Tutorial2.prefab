@@ -8851,6 +8851,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3871545353054597194}
     m_Modifications:
+    - target: {fileID: -3118081802271183372, guid: 22c00da2df5a21f45b61ef6d92d96997, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3630381811472245964, guid: 22c00da2df5a21f45b61ef6d92d96997, type: 3}
       propertyPath: m_Name
       value: TriggerTutorial3

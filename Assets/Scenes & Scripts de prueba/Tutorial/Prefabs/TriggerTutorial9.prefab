@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5553695288948322780}
   - component: {fileID: -3118081802271183372}
-  - component: {fileID: 8610601442182713959}
+  - component: {fileID: 9152509335605722116}
   m_Layer: 0
-  m_Name: TriggerTutorial6
+  m_Name: TriggerTutorial9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8610601442182713959
+--- !u!114 &9152509335605722116
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

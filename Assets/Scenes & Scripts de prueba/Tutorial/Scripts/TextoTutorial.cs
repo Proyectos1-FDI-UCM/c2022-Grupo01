@@ -21,14 +21,15 @@ public class TextoTutorial : MonoBehaviour
 		{
 			Destroy(gameObject); // elimina el trigger para no volver a activarse al pasar de vuelta
 			textoTutorial.SetActive(true);
-			Destroy(textoTutorial, _tiempoVisible); // desaparece el objeto activado (caja de texto) en el tiempo definido
 			Debug.Log("activa texto tutorial");
-			/*
 			if (Input.anyKeyDown)
 			{
 				Destroy(textoTutorial);
 			}
-			*/
+			else
+            {
+				Destroy(textoTutorial, _tiempoVisible); // desaparece el objeto activado (caja de texto) en el tiempo definido
+			}
 		}
 	}
 }
