@@ -113,7 +113,7 @@ public class juanMovement : MonoBehaviour
     {
         if(_myState == juanStates.Channel)
         {
-            animator.SetTrigger("CHARGE");
+            animator.SetBool("CHARGE",true);
             _playerPosition = _myPlayerManager._playerPosition;
             _playerDirection = (_playerPosition - _myTransform.position).normalized; 
             if (_playerDirection.x > 0) _mySpriteRenderer.flipX = true;
@@ -121,8 +121,8 @@ public class juanMovement : MonoBehaviour
 
             if (cooldownsTime(_cooldownChannelTime))
             {
-                              
-                
+
+                animator.SetBool("CHARGE", false);
                 _myState = juanStates.Move;
                 _rb.constraints = RigidbodyConstraints2D.None;
                 _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -138,6 +138,7 @@ public class juanMovement : MonoBehaviour
             {
                 _rb.velocity = _playerDirection * _speed;
                 animator.SetBool("MOVE", true);
+
             }
 
             if ((_playerPosition + _movementOffset * _playerDirection - _myTransform.position).magnitude < _distanceOffset || _collision)
@@ -158,7 +159,8 @@ public class juanMovement : MonoBehaviour
             {
                 _collider.isTrigger = true;
                 animator.SetBool("PORTAL", true);
-               
+                
+
                 _elapsedTime = 0;
                 rest = false;
                 
@@ -167,6 +169,10 @@ public class juanMovement : MonoBehaviour
             {
                 _collider.isTrigger = false;
                 animator.SetBool("PORTAL", false);
+                animator.SetBool("HURT", false);
+
+
+
                 _myState = juanStates.Teleport;
                 bossTeleport();
                 _elapsedTime = 0;
@@ -182,6 +188,7 @@ public class juanMovement : MonoBehaviour
                 
             }
         }
+        
     }
 
     private void OnDestroy()

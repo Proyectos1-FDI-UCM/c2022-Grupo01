@@ -593,8 +593,8 @@ MonoBehaviour:
   gancho: {fileID: 0}
   cam: {fileID: 0}
   bayeta: 0
-  myLifeState: 0
   _deadEnemyCount: 0
+  myLifeState: 0
   health: 0
   maxHealth: 0
   meleeDamage: 0
@@ -624,6 +624,7 @@ MonoBehaviour:
   _pauseMenu: {fileID: 0}
   _loadingScreen: {fileID: 0}
   _stats: {fileID: 0}
+  _deathMenu: {fileID: 0}
   _healthBarText: {fileID: 345115296}
   _bossbarText: {fileID: 0}
   _playerSpeed: {fileID: 0}

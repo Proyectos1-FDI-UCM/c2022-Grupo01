@@ -81,7 +81,10 @@ public class EnemyLifeComponent : MonoBehaviour
 	public void Damage(float damage)
 	{
 		animator.SetTrigger("Hurt");
+		animator.SetBool("HURT", true);
+
 		_currentLife -= damage;
+		
 		if (_currentLife <= 0) Die();
 	}
 
@@ -92,7 +95,9 @@ public class EnemyLifeComponent : MonoBehaviour
 	{
 		GameManager.Instance.DeadEnemies();
 		animator.SetTrigger("Die");
+		animator.SetBool("DEAD", true);
 		Destroy(gameObject, 1f);
+		animator.SetBool("DEAD", false);
 		sala.OnEnemyDies(this);
 		GetComponent<BoxCollider2D>().enabled = false;
 		transform.GetChild(0).GetComponentInChildren<DetectPlayer>().Deactivate();
