@@ -105,7 +105,8 @@ public class DetectPlayer : MonoBehaviour
         {
             case typeofEnemy.Fleeing: GetComponentInParent<FleeingEnemyMovement>().ExecuteFleeingEnemyMovement(); break;
             case typeofEnemy.CAC:
-                GetComponentInParent<EnemyMeleeMovement>().ExecuteMeleeEnemyMovement();
+                GetComponentInParent<NavMeshAgent>().enabled = true;
+                GetComponentInParent<MeleeMovement>().ExecuteMeleeEnemyMovement();
                 GetComponentInParent<MeleeAttack>().ExecuteMeleeAttack();
                 break;
             case typeofEnemy.Range:
@@ -117,7 +118,8 @@ public class DetectPlayer : MonoBehaviour
                 //Debug.Log("Si");
                 break;
             case typeofEnemy.Weak:
-                GetComponentInParent<EnemyMeleeMovement>().ExecuteMeleeEnemyMovement();
+                GetComponentInParent<NavMeshAgent>().enabled = true;
+                GetComponentInParent<MeleeMovement>().ExecuteMeleeEnemyMovement();
                 break;
             case typeofEnemy.juan:
                 GetComponentInParent<juanMovement>().enabled = true;
@@ -135,7 +137,8 @@ public class DetectPlayer : MonoBehaviour
         {
             case typeofEnemy.Fleeing: GetComponentInParent<FleeingEnemyMovement>().enabled = false; break;
             case typeofEnemy.CAC:
-                GetComponentInParent<EnemyMeleeMovement>().StopMeleeEnemyMovement();
+                GetComponentInParent<NavMeshAgent>().enabled = false;
+                GetComponentInParent<MeleeMovement>().StopMeleeEnemyMovement();
                 GetComponentInParent<MeleeAttack>().enabled = false;
                 break; 
             case typeofEnemy.Range:
@@ -144,7 +147,8 @@ public class DetectPlayer : MonoBehaviour
                 break;
             case typeofEnemy.Necromancer: GetComponentInParent<NecromancerController>().enabled = false; break;
             case typeofEnemy.Weak:
-                GetComponentInParent<EnemyMeleeMovement>().StopMeleeEnemyMovement();
+                GetComponentInParent<NavMeshAgent>().enabled = false;
+                GetComponentInParent<MeleeMovement>().StopMeleeEnemyMovement();
                 break;
             case typeofEnemy.juan:
                 GetComponentInParent<juanMovement>().enabled = false;

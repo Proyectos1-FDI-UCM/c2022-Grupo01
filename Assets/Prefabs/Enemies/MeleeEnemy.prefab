@@ -78,7 +78,8 @@ GameObject:
   - component: {fileID: 9191831522005992303}
   - component: {fileID: 894022324}
   - component: {fileID: 249422623309061836}
-  - component: {fileID: 3309022084322763899}
+  - component: {fileID: 6355398804128154355}
+  - component: {fileID: -8815746887556631819}
   m_Layer: 7
   m_Name: MeleeEnemy
   m_TagString: Untagged
@@ -240,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meleeCooldown: 0.8
-  _attackRange: 1
+  _attackRange: 2
   _meleeDamage: 10
   _playerLayer:
     serializedVersion: 2
@@ -267,7 +268,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &3309022084322763899
+--- !u!114 &6355398804128154355
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -276,10 +277,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 9191831522005992297}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4263095e46d3cdf41b3b8c9f23f9eb1d, type: 3}
+  m_Script: {fileID: 11500000, guid: 223f2aa498f2ec44cb1d4e8036ba300c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _numberOfPositions: 100
-  _speed: 3
-  _cooldownTime: 1
-  _distanceOffset: 1.5
+  _playerDistance: 1.8
+  _timeToBeElapsed: 0.1
+  _animator: {fileID: 9191831522005992302}
+--- !u!195 &-8815746887556631819
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9191831522005992297}
+  m_Enabled: 0
+  m_AgentTypeID: 0
+  m_Radius: 1.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 4
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
