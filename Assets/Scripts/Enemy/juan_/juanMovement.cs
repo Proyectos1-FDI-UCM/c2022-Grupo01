@@ -42,7 +42,7 @@ public class juanMovement : MonoBehaviour
     private Transform _myTransform;
     private SpriteRenderer _mySpriteRenderer;
     [SerializeField] private Animator animator;
-    [SerializeField] private GameObject _trapDoor;
+    [SerializeField] private SpriteRenderer _trapDoor;
     #endregion
 
     #region methods
@@ -177,7 +177,6 @@ public class juanMovement : MonoBehaviour
                 animator.SetBool("HURT", false);
 
 
-
                 _myState = juanStates.Teleport;
                 bossTeleport();
                 _elapsedTime = 0;
@@ -199,6 +198,7 @@ public class juanMovement : MonoBehaviour
 
     private void OnDestroy()
     {
-        _trapDoor.gameObject.SetActive(true);
+        _trapDoor.enabled = true;
+        _trapDoor.GetComponent<NextLevel>().enabled = true;
     }
 }
