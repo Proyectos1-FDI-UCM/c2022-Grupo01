@@ -148,5 +148,6 @@ public class UI_Manager : MonoBehaviour
         _player = PlayerManager.Instance.player;
         _playerManager = GetComponent<PlayerManager>();
         _deathMenu.SetActive(false);
+        _winMenu.SetActive(false);
     }
 }

@@ -32,8 +32,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
-	#region methods
-	#region UI
+    #region methods
+    #region UI
+    void SetDeathMenu(bool setDeathMenu)
+    {
+        _uiManager.SetDeathMenu(setDeathMenu);
+	}
+
+	void SetWinMenu(bool setDeathMenu)
+	{
+		_uiManager.SetWinMenu(setDeathMenu);
+	}
+
 	public void SetCooldownBar(bool setter)
 	{
         _uiManager.SetCooldownBar(setter);
@@ -76,12 +86,26 @@ public class GameManager : MonoBehaviour
     }
 	#endregion
 
+    public IEnumerator OnPlayerVictory()
+	{
+        //Musica de victoria
+        _player.GetComponent<PlayerMovement>().enabled = false;
+        _player.GetComponent<PlayerAttack>().enabled = false;
+        _player.GetComponent<EnemyLifeComponent>().enabled = false;
+        _cam.lerpParameter = 0;
+        _cam.GetComponent<FollowComponent>().SetPlayerDead();
+        _uiManager.HideHUD(true);
+
+        yield return new WaitForSeconds(3f);
+        SetWinMenu(true);
+    }
     public IEnumerator OnPlayerDie()
 	{
         _player.SetActive(false);
         _cam.lerpParameter = 0;
         _cam.GetComponent<FollowComponent>().SetPlayerDead();
         _uiManager.HideHUD(true);
+
         yield return new WaitForSeconds(3f);
         SetDeathMenu(true);
     }
@@ -99,15 +123,6 @@ public class GameManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
-    }
-
-    void SetDeathMenu(bool setDeathMenu)
-    {
-        _uiManager.SetDeathMenu(setDeathMenu);
-    }
-    public void SetWinMenu(bool setDeathMenu)
-    {
-        _uiManager.SetWinMenu(setDeathMenu);
     }
 
     public void LoadGame()
