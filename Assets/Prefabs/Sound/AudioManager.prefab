@@ -74,3 +74,9 @@ MonoBehaviour:
     pitch: 0.38
     loop: 0
     source: {fileID: 0}
+  - name: OpenedChest
+    clip: {fileID: 8300000, guid: 6dff68248a65d482e9d5dc5fe32b0a76, type: 3}
+    volume: 0.5
+    pitch: 1.25
+    loop: 0
+    source: {fileID: 0}
