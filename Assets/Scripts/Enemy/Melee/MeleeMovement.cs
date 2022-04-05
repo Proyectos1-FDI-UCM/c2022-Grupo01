@@ -30,6 +30,7 @@ public class MeleeMovement : MonoBehaviour
     private Animator _animator;
     private PlayerManager _myPlayerManager;
     private Transform _mytransform;
+    private EnemyLifeComponent _myELC;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,7 @@ public class MeleeMovement : MonoBehaviour
         _mytransform = transform;
         _wallsLayerMask = 1 << 8;
         _voidLayerMask = 1 << 15;
+        _myELC = GetComponent<EnemyLifeComponent>();
     }
 
     // Update is called once per frame
@@ -46,7 +48,7 @@ public class MeleeMovement : MonoBehaviour
         Vector3 direction = _myPlayerManager._playerPosition - _mytransform.position;
         float distance = direction.magnitude;
         Vector3 directionNormalized = direction.normalized;
-        if (!Physics2D.Raycast(_mytransform.position, directionNormalized, distance, _wallsLayerMask))
+        if (!Physics2D.Raycast(_mytransform.position, directionNormalized, distance, _wallsLayerMask) && !_myELC._isDead)
         {
             if (!Physics2D.Raycast(_mytransform.position, directionNormalized, distance, _voidLayerMask))
             {

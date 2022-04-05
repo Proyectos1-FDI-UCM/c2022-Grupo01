@@ -172,7 +172,7 @@ public class juanMovement : MonoBehaviour
             }
             else if (!rest&&cooldownsTime(_cooldownPortalTime))
             {
-                _collider.isTrigger = false;
+                
                 animator.SetBool("PORTAL", false);
                 animator.SetBool("HURT", false);
 
@@ -187,6 +187,7 @@ public class juanMovement : MonoBehaviour
         {
             if (cooldownsTime(_cooldownSpawnTime))
             {
+                _collider.isTrigger = false;
                 _myState = juanStates.Channel;
                 spawn();
                 _elapsedTime = 0;

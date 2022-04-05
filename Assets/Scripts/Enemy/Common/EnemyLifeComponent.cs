@@ -28,8 +28,10 @@ public class EnemyLifeComponent : MonoBehaviour
 
 	#region parameters
 	/// <summary>
-    /// Booleano que indica si un enemigo está o no muerto
-    /// </summary>
+	/// Booleano que indica si un enemigo está o no muerto
+	/// </summary>
+	/// 
+	public bool _isDead;
 	#endregion
 
 	#region references
@@ -94,6 +96,7 @@ public class EnemyLifeComponent : MonoBehaviour
 	void Die()
 	{
 		GameManager.Instance.DeadEnemies();
+		_isDead = true;
 		animator.SetTrigger("Die");
 		animator.SetBool("DEAD", true);
 		Destroy(gameObject, 1f);
@@ -108,12 +111,17 @@ public class EnemyLifeComponent : MonoBehaviour
 	void Start()
     {
 		_currentLife = maxLife;
+		_isDead = false;
     }
-    void Update()
-    {
-        if (maxLife > 200)
-        {
+	void Update()
+	{
+		if (maxLife > 200)
+		{
 			GameManager.Instance.UpdateBossBar(_currentLife);
 		}
-    }
+	}
+
 }
+   
+
+
