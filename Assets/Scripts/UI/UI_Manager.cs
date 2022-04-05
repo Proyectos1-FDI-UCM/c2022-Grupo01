@@ -8,7 +8,7 @@ public class UI_Manager : MonoBehaviour
 {
     #region references
     [SerializeField] private Slider _healthSlider, _cooldownSlider, _secondaryHealthSlider, _bossbarSlider;
-    [SerializeField] private GameObject _objectInfo, _objectInfoPrefab, _pauseMenu, _loadingScreen, _stats, _deathMenu;
+    [SerializeField] private GameObject _objectInfo, _objectInfoPrefab, _pauseMenu, _loadingScreen, _stats, _deathMenu, _winMenu;
     [SerializeField] private TextMeshProUGUI _healthBarText, _bossbarText, _playerSpeed, _playerRangeDamage, _playerMeleeDamage;
     [SerializeField] private FollowComponent _cam;
     PlayerManager _playerManager;
@@ -129,6 +129,11 @@ public class UI_Manager : MonoBehaviour
     public void SetDeathMenu(bool setDeathMenu)
     {
         _deathMenu.SetActive(setDeathMenu);
+    }
+
+    public void SetWinMenu(bool setWinMenu)
+    {
+        _winMenu.SetActive(setWinMenu);
     }
     #endregion
 

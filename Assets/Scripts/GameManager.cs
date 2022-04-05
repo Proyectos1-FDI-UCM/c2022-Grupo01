@@ -105,6 +105,10 @@ public class GameManager : MonoBehaviour
     {
         _uiManager.SetDeathMenu(setDeathMenu);
     }
+    public void SetWinMenu(bool setDeathMenu)
+    {
+        _uiManager.SetWinMenu(setDeathMenu);
+    }
 
     public void LoadGame()
 	{
