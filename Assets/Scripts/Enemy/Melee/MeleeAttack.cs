@@ -36,6 +36,9 @@ public class MeleeAttack : MonoBehaviour
     /// Referencia al Animator
     /// </summary>
 	[SerializeField] private Animator _animator;
+
+
+	private EnemyLifeComponent _myEnemyLifeComponent;
 	#endregion
 
 	#region methods
@@ -71,10 +74,12 @@ public class MeleeAttack : MonoBehaviour
     private void Start()
     {
 		_myPlayerManager = PlayerManager.Instance;
+		_myEnemyLifeComponent = GetComponent<EnemyLifeComponent>();
     }
 
     private void FixedUpdate()
 	{
+		
 		//checkear distancia entre PJ y enemigo
 		float distance = Vector3.Magnitude(_myPlayerManager._playerPosition - transform.position);
 		_meleeCooldown -= Time.fixedDeltaTime;
@@ -83,6 +88,16 @@ public class MeleeAttack : MonoBehaviour
 			Melee();
 			_meleeCooldown = 0.8f;
 		}
+		
 	}
-	
+
+    private void Update()
+    {
+		if (_myEnemyLifeComponent._isDead == true)
+		{
+			this.enabled = false;
+		}
+	}
+
+
 }

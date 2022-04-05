@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
         //Musica de victoria
         _player.GetComponent<PlayerMovement>().enabled = false;
         _player.GetComponent<PlayerAttack>().enabled = false;
-        _player.GetComponent<EnemyLifeComponent>().enabled = false;
+        _player.GetComponent<PlayerLife>().enabled = false;
         _cam.lerpParameter = 0;
         _cam.GetComponent<FollowComponent>().SetPlayerDead();
         _uiManager.HideHUD(true);

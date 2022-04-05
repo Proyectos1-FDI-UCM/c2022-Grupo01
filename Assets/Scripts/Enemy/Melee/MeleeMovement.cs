@@ -72,6 +72,7 @@ public class MeleeMovement : MonoBehaviour
         {
             _animator.SetBool("Walk", false);
         }
+
     }
 }
 
