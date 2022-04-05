@@ -35,4 +35,17 @@ public class AudioManager : MonoBehaviour
             s.source.Stop();
         }
     }
+
+    public void PlayUntilEnd(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null) Debug.LogError($"ERROR: El sonido {name} no se encuentra o no existe (¿error al escribir el nombre del sonido?)");
+        else
+        {
+            if(!s.source.isPlaying)
+            {
+                s.source.Play();
+            }
+        }
+    }
 }
