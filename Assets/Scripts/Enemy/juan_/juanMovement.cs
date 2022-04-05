@@ -117,11 +117,7 @@ public class juanMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_myELC._isDead == true)
-        {
-            _trapDoor.gameObject.SetActive(true);
-            this.enabled = false;
-        }
+
         if (_myState == juanStates.Channel)
         {
             animator.SetBool("CHARGE",true);
@@ -199,7 +195,12 @@ public class juanMovement : MonoBehaviour
                 
             }
         }
+
+
         
     }
-
+    private void OnDestroy()
+    {
+        _trapDoor.gameObject.SetActive(true);
+    }
 }
