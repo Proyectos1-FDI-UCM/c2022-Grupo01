@@ -96,7 +96,7 @@ Transform:
   m_GameObject: {fileID: 6316753048730843751}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -53.43371, y: -4.343038, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 6316753048233789263}
   m_Father: {fileID: 0}
@@ -143,7 +143,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: -8857106473960092384, guid: beb4daa1238457e439fd43cfcf4dab05, type: 3}
-  m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
+  m_Color: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -187,9 +187,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6316753048730843751}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c705ecc6c5171d44cb70ebef3aa22ac4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -239,23 +239,23 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6316753048730843751}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39ef3b0eda9ce3a40bc729afd900215b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 6316753048730843744}
   _bossRB: {fileID: 3121082444419704770}
   _direction: {x: 0, y: 0, z: 0}
-  InitialPosition: {x: 0, y: 0, z: 0}
+  InitialPosition: {fileID: 0}
   speed: 7
   giro: 0
   cooldown: 5
   timeLeft: 0
   vuelta: 0
   carga: 0
-  agua: 1
-  recarga: 0
+  agua: 0
+  recarga: 1
   centro: {fileID: 0}
   _mySpongeSalaManager: {fileID: 0}
 --- !u!114 &974487686
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6316753048730843751}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23e840ffff7d323469fdfd2526ba81ee, type: 3}
   m_Name: 
@@ -292,4 +292,6 @@ MonoBehaviour:
   maxLife: 500
   ID: 0
   dead: 0
-  animator: {fileID: 0}
+  animator: {fileID: 6316753048730843744}
+  _victoryDuck: {fileID: 8032369355267124065, guid: a8f28b1fa50b642459cde95c1bda2e17, type: 3}
+  _victoryDuckPosition: {fileID: 0}
