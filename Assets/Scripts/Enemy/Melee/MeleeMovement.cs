@@ -6,20 +6,18 @@ using UnityEngine.AI;
 public class MeleeMovement : MonoBehaviour
 {
     #region properties
-    private NavMeshAgent _agent;
-    private float _elapsedTime = 0;
     [SerializeField]
     private float _playerDistance = 1;
+    private int _wallsLayerMask, _voidLayerMask;
     #endregion
     #region parameters
     [SerializeField]
-    private float _timeToBeElapsed = 2f;
+    private float _speed = 1f;
     #endregion
     #region methods
     public void ExecuteMeleeEnemyMovement()
     {
         this.enabled = true;
-        _animator.SetBool("Walk", true);   
     }
     public void StopMeleeEnemyMovement()
     {
@@ -37,28 +35,41 @@ public class MeleeMovement : MonoBehaviour
     void Start()
     {
         _myPlayerManager = PlayerManager.Instance;
-        _agent = GetComponent<NavMeshAgent>();
-        _agent.updateRotation = false;
-        _agent.updateUpAxis = false;
-        _elapsedTime += _timeToBeElapsed;
-        _agent.SetDestination(_myPlayerManager._playerPosition);
         _mytransform = transform;
+        _wallsLayerMask = 1 << 8;
+        _voidLayerMask = 1 << 15;
     }
 
     // Update is called once per frame
     void Update()
     {
-        _elapsedTime += Time.deltaTime;
+        Vector3 direction = _myPlayerManager._playerPosition - _mytransform.position;
+        float distance = direction.magnitude;
+        Vector3 directionNormalized = direction.normalized;
+        if (!Physics2D.Raycast(_mytransform.position, directionNormalized, distance, _wallsLayerMask))
+        {
+            if (!Physics2D.Raycast(_mytransform.position, directionNormalized, distance, _voidLayerMask))
+            {
+                if (distance > _playerDistance)
+                {
+                    _mytransform.position += _speed * directionNormalized * Time.deltaTime;
+                    _animator.SetBool("Walk", true);
+                }
+                else
+                {
+                    _animator.SetBool("Walk", false);
+                }
+            }
+            else
+            {
+                _animator.SetBool("Walk", false);
+            }
 
-        Vector3 direction = ( _myPlayerManager._playerPosition-_mytransform.position).normalized;
-       // float distance = direction.magnitude;
-
-        if( _elapsedTime > _timeToBeElapsed)
-		{
-            _agent.SetDestination(_myPlayerManager._playerPosition-direction*_playerDistance);
-            
-            _elapsedTime = 0;
-		}
+        }
+        else
+        {
+            _animator.SetBool("Walk", false);
+        }
     }
 }
 

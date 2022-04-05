@@ -108,5 +108,12 @@ public class EnemyLifeComponent : MonoBehaviour
 	void Start()
     {
 		_currentLife = maxLife;
-    }  
+    }
+    void Update()
+    {
+        if (maxLife > 200)
+        {
+			GameManager.Instance.UpdateBossBar(_currentLife);
+		}
+    }
 }

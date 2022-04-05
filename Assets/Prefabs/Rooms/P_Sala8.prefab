@@ -5861,7 +5861,6 @@ GameObject:
   - component: {fileID: 1439703225809907814}
   - component: {fileID: 3089455118381005878}
   - component: {fileID: 428113729339262707}
-  - component: {fileID: 9020375118525145599}
   m_Layer: 15
   m_Name: Vacio
   m_TagString: Untagged
@@ -8690,22 +8689,6 @@ CompositeCollider2D:
       - {x: -137.99997, y: 37}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
---- !u!114 &9020375118525145599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5828716669217105207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!1 &5922638583642111625
 GameObject:
   m_ObjectHideFlags: 0
