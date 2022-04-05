@@ -36,6 +36,7 @@ public class RandomGenerator : MonoBehaviour
         ColocarSalas(rooms);
         AbrirPuertas(gameObjectPrefabs);
         floorToGenerate++;
+        Inventory.Instance.activeItem.GetComponent<ActiveObject>().OnNewFloor();
     }
 
     void Inicializa(out int[,] rooms, out GameObject[,] gameObjectPrefabs)

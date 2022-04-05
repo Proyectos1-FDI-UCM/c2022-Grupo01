@@ -42,4 +42,16 @@ public class BolsaDeHieloActivo : ActiveObject
         sonCreated = false;
         Destroy(sonToCreate);
     }
+
+    public override void OnNewFloor()
+    {
+        try
+        {
+            bolsaDeHieloController._elapsedTime = cooldown;
+        }
+        catch
+        {
+            Debug.LogError("No existe _cuboDeAguaController");
+        }
+    }
 }

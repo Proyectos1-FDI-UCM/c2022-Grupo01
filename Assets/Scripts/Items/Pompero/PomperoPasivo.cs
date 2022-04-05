@@ -20,7 +20,7 @@ public class PomperoPasivo : PassiveObject
         if (!pickedUp)
         {
             base.Activate();
-            pompero = new GameObject("BolsaDeHielo");
+            pompero = new GameObject("CacharroDePompas");
             pompero.transform.parent = PlayerManager.Instance.player.transform;
             pompero.AddComponent<Pomper>();
             pompero.GetComponent<Pomper>()._bubblePrefab = _bubblePrefab;

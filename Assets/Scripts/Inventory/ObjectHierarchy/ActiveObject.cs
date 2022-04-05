@@ -32,4 +32,10 @@ public class ActiveObject : Object
             oldOBject.SetActive(true);
         }
     }
+
+    public virtual void OnNewFloor()
+	{
+        //recover cooldown
+        //recover pools 
+	}
 }

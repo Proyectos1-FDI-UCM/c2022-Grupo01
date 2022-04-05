@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class FregonaActivo : ActiveObject
 {
+    #region properties
+    private FregonaController _fregonaController;
+	#endregion
+
 	private void Start()
 	{
 
@@ -20,8 +24,9 @@ public class FregonaActivo : ActiveObject
             fregonaCollider.isTrigger = true;
             sonToCreate.AddComponent<Rigidbody2D>().gravityScale = 0;
             sonToCreate.AddComponent<FregonaController>();
-            sonToCreate.GetComponent<FregonaController>()._elapsedTime = cooldown;
-            sonToCreate.GetComponent<FregonaController>()._cooldown = cooldown;
+            _fregonaController = sonToCreate.GetComponent<FregonaController>();
+            _fregonaController._elapsedTime = cooldown;
+            _fregonaController._cooldown = cooldown;
             sonCreated = true;
             GameManager.Instance.ShowActiveCooldown(_elapsedTime,cooldown);
         }
@@ -32,5 +37,17 @@ public class FregonaActivo : ActiveObject
         base.ChangeActiveObject();
         sonCreated = false;
         Destroy(sonToCreate);
+    }
+
+    public override void OnNewFloor()
+    {
+        try
+        {
+            _fregonaController._elapsedTime = cooldown;
+        }
+        catch
+        {
+            Debug.LogError("No existe _fregonaController");
+        }
     }
 }

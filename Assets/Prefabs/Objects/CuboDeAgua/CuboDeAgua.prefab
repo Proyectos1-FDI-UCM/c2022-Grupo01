@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2789499040826018221}
   - component: {fileID: 1546278829977327594}
   - component: {fileID: 2983023384101097659}
-  - component: {fileID: 869598055333471277}
   - component: {fileID: 3677461223453004140}
   - component: {fileID: -397415068933445804}
+  - component: {fileID: 1710461082}
   m_Layer: 14
   m_Name: CuboDeAgua
   m_TagString: Untagged
@@ -112,19 +112,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
---- !u!114 &869598055333471277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102250945931165755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09be7bc53d50f9344b8129d2d4a3e928, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  recuperaVida: 30
 --- !u!95 &3677461223453004140
 Animator:
   serializedVersion: 3
@@ -157,3 +144,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
+--- !u!114 &1710461082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102250945931165755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa1e1313046e8f48b0706bf27609955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  type: 1
+  nameOnScreen: Cubo de Agua
+  littleDescriptionOnScreen: Para mantenerte fresco :)
+  activePrefab: {fileID: 5102250945931165755}
+  pickable: 1
+  cooldown: 0
+  _elapsedTime: 0
+  sonToCreate: {fileID: 0}
+  sonCreated: 0
+  maxHealthToAdd: 40

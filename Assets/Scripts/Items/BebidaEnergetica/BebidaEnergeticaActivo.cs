@@ -31,6 +31,7 @@ public class BebidaEnergeticaActivo : ActiveObject
         _bebidaEnergeticaController = sonToCreate.GetComponent<BebidaEnergeticaController>();
         _bebidaEnergeticaController._cooldown = cooldown;
         _bebidaEnergeticaController.speedBoost = speedBoost;
+        _bebidaEnergeticaController._elapsedTime = cooldown;
     }
 
     public override void ChangeActiveObject()
@@ -38,5 +39,17 @@ public class BebidaEnergeticaActivo : ActiveObject
         base.ChangeActiveObject();
         sonCreated = false;
         Destroy(sonToCreate);
+    }
+
+    public override void OnNewFloor()
+    {
+        try
+        {
+            _bebidaEnergeticaController._elapsedTime = cooldown;
+        }
+        catch
+        {
+            Debug.LogError("No existe _bebidaEnergeticaController");
+        }
     }
 }
