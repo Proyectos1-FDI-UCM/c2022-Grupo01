@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7264373903977453614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7264373903977453616}
+  - component: {fileID: 7264373903977453615}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7264373903977453616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7264373903977453614}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 202.00163, y: 11.302548, z: -187.11418}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7264373903977453615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7264373903977453614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0372b406fe6d24e688c51e50ddddbc44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: NecromancerSummon
+    clip: {fileID: 8300000, guid: 7734f22ae3bdd4883993091fbd3ca911, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ChestRoom
+    clip: {fileID: 8300000, guid: 13e36e50b68344603b98b30050ffe0b0, type: 3}
+    volume: 0.9
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: PlayerSweep
+    clip: {fileID: 8300000, guid: a533a862484954a1ca1a2760e69ff067, type: 3}
+    volume: 0.65
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: Puddle
+    clip: {fileID: 8300000, guid: 43cf036afe3a14762ab36e6cd3a1d08d, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerStep
+    clip: {fileID: 8300000, guid: 630d59349c4c7478992c017c4368fb82, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
