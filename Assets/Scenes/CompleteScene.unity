@@ -5072,6 +5072,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6782809854696887245, guid: c179726ff0ec3464ca47d7f86fbf0c06, type: 3}
   m_PrefabInstance: {fileID: 1420800675}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1418994233 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1555856720, guid: 5190ae259f44d6d41ac6956295c492b8, type: 3}
+  m_PrefabInstance: {fileID: 8598375324230892403}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1420800675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16019,86 +16024,6 @@ PrefabInstance:
       propertyPath: Scenary
       value: 
       objectReference: {fileID: 614648290}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: roomPrefabs.Array.size
-      value: 26
-      objectReference: {fileID: 0}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: roomPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 7828763359822364384, guid: a6f5fd412dc276e45a6f0ddc0ed67ff8, type: 3}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: roomPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 887353260345840104, guid: 438f5706c5f611e4a9fb772d9c343d9e, type: 3}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: roomPrefabs.Array.data[3]
-      value: 
-      objectReference: {fileID: 3383765010814101554, guid: 5e306376e541e3c47adcfbb758b62cb3, type: 3}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: roomPrefabs.Array.data[4]
-      value: 
-      objectReference: {fileID: 386330785103631755, guid: bc540dbaa53fcc4429eb56bb4f1615b3, type: 3}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: roomPrefabs.Array.data[5]
-      value: 
-      objectReference: {fileID: 4412629992556279437, guid: 1517f4e2753797e49976934ab2bb63af, type: 3}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: roomPrefabs.Array.data[6]
-      value: 
-      objectReference: {fileID: 5351613195368858636, guid: edbd84ff431c746459d671ceaa4ce726, type: 3}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: roomPrefabs.Array.data[7]
-      value: 
-      objectReference: {fileID: 4530854110729841419, guid: dff663a58e36de74c8a4bc7349adb7df, type: 3}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: roomPrefabs.Array.data[8]
-      value: 
-      objectReference: {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: roomPrefabs.Array.data[17]
-      value: 
-      objectReference: {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: roomPrefabs.Array.data[18]
-      value: 
-      objectReference: {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: roomPrefabs.Array.data[19]
-      value: 
-      objectReference: {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: roomPrefabs.Array.data[20]
-      value: 
-      objectReference: {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: roomPrefabs.Array.data[21]
-      value: 
-      objectReference: {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: roomPrefabs.Array.data[22]
-      value: 
-      objectReference: {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: roomPrefabs.Array.data[23]
-      value: 
-      objectReference: {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: roomPrefabs.Array.data[24]
-      value: 
-      objectReference: {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: roomPrefabs.Array.data[25]
-      value: 
-      objectReference: {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: bossRoomPrefab.Array.data[0]
-      value: 
-      objectReference: {fileID: 1583088822720531733, guid: 94da168f94789084d94cedea19de68e0, type: 3}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: bossRoomPrefab.Array.data[1]
-      value: 
-      objectReference: {fileID: 7754045428617506983, guid: e363d1f96c84f0f45a8b15317b33f03a, type: 3}
     - target: {fileID: 632344021560230595, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
       propertyPath: cam
       value: 
@@ -16120,10 +16045,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5272552500916890694}
     - target: {fileID: 632344021560230595, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: bayetaID
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 632344021560230595, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
       propertyPath: shotPoint
       value: 
       objectReference: {fileID: 1190683377}
@@ -16131,10 +16052,6 @@ PrefabInstance:
       propertyPath: rotationPoint
       value: 
       objectReference: {fileID: 450459907}
-    - target: {fileID: 632344021560230595, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: _deadEnemyCount
-      value: 123
-      objectReference: {fileID: 0}
     - target: {fileID: 632344021560230652, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -16192,13 +16109,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 519420033}
     - target: {fileID: 632344021560230654, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: _kills
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 632344021560230654, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
       propertyPath: _stats
       value: 
       objectReference: {fileID: 1635841056}
+    - target: {fileID: 632344021560230654, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
+      propertyPath: _winMenu
+      value: 
+      objectReference: {fileID: 1418994233}
     - target: {fileID: 632344021560230654, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
       propertyPath: _deathMenu
       value: 
@@ -16479,6 +16396,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 671491337, guid: 5190ae259f44d6d41ac6956295c492b8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1957454366}
+    - target: {fileID: 671491337, guid: 5190ae259f44d6d41ac6956295c492b8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 765283356, guid: 5190ae259f44d6d41ac6956295c492b8, type: 3}
       propertyPath: m_TargetCamera
       value: 

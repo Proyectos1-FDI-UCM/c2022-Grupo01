@@ -56,7 +56,7 @@ public class SpongeLifeComponent : MonoBehaviour
 
 	private BossMovement _bossMovement;
 
-	[SerializeField] private GameObject _victoryDuck, _victoryDuckPosition;
+	[SerializeField] private GameObject _victoryDuck;
 	#endregion
 
 	#region methods
@@ -141,6 +141,6 @@ public class SpongeLifeComponent : MonoBehaviour
 
 	private void OnDestroy()
 	{
-		Instantiate(_victoryDuck, _victoryDuckPosition.transform.position, Quaternion.identity);
+		_victoryDuck.SetActive(true);
 	}
 }

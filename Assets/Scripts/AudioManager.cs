@@ -6,7 +6,6 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
 
-
     void Awake()
     {
         foreach(Sound s in sounds)
@@ -33,6 +32,20 @@ public class AudioManager : MonoBehaviour
         else
         {
             s.source.Stop();
+        }
+    }
+
+    public void PlayInterval(string name, float toSeconds, float fromSeconds = 0f)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null) Debug.LogError($"ERROR: El sonido {name} no se encuentra o no existe (¿error al escribir el nombre del sonido?)");
+        else
+        {
+            if(!s.source.isPlaying)
+            {
+                s.source.Play();
+                s.source.SetScheduledEndTime(AudioSettings.dspTime + (toSeconds - fromSeconds));
+            }       
         }
     }
 
