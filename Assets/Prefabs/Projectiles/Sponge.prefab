@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {x: 0, y: 0, z: 0}
-  _velocity: 3
+  _velocity: 10
 --- !u!1 &7838735278821359777
 GameObject:
   m_ObjectHideFlags: 0
