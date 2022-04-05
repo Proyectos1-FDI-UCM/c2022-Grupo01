@@ -16067,7 +16067,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c142b7710605a21408c5e31787f1b276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transitionTime: 0
   _message: {fileID: 5822731018763106764}
 --- !u!1 &9154862025029910470
 GameObject:
@@ -17365,6 +17364,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3858885734381484277}
     - target: {fileID: 974487679, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
+      propertyPath: cooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 974487679, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
       propertyPath: InitialPosition
       value: 
       objectReference: {fileID: 5777308699139963023}
@@ -17382,11 +17385,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6316753048730843746, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -116.46
+      value: -122
       objectReference: {fileID: 0}
     - target: {fileID: 6316753048730843746, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 46.78
+      value: 45.6
       objectReference: {fileID: 0}
     - target: {fileID: 6316753048730843746, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
       propertyPath: m_LocalPosition.z
