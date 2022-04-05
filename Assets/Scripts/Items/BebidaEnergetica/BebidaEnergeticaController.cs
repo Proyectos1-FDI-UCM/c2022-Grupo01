@@ -9,10 +9,10 @@ public class BebidaEnergeticaController : MonoBehaviour
     #region parameters
     [HideInInspector] public float _cooldown = 15f;
     [HideInInspector] public int speedBoost = 2;
+    [HideInInspector] public float _elapsedTime;
     #endregion
 
     #region properties
-    private float _elapsedTime;
     #endregion
 
     #region references

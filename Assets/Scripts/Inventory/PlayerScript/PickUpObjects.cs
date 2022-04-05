@@ -22,7 +22,7 @@ public class PickUpObjects : MonoBehaviour
             if(items.Length >= 1) PickUpObject(items[0]);
         }
     }
-
+    
     void PickUpObject(Collider2D item)
 	{
         Object objeto = item.GetComponent<Object>();
