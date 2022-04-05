@@ -71,6 +71,6 @@ MonoBehaviour:
   - name: PlayerStep
     clip: {fileID: 8300000, guid: 630d59349c4c7478992c017c4368fb82, type: 3}
     volume: 0.5
-    pitch: 1
+    pitch: 0.38
     loop: 0
     source: {fileID: 0}
