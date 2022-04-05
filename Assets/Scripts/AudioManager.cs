@@ -25,4 +25,14 @@ public class AudioManager : MonoBehaviour
         if (s == null) Debug.LogError($"ERROR: El sonido {name} no se encuentra o no existe (¿error al escribir el nombre del sonido?)");
         else s.source.Play();
     }
+
+    public void StopPlaying(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null) Debug.LogError($"ERROR: No se puede parar el sonido {name} porque no existe o no se encuentra (¿error al escribir el nombre del sonido?)");
+        else
+        {
+            s.source.Stop();
+        }
+    }
 }
