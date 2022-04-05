@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         playerRB.MovePosition(transform.position + movement.normalized * movementSpeed * Time.fixedDeltaTime);
         animationDirection = movement;
         animator.SetBool("Walk", true);
-        FindObjectOfType<AudioManager>().PlayInterval("PlayerStep", 0.4f);
+        AudioManager.Instance.PlayInterval("PlayerStep", 0.4f);
         GetComponent<PlayerAttack>().SetAttackPoint(animationDirection);
     }
 

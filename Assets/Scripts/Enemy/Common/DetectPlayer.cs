@@ -139,7 +139,6 @@ public class DetectPlayer : MonoBehaviour
                 GetComponentInParent<MeleeAttack>().enabled = false;
                 break; 
             case typeofEnemy.Range:
-                GetComponentInParent<RangeMovement>().enabled = false;
                 GetComponentInParent<RangeAttack>().enabled = false;
                 break;
             case typeofEnemy.Necromancer: GetComponentInParent<NecromancerController>().enabled = false; break;

@@ -12,13 +12,13 @@ public class PlayChestRoomSound : MonoBehaviour
         timesEntered++;
         if(timesEntered == 1)
         {
-            FindObjectOfType<AudioManager>().Play("ChestRoom");
+            AudioManager.Instance.Play("ChestRoom");
         }   
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        FindObjectOfType<AudioManager>().StopPlaying("ChestRoom");
+        AudioManager.Instance.StopPlaying("ChestRoom");
         timesEntered = 0;
         //FALTA PONER AQUÍ LA CANCIÓN NORMAL Y CORRIENTE
     }
