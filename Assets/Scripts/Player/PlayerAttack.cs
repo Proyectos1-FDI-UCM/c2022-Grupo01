@@ -98,7 +98,7 @@ public class PlayerAttack : MonoBehaviour
     void Melee()
     {
         animator.SetTrigger("Attack");
-        FindObjectOfType<AudioManager>().PlayInterval("PlayerSweep", 1.4f, 0.3f);
+        FindObjectOfType<AudioManager>().Play("PlayerSweep");
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position + _attackPointPosition, attackRange, enemyLayers);
         Collider2D[] hitSponge = Physics2D.OverlapCircleAll(transform.position + _attackPointPosition, attackRange, bulletLayer);
