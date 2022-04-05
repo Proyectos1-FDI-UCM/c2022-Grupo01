@@ -42,6 +42,7 @@ public class RangeAttack : MonoBehaviour
         _myPlayerManager = PlayerManager.Instance;
         _elapsedTime = 0f;
         _lastPosition = _myPlayerManager._playerPosition;
+        _myELC = GetComponent<EnemyLifeComponent>();
     }
 
     // Update is called once per frame
