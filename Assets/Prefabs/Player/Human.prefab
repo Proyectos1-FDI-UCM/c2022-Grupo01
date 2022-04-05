@@ -107,12 +107,8 @@ MonoBehaviour:
   rango: 10
   rodarCooldown: 0.42
   notRollingLayers:
-  - serializedVersion: 2
-    m_Bits: 256
-  - serializedVersion: 2
-    m_Bits: 512
-  - serializedVersion: 2
-    m_Bits: 32768
+    serializedVersion: 2
+    m_Bits: 33536
   rollRaycastDistanceModifier: 2
   gancho: 0
   animationDirection: {x: 0, y: 0, z: 0}
@@ -138,7 +134,7 @@ MonoBehaviour:
   _gun: {fileID: 5757689140805788999}
   icebagPrefab: {fileID: 8467541936118930963, guid: 5c698bc38c4cec04eb825f50e627dba2, type: 3}
   gunRB: {fileID: 5757689141440673754}
-  meleeDamage: 10
+  meleeDamage: 15
   shotForce: 40
   rangeDamage: 25
   iceForce: 20
@@ -164,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  maxHealth: 150
+  maxHealth: 100
   _invulnerabilityTime: 1.2
   animator: {fileID: 489965836124677250}
 --- !u!114 &5272552500916890695

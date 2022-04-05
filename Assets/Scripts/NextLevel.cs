@@ -44,16 +44,10 @@ public class NextLevel : MonoBehaviour
         _message.transform.position = new Vector3(0, 0.05f, 0);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        ShowMessage(false) ;
-    }
-
     // Update is called once per frame
     void Update()
     {
-        if (_colliding && Input.GetKeyDown(KeyCode.F))
+        if (_colliding && Input.GetKeyDown(KeyCode.F) && !PlayerManager.Instance.gancho.activeSelf)
         {
             GameManager.Instance.SetLoadingScreen(true);
             gameObject.SetActive(false);

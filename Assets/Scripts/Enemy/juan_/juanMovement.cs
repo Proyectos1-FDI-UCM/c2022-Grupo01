@@ -177,7 +177,6 @@ public class juanMovement : MonoBehaviour
                 animator.SetBool("HURT", false);
 
 
-
                 _myState = juanStates.Teleport;
                 bossTeleport();
                 _elapsedTime = 0;
