@@ -121,6 +121,7 @@ public class DetectPlayer : MonoBehaviour
                 break;
             case typeofEnemy.juan:
                 GetComponentInParent<juanMovement>().enabled = true;
+                GetComponentInParent<EnemyLifeComponent>().enabled = true;
                 break;
         }
     }
@@ -147,6 +148,7 @@ public class DetectPlayer : MonoBehaviour
                 break;
             case typeofEnemy.juan:
                 GetComponentInParent<juanMovement>().enabled = false;
+                GetComponentInParent<EnemyLifeComponent>().enabled = false;
                 break;
         }
 

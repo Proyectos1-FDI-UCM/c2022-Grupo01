@@ -94,7 +94,6 @@ public class juanMovement : MonoBehaviour
         _mySpriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<Collider2D>();
         _collision = false;
-        _collider.isTrigger = false;
     }
     private void OnEnable()
     {
@@ -103,7 +102,7 @@ public class juanMovement : MonoBehaviour
         _myState = juanStates.Channel;
         bossTeleport();
         spawn();
-        
+        _collider.isTrigger = false;
     }
     #endregion
 
