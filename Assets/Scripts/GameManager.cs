@@ -101,6 +101,7 @@ public class GameManager : MonoBehaviour
     }
     public IEnumerator OnPlayerDie()
 	{
+        AudioManager.Instance.Play("Out");
         _player.SetActive(false);
         _cam.lerpParameter = 0;
         _cam.GetComponent<FollowComponent>().SetPlayerDead();
