@@ -102,7 +102,8 @@ public class EnemyLifeComponent : MonoBehaviour
         if (maxLife > 200)
         {
 			Destroy(gameObject, 2f);
-        }
+			GameManager.Instance.UpdateBossBar(0);
+		}
 		else Destroy(gameObject, 1f);
 		sala.OnEnemyDies(this);
 		GetComponent<BoxCollider2D>().enabled = false;
@@ -116,6 +117,7 @@ public class EnemyLifeComponent : MonoBehaviour
 		_currentLife = maxLife;
 		_isDead = false;
     }
+
 	void Update()
 	{
 		if (maxLife > 200)
