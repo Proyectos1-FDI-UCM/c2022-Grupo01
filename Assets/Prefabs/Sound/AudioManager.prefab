@@ -92,3 +92,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: FireExtinguishes
+    clip: {fileID: 8300000, guid: 1c91c781a26a04fdda59159b0ac9a88f, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

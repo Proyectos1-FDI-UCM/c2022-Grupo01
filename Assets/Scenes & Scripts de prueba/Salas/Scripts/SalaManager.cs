@@ -140,6 +140,7 @@ public class SalaManager : MonoBehaviour
         else if (_listOfEnemies.Count == 0 && myState==SalaStates.Activa)
         {
             DestroyDoors();
+            AudioManager.Instance.Play("FireExtinguishes");
             myState = SalaStates.Completada;
         }
     }
