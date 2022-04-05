@@ -55,6 +55,8 @@ public class SpongeLifeComponent : MonoBehaviour
 	private BolsaDeHielo ice;
 
 	private BossMovement _bossMovement;
+
+	[SerializeField] private GameObject _victoryDuck, _victoryDuckPosition;
 	#endregion
 
 	#region methods
@@ -136,4 +138,9 @@ public class SpongeLifeComponent : MonoBehaviour
     {
 		GameManager.Instance.UpdateBossBar(_currentLife);
     }
+
+	private void OnDestroy()
+	{
+		Instantiate(_victoryDuck, _victoryDuckPosition.transform.position, Quaternion.identity);
+	}
 }
