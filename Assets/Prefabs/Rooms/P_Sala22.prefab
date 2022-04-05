@@ -16161,14 +16161,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279fdce96ba93bc44ac01e8850875407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upperDoor: {fileID: 0}
-  upperCorridor: {fileID: 0}
-  lowerDoor: {fileID: 0}
-  lowerCorridor: {fileID: 0}
-  leftDoor: {fileID: 0}
-  leftCorridor: {fileID: 0}
-  rightDoor: {fileID: 0}
-  rightCorridor: {fileID: 0}
+  upperDoor: {fileID: 8172843211192460363}
+  upperCorridor: {fileID: 5827146960169256741}
+  lowerDoor: {fileID: 7006833075794893698}
+  lowerCorridor: {fileID: 6965818267699886369}
+  leftDoor: {fileID: 3725580166633092167}
+  leftCorridor: {fileID: 7715729061217185759}
+  rightDoor: {fileID: 5332919427184732980}
+  rightCorridor: {fileID: 2568337254174742587}
 --- !u!114 &8351780700576339111
 MonoBehaviour:
   m_ObjectHideFlags: 0

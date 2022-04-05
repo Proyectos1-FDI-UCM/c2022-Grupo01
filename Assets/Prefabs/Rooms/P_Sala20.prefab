@@ -800,14 +800,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279fdce96ba93bc44ac01e8850875407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upperDoor: {fileID: 0}
-  upperCorridor: {fileID: 0}
-  lowerDoor: {fileID: 0}
-  lowerCorridor: {fileID: 0}
-  leftDoor: {fileID: 0}
-  leftCorridor: {fileID: 0}
-  rightDoor: {fileID: 0}
-  rightCorridor: {fileID: 0}
+  upperDoor: {fileID: 1697342769329623293}
+  upperCorridor: {fileID: 5566614678761701055}
+  lowerDoor: {fileID: 7566362760010359335}
+  lowerCorridor: {fileID: 5881164561936254111}
+  leftDoor: {fileID: 4594766644911815033}
+  leftCorridor: {fileID: 453241024291754606}
+  rightDoor: {fileID: 7289375917708211933}
+  rightCorridor: {fileID: 7566286270950588549}
 --- !u!114 &3111083591567431357
 MonoBehaviour:
   m_ObjectHideFlags: 0

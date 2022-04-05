@@ -5063,13 +5063,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upperDoor: {fileID: 666229138299515001}
-  upperCorridor: {fileID: 0}
+  upperCorridor: {fileID: 2921429947915391767}
   lowerDoor: {fileID: 1830831760841887664}
-  lowerCorridor: {fileID: 0}
+  lowerCorridor: {fileID: 1801053409510436115}
   leftDoor: {fileID: 5469275583297511541}
-  leftCorridor: {fileID: 0}
+  leftCorridor: {fileID: 1389053677717666797}
   rightDoor: {fileID: 3627504022970023686}
-  rightCorridor: {fileID: 0}
+  rightCorridor: {fileID: 6625286972941356041}
 --- !u!114 &476434106367543977
 MonoBehaviour:
   m_ObjectHideFlags: 0
