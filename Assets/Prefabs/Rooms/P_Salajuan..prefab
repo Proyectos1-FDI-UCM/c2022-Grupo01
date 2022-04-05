@@ -292,7 +292,7 @@ MonoBehaviour:
   _distanceOffset: 0.3
   _movementOffset: 2
   animator: {fileID: 3120276375747197023}
-  _trapDoor: {fileID: 4319589080418578429}
+  _trapDoor: {fileID: 3141452085836716458}
 --- !u!50 &1264898418
 Rigidbody2D:
   serializedVersion: 4
@@ -6055,7 +6055,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2807080889181347352
 Transform:
   m_ObjectHideFlags: 0
@@ -6094,7 +6094,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3141452085836716458}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d9a83c56067cf74ca5dff6fb0329469, type: 3}
   m_Name: 
@@ -6108,7 +6108,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3141452085836716458}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -17497,7 +17497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2626209082651739743
 RectTransform:
   m_ObjectHideFlags: 0

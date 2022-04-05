@@ -42,7 +42,7 @@ public class juanMovement : MonoBehaviour
     private Transform _myTransform;
     private SpriteRenderer _mySpriteRenderer;
     [SerializeField] private Animator animator;
-    [SerializeField] private SpriteRenderer _trapDoor;
+    [SerializeField] private GameObject _trapDoor;
     #endregion
 
     #region methods
@@ -199,7 +199,6 @@ public class juanMovement : MonoBehaviour
 
     private void OnDestroy()
     {
-        _trapDoor.enabled = true;
-        _trapDoor.GetComponent<NextLevel>().enabled = true;
+        _trapDoor.gameObject.SetActive(true);
     }
 }
