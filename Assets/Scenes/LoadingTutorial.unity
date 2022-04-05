@@ -470,7 +470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f017696b95c7b374cbc25bd7ffb424f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _screenType: 0
+  _screenType: 1
   _loadingScreenText: {fileID: 357985658}
 --- !u!328 &1448263577
 VideoPlayer:
