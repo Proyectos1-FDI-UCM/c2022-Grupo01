@@ -94,7 +94,7 @@ public class juanMovement : MonoBehaviour
         _mySpriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<Collider2D>();
         _collision = false;
-        _collider.isTrigger = true;
+        _collider.isTrigger = false;
     }
     private void OnEnable()
     {
