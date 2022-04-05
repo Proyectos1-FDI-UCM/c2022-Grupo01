@@ -63,7 +63,7 @@ public class OpenChest : MonoBehaviour
                     _shadowObject.GetComponent<SpriteRenderer>().sprite = _newOpenedSprite;
                     Instantiate(_objectHeld, transform.position + _offset, Quaternion.identity);
                     _canOpenChest = false;
-                    FindObjectOfType<AudioManager>().Play("OpenedChest");
+                    AudioManager.Instance.Play("OpenedChest");
                     GameManager.Instance.itemList.RemoveAt(rnd); 
                     _hasBeenOpened = true;
                 }
