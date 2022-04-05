@@ -23,7 +23,7 @@ public class Puddle : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
         PlayerLife player = collision.gameObject.GetComponent<PlayerLife>();
-		FindObjectOfType<AudioManager>().Play("Puddle");
+		AudioManager.Instance.Play("Puddle");
 		if (player != null && _playerManager.playerInRoll)
 		{
 			player.SetHealth(+_touchHydrate, false);
