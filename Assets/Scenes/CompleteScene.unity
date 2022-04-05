@@ -2480,10 +2480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!4 &68063368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6782809854696887245, guid: c179726ff0ec3464ca47d7f86fbf0c06, type: 3}
@@ -2523,28 +2519,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 148387606d0ccd84fa326ca211f274ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseGeometry: 0
-  m_OverrideByGrid: 0
-  m_UseMeshPrefab: {fileID: 0}
-  m_CompressBounds: 0
-  m_OverrideVector: {x: 1, y: 1, z: 1}
-  m_DefaultArea: 0
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
-  m_BuildHeightMesh: 0
-  m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: 2698e1c53f4199e47871ce90cceccaa2, type: 2}
 --- !u!4 &114556081
 Transform:
   m_ObjectHideFlags: 0
@@ -5845,10 +5819,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 0
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!1 &1635841056 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 86965528, guid: 5190ae259f44d6d41ac6956295c492b8, type: 3}
@@ -6436,10 +6406,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 0
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!483693784 &1914210128
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -16062,25 +16028,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7828763359822364384, guid: a6f5fd412dc276e45a6f0ddc0ed67ff8, type: 3}
     - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
+      propertyPath: roomPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 887353260345840104, guid: 438f5706c5f611e4a9fb772d9c343d9e, type: 3}
+    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
       propertyPath: roomPrefabs.Array.data[3]
       value: 
-      objectReference: {fileID: 7754045428617506983, guid: 1e526fc088666b04296dd0083923afec, type: 3}
+      objectReference: {fileID: 3383765010814101554, guid: 5e306376e541e3c47adcfbb758b62cb3, type: 3}
     - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
       propertyPath: roomPrefabs.Array.data[4]
       value: 
-      objectReference: {fileID: 7828763359822364384, guid: a6f5fd412dc276e45a6f0ddc0ed67ff8, type: 3}
+      objectReference: {fileID: 386330785103631755, guid: bc540dbaa53fcc4429eb56bb4f1615b3, type: 3}
     - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
       propertyPath: roomPrefabs.Array.data[5]
       value: 
-      objectReference: {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
+      objectReference: {fileID: 4412629992556279437, guid: 1517f4e2753797e49976934ab2bb63af, type: 3}
     - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
       propertyPath: roomPrefabs.Array.data[6]
       value: 
-      objectReference: {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
+      objectReference: {fileID: 5351613195368858636, guid: edbd84ff431c746459d671ceaa4ce726, type: 3}
     - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
       propertyPath: roomPrefabs.Array.data[7]
       value: 
-      objectReference: {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
+      objectReference: {fileID: 4530854110729841419, guid: dff663a58e36de74c8a4bc7349adb7df, type: 3}
     - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
       propertyPath: roomPrefabs.Array.data[8]
       value: 
