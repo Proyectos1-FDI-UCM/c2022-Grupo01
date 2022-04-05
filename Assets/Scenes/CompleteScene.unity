@@ -3545,6 +3545,12 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: PlayerSweep
+    clip: {fileID: 8300000, guid: a533a862484954a1ca1a2760e69ff067, type: 3}
+    volume: 0.65
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &713920432
 Transform:
   m_ObjectHideFlags: 0
