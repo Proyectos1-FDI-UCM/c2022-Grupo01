@@ -92,7 +92,6 @@ public class BossMovement : MonoBehaviour
                 giro = -(vuelta % 4);
                 _myRangeAttack.enabled = true;
                 animator.SetBool("RECARGA", false);
-                Debug.LogWarning("TOC");
             }
         }
         // Movimiento principal en los bordes
