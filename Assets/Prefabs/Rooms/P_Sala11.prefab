@@ -15777,6 +15777,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3555448867082421280}
   - component: {fileID: 2132799189071637900}
+  - component: {fileID: 6751930104795917332}
+  - component: {fileID: 2195689616649466739}
   m_Layer: 0
   m_Name: P_Sala11
   m_TagString: Untagged
@@ -15837,6 +15839,47 @@ MonoBehaviour:
   leftCorridor: {fileID: 2435226741027388874}
   rightDoor: {fileID: 8450529939472281817}
   rightCorridor: {fileID: 7601229830935726638}
+--- !u!114 &6751930104795917332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7968728091498755809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43fe3db3416112f408f3ed6c3cd515ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listOfDoors: []
+  _listOfEnemies: []
+  myState: 0
+--- !u!61 &2195689616649466739
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7968728091498755809}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -121.97241, y: 45.469154}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 31.769165, y: 16.735199}
+  m_EdgeRadius: 0
 --- !u!1 &8065691281093253527
 GameObject:
   m_ObjectHideFlags: 0
