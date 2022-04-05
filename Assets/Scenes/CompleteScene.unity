@@ -16028,6 +16028,14 @@ PrefabInstance:
       propertyPath: _firstRoom
       value: 
       objectReference: {fileID: 2992554537540417854, guid: fee8ae1abaf6b7b4a92f33a272d508bb, type: 3}
+    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
+      propertyPath: bossRoomPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 7754045428617506983, guid: e363d1f96c84f0f45a8b15317b33f03a, type: 3}
+    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
+      propertyPath: bossRoomPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 1583088822720531733, guid: 94da168f94789084d94cedea19de68e0, type: 3}
     - target: {fileID: 632344021560230595, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
       propertyPath: cam
       value: 
