@@ -16024,6 +16024,10 @@ PrefabInstance:
       propertyPath: Scenary
       value: 
       objectReference: {fileID: 614648290}
+    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
+      propertyPath: _firstRoom
+      value: 
+      objectReference: {fileID: 2992554537540417854, guid: fee8ae1abaf6b7b4a92f33a272d508bb, type: 3}
     - target: {fileID: 632344021560230595, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
       propertyPath: cam
       value: 
@@ -16257,14 +16261,6 @@ PrefabInstance:
       propertyPath: hook
       value: 
       objectReference: {fileID: 365699414}
-    - target: {fileID: 5757689141459901219, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
-      propertyPath: notRollingLayers.m_Bits
-      value: 33536
-      objectReference: {fileID: 0}
-    - target: {fileID: 5757689141459901246, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
-      propertyPath: meleeDamage
-      value: 15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a92055c3f64f0a148a2b9ae56e364432, type: 3}
 --- !u!1001 &7264373904355628928
