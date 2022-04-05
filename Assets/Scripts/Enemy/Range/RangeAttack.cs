@@ -34,6 +34,7 @@ public class RangeAttack : MonoBehaviour
     private PlayerManager _myPlayerManager;
     [SerializeField]
     private Transform _myTransform;
+    private EnemyLifeComponent _myELC;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -55,6 +56,10 @@ public class RangeAttack : MonoBehaviour
             _elapsedTime = 0f;
         }
         _lastPosition = _myPlayerManager._playerPosition;
+        if(_myELC._isDead == true)
+        {
+            this.enabled = false;
+        }
     }
     
 }
