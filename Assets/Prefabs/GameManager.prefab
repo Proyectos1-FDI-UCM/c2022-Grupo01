@@ -61,6 +61,11 @@ MonoBehaviour:
   - {fileID: 6371751139099512063, guid: 1cb2dad4b85e68b438e2b9d259de5ac3, type: 3}
   - {fileID: 3998425941224310982, guid: 2439de35a2f90234e8b4d0605d4c5d23, type: 3}
   - {fileID: 5102250945931165755, guid: c3f3439b2fbcb0e43881d11d096b833b, type: 3}
+  - {fileID: 5102250945931165755, guid: 702650c71fe95ee439ad2b3d60415393, type: 3}
+  - {fileID: 5102250945931165755, guid: 19f34ebcfd34307448386bff04f8f388, type: 3}
+  - {fileID: 5102250945931165755, guid: 07cffc66f35b46c42ba7145e93707a3e, type: 3}
+  - {fileID: 5102250945931165755, guid: 00c8e8d59f994944aaa2c930706cf76b, type: 3}
+  - {fileID: 8274233382138784993, guid: a82a3a4f165f2b449b2d83b9316378b2, type: 3}
 --- !u!114 &632344021560230654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,6 +88,7 @@ MonoBehaviour:
   _loadingScreen: {fileID: 0}
   _stats: {fileID: 0}
   _deathMenu: {fileID: 0}
+  _winMenu: {fileID: 0}
   _healthBarText: {fileID: 0}
   _bossbarText: {fileID: 0}
   _playerSpeed: {fileID: 0}
