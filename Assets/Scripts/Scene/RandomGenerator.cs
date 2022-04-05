@@ -6,7 +6,7 @@ public class RandomGenerator : MonoBehaviour
 {
     #region references
     [SerializeField] private List<GameObject> roomPrefabs;
-    [SerializeField] private GameObject objectRoomPrefab, Scenary;
+    [SerializeField] private GameObject objectRoomPrefab, Scenary, _firstRoom;
     [SerializeField] private GameObject[] bossRoomPrefab;
     #endregion
 
@@ -133,10 +133,9 @@ public class RandomGenerator : MonoBehaviour
 
                         PonerPrimeraSala(ref lastRoomPosition, ref newRoom, i, j);
                     }
-                    else if(!objectRoomGenerated && rndObjectRoom == rooms[i, j])
+                    else if(rndObjectRoom == rooms[i, j])
                     {
                         PonerSala(ref comprobarPosicion, ref lastRoomPosition, ref newRoom, i, j, false, true);
-                        objectRoomGenerated = true;
                     }
                     else if (rooms[i,j] == numSalasCreadas)
                     {
@@ -154,7 +153,7 @@ public class RandomGenerator : MonoBehaviour
 
     void PonerPrimeraSala(ref int[] lastRoomPosition, ref GameObject newRoom, int i, int j)
 	{
-        newRoom = Instantiate(roomPrefabs[0], Vector3.zero, Quaternion.identity);
+        newRoom = Instantiate(_firstRoom, Vector3.zero, Quaternion.identity);
 
         try
         {
@@ -162,11 +161,10 @@ public class RandomGenerator : MonoBehaviour
         }
         catch
         {
-            Scenary = new GameObject("---Scenary---");
+            Scenary = new GameObject("---SCENARY---");
             newRoom.transform.parent = Scenary.transform;
         }
 
-        roomPrefabs.Remove(roomPrefabs[0]);
         PlayerManager.Instance.player.transform.position = newRoom.transform.position + new Vector3(-122, 45, 0);
         lastRoomPosition[0] = i;
         lastRoomPosition[1] = j;
@@ -182,8 +180,11 @@ public class RandomGenerator : MonoBehaviour
 
         lastRoomPosition[0] = i;
         lastRoomPosition[1] = j;
+
         if(bossRoom) newRoom = Instantiate(bossRoomPrefab[floorToGenerate], newRoom.transform.position + new Vector3(comprobarPosicion[1] * instanceOffset.x, -comprobarPosicion[0] * instanceOffset.y, 0), Quaternion.identity);
+        
         else if (objectRoom) newRoom = Instantiate(objectRoomPrefab, newRoom.transform.position + new Vector3(comprobarPosicion[1] * instanceOffset.x, -comprobarPosicion[0] * instanceOffset.y, 0), Quaternion.identity);
+        
         else newRoom = Instantiate(roomPrefabs[rnd], newRoom.transform.position + new Vector3(comprobarPosicion[1] * instanceOffset.x, -comprobarPosicion[0] * instanceOffset.y, 0), Quaternion.identity);
 
 		try
@@ -192,7 +193,7 @@ public class RandomGenerator : MonoBehaviour
 		}
 		catch
 		{
-			Scenary = new GameObject("---Scenary---");
+			Scenary = new GameObject("---SCENARY---");
 			newRoom.transform.parent = Scenary.transform;
 		}
 
