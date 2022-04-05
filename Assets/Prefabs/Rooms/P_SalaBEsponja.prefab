@@ -17375,10 +17375,6 @@ PrefabInstance:
       propertyPath: _victoryDuck
       value: 
       objectReference: {fileID: 8322295966606545200}
-    - target: {fileID: 5005805420399847644, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
-      propertyPath: _victoryDuckPosition
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6316753048730843746, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
       propertyPath: m_RootOrder
       value: 9

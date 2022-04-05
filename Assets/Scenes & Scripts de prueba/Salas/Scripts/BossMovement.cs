@@ -9,7 +9,7 @@ public class BossMovement : MonoBehaviour
     private Transform _myTransform;
     public Vector3 _direction;
     public Transform InitialPosition;
-    public float speed = 5, giro = 0, cooldown = 5, timeLeft, vuelta = 0, carga;
+    public float speed = 5, giro = 0, cooldown = 3, timeLeft, vuelta = 0, carga;
 
     public bool agua=true, recarga=false;
     public GameObject centro;
@@ -25,7 +25,7 @@ public class BossMovement : MonoBehaviour
         agua = false;
         recarga = false;
         carga = cooldown;
-        timeLeft = cooldown;
+        timeLeft = cooldown/2;
     }
     public void Giro()
     {
@@ -114,7 +114,7 @@ public class BossMovement : MonoBehaviour
                 //agua = true;
                 
                 bossColider.isTrigger = false;
-                timeLeft = cooldown;
+                timeLeft = cooldown/2;
                 animator.SetBool("RECARGA", true);
                 _direction.x = 0;
                 _direction.y = 0;
