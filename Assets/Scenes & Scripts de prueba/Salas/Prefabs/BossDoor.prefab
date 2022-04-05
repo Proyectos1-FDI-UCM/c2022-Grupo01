@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 1218716674457837457}
   - component: {fileID: 4788629962712548337}
   - component: {fileID: -5895946663853420561}
-  m_Layer: 8
+  m_Layer: 19
   m_Name: BossDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,3 +265,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   salaSponge: {fileID: 0}
+  salaManager: {fileID: 0}
