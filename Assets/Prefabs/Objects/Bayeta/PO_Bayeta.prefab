@@ -128,8 +128,8 @@ MonoBehaviour:
   type: 0
   nameOnScreen: Bayeta
   littleDescriptionOnScreen: da vida por cada 10 enemigos que hubieras matado
-  health: 0
   maxHealth: 0
+  health: 0
   meleeDamage: 0
   rangeDamage: 0
   speed: 0

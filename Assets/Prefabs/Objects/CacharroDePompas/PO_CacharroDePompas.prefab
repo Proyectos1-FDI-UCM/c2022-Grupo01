@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6371751139099512063}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.5244713, y: -7.8174467, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 5.3999996, y: 5.3999996, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -126,13 +126,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2
   type: 0
-  nameOnScreen: 
-  littleDescriptionOnScreen: 
-  health: 0
+  nameOnScreen: Cacharro de Pompas
+  littleDescriptionOnScreen: She protecc, she attacc :)
   maxHealth: 0
+  health: 0
   meleeDamage: 0
   rangeDamage: 0
   speed: 0
+  manguitos: 0
   _bubblePrefab: {fileID: 368771570412944389, guid: 2247d63244b03f04481b06d065b19dcd, type: 3}
 --- !u!95 &-3286614402155553676
 Animator:
@@ -165,4 +166,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bb3fd6ca469450cbecf5fb324b1591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0, y: -0.05, z: 0}

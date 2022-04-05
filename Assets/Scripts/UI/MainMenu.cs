@@ -7,21 +7,16 @@ public class MainMenu : MonoBehaviour
 {
     public static void LoadPlayTutorial()
     {
-        SceneManager.LoadScene("LoadingTutorial");
+        SceneManager.LoadSceneAsync("LoadingTutorial");
     }
 
     public static void LoadingPlayNormalGame()
     {
-        SceneManager.LoadScene("LoadingGame");
+        SceneManager.LoadSceneAsync("LoadingGame");
     }
 
     public void Quit()
     {
         Application.Quit();
-    }
-
-    public void BackToMenu()
-    {
-        SceneManager.LoadScene("Menu");
     }
 }

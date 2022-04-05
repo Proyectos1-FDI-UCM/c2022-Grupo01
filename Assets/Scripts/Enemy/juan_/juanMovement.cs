@@ -31,6 +31,8 @@ public class juanMovement : MonoBehaviour
     private float _distanceOffset = 0.1f;
     [SerializeField]
     private float _movementOffset = 2f;
+
+    
     #endregion
 
     #region references
@@ -94,6 +96,8 @@ public class juanMovement : MonoBehaviour
     }
     private void OnEnable()
     {
+        EnemyLifeComponent _myJuanLifeComponent = GetComponent<EnemyLifeComponent>();
+        GameManager.Instance.CreateBossBar("Juan.", _myJuanLifeComponent.maxLife);
         _myState = juanStates.Channel;
         bossTeleport();
         spawn();
@@ -111,7 +115,8 @@ public class juanMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_myState == juanStates.Channel)
+        
+        if (_myState == juanStates.Channel)
         {
             animator.SetBool("CHARGE",true);
             _playerPosition = _myPlayerManager._playerPosition;

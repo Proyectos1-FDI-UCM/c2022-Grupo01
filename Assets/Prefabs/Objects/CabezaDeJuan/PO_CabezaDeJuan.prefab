@@ -128,8 +128,8 @@ MonoBehaviour:
   type: 0
   nameOnScreen: Cabeza de Juan
   littleDescriptionOnScreen: Una cabeza de Juan, y a correr
-  health: 0
   maxHealth: 0
+  health: 0
   meleeDamage: 0
   rangeDamage: 0
   speed: 1

@@ -12,8 +12,8 @@ public class BossDoor : MonoBehaviour
 
     public void Register()
     {
-        Debug.LogWarning("Sala" + salaSponge);
-        Debug.LogWarning("This " + this);
+        //Debug.LogWarning("Sala" + salaSponge);
+        //Debug.LogWarning("This " + this);
         if(salaSponge != null)
         {
             salaSponge.RegisterDoor(this);

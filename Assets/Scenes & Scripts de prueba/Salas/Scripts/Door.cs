@@ -17,8 +17,8 @@ public class Door : MonoBehaviour
 
     public void Register()
     {
-        Debug.LogWarning("Sala" + sala);
-        Debug.LogWarning("This " + this);
+        //Debug.LogWarning("Sala" + sala);
+        //Debug.LogWarning("This " + this);
         sala.RegisterDoor(this);
     }
 }   
