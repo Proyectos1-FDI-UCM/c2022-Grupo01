@@ -5,7 +5,7 @@ using UnityEngine;
 public class juanMovement : MonoBehaviour
 {
     #region properties
-    private enum juanStates { Channel, Move, Teleport, Rest };
+    private enum juanStates {Channel, Move, Teleport, Rest };
     private juanStates _myState;
     private float _elapsedTime;
     private Vector3 _playerDirection, _lastDirecion;
@@ -94,6 +94,7 @@ public class juanMovement : MonoBehaviour
         _mySpriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<Collider2D>();
         _collision = false;
+        _collider.isTrigger = false;
     }
     private void OnEnable()
     {
