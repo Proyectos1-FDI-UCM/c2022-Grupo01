@@ -49,7 +49,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-
     public void PlayUntilEnd(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
