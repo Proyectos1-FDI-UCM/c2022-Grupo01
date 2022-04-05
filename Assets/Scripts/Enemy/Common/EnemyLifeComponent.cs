@@ -83,6 +83,7 @@ public class EnemyLifeComponent : MonoBehaviour
 	public void Damage(float damage)
 	{
 		animator.SetTrigger("Hurt");
+		animator.SetBool("HURT", true);
 
 		_currentLife -= damage;
 		
@@ -97,7 +98,12 @@ public class EnemyLifeComponent : MonoBehaviour
 		GameManager.Instance.DeadEnemies();
 		_isDead = true;
 		animator.SetTrigger("Die");
-		Destroy(gameObject, 1f);
+		animator.SetBool("DEAD", true);
+        if (maxLife > 200)
+        {
+			Destroy(gameObject, 2f);
+        }
+		else Destroy(gameObject, 1f);
 		sala.OnEnemyDies(this);
 		GetComponent<BoxCollider2D>().enabled = false;
 		transform.GetChild(0).GetComponentInChildren<DetectPlayer>().Deactivate();
