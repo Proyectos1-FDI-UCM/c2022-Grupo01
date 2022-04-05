@@ -39,7 +39,7 @@ public class NecromancerController : MonoBehaviour
         {
             _weakEnemyInstance = Instantiate(_weakEnemy, _myTransform.position, Quaternion.identity);
             _weakEnemyInstance.GetComponent<WeakEnemy>()._necromancer = this;
-            FindObjectOfType<AudioManager>().Play("NecromancerSummon");
+            AudioManager.Instance.Play("NecromancerSummon");
             _currentTime = _timeLeft;
             _weakCounter++;
         }
