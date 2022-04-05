@@ -70,6 +70,7 @@ public class SalaManager : MonoBehaviour
     public void EnterSala()
     {
         //Debug.Log("Funciona");
+        AudioManager.Instance.Play("FireGenerates");
         myState = SalaStates.Activa;
         foreach(Door door in _listOfDoors)
         {
