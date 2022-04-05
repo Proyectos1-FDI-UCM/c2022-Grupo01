@@ -250,7 +250,7 @@ MonoBehaviour:
   InitialPosition: {fileID: 0}
   speed: 7
   giro: 0
-  cooldown: 5
+  cooldown: 3
   timeLeft: 0
   vuelta: 0
   carga: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e840ffff7d323469fdfd2526ba81ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shotForce: 10
+  _shotForce: 15
   _cooldownTime: 4
   _attackOffset: 2
   _bulletPrefab: {fileID: 7838735278465922918, guid: 5a7e4657f29bb464ca2d2399b654cc92, type: 3}
@@ -293,5 +293,4 @@ MonoBehaviour:
   ID: 0
   dead: 0
   animator: {fileID: 6316753048730843744}
-  _victoryDuck: {fileID: 8032369355267124065, guid: a8f28b1fa50b642459cde95c1bda2e17, type: 3}
-  _victoryDuckPosition: {fileID: 0}
+  _victoryDuck: {fileID: 0}
