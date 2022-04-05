@@ -41,8 +41,9 @@ public class juanMovement : MonoBehaviour
     private Collider2D _collider;
     private Transform _myTransform;
     private SpriteRenderer _mySpriteRenderer;
+    private EnemyLifeComponent _myELC;
     [SerializeField] private Animator animator;
-    [SerializeField] private SpriteRenderer _trapDoor;
+    [SerializeField] private GameObject _trapDoor;
     #endregion
 
     #region methods
@@ -109,13 +110,18 @@ public class juanMovement : MonoBehaviour
     void Start()
     {
         _myPlayerManager = PlayerManager.Instance;
+        _myELC = GetComponent<EnemyLifeComponent>();
         //_wallsLayerMask = 1 << 8;
     }
         
     // Update is called once per frame
     void Update()
     {
-        
+        if(_myELC._isDead == true)
+        {
+            _trapDoor.gameObject.SetActive(true);
+            this.enabled = false;
+        }
         if (_myState == juanStates.Channel)
         {
             animator.SetBool("CHARGE",true);
@@ -196,9 +202,4 @@ public class juanMovement : MonoBehaviour
         
     }
 
-    private void OnDestroy()
-    {
-        _trapDoor.enabled = true;
-        _trapDoor.GetComponent<NextLevel>().enabled = true;
-    }
 }

@@ -6,6 +6,8 @@ public class fountainScript : MonoBehaviour
 {
     public bool _isClogged;
     public SpongeSalaManager _salaManager;
+    [SerializeField]
+    private float _speed = 10f;
 
     private SpriteRenderer render;
     public Animator animator;
@@ -48,7 +50,7 @@ public class fountainScript : MonoBehaviour
         Vector3 direction = (_center.transform.position - _myTransform.position).normalized;
         GameObject bullet = Instantiate(_bulletPrefab, _myTransform.position + direction*2 , Quaternion.identity);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();   
-        rb.AddForce(direction * 5, ForceMode2D.Impulse);
+        rb.AddForce(direction * _speed, ForceMode2D.Impulse);
         Destroy(bullet,delay);
     }
     #endregion
