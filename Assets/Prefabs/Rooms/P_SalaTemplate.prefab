@@ -4605,6 +4605,7 @@ MonoBehaviour:
   _currentLife: 0
   maxLife: 40
   ID: 0
+  _isDead: 0
   animator: {fileID: 7731970310488568255}
 --- !u!114 &4462411735228196131
 MonoBehaviour:
