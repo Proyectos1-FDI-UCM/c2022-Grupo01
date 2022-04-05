@@ -105,7 +105,6 @@ public class DetectPlayer : MonoBehaviour
         {
             case typeofEnemy.Fleeing: GetComponentInParent<FleeingEnemyMovement>().ExecuteFleeingEnemyMovement(); break;
             case typeofEnemy.CAC:
-                GetComponentInParent<NavMeshAgent>().enabled = true;
                 GetComponentInParent<MeleeMovement>().ExecuteMeleeEnemyMovement();
                 GetComponentInParent<MeleeAttack>().ExecuteMeleeAttack();
                 break;
@@ -118,7 +117,6 @@ public class DetectPlayer : MonoBehaviour
                 //Debug.Log("Si");
                 break;
             case typeofEnemy.Weak:
-                GetComponentInParent<NavMeshAgent>().enabled = true;
                 GetComponentInParent<MeleeMovement>().ExecuteMeleeEnemyMovement();
                 break;
             case typeofEnemy.juan:
@@ -137,7 +135,6 @@ public class DetectPlayer : MonoBehaviour
         {
             case typeofEnemy.Fleeing: GetComponentInParent<FleeingEnemyMovement>().enabled = false; break;
             case typeofEnemy.CAC:
-                GetComponentInParent<NavMeshAgent>().enabled = false;
                 GetComponentInParent<MeleeMovement>().StopMeleeEnemyMovement();
                 GetComponentInParent<MeleeAttack>().enabled = false;
                 break; 
@@ -147,7 +144,6 @@ public class DetectPlayer : MonoBehaviour
                 break;
             case typeofEnemy.Necromancer: GetComponentInParent<NecromancerController>().enabled = false; break;
             case typeofEnemy.Weak:
-                GetComponentInParent<NavMeshAgent>().enabled = false;
                 GetComponentInParent<MeleeMovement>().StopMeleeEnemyMovement();
                 break;
             case typeofEnemy.juan:

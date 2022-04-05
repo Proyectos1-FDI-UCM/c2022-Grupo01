@@ -202,7 +202,6 @@ GameObject:
   - component: {fileID: -1881989702862749291}
   - component: {fileID: -8675844643101548979}
   - component: {fileID: 1624717501268640390}
-  - component: {fileID: -8608879856031237777}
   m_Layer: 7
   m_Name: WeakEnemy
   m_TagString: Untagged
@@ -393,36 +392,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6708671370522219186}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 223f2aa498f2ec44cb1d4e8036ba300c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _playerDistance: 0
-  _timeToBeElapsed: 0.1
+  _speed: 4.5
   _animator: {fileID: 9195848397771939019}
---- !u!195 &-8608879856031237777
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6708671370522219186}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 2
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 4
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &8480030182928531357
 GameObject:
   m_ObjectHideFlags: 0
