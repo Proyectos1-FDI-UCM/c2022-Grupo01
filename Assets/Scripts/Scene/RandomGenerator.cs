@@ -36,7 +36,14 @@ public class RandomGenerator : MonoBehaviour
         ColocarSalas(rooms);
         AbrirPuertas(gameObjectPrefabs);
         floorToGenerate++;
-        Inventory.Instance.activeItem.GetComponent<ActiveObject>().OnNewFloor();
+		try
+		{
+            Inventory.Instance.activeItem.GetComponent<ActiveObject>().OnNewFloor();
+		}
+		catch
+		{
+            Debug.LogWarning("No active item to recharge");
+		}
     }
 
     void Inicializa(out int[,] rooms, out GameObject[,] gameObjectPrefabs)

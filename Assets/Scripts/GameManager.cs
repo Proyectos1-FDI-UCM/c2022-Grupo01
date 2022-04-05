@@ -96,30 +96,31 @@ public class GameManager : MonoBehaviour
         GetComponent<RandomGenerator>().GenerateFloor();
 	}
 
-    public void LoadPlayTutorial()
-    {
-        SceneManager.LoadScene("LoadingTutorial");
-    }
-
-    public void LoadingPlayNormalGame()
-    {
-        SceneManager.LoadScene("LoadingGame");
-    }
-
     public void Quit()
     {
         Application.Quit();
-    }
-
-    public void BackToMenu()
-    {
-        SceneManager.LoadScene("Menu");
     }
 
     void SetDeathMenu(bool setDeathMenu)
     {
         _uiManager.SetDeathMenu(setDeathMenu);
     }
+
+    public void LoadGame()
+	{
+        SceneManager.LoadScene("CompleteScene");
+	}
+
+    public void LoadTutorial()
+	{
+        SceneManager.LoadScene("Tutorial");
+	}
+
+    public void BackToMenu()
+	{
+        PauseMenu(false);
+        SceneManager.LoadScene("Menu");
+	}
     #endregion
 
     private void Awake()

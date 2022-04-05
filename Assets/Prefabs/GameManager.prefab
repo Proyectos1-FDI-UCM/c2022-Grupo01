@@ -61,7 +61,6 @@ MonoBehaviour:
   - {fileID: 6371751139099512063, guid: 1cb2dad4b85e68b438e2b9d259de5ac3, type: 3}
   - {fileID: 3998425941224310982, guid: 2439de35a2f90234e8b4d0605d4c5d23, type: 3}
   - {fileID: 5102250945931165755, guid: c3f3439b2fbcb0e43881d11d096b833b, type: 3}
-  _deadEnemyCount: 0
 --- !u!114 &632344021560230654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,10 +76,15 @@ MonoBehaviour:
   _healthSlider: {fileID: 0}
   _cooldownSlider: {fileID: 0}
   _secondaryHealthSlider: {fileID: 0}
+  _bossbarSlider: {fileID: 0}
   _objectInfo: {fileID: 0}
   _objectInfoPrefab: {fileID: 2201518572312020010, guid: 96ac578b04faf2e49a9e94f30e64cb2f, type: 3}
   _pauseMenu: {fileID: 0}
+  _loadingScreen: {fileID: 0}
+  _stats: {fileID: 0}
+  _deathMenu: {fileID: 0}
   _healthBarText: {fileID: 0}
+  _bossbarText: {fileID: 0}
   _playerSpeed: {fileID: 0}
   _playerRangeDamage: {fileID: 0}
   _playerMeleeDamage: {fileID: 0}
@@ -103,6 +107,9 @@ MonoBehaviour:
   model: {fileID: 0}
   shotPoint: {fileID: 0}
   gancho: {fileID: 0}
+  cam: {fileID: 0}
+  bayeta: 0
+  _deadEnemyCount: 123
   myLifeState: 0
   health: 0
   maxHealth: 0
@@ -112,7 +119,6 @@ MonoBehaviour:
   uses: 0
   _playerPosition: {x: 0, y: 0, z: 0}
   playerInRoll: 0
-  _previusCooldown: -2
 --- !u!114 &632344021560230594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,14 +148,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomPrefabs:
   - {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
-  - {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
+  - {fileID: 7828763359822364384, guid: a6f5fd412dc276e45a6f0ddc0ed67ff8, type: 3}
   - {fileID: 3437321661692434036, guid: 37977c0364d954ce3ac22770e42ae149, type: 3}
-  - {fileID: 1111876729451535788, guid: 1517f4e2753797e49976934ab2bb63af, type: 3}
   - {fileID: 7754045428617506983, guid: 1e526fc088666b04296dd0083923afec, type: 3}
-  - {fileID: 8320215599221655531, guid: bc540dbaa53fcc4429eb56bb4f1615b3, type: 3}
-  - {fileID: 8487530944823689272, guid: 5e306376e541e3c47adcfbb758b62cb3, type: 3}
-  - {fileID: 4645196504980961116, guid: 438f5706c5f611e4a9fb772d9c343d9e, type: 3}
-  - {fileID: 3792670963264339132, guid: ecf30623ccb511c43b31efa418593d6c, type: 3}
+  - {fileID: 7828763359822364384, guid: a6f5fd412dc276e45a6f0ddc0ed67ff8, type: 3}
   - {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
   - {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
   - {fileID: 7754045428617506983, guid: 5e276f3fd6f75e84c8416dd1c8eb8864, type: 3}
@@ -165,7 +167,7 @@ MonoBehaviour:
   objectRoomPrefab: {fileID: 7754045428617506983, guid: b4bac0345ac629844b692800b55ccd2b, type: 3}
   Scenary: {fileID: 0}
   bossRoomPrefab:
-  - {fileID: 8954406205686018616, guid: fd2b4553096b9c845a6f863dd2cfff2b, type: 3}
+  - {fileID: 1583088822720531733, guid: 94da168f94789084d94cedea19de68e0, type: 3}
   - {fileID: 7754045428617506983, guid: e363d1f96c84f0f45a8b15317b33f03a, type: 3}
 --- !u!114 &632344021560230592
 MonoBehaviour:

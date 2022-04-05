@@ -14,12 +14,6 @@ public class LoadingTutorial : MonoBehaviour
     IEnumerator MakeTheLoad(string level)
     {
         yield return new WaitForSeconds(_loadingTime);
-
-        AsyncOperation operation = SceneManager.LoadSceneAsync(level);
-
-        while (operation.isDone == false)
-        {
-            yield return null;
-        }
+        SceneManager.LoadSceneAsync(level);
     }
 }

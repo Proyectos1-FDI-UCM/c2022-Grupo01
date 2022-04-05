@@ -156,13 +156,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79075e18fbfad5d4cbcf887dd4e60682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 8
-  type: 0
+  ID: 9
+  type: 1
   nameOnScreen: "Bebida Energ\xE9tica"
   littleDescriptionOnScreen: No es muy sana pero corres como dios
   activePrefab: {fileID: 8274233382138784993}
   pickable: 1
-  cooldown: 0
+  cooldown: 40
   _elapsedTime: 0
   sonToCreate: {fileID: 0}
   sonCreated: 0

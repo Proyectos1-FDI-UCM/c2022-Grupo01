@@ -128,8 +128,8 @@ MonoBehaviour:
   type: 0
   nameOnScreen: Cuentagotas
   littleDescriptionOnScreen: Un poquito de agua nunca viene mal
-  health: 100
   maxHealth: 10
+  health: 100
   meleeDamage: 0
   rangeDamage: 0
   speed: 0
