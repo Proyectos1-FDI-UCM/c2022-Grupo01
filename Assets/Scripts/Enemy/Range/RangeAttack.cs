@@ -41,7 +41,7 @@ public class RangeAttack : MonoBehaviour
     void Start()
     {
         _myPlayerManager = PlayerManager.Instance;
-        _elapsedTime = 0f;
+        _elapsedTime = _cooldownTime/2f;
         _lastPosition = _myPlayerManager._playerPosition;
         _myELC = GetComponent<EnemyLifeComponent>();
     }
