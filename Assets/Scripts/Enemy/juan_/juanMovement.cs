@@ -204,5 +204,6 @@ public class juanMovement : MonoBehaviour
     {
         _trapDoor.gameObject.SetActive(true);
         _cabezaJuan.gameObject.SetActive(true);
+        GameManager.Instance.HideBossBar();
     }
 }
