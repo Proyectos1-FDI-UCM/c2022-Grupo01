@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public static void LoadPlayTutorial()
+    #region references
+    [SerializeField] private GameObject _controls, _button;
+	#endregion
+
+	public static void LoadPlayTutorial()
     {
         SceneManager.LoadSceneAsync("LoadingTutorial");
     }
@@ -19,4 +23,16 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void ShowControls(bool showControls)
+	{
+        _controls.SetActive(showControls);
+        _button.SetActive(true);
+        gameObject.SetActive(false);
+	}
+
+	private void Start()
+	{
+        ShowControls(false);
+	}
 }

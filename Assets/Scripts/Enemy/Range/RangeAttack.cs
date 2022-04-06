@@ -20,6 +20,7 @@ public class RangeAttack : MonoBehaviour
     }
     private void Shoot()
     {
+        AudioManager.Instance.Play("EnemyShoot");
         Vector3 direction = (_shotPosition - _myTransform.position).normalized;
         GameObject bullet = Instantiate(_bulletPrefab, _myTransform.position + direction *1, Quaternion.identity);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
