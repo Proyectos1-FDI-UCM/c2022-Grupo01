@@ -202,5 +202,6 @@ public class juanMovement : MonoBehaviour
     private void OnDestroy()
     {
         _trapDoor.gameObject.SetActive(true);
+        GameManager.Instance.HideBossBar();
     }
 }
