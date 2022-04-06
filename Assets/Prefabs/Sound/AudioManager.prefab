@@ -46,19 +46,19 @@ MonoBehaviour:
   sounds:
   - name: NecromancerSummon
     clip: {fileID: 8300000, guid: 7734f22ae3bdd4883993091fbd3ca911, type: 3}
-    volume: 0.7
+    volume: 0.6
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: ChestRoom
     clip: {fileID: 8300000, guid: 13e36e50b68344603b98b30050ffe0b0, type: 3}
-    volume: 0.9
+    volume: 0.7
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: PlayerSweep
     clip: {fileID: 8300000, guid: a533a862484954a1ca1a2760e69ff067, type: 3}
-    volume: 0.65
+    volume: 0.55
     pitch: 2
     loop: 0
     source: {fileID: 0}
@@ -78,5 +78,35 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 6dff68248a65d482e9d5dc5fe32b0a76, type: 3}
     volume: 0.6
     pitch: 1.25
+    loop: 0
+    source: {fileID: 0}
+  - name: Out
+    clip: {fileID: 8300000, guid: fed8dfb722460423593e2b1c56c987ca, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: FireGenerates
+    clip: {fileID: 8300000, guid: d76b07c47e27b425ca980ce6f0b8de00, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: FireExtinguishes
+    clip: {fileID: 8300000, guid: 1c91c781a26a04fdda59159b0ac9a88f, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerShoot
+    clip: {fileID: 8300000, guid: 9b98a03bd21bb4902b74f107120c46d1, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyShoot
+    clip: {fileID: 8300000, guid: 9b98a03bd21bb4902b74f107120c46d1, type: 3}
+    volume: 0.6
+    pitch: 1.75
     loop: 0
     source: {fileID: 0}

@@ -70,6 +70,7 @@ public class SalaManager : MonoBehaviour
     public void EnterSala()
     {
         //Debug.Log("Funciona");
+        AudioManager.Instance.Play("FireGenerates");
         myState = SalaStates.Activa;
         foreach(Door door in _listOfDoors)
         {
@@ -139,6 +140,7 @@ public class SalaManager : MonoBehaviour
         else if (_listOfEnemies.Count == 0 && myState==SalaStates.Activa)
         {
             DestroyDoors();
+            AudioManager.Instance.Play("FireExtinguishes");
             myState = SalaStates.Completada;
         }
     }

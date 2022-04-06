@@ -7,7 +7,7 @@ public class Door : MonoBehaviour
     [HideInInspector] public SalaManager sala;
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        IceBagEffect bolsaDeHielo = collision.gameObject.GetComponent<IceBagEffect>();
+        BolsaDeHielo bolsaDeHielo = collision.gameObject.GetComponent<BolsaDeHielo>();
         if (bolsaDeHielo != null)
         {
             GetComponent<SpriteRenderer>().enabled = false;

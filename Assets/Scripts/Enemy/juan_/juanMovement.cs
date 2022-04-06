@@ -5,7 +5,7 @@ using UnityEngine;
 public class juanMovement : MonoBehaviour
 {
     #region properties
-    private enum juanStates { Channel, Move, Teleport, Rest };
+    private enum juanStates {Channel, Move, Teleport, Rest };
     private juanStates _myState;
     private float _elapsedTime;
     private Vector3 _playerDirection, _lastDirecion;
@@ -41,8 +41,9 @@ public class juanMovement : MonoBehaviour
     private Collider2D _collider;
     private Transform _myTransform;
     private SpriteRenderer _mySpriteRenderer;
+    private EnemyLifeComponent _myELC;
     [SerializeField] private Animator animator;
-    [SerializeField] private SpriteRenderer _trapDoor;
+    [SerializeField] private GameObject _trapDoor;
     #endregion
 
     #region methods
@@ -101,7 +102,7 @@ public class juanMovement : MonoBehaviour
         _myState = juanStates.Channel;
         bossTeleport();
         spawn();
-        
+        _collider.isTrigger = false;
     }
     #endregion
 
@@ -109,13 +110,14 @@ public class juanMovement : MonoBehaviour
     void Start()
     {
         _myPlayerManager = PlayerManager.Instance;
+        _myELC = GetComponent<EnemyLifeComponent>();
         //_wallsLayerMask = 1 << 8;
     }
         
     // Update is called once per frame
     void Update()
     {
-        
+
         if (_myState == juanStates.Channel)
         {
             animator.SetBool("CHARGE",true);
@@ -193,12 +195,12 @@ public class juanMovement : MonoBehaviour
                 
             }
         }
+
+
         
     }
-
     private void OnDestroy()
     {
-        _trapDoor.enabled = true;
-        _trapDoor.GetComponent<NextLevel>().enabled = true;
+        _trapDoor.gameObject.SetActive(true);
     }
 }
