@@ -141,6 +141,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Shoot()
 	{
+        AudioManager.Instance.Play("PlayerShoot");
         GameObject bullet = Instantiate(bulletPrefab, shotPoint.position, Quaternion.identity);
         bullet.GetComponent<BulletLife>().bulletDamage = rangeDamage;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
