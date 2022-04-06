@@ -8,7 +8,7 @@ public class UI_Manager : MonoBehaviour
 {
     #region references
     [SerializeField] private Slider _healthSlider, _cooldownSlider, _secondaryHealthSlider, _bossbarSlider;
-    [SerializeField] private GameObject _objectInfo, _objectInfoPrefab, _pauseMenu, _loadingScreen, _stats, _deathMenu, _winMenu;
+    [SerializeField] private GameObject _objectInfo, _objectInfoPrefab, _pauseMenu, _loadingScreen, _stats, _deathMenu, _winMenu, _controls, _controlsButton, _secondControlsButton;
     [SerializeField] private TextMeshProUGUI _healthBarText, _bossbarText, _playerSpeed, _playerRangeDamage, _playerMeleeDamage;
     [SerializeField] private FollowComponent _cam;
     PlayerManager _playerManager;
@@ -135,6 +135,13 @@ public class UI_Manager : MonoBehaviour
     {
         _winMenu.SetActive(setWinMenu);
     }
+
+    public void SetControlsImage(bool image)
+	{
+        _controls.SetActive(image);
+        _controlsButton.SetActive(!image);
+        _secondControlsButton.SetActive(image);
+	}
     #endregion
 
     IEnumerator DeactivateObjectInfoAfterSeconds(GameObject objectInfo, float seconds)
