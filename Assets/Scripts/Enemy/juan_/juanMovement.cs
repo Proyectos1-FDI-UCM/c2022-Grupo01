@@ -44,6 +44,7 @@ public class juanMovement : MonoBehaviour
     private EnemyLifeComponent _myELC;
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject _trapDoor;
+    [SerializeField] private GameObject _cabezaJuan;
     #endregion
 
     #region methods
@@ -202,5 +203,6 @@ public class juanMovement : MonoBehaviour
     private void OnDestroy()
     {
         _trapDoor.gameObject.SetActive(true);
+        _cabezaJuan.gameObject.SetActive(true);
     }
 }
