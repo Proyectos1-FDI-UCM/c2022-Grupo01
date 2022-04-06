@@ -24,7 +24,10 @@ public class SalaManager : MonoBehaviour
         BossDoor _bossDoor = collision.gameObject.GetComponent<BossDoor>();
         if (_player != null)
         {
-            EnterSala();
+            if(myState != SalaStates.Completada)
+            {
+                EnterSala();
+            }
         }
         if (_enemy != null)
         {

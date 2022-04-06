@@ -63,6 +63,10 @@ public class GameManager : MonoBehaviour
     {
         _uiManager.UpdateBossbar(health);
     }
+    public void HideBossBar()
+    {
+        _uiManager.HideBossbar();
+    }
 
     public void ShowActiveCooldown(float cooldown, float maxCooldown)
 	{
