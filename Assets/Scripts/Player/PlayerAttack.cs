@@ -61,7 +61,7 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         //cambiar esto a un inputManager
-        if (Input.GetButtonDown("Fire1") && GetComponent<PlayerLife>().health > 0 && _shotCooldownCounter >= _shotCooldown)
+        if (Input.GetButtonDown("Fire2") && GetComponent<PlayerLife>().health > 0 && _shotCooldownCounter >= _shotCooldown)
 		{
             _gun.SetActive(true);
             Shoot();
@@ -69,7 +69,7 @@ public class PlayerAttack : MonoBehaviour
             _shotCooldownCounter = 0;
 		}
         
-        if (Input.GetMouseButton(1) && _meleeCooldownCounter >= _meleeCooldown)
+        if (Input.GetMouseButton(0) && _meleeCooldownCounter >= _meleeCooldown)
 		{
             _gun.SetActive(false);
             Melee();
