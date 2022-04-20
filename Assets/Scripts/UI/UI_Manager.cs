@@ -109,7 +109,7 @@ public class UI_Manager : MonoBehaviour
         //GameManager.Instance.StopEnemies();
         GameManager.Instance.enabled = !pause;
 		_pauseMenu.SetActive(pause);
-        _player.SetActive(!pause);
+        _player.transform.GetChild(0).GetComponentInChildren<SpriteRenderer>().enabled = !pause;
         _cam.enabled = !pause;
     }
 
