@@ -23,10 +23,6 @@ public class PlayerAttack : MonoBehaviour
     #region parameters
     public float meleeDamage = 20, shotForce = 20f, rangeDamage = 25f;
 
-    // BOLSA DE HIELO (Laura)
-    [SerializeField]
-    private float iceForce = 20f;
-    //public float iceDamage = 20f;
     [SerializeField]
     private LayerMask enemyLayers;
     [SerializeField]
@@ -61,7 +57,7 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         //cambiar esto a un inputManager
-        if (Input.GetButtonDown("Fire1") && GetComponent<PlayerLife>().health > 0 && _shotCooldownCounter >= _shotCooldown)
+        if (Input.GetMouseButton(1) && GetComponent<PlayerLife>().health > 0 && _shotCooldownCounter >= _shotCooldown)
 		{
             _gun.SetActive(true);
             Shoot();
@@ -69,7 +65,7 @@ public class PlayerAttack : MonoBehaviour
             _shotCooldownCounter = 0;
 		}
         
-        if (Input.GetMouseButton(1) && _meleeCooldownCounter >= _meleeCooldown)
+        if (Input.GetMouseButton(0) && _meleeCooldownCounter >= _meleeCooldown)
 		{
             _gun.SetActive(false);
             Melee();
@@ -94,7 +90,7 @@ public class PlayerAttack : MonoBehaviour
         else if (movement.y < 0) { _attackPointPosition.y = -attackRange; _attackPointPosition.x = 0f; }
         */
     }
-
+    
     void Melee()
     {
         animator.SetTrigger("Attack");
@@ -102,7 +98,6 @@ public class PlayerAttack : MonoBehaviour
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position + _attackPointPosition, attackRange, enemyLayers);
         Collider2D[] hitSponge = Physics2D.OverlapCircleAll(transform.position + _attackPointPosition, attackRange, bulletLayer);
-
 
         foreach (Collider2D enemy in hitEnemies)
 		{
@@ -126,7 +121,6 @@ public class PlayerAttack : MonoBehaviour
                 if(enemyLife != null)
                 {
                     enemyLife.Damage(meleeDamage);
-
                 }
             }
         }

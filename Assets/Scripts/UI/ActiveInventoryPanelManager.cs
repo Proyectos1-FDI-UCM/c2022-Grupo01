@@ -15,16 +15,6 @@ public class ActiveInventoryPanelManager : MonoBehaviour
         get { return _instance; }
     }
 
-    public void CreateActiveDisplay()
-    {
-        if (activeItemDisplayed != null)
-        {
-            obj2 = Instantiate(_activeInventoryPrefab, Vector3.zero, Quaternion.identity, transform);
-            obj2.GetComponent<RectTransform>().localPosition = GetActiveSlotPosition();
-            activeItemDisplayed = Inventory.Instance.activeItem;
-        }
-    }
-
     public void UpdateActiveDisplay()
     {
         if (activeItemDisplayed != Inventory.Instance.activeItem && activeItemDisplayed == null)
@@ -35,6 +25,8 @@ public class ActiveInventoryPanelManager : MonoBehaviour
             obj2.GetComponent<RectTransform>().localPosition = GetActiveSlotPosition();
 
             activeItemDisplayed = Inventory.Instance.activeItem;
+
+            transform.GetChild(0).gameObject.SetActive(true);
         }
         else if (activeItemDisplayed != Inventory.Instance.activeItem && activeItemDisplayed != null)
         {
@@ -52,10 +44,5 @@ public class ActiveInventoryPanelManager : MonoBehaviour
     void Awake()
     {
         _instance = this;
-    }
-
-    void Start()
-    {
-        CreateActiveDisplay();
     }
 }

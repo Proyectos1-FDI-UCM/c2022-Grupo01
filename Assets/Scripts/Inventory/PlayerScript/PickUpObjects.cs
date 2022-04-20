@@ -26,6 +26,7 @@ public class PickUpObjects : MonoBehaviour
     void PickUpObject(Collider2D item)
 	{
         Object objeto = item.GetComponent<Object>();
+        OpenChest chest = item.GetComponent<OpenChest>();
 
         if(objeto != null)
         {
@@ -57,6 +58,11 @@ public class PickUpObjects : MonoBehaviour
                 GameManager.Instance.ObjectInfo(Inventory.Instance.bottleItem.GetComponent<BottleObject>().nameOnScreen, Inventory.Instance.bottleItem.GetComponent<BottleObject>().littleDescriptionOnScreen);
             }
             item.gameObject.SetActive(false);
+        }
+
+        if(chest != null)
+        {
+            chest.Open();
         }
     }
 }
