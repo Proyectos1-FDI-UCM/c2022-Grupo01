@@ -123,6 +123,7 @@ public class GameManager : MonoBehaviour
     public void GenerateNewFloor()
 	{
         GetComponent<RandomGenerator>().GenerateFloor();
+        _playerManager._playerMovement.gancho = false;
 	}
 
     public void Quit()

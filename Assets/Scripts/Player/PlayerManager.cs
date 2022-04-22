@@ -10,7 +10,7 @@ public class PlayerManager : MonoBehaviour
     
     private PlayerAttack _playerAttack;
     private PlayerLife _playerLife;
-    private PlayerMovement _playerMovement;
+    [HideInInspector] public PlayerMovement _playerMovement;
     private Transform _playerTransform;
     private UI_Manager _uiManager;
     #endregion
