@@ -73,6 +73,8 @@ public class PlayerLife : MonoBehaviour
     }
     private void Die()
 	{
+        AudioManager.Instance.StopPlaying("PlayerHit");
+        AudioManager.Instance.Play("PlayerDeath");
         animator.SetBool("Walk", false);
         GetComponent<PlayerMovement>().enabled = false;
         animator.SetTrigger("Die");

@@ -16,7 +16,12 @@ public class BulletLife : MonoBehaviour
 		GameObject effect = Instantiate(hitEffect, punto.point, Quaternion.identity);
 		Destroy(effect, 2f);
 		PlayerLife playerLife = collision.gameObject.GetComponent<PlayerLife>();
-		if (playerLife != null) PlayerManager.Instance.ChangePlayerLife(-bulletDamage, false);
+		if (playerLife != null)
+		{
+			PlayerManager.Instance.ChangePlayerLife(-bulletDamage, false);
+			AudioManager.Instance.Play("PlayerHit");
+		}
+		else AudioManager.Instance.Play("EnemyHit");
 		Destroy(gameObject);
 	}
 }

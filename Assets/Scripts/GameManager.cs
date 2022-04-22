@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
     }
     public IEnumerator OnPlayerDie()
 	{
-        AudioManager.Instance.Play("Out");
+        AudioManager.Instance.PlayAfter(3.5f, "Out");
         _player.SetActive(false);
         _cam.lerpParameter = 0;
         _cam.GetComponent<FollowComponent>().SetPlayerDead();
@@ -123,6 +123,7 @@ public class GameManager : MonoBehaviour
     public void GenerateNewFloor()
 	{
         GetComponent<RandomGenerator>().GenerateFloor();
+        _playerManager._playerMovement.gancho = false;
 	}
 
     public void Quit()
