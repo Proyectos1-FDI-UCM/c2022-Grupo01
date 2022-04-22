@@ -110,3 +110,21 @@ MonoBehaviour:
     pitch: 1.75
     loop: 0
     source: {fileID: 0}
+  - name: PlayerHit
+    clip: {fileID: 8300000, guid: 10cfc86789cdf4f9db0b00cfb87265ec, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerDeath
+    clip: {fileID: 8300000, guid: 81da6ab2f6dbd454882f9b6ace1d39cc, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyHit
+    clip: {fileID: 8300000, guid: 10cfc86789cdf4f9db0b00cfb87265ec, type: 3}
+    volume: 0.6
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}

@@ -75,4 +75,11 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
+
+    public void PlayAfter(float seconds, string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null) Debug.LogError($"ERROR: El sonido {name} no se encuentra o no existe (¿error al escribir el nombre del sonido?)");
+        else s.source.PlayDelayed(seconds);
+    }
 }
