@@ -20,9 +20,10 @@ public class PlayerMovement : MonoBehaviour
     private bool target = false, getInput = true;
     private float _timeForRoll = 0;
 
-    private Vector3 movementWalk, ganchoDirection, rollDirection;
     public Vector3 animationDirection;
+    private Vector3 movementWalk, ganchoDirection, rollDirection;
     private Vector2 mouse, ganchoPos;
+    private bool inRoll;
 	#endregion
 
 	#region references
@@ -54,7 +55,8 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Rodar(Vector3 movement)
     {
-        _playerManager.PlayerInRoll(true);
+        inRoll = true;
+        _playerManager.PlayerInRoll(inRoll);
         //Empezamos la animaci�n de ruedo
         animator.SetTrigger("Ruedo");
         //Hacemos que el jugador pueda atravesar enemigos
@@ -65,22 +67,17 @@ public class PlayerMovement : MonoBehaviour
         if (movement == Vector3.zero) rollDirection = new Vector3(1, 0, 0);
         else rollDirection = movement;
         
-        int n = 0;
-        while (n < 20 && !Physics2D.Raycast(_myTransform.position, rollDirection, Vector3.Distance(_myTransform.position, _myTransform.position + rollDirection.normalized / rollRaycastDistanceModifier), notRollingLayers))
-        {   
-            playerRB.MovePosition(transform.position + rollDirection.normalized * rollSpeed * Time.fixedDeltaTime);
-            n++;
-            yield return new WaitForSeconds(Time.fixedDeltaTime);
-        }
+        yield return new WaitForSeconds(20 * Time.fixedDeltaTime);
 
         movementWalk = Vector3.zero;
-        
+
         _playerCollider.isTrigger = false;
         animator.SetTrigger("IdleTrigger");
         getInput = true;
         Debug.Log(getInput);
         _timeForRoll = 0;
-        _playerManager.PlayerInRoll(false);
+        inRoll = false;
+        _playerManager.PlayerInRoll(inRoll);
     }
 
     public void LanzaGancho(Vector3 position)
@@ -160,6 +157,11 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.Space) && _timeForRoll >= rodarCooldown && getInput)
             {
                 StartCoroutine(Rodar(animationDirection));
+            }
+
+			if (inRoll && !Physics2D.Raycast(_myTransform.position, rollDirection, Vector3.Distance(_myTransform.position, _myTransform.position + rollDirection.normalized / rollRaycastDistanceModifier), notRollingLayers))
+			{
+                playerRB.MovePosition(transform.position + rollDirection.normalized * rollSpeed * Time.fixedDeltaTime);
             }
 
             //Si has recibido un input y no est�s rodando te mov�s

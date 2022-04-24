@@ -7,9 +7,9 @@ public class PlayerManager : MonoBehaviour
     #region references
     public GameObject player, gun, rotationPoint, model, shotPoint, gancho;
     public Camera cam;
-    
-    private PlayerAttack _playerAttack;
-    private PlayerLife _playerLife;
+
+    [HideInInspector] public PlayerAttack _playerAttack;
+    [HideInInspector] public PlayerLife _playerLife;
     [HideInInspector] public PlayerMovement _playerMovement;
     private Transform _playerTransform;
     private UI_Manager _uiManager;

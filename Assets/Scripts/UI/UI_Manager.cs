@@ -106,6 +106,9 @@ public class UI_Manager : MonoBehaviour
 	{
         if (pause) Time.timeScale = 0;
         else Time.timeScale = 1;
+        PlayerManager.Instance._playerMovement.enabled = !pause;
+        PlayerManager.Instance._playerAttack.enabled = !pause;
+        PlayerManager.Instance._playerLife.enabled = !pause;
         //GameManager.Instance.StopEnemies();
         GameManager.Instance.enabled = !pause;
 		_pauseMenu.SetActive(pause);

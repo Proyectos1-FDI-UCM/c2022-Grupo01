@@ -11,14 +11,15 @@ public class MainMenu : MonoBehaviour
 
 	public static void LoadPlayTutorial()
     {
-        SceneManager.LoadSceneAsync("LoadingTutorial");
+        //SceneManager.LoadSceneAsync("LoadingTutorial");
+        SceneManager.LoadSceneAsync("Tutorial");
     }
 
     public static void LoadingPlayNormalGame()
     {
-        SceneManager.LoadSceneAsync("LoadingGame");
+        //SceneManager.LoadSceneAsync("LoadingGame");
+        SceneManager.LoadSceneAsync("CompleteScene");
     }
-
     public void Quit()
     {
         Application.Quit();

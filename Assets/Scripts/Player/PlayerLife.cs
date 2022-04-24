@@ -113,11 +113,11 @@ public class PlayerLife : MonoBehaviour
     {
         _playerManager = PlayerManager.Instance;
         health = maxHealth;
-        GameManager.Instance.ShowHealth(health);
         _playerManager.UpdateLife(health);
         _playerManager.UpdateMaxLife(maxHealth);
         _playerAttack = GetComponent<PlayerAttack>(); 
         _dead = false;
+        GameManager.Instance.ShowHealth(health);
     }
 
     private void Update()
