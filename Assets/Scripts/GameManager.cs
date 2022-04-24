@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public Vector3 _playerDirection, _necroPosition;
     public List<GameObject> itemList;
 
+    [SerializeField] private Transform _playerToJuan, _playerToSponge;
+
     //Numero de enemigos eliminados durante la partida, para objeto Bayeta
 
     static private GameManager _instance;
@@ -145,6 +147,16 @@ public class GameManager : MonoBehaviour
 	{
         PauseMenu(false);
         SceneManager.LoadScene("Menu");
+	}
+
+    public void GoToJuan()
+	{
+        PlayerManager.Instance.player.transform.position = _playerToJuan.position;
+	}
+
+    public void GoToSponge()
+	{
+        PlayerManager.Instance.player.transform.position = _playerToSponge.position;
 	}
     #endregion
 
