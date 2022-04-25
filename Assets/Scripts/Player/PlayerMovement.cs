@@ -159,7 +159,7 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(Rodar(animationDirection));
             }
 
-			if (inRoll && !Physics2D.Raycast(_myTransform.position, rollDirection, Vector3.Distance(_myTransform.position, _myTransform.position + rollDirection.normalized / rollRaycastDistanceModifier), notRollingLayers))
+			if (inRoll && !Physics2D.Raycast(_myTransform.position + new Vector3(0, 0.5f, 0), rollDirection, Vector3.Distance(_myTransform.position, _myTransform.position + rollDirection.normalized / rollRaycastDistanceModifier), notRollingLayers) && !Physics2D.Raycast(_myTransform.position + new Vector3(0, -0.5f, 0), rollDirection, Vector3.Distance(_myTransform.position, _myTransform.position + rollDirection.normalized / rollRaycastDistanceModifier), notRollingLayers))
 			{
                 playerRB.MovePosition(transform.position + rollDirection.normalized * rollSpeed * Time.fixedDeltaTime);
             }
