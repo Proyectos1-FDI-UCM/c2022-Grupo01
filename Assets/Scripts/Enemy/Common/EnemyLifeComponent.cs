@@ -103,7 +103,10 @@ public class EnemyLifeComponent : MonoBehaviour
 			GameManager.Instance.UpdateBossBar(0);
 		}
 		else Destroy(gameObject, 1f);
-		sala.OnEnemyDies(this);
+		if(sala != null)
+        {
+			sala.OnEnemyDies(this);
+		}
 		GetComponent<BoxCollider2D>().enabled = false;
 		GetComponentInChildren<DetectPlayer>().Deactivate();
 		this.enabled = false;
