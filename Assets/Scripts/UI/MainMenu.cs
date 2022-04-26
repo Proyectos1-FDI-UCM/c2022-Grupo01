@@ -36,4 +36,12 @@ public class MainMenu : MonoBehaviour
 	{
         ShowControls(false);
 	}
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F6))
+        {
+            SceneManager.LoadSceneAsync("DebugMenu");
+        }
+    }
 }

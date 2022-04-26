@@ -28,14 +28,6 @@ public class InputManager : MonoBehaviour
             _pause = !_pause;
             GameManager.Instance.GenerateNewFloor();
 		}
-		if (Input.GetKeyDown(KeyCode.F1))
-		{
-            GameManager.Instance.GoToJuan();
-		}
-		if (Input.GetKeyDown(KeyCode.F2))
-		{
-            GameManager.Instance.GoToSponge();
-		}
 
 		if (Input.GetKeyDown(KeyCode.R))
 		{
