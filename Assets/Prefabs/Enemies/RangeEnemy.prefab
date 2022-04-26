@@ -210,7 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sala: {fileID: 0}
   _currentLife: 0
-  maxLife: 10
+  maxLife: 20
   ID: 0
   _isDead: 0
   animator: {fileID: 6261920538391311323}

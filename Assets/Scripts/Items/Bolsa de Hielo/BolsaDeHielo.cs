@@ -20,7 +20,7 @@ public class BolsaDeHielo : MonoBehaviour
     #region methods
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Explode();
+        Destroy(gameObject);
     }
 
     void Explode()
@@ -39,10 +39,7 @@ public class BolsaDeHielo : MonoBehaviour
     {
         _iceCooldownCounter += Time.deltaTime;
 
-        if (_iceCooldownCounter >= _iceCooldown)
-        {
-            Explode();
-        }
+        if (_iceCooldownCounter >= _iceCooldown) Destroy(gameObject);
     }
 
 	private void OnDestroy()

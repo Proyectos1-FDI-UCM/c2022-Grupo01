@@ -23,18 +23,15 @@ public class IceBagEffect : MonoBehaviour
 
         foreach (Collider2D enemy in hitPlayer)
         {
-            enemy.GetComponent<EnemyLifeComponent>().Damage(_iceDamage);
-            if (enemy.GetComponent<NavMeshAgent>() != null) 
+            try { enemy.GetComponent<EnemyLifeComponent>().Damage(_iceDamage); }
+            catch { Debug.Log(enemy.name + " no quiere ser golpeado"); }
+            if (enemy.GetComponent<MeleeMovement>() != null) 
             {
-                enemy.GetComponent<NavMeshAgent>().speed /= 2;
+                enemy.GetComponent<MeleeMovement>().speed /= 2;
             }
             else if (enemy.GetComponent<FleeingEnemyMovement>() != null) 
             {
                 enemy.GetComponent<FleeingEnemyMovement>()._speed /= 2;
-            }
-            else if (enemy.GetComponent<RangeMovement>() != null) 
-            {
-                enemy.GetComponent<RangeMovement>().speed /= 2;
             }
         }
     }
@@ -47,7 +44,7 @@ public class IceBagEffect : MonoBehaviour
         {
             foreach (Collider2D enemy in hitPlayer)
             {
-                if (enemy.GetComponent<NavMeshAgent>() != null) enemy.GetComponent<NavMeshAgent>().speed *= 2;
+                if (enemy.GetComponent<MeleeMovement>() != null) enemy.GetComponent<MeleeMovement>().speed *= 2;
                 else if (enemy.GetComponent<FleeingEnemyMovement>() != null) enemy.GetComponent<FleeingEnemyMovement>()._speed *= 2;
                 else if (enemy.GetComponent<RangeMovement>() != null) enemy.GetComponent<RangeMovement>().speed *= 2;
             }

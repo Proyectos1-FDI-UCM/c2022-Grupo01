@@ -213,6 +213,7 @@ MonoBehaviour:
   _currentLife: 0
   maxLife: 30
   ID: 0
+  _isDead: 0
   animator: {fileID: 9191831522005992302}
 --- !u!114 &9191831522005992303
 MonoBehaviour:
@@ -280,5 +281,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerDistance: 1.8
-  _speed: 4
+  speed: 4
   _animator: {fileID: 9191831522005992302}

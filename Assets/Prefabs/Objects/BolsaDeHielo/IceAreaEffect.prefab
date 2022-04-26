@@ -99,5 +99,5 @@ MonoBehaviour:
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  _iceDamage: 30
+  _iceDamage: 20
   _timeToDestroy: 5

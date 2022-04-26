@@ -17,7 +17,7 @@ public class PlayerManager : MonoBehaviour
 
     #region properties
     [HideInInspector] public bool bayeta = false;
-    [HideInInspector] public int _deadEnemyCount = 0;
+    public int _deadEnemyCount = 0;
     public enum LifeStates { Normal, Shield, HolyFlotador };   // A�adir shields en el futuro
     public LifeStates myLifeState;
     #endregion

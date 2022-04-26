@@ -49,11 +49,6 @@ public class SpongeLifeComponent : MonoBehaviour
 	/// </summary>
 	private BubbleAttack bubble;
 
-	/// <summary>
-	/// Referencia a BolsaDeHielo
-	/// </summary>
-	private BolsaDeHielo ice;
-
 	private BossMovement _bossMovement;
 
 	[SerializeField] private GameObject _victoryDuck;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InputManager : MonoBehaviour
 {
@@ -34,6 +35,11 @@ public class InputManager : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.F2))
 		{
             GameManager.Instance.GoToSponge();
+		}
+
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
 		}
     }
 }

@@ -124,7 +124,9 @@ public class GameManager : MonoBehaviour
 
     public void GenerateNewFloor()
 	{
-        GetComponent<RandomGenerator>().GenerateFloor();
+        foreach (GameObject item in Inventory.Instance.passiveItemList) if (item.GetComponent<PassiveObject>().ID == 3) { PlayerManager.Instance.myLifeState = PlayerManager.LifeStates.HolyFlotador; HolyFlotadorImage.Instance.enabled = true; }
+        try { GetComponent<RandomGenerator>().GenerateFloor(); }
+        catch { Debug.Log("There is no RandomGenerator"); }
         _playerManager._playerMovement.gancho = false;
 	}
 

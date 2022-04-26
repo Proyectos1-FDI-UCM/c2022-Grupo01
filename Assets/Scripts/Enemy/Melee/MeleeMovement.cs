@@ -11,8 +11,7 @@ public class MeleeMovement : MonoBehaviour
     private int _wallsLayerMask, _voidLayerMask;
     #endregion
     #region parameters
-    [SerializeField]
-    private float _speed = 1f;
+    public float speed = 1f;
     #endregion
     #region methods
     public void ExecuteMeleeEnemyMovement()
@@ -54,7 +53,7 @@ public class MeleeMovement : MonoBehaviour
             {
                 if (distance > _playerDistance)
                 {
-                    _mytransform.position += _speed * directionNormalized * Time.deltaTime;
+                    _mytransform.position += speed * directionNormalized * Time.deltaTime;
                     _animator.SetBool("Walk", true);
                 }
                 else
