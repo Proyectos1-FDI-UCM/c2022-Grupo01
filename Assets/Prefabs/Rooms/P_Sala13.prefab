@@ -683,7 +683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerDistance: 1.8
-  _speed: 4
+  speed: 1
   _animator: {fileID: 219524610954049673}
 --- !u!1 &503443137659427225
 GameObject:
@@ -2017,7 +2017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerDistance: 1.8
-  _speed: 4
+  speed: 1
   _animator: {fileID: 1363587304669254164}
 --- !u!1 &1363587305250221882
 GameObject:
@@ -2388,7 +2388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sala: {fileID: 0}
   _currentLife: 0
-  maxLife: 10
+  maxLife: 20
   ID: 0
   _isDead: 0
   animator: {fileID: 2782609669985502911}
@@ -7182,7 +7182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sala: {fileID: 0}
   _currentLife: 0
-  maxLife: 10
+  maxLife: 20
   ID: 0
   _isDead: 0
   animator: {fileID: 4226899864545622315}
@@ -9055,7 +9055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerDistance: 1.8
-  _speed: 4
+  speed: 1
   _animator: {fileID: 7399635663918453336}
 --- !u!1 &7412050991736272014
 GameObject:
