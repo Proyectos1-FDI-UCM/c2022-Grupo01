@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +8,7 @@ public class NecromancerController : MonoBehaviour
     [SerializeField]
     private float _currentTime, _timeLeft = 3;
     //public float add;
+    [SerializeField] private LayerMask colisiones;
 
     [SerializeField]
     private GameObject _weakEnemy;
@@ -34,6 +35,13 @@ public class NecromancerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 rangoGeneracion = new Vector3(Random.Range(-1, 2), Random.Range(-1, 2), 0);
+
+        if(Physics2D.Raycast(_myTransform.position, _myTransform.position + rangoGeneracion, (_myTransform.position + rangoGeneracion).magnitude, colisiones))
+        {
+
+        }
+
         _currentTime -= Time.deltaTime;
         if (_currentTime < 0 && _weakCounter < 4)
         {
