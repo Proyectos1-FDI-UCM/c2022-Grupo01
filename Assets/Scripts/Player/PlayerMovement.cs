@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -143,7 +143,7 @@ public class PlayerMovement : MonoBehaviour
                 
             }
             
-            if (pickUpHook && Input.GetKey(KeyCode.E)/*Input.GetMouseButton(1)*/)
+            if (pickUpHook && Input.GetKeyDown(KeyCode.E)/*Input.GetMouseButton(1)*/)
             {
                 ganchoPos = mouse;
                 ganchoDirection = ganchoPos - (Vector2) _myTransform.position;
