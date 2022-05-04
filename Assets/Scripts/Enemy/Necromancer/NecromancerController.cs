@@ -35,22 +35,23 @@ public class NecromancerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _currentTime -= Time.deltaTime;
+
         Vector3 rangoGeneracion = new Vector3(Random.Range(-1, 2), Random.Range(-1, 2), 0);
 
-        if(Physics2D.Raycast(_myTransform.position, _myTransform.position + rangoGeneracion, (_myTransform.position + rangoGeneracion).magnitude, colisiones))
+        if(!Physics2D.Raycast(_myTransform.position, _myTransform.position + rangoGeneracion, (_myTransform.position + rangoGeneracion).magnitude, colisiones))
         {
-
+            if (_currentTime < 0 && _weakCounter < 4)
+            {
+                _weakEnemyInstance = Instantiate(_weakEnemy, _myTransform.position + rangoGeneracion, Quaternion.identity);
+                _weakEnemyInstance.GetComponent<WeakEnemy>()._necromancer = this;
+                AudioManager.Instance.Play("NecromancerSummon");
+                _currentTime = _timeLeft;
+                _weakCounter++;
+            }
         }
 
-        _currentTime -= Time.deltaTime;
-        if (_currentTime < 0 && _weakCounter < 4)
-        {
-            _weakEnemyInstance = Instantiate(_weakEnemy, _myTransform.position, Quaternion.identity);
-            _weakEnemyInstance.GetComponent<WeakEnemy>()._necromancer = this;
-            AudioManager.Instance.Play("NecromancerSummon");
-            _currentTime = _timeLeft;
-            _weakCounter++;
-        }
+       
 
         else if (_weakCounter >= 4)
         {

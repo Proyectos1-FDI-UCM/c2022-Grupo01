@@ -213,6 +213,7 @@ MonoBehaviour:
   _currentLife: 0
   maxLife: 40
   ID: 0
+  _isDead: 0
   animator: {fileID: 2223008597245930797}
 --- !u!114 &5222318862485010865
 MonoBehaviour:
@@ -241,6 +242,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentTime: 0
   _timeLeft: 1.5
+  colisiones:
+    serializedVersion: 2
+    m_Bits: 574208
   _weakEnemy: {fileID: 6708671370522219186, guid: 7a65554a7f8e37d429dc0823da17a081, type: 3}
   _weakCounter: 0
 --- !u!114 &1438671300
