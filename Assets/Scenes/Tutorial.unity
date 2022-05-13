@@ -24435,7 +24435,7 @@ PrefabInstance:
     - target: {fileID: 6576827733805894764, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
       propertyPath: textoTutorial
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2725366017124867624, guid: 3fe57bb425a6dc2498114798150f2b92, type: 3}
     - target: {fileID: 6576827733805894764, guid: 93dfb85c5350db145883ed4e70825bea, type: 3}
       propertyPath: _tiempoVisible
       value: 5
