@@ -8348,6 +8348,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 3871545353054597194}
     m_Modifications:
     - target: {fileID: 1072591426953504343, guid: df0a622efa618ed44bafd2587da4ab7a, type: 3}
+      propertyPath: textoTutorial
+      value: 
+      objectReference: {fileID: 2725366017124867624, guid: 3fe57bb425a6dc2498114798150f2b92, type: 3}
+    - target: {fileID: 1072591426953504343, guid: df0a622efa618ed44bafd2587da4ab7a, type: 3}
       propertyPath: _tiempoVisible
       value: 4
       objectReference: {fileID: 0}
