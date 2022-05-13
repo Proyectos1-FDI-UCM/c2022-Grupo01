@@ -89,7 +89,8 @@ footer p {
   }
 }
 
-@font-face {
-  src: url(fonts/Fresh_Nieve.otf);
-  font-family: fresh nieve;
+.paragraph {
+  font-size: 750%;
+  font-family: 'Frijole', cursive;
 }
+
