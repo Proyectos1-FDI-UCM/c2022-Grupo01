@@ -38,7 +38,7 @@ public class UI_Manager : MonoBehaviour
             _healthSlider.value = health;
         }
 
-        _healthBarText.text = "Hydration: " + health;
+        _healthBarText.text = "Hydration: " + health + " | " + PlayerManager.Instance.maxHealth;
     }
 
     public void CreateBossBar(string bossName, float maxHealth)

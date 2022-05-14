@@ -7600,6 +7600,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1773576267}
+    - target: {fileID: 3790373738356874102, guid: 5190ae259f44d6d41ac6956295c492b8, type: 3}
+      propertyPath: m_margin.z
+      value: -85.98764
+      objectReference: {fileID: 0}
     - target: {fileID: 8598375324300007457, guid: 5190ae259f44d6d41ac6956295c492b8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -7712,5 +7716,9 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1957454366}
+    - target: {fileID: 9073379212475597844, guid: 5190ae259f44d6d41ac6956295c492b8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 104.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5190ae259f44d6d41ac6956295c492b8, type: 3}
