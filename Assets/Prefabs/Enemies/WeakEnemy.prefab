@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerDistance: 0
-  speed: 8
+  speed: 6.5
   _animator: {fileID: 9195848397771939019}
 --- !u!1 &8480030182928531357
 GameObject:

@@ -21,6 +21,7 @@ public class IceBagEffect : MonoBehaviour
     {
         hitPlayer = Physics2D.OverlapCircleAll(transform.position, _attackRange, _enemyLayer);
 
+        Destroy(gameObject, _timeToDestroy);
         foreach (Collider2D enemy in hitPlayer)
         {
             try { enemy.GetComponent<EnemyLifeComponent>().Damage(_iceDamage); }
@@ -48,7 +49,6 @@ public class IceBagEffect : MonoBehaviour
                 else if (enemy.GetComponent<FleeingEnemyMovement>() != null) enemy.GetComponent<FleeingEnemyMovement>()._speed *= 2;
                 else if (enemy.GetComponent<RangeMovement>() != null) enemy.GetComponent<RangeMovement>().speed *= 2;
             }
-            Destroy(gameObject);
         }
     }
 }

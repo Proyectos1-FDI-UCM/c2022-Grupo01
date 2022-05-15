@@ -174,9 +174,9 @@ public class PlayerMovement : MonoBehaviour
             hook.GetComponent<gancho>().StartCoroutine(hook.GetComponent<gancho>().LaunchHook(mouse));
         }
 
-		else if (!hook.GetComponent<gancho>().launching && hook.GetComponent<gancho>().canMove)
+		else if (!hook.GetComponent<gancho>().launching && hook.GetComponent<gancho>().canMove && Vector3.Magnitude(transform.position - hook.transform.position) > 0.2)
 		{
-            hook.transform.Translate(10 * Time.deltaTime * (transform.position - hook.transform.position).normalized);
+            hook.transform.Translate(20 * Time.deltaTime * (transform.position - hook.transform.position).normalized);
         }
 
         //Input rodar

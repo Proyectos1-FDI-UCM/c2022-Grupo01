@@ -52,7 +52,7 @@ public class gancho : MonoBehaviour
 	{
 		if (canMove)
 		{
-			if (Vector3.Magnitude(transform.position - PlayerManager.Instance._playerPosition) < 1) { canLaunch = true; gameObject.SetActive(false); }
+			if (Vector3.Magnitude(transform.position - PlayerManager.Instance._playerPosition) < 0.2) { canLaunch = true; gameObject.SetActive(false); }
 			else { canLaunch = false; }
 		}
 	}
