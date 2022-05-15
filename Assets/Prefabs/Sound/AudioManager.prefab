@@ -128,3 +128,9 @@ MonoBehaviour:
     pitch: 1.75
     loop: 0
     source: {fileID: 0}
+  - name: BossEsponjaMainTheme
+    clip: {fileID: 8300000, guid: b2b2f253cfc584cceaee1e80a653d270, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}

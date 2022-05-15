@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -127,6 +127,7 @@ public class SpongeLifeComponent : MonoBehaviour
 		//GameManager.Instance.ShowBossBar("Boss Esponja", maxLife);
 		_currentLife = maxLife;
 		_bossMovement = GetComponent<BossMovement>();
+		AudioManager.Instance.Play("BossEsponjaMainTheme");
 	}
 
     void Update()
