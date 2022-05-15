@@ -3823,7 +3823,17 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 6210844257184882938}
+    m_ColliderPaths:
+    - - X: -1190000000
+        Y: 340000000
+      - X: -1190000000
+        Y: 370000000
+      - X: -1250000000
+        Y: 370000000
+      - X: -1250000000
+        Y: 340000000
   m_CompositePaths:
     m_Paths:
     - - {x: -119.00003, y: 34}
@@ -4440,7 +4450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2316836972329436470
 Transform:
   m_ObjectHideFlags: 0
@@ -6229,7 +6239,17 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 7568057718992495140}
+    m_ColliderPaths:
+    - - X: -1190000000
+        Y: 540000000
+      - X: -1190000000
+        Y: 570000000
+      - X: -1250000000
+        Y: 570000000
+      - X: -1250000000
+        Y: 540000000
   m_CompositePaths:
     m_Paths:
     - - {x: -119.00003, y: 54}
@@ -13626,7 +13646,17 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 4749595387902823161}
+    m_ColliderPaths:
+    - - X: -1050000000
+        Y: 430000000
+      - X: -1050000000
+        Y: 490000000
+      - X: -1060000000
+        Y: 490000000
+      - X: -1060000000
+        Y: 430000000
   m_CompositePaths:
     m_Paths:
     - - {x: -105.00003, y: 43}
@@ -14329,7 +14359,17 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 4410542727572645509}
+    m_ColliderPaths:
+    - - X: -1380000000
+        Y: 430000000
+      - X: -1380000000
+        Y: 490000000
+      - X: -1390000000
+        Y: 490000000
+      - X: -1390000000
+        Y: 430000000
   m_CompositePaths:
     m_Paths:
     - - {x: -138.00003, y: 43}
