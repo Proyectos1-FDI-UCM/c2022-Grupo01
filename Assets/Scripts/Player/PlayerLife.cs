@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -54,6 +54,7 @@ public class PlayerLife : MonoBehaviour
         {
             StartCoroutine("GetInvulnerable");
             animator.SetTrigger("Hurt");
+            AudioManager.Instance.Play("PlayerHurt");
         }
     }
 

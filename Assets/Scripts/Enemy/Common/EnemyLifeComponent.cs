@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -83,6 +83,7 @@ public class EnemyLifeComponent : MonoBehaviour
 	public void Damage(float damage)
 	{
 		animator.SetTrigger("Hurt");
+		AudioManager.Instance.Play("EnemyHurt");
 
 		_currentLife -= damage;
 		
@@ -97,6 +98,7 @@ public class EnemyLifeComponent : MonoBehaviour
 		GameManager.Instance.DeadEnemies();
 		_isDead = true;
 		animator.SetTrigger("Die");
+		AudioManager.Instance.Play("EnemyDeath");
         if (maxLife > 200)
         {
 			Destroy(gameObject, 2f);
