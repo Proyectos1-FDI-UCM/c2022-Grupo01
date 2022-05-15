@@ -137,13 +137,19 @@ MonoBehaviour:
   - name: PlayerHurt
     clip: {fileID: 8300000, guid: 19974de615a4e48bba51c59cbaadb3e5, type: 3}
     volume: 0.6
-    pitch: 1.67
+    pitch: 1.65
     loop: 0
     source: {fileID: 0}
   - name: EnemyDeath
     clip: {fileID: 8300000, guid: 81da6ab2f6dbd454882f9b6ace1d39cc, type: 3}
     volume: 0.6
     pitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemySweep
+    clip: {fileID: 8300000, guid: a533a862484954a1ca1a2760e69ff067, type: 3}
+    volume: 0.55
+    pitch: 0.66
     loop: 0
     source: {fileID: 0}
   - name: BossEsponjaMainTheme

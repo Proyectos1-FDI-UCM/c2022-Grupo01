@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -61,6 +61,7 @@ public class MeleeAttack : MonoBehaviour
 	private void Melee()
 	{
 		_animator.SetTrigger("Attack");
+		AudioManager.Instance.Play("EnemySweep");
 
 		Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(transform.position, _attackRange, _playerLayer);
 		try

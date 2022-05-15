@@ -115,6 +115,7 @@ public class SpongeLifeComponent : MonoBehaviour
 		{
 			_bossMovement._bossRB.constraints = RigidbodyConstraints2D.FreezeAll;
 			animator.SetTrigger("DEAD");
+			AudioManager.Instance.StopPlaying("BossEsponjaMainTheme");
 			Destroy(gameObject, 2.5f);
 			dead = true;
 			sala.OnEnemyDies(this);
