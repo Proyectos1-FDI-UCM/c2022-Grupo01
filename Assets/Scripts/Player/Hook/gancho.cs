@@ -5,14 +5,56 @@ using UnityEngine;
 public class gancho : MonoBehaviour
 {
 	public PlayerMovement player;
-
-	public void LanzaGancho(Vector3 position, Vector3 travelPoint)
+	[SerializeField] private float distance = 20;
+	public float speed = 10;
+	[HideInInspector] public float hookSpeed;
+	[HideInInspector] public bool launching = false, canLaunch = true, canMove = true;
+	public IEnumerator LaunchHook(Vector3 position)
 	{
-		player.LanzaGancho(position, travelPoint);
+		launching = true;
+		int i = 0;
+		Vector2 dir = (position - transform.position).normalized;
+		while (i < distance)
+		{
+			transform.Translate(dir * hookSpeed * Time.deltaTime);
+			i++;
+			yield return new WaitForSeconds(Time.deltaTime);
+		}
+		Comeback();
 	}
 
-	private void OnCollisionEnter2D(Collision2D collision)
+	void Comeback()
 	{
-		player.gancho = false;
+		launching = false;
+	}
+
+	private void Start()
+	{
+		hookSpeed = speed;
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		PosteDetector poste = collision.GetComponent<PosteDetector>();
+
+		if (collision.gameObject != player.gameObject && poste == null)
+		{
+			StopCoroutine("LaunchHook");
+			Comeback();
+		}
+		else if (poste != null)
+		{
+			Debug.Log("JoDEROJOEWDJOER");
+			player.StartCoroutine(player.MovePlayerToHookPoint(poste.travelPoint.position));
+		}
+	}
+
+	private void Update()
+	{
+		if (canMove)
+		{
+			if (Vector3.Magnitude(transform.position - PlayerManager.Instance._playerPosition) < 1) { canLaunch = true; gameObject.SetActive(false); }
+			else { canLaunch = false; }
+		}
 	}
 }

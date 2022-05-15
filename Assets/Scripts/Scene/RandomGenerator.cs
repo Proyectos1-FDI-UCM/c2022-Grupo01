@@ -166,6 +166,8 @@ public class RandomGenerator : MonoBehaviour
         }
 
         PlayerManager.Instance.player.transform.position = newRoom.transform.position + new Vector3(-122, 45, 0);
+        PlayerManager.Instance.UpdatePosition();
+        PlayerManager.Instance.gancho.transform.position = PlayerManager.Instance._playerPosition;
         lastRoomPosition[0] = i;
         lastRoomPosition[1] = j;
         gameObjectPrefabs[lastRoomPosition[0], lastRoomPosition[1]] = newRoom;

@@ -66,6 +66,8 @@ MonoBehaviour:
   - {fileID: 5102250945931165755, guid: 07cffc66f35b46c42ba7145e93707a3e, type: 3}
   - {fileID: 5102250945931165755, guid: 00c8e8d59f994944aaa2c930706cf76b, type: 3}
   - {fileID: 8274233382138784993, guid: a82a3a4f165f2b449b2d83b9316378b2, type: 3}
+  _playerToJuan: {fileID: 0}
+  _playerToSponge: {fileID: 0}
 --- !u!114 &632344021560230654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +119,9 @@ MonoBehaviour:
   shotPoint: {fileID: 0}
   gancho: {fileID: 0}
   cam: {fileID: 0}
+  _playerAttack: {fileID: 0}
+  _playerLife: {fileID: 0}
+  _playerMovement: {fileID: 0}
   bayeta: 0
   _deadEnemyCount: 123
   myLifeState: 0

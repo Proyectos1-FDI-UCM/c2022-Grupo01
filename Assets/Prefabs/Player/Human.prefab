@@ -196,13 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 10
   rollSpeed: 20
-  hookSpeed: 2
-  rango: 10
   rodarCooldown: 0.42
-  notRollingLayers:
-    serializedVersion: 2
-    m_Bits: 33536
-  rollRaycastDistanceModifier: 2
   gancho: 0
   animationDirection: {x: 0, y: 0, z: 0}
   canRoll: 0

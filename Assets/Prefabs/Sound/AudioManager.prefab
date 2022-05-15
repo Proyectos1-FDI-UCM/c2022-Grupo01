@@ -125,6 +125,6 @@ MonoBehaviour:
   - name: EnemyHit
     clip: {fileID: 8300000, guid: 10cfc86789cdf4f9db0b00cfb87265ec, type: 3}
     volume: 0.6
-    pitch: 2
+    pitch: 1.75
     loop: 0
     source: {fileID: 0}
