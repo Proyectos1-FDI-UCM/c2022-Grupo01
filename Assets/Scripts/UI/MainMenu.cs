@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
@@ -9,16 +10,18 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject _controls, _button;
 	#endregion
 
-	public static void LoadPlayTutorial()
+	public void LoadPlayTutorial()
     {
         //SceneManager.LoadSceneAsync("LoadingTutorial");
         SceneManager.LoadSceneAsync("Tutorial");
+        GetComponent<Button>().interactable = false;
     }
 
-    public static void LoadingPlayNormalGame()
+    public void LoadingPlayNormalGame()
     {
         //SceneManager.LoadSceneAsync("LoadingGame");
         SceneManager.LoadSceneAsync("CompleteScene");
+        GetComponent<Button>().interactable = false;
     }
     public void Quit()
     {
