@@ -23,9 +23,10 @@ public class gancho : MonoBehaviour
 		Comeback();
 	}
 
-	void Comeback()
+	public void Comeback()
 	{
 		launching = false;
+		player.animator.SetTrigger("IdleTrigger");
 	}
 
 	private void Start()
