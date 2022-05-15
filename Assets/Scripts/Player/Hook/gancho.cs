@@ -6,9 +6,9 @@ public class gancho : MonoBehaviour
 {
 	public PlayerMovement player;
 
-	public void LanzaGancho(Vector3 position)
+	public void LanzaGancho(Vector3 position, Vector3 travelPoint)
 	{
-		player.LanzaGancho(position);
+		player.LanzaGancho(position, travelPoint);
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)

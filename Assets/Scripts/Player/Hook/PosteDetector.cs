@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class PosteDetector : MonoBehaviour
 {
-    public void OnTriggerEnter2D(Collider2D collision)
+    #region references
+    public Transform travelPoint;
+	#endregion
+
+	public void OnTriggerEnter2D(Collider2D collision)
     {
         gancho _gancho = collision.gameObject.GetComponent<gancho>();
         if (_gancho != null)
         {
-            Debug.Log("Detecta gancho");
-            _gancho.LanzaGancho(transform.position);
+            _gancho.LanzaGancho(transform.position, travelPoint.position);
         }
     }
 }

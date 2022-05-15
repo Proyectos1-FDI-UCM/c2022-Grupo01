@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector3 animationDirection;
     private Vector3 movementWalk, ganchoDirection, rollDirection;
-    private Vector2 mouse, ganchoPos;
+    private Vector2 mouse, ganchoPos, postePosition;
     [HideInInspector] public bool canRoll = true;
     private bool inRoll;
 	#endregion
@@ -85,15 +85,16 @@ public class PlayerMovement : MonoBehaviour
         _playerManager.PlayerInRoll(inRoll);
     }
 
-    public void LanzaGancho(Vector3 position)
+    public void LanzaGancho(Vector3 position, Vector3 travelPoint)
     {
         //Debug.LogWarning(position);
         ganchoPos = position;
         //ganchoDirection = position - _myTransform.position;
-        ganchoDirection = _hookTransform.position - _myTransform.position;
+        ganchoDirection = travelPoint - _myTransform.position;
         target = true;
         _playerCollider.isTrigger = true;
         animator.SetBool("JUMP",true);
+        transform.GetChild(3).gameObject.SetActive(false);
     }
 
     public void ModifyPlayerSpeed(int speed)
@@ -180,7 +181,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("Walk", false);
 
-            if (target == false)
+            if (!target)
             {
                 if (Vector3.Magnitude(_myTransform.position - _hookTransform.position) < rango) _hookTransform.Translate(hookSpeed * Time.deltaTime * ganchoDirection.normalized * 5);
 
@@ -192,7 +193,6 @@ public class PlayerMovement : MonoBehaviour
                 if (!pickUpHook)
                 {
                     //Move(ganchoDirection);
-                    animator.SetBool("JUMP", true);
                     animator.SetBool("JUMP", false);
                     Move(ganchoDirection);
                     
@@ -204,8 +204,9 @@ public class PlayerMovement : MonoBehaviour
                     gancho = false;
                     target = false;
                     animator.SetBool("JUMP", false);
+                    transform.GetChild(3).gameObject.SetActive(true);
                     //animator.SetTrigger("IdleTrigger");
-                }               
+                }
             }
         }
 
