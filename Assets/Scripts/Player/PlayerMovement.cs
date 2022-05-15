@@ -25,8 +25,7 @@ public class PlayerMovement : MonoBehaviour
     #endregion
 
     #region references
-    [SerializeField]
-    private Animator animator;
+    public Animator animator;
     [SerializeField]
     private Camera cam;
     [SerializeField]
@@ -111,6 +110,7 @@ public class PlayerMovement : MonoBehaviour
 
     public IEnumerator MovePlayerToHookPoint(Vector3 travelPoint)
     {
+        transform.GetChild(3).gameObject.SetActive(false);
         GetComponent<Collider2D>().isTrigger = true;
         hook.GetComponent<gancho>().canMove = false;
         hook.GetComponent<gancho>().hookSpeed = 0;
@@ -124,11 +124,13 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(Time.deltaTime);
 		}
 
+        hook.GetComponent<gancho>().Comeback();
         animator.SetBool("JUMP", false);
         getInput = true;
         hook.GetComponent<gancho>().hookSpeed = hook.GetComponent<gancho>().speed;
         hook.GetComponent<gancho>().canMove = true;
         GetComponent<Collider2D>().isTrigger = false;
+        transform.GetChild(3).gameObject.SetActive(true);
 	}
 
     public void ModifyPlayerSpeed(int speed)
