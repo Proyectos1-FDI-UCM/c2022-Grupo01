@@ -75,6 +75,7 @@ public class SpongeDetectPlayer : MonoBehaviour
                 {
                     //Debug.Log("Activate");
                     Activate();
+                    AudioManager.Instance.Play("BossEsponjaMainTheme");
                 }
             }
         }

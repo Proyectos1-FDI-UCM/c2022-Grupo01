@@ -119,6 +119,7 @@ public class SpongeLifeComponent : MonoBehaviour
 			Destroy(gameObject, 2.5f);
 			dead = true;
 			sala.OnEnemyDies(this);
+			transform.GetChild(0).gameObject.SetActive(false);
 		}
 	}
 	#endregion
@@ -128,7 +129,6 @@ public class SpongeLifeComponent : MonoBehaviour
 		//GameManager.Instance.ShowBossBar("Boss Esponja", maxLife);
 		_currentLife = maxLife;
 		_bossMovement = GetComponent<BossMovement>();
-		AudioManager.Instance.Play("BossEsponjaMainTheme");
 	}
 
     void Update()

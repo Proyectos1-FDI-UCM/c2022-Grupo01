@@ -809,14 +809,6 @@ PrefabInstance:
       propertyPath: Scenary
       value: 
       objectReference: {fileID: 614648290}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: roomPrefabs.Array.size
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 632344021560230593, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: roomPrefabs.Array.data[31]
-      value: 
-      objectReference: {fileID: 6125020029698661656, guid: 908cd580a937dd044b26078446fe9184, type: 3}
     - target: {fileID: 632344021560230595, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
       propertyPath: cam
       value: 
@@ -897,14 +889,6 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 5272552500916890694}
-    - target: {fileID: 632344021560230653, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: _playerToJuan
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 632344021560230653, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
-      propertyPath: _playerToSponge
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 632344021560230654, guid: 8e0fa60e04dd09745a4306f16d1cd856, type: 3}
       propertyPath: _cam
       value: 

@@ -69,7 +69,7 @@ public class PlayerManager : MonoBehaviour
 
     public void UpdatePosition()
     {
-        _playerPosition = _playerTransform.position;
+        _playerPosition = player.transform.position;
     }
 
     public void PlayerInRoll(bool inRoll)

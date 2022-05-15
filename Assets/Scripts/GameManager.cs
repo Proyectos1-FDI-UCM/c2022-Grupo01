@@ -169,7 +169,6 @@ public class GameManager : MonoBehaviour
 
 	private void Start()
 	{
-        try { GetComponent<RandomGenerator>().GenerateFloor(); }
-        catch { Debug.Log("There is no random generator"); }
+        GetComponent<RandomGenerator>().GenerateFloor();
 	}
 }
