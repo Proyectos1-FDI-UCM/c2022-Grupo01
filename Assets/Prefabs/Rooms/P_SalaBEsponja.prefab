@@ -17421,7 +17421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6316753048730843751, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}
       propertyPath: m_Name
-      value: Boss ESponja
+      value: BossEsponja
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fc52d9f8237d3e4a836761694f51c19, type: 3}

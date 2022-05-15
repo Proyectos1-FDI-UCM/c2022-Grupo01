@@ -62,8 +62,6 @@ public class RangeAttack : MonoBehaviour
         {
             this.enabled = false;
         }
-
-
     }
     
 }

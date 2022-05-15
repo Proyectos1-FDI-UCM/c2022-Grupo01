@@ -44,7 +44,6 @@ public class gancho : MonoBehaviour
 		}
 		else if (poste != null)
 		{
-			Debug.Log("JoDEROJOEWDJOER");
 			player.StartCoroutine(player.MovePlayerToHookPoint(poste.travelPoint.position));
 		}
 	}

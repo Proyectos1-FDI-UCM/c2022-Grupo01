@@ -37,21 +37,23 @@ public class NecromancerController : MonoBehaviour
     {
         _currentTime -= Time.deltaTime;
 
-        Vector3 rangoGeneracion = new Vector3(Random.Range(-1, 2), Random.Range(-1, 2), 0);
+        Vector3 rangoGeneracion = Vector3.zero;
 
-        if(!Physics2D.Raycast(_myTransform.position, _myTransform.position + rangoGeneracion, (_myTransform.position + rangoGeneracion).magnitude, colisiones))
+        if (_currentTime < 0 && _weakCounter < 4)
         {
-            if (_currentTime < 0 && _weakCounter < 4)
-            {
-                _weakEnemyInstance = Instantiate(_weakEnemy, _myTransform.position + rangoGeneracion, Quaternion.identity);
-                _weakEnemyInstance.GetComponent<WeakEnemy>()._necromancer = this;
-                AudioManager.Instance.Play("NecromancerSummon");
-                _currentTime = _timeLeft;
-                _weakCounter++;
-            }
+            switch (_weakCounter)
+			{
+                case 0: rangoGeneracion = new Vector3(1, 0, 0); break;
+                case 1: rangoGeneracion = new Vector3(-1, 0, 0); break;
+                case 2: rangoGeneracion = new Vector3(0, 1, 0); break;
+                case 3: rangoGeneracion = new Vector3(0, -1, 0); break;
+			}
+            _weakEnemyInstance = Instantiate(_weakEnemy, _myTransform.position + rangoGeneracion, Quaternion.identity);
+            _weakEnemyInstance.GetComponent<WeakEnemy>()._necromancer = this;
+            AudioManager.Instance.Play("NecromancerSummon");
+            _currentTime = _timeLeft;
+            _weakCounter++;
         }
-
-       
 
         else if (_weakCounter >= 4)
         {

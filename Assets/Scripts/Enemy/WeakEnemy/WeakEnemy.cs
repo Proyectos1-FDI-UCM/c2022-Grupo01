@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeakEnemy : MonoBehaviour
 {
-    public NecromancerController _necromancer;
+    [HideInInspector] public NecromancerController _necromancer;
     private EnemyLifeComponent _myELC;
 
     // Start is called before the first frame update

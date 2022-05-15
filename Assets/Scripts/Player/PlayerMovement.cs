@@ -111,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
 
     public IEnumerator MovePlayerToHookPoint(Vector3 travelPoint)
     {
-        Debug.Log("WEWE");
+        GetComponent<Collider2D>().isTrigger = true;
         hook.GetComponent<gancho>().canMove = false;
         hook.GetComponent<gancho>().hookSpeed = 0;
         getInput = false;
@@ -128,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
         getInput = true;
         hook.GetComponent<gancho>().hookSpeed = hook.GetComponent<gancho>().speed;
         hook.GetComponent<gancho>().canMove = true;
+        GetComponent<Collider2D>().isTrigger = false;
 	}
 
     public void ModifyPlayerSpeed(int speed)
