@@ -176,3 +176,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: PickUpItem
+    clip: {fileID: 8300000, guid: acf780a8a2abc4781bf087688f20bb48, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

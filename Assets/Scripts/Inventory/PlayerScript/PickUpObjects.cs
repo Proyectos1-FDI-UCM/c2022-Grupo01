@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,6 +30,7 @@ public class PickUpObjects : MonoBehaviour
 
         if(objeto != null)
         {
+            AudioManager.Instance.Play("PickUpItem");
             if (objeto.type == ItemTypes.Passive)
             {
                 Inventory.Instance.passiveItemList.Add(item.gameObject);
