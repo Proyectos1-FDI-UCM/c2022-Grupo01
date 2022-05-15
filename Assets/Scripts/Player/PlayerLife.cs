@@ -53,7 +53,6 @@ public class PlayerLife : MonoBehaviour
         if (!_invulnerability && healthToAdd < 0 && !isShot && !_dead) 
         {
             StartCoroutine("GetInvulnerable");
-            StartCoroutine("InvulnerableAnimation");
             animator.SetTrigger("Hurt");
         }
     }
@@ -86,26 +85,12 @@ public class PlayerLife : MonoBehaviour
     IEnumerator GetInvulnerable()
     {
         _invulnerability = true;
-        yield return new WaitForSeconds(_invulnerabilityTime);
+        Color newColor = new Color(255, 255, 255, 0.5f);
+        transform.GetChild(0).GetComponentInChildren<SpriteRenderer>().color = newColor;
+        yield return new WaitForSeconds(_invulnerabilityTime); 
         _invulnerability = false;
-    }
-
-    IEnumerator InvulnerableAnimation()
-    {
-        yield return new WaitForSeconds(0.2f);
-        SpriteRenderer sprite = transform.GetChild(0).GetComponentInChildren<SpriteRenderer>();
-        SpriteRenderer shadow = transform.GetChild(0).GetChild(0).GetComponentInChildren<SpriteRenderer>();
-        shadow.enabled = false;
-        sprite.enabled = false;
-        yield return new WaitForSeconds(_invulnerabilityTime / 3);
-        shadow.enabled = true;
-        sprite.enabled = true;
-        yield return new WaitForSeconds(_invulnerabilityTime / 3);
-        shadow.enabled = false;
-        sprite.enabled = false;
-        yield return new WaitForSeconds(_invulnerabilityTime / 3);
-        shadow.enabled = true;
-        sprite.enabled = true;
+        Color normal = Color.white;
+        transform.GetChild(0).GetComponentInChildren<SpriteRenderer>().color = normal;
     }
 	#endregion
 	
@@ -118,10 +103,5 @@ public class PlayerLife : MonoBehaviour
         _playerAttack = GetComponent<PlayerAttack>(); 
         _dead = false;
         GameManager.Instance.ShowHealth(health);
-    }
-
-    private void Update()
-    {
-
     }
 }
