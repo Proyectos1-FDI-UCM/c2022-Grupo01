@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,6 +30,7 @@ public class BinController : MonoBehaviour
                     Inventory.Instance.bottleItem = null;
                     BottleInventoryPanelManager.Instance.RemoveBottleDisplay();
                 }
+                AudioManager.Instance.Play("GlassBottle");
                 break;
 
             case BinType.Plastic:
