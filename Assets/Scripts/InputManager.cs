@@ -18,20 +18,23 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (Input.GetKeyDown(KeyCode.Escape))
+		if (PlayerManager.Instance.player.activeSelf)
 		{
-            _pause = !_pause;
-            GameManager.Instance.PauseMenu(_pause);
-		}
-		if (Input.GetKeyDown(KeyCode.K))
-		{
-            _pause = !_pause;
-            GameManager.Instance.GenerateNewFloor();
-		}
+			if (Input.GetKeyDown(KeyCode.Escape))
+			{
+				_pause = !_pause;
+				GameManager.Instance.PauseMenu(_pause);
+			}
+			if (Input.GetKeyDown(KeyCode.K))
+			{
+				_pause = !_pause;
+				GameManager.Instance.GenerateNewFloor();
+			}
 
-		if (Input.GetKeyDown(KeyCode.R))
-		{
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+			if (Input.GetKeyDown(KeyCode.R))
+			{
+				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+			}
 		}
     }
 }
