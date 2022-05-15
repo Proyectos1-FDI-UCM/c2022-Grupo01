@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class BayetaPasivo : PassiveObject
 {
-
     #region parameters
     private int recuperaVida = 10;
     #endregion
