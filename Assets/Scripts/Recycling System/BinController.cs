@@ -47,6 +47,7 @@ public class BinController : MonoBehaviour
                     Inventory.Instance.bottleItem = null;
                     BottleInventoryPanelManager.Instance.RemoveBottleDisplay();
                 }
+                AudioManager.Instance.Play("PlasticBottle");
                 break;
 
             case BinType.Paper:
@@ -63,6 +64,7 @@ public class BinController : MonoBehaviour
                     Inventory.Instance.bottleItem = null;
                     BottleInventoryPanelManager.Instance.RemoveBottleDisplay();
                 }
+                AudioManager.Instance.Play("CardboardBottle");
                 break;    
         }
     }

@@ -164,3 +164,15 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: PlasticBottle
+    clip: {fileID: 8300000, guid: a287d283836d047b1a60d463a81401ed, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CardboardBottle
+    clip: {fileID: 8300000, guid: b2ecb74360b6e4be8bc10a847d03784b, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
