@@ -158,3 +158,9 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: GlassBottle
+    clip: {fileID: 8300000, guid: dc9476a806a464ba8ae9f7c86efb84af, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
