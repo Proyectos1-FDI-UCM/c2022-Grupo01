@@ -154,6 +154,19 @@ public class PlayerMovement : MonoBehaviour
         canRoll = true;
     }
 
+	private void OnTriggerStay2D(Collider2D collision)
+	{
+        Puddle puddle = collision.GetComponent<Puddle>();
+
+        if(puddle != null && inRoll)
+		{
+            AudioManager.Instance.Play("Puddle");
+            PlayerManager.Instance.ChangePlayerLife(puddle._touchHydrate, false);
+            puddle.UsedPuddle();
+            puddle.activated = true;
+        }
+	}
+
 	void FixedUpdate()
     {
         _timeForRoll += Time.fixedDeltaTime;
